@@ -1,0 +1,33 @@
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color:black;
+    height: 687px;
+  }
+
+nav {
+    float: left;
+    width: 30%;
+    height: 687px; 
+    background:black;
+    padding: 20px;
+  }
+  
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;
+    }
+}
