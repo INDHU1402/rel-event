@@ -8,9 +8,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
+                         {path:'login', component: LoginComponent},
 ];
 
 @NgModule({
@@ -20,6 +22,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     FooterComponent,
     HomeComponent,
     SignupComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
