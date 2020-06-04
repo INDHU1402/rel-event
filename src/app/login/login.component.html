@@ -1,7 +1,7 @@
 <br><br>
 <div class="container">
     <br><br>
-<form class="login-form">
+<form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
     <div class="underlay-photo"></div> 
     <p class="login-text">
       <span class="fa-stack fa-lg">
@@ -16,15 +16,15 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Login as user</h4>
     <br>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="UserID" />
+    <input type="text" class="login-username" name="loginId" ngModel #loginId="ngModel" autofocus="true" required="true" placeholder="UserID" />
     <br>
-    <input type="password" class="login-password" required="true" placeholder="Password" />
+    <input type="password" class="login-password" name="password" ngModel #password="ngModel"required="true" placeholder="Password" />
     <br><br>
-    <input type="submit" name="signup-user" value="Login" class="login-submit"/>
+    <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
   </form>
 </div>
 <br><br><br>
-<div class="container">
+<!--<div class="container">
     <br><br>
 <form class="login-form">
     <div class="underlay-photo"></div> 
@@ -48,4 +48,4 @@
     <input type="submit" name="signup-worker" value="Login" class="login-submit"/>
   </form>
 </div>
-<br><br><br>
+<br><br><br>-->
