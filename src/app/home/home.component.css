@@ -1,33 +1,118 @@
 section:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
+}
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.text-block1 {
+position: absolute;
+bottom: -110px;
+left:240px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(3, 1, 1, 0.5); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
+}
+.text-block2 {
+position: absolute;
+bottom: -110px;
+left:740px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(0, 0, 0, 0.89); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
+}
+.text-block3 {
+position: absolute;
+bottom: -110px;
+left:1400px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(0, 0, 0, 0.89); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
+}
+.text-block4 {
+position: absolute;
+bottom: -510px;
+left:240px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(0, 0, 0, 0.89); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
+}
+.text-block5 {
+position: absolute;
+bottom: -510px;
+left:740px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(0, 0, 0, 0.89); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
+}
+.text-block6 {
+position: absolute;
+bottom: -510px;
+left:1400px;
+background: rgb(8, 3, 3); /* Fallback color */
+background: rgba(0, 0, 0, 0.89); /* Black background with 0.5 opacity */
+color: #f5f5f5; /* Grey text */
+
+padding-left: 20px;
+padding-right: 20px;
 }
 
 article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color:black;
-    height: 687px;
-  }
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color:black;
+  height: 687px;
+}
 
 nav {
-    float: left;
-    width: 30%;
-    height: 687px; 
-    background:black;
-    padding: 20px;
-  }
-  
+  float: left;
+  width: 30%;
+  height: 687px; 
+  background:black;
+  padding: 20px;
+}
+
 nav ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+float: left;
+width: 33.33%;
+padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+content: "";
+clear: both;
+display: table;
 }
