@@ -1,0 +1,71 @@
+<br><br><br><br><br><br>
+<div class="container" style="background-color: black">
+    <br><br>
+    <form #registerForm="ngForm">
+        <div class="underlay-photo"></div>
+        <i class="glyphicon glyphicon-plus-sign" style="color: white; font-size: 50px; float: left;"></i>
+        <p style="color:white; font-size: 40px;">Create an event</p>
+        <input type="text" class="login-username" name="eventId" [(ngModel)]='eventDetails.eventId' autofocus="true" required="true"
+            placeholder="eventId" />
+        <input type="text" class="login-username" autofocus="true" name="eventName" [(ngModel)]='eventDetails.eventName' required="true"
+            placeholder="eventName" />
+        <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType' class="login-username">
+            <option hidden value="" disabled selected>Choose type </option>
+            <option *ngFor="let type of Types">{{type}}</option>
+        </select>
+    <input type="text" class="login-username" autofocus="true" name="about" [(ngModel)]='eventDetails.about'required="true" placeholder="about">
+    <input type="number" class="login-username" autofocus="true" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true" placeholder="attendeesCount" />
+    <input class="login-username" type="date" name="eventDate" [(ngModel)]='eventDetails.eventDate' required="true" placeholder="Event date">
+    <select name="category" id="category" [(ngModel)]='eventDetails.category' class="login-username">
+        <option hidden value="" disabled selected>Choose category </option> 
+        <option *ngFor="let category of Category">{{category}}</option>
+    </select> 
+    <input type="text" class="login-username" autofocus="true" name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true" placeholder="organiserName" />
+    <select name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor' class="login-username">
+        <option hidden value="" disabled selected>Allow sponsors?</option> 
+        <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
+    </select> 
+    <input type="number" class="login-username" autofocus="true" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true" placeholder="ticketPrice" />
+    <input type="text" class="login-username" autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true" placeholder="venue" />
+    <br><br>
+    <p>upload-images works!</p>
+
+    <!--<form #imageForm=ngForm (ngSubmit)="OnSubmit(imageForm.value)">
+    <img [src]="imageUrl" style="width: 250px; height: 200px;">
+    <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">-->
+
+    <table class="table table-bordered table-sm text-center" style="background-color: white;">
+        <thead>
+            <tr class="bg-info text-white">
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+                <th>EXPERIENCE</th>
+                <th>MAIL-ID</th>
+                <th>MOBILE-NO.</th>
+                <th>SERVICENAME</th>
+                <th>SERVICETYPE</th>
+                <th>ADD</th>
+                <th>REMOVE</th>
+            </tr>
+        </thead>
+        <tbody>
+    <tr *ngFor='let prof of professionals'>
+        <td>{{prof.professionalId}}</td>
+        <td>{{prof.professionalName}}</td>
+        <td>{{prof.address}}</td>
+        <td>{{prof.experience}}</td>
+        <td>{{prof.mailId}}</td>
+        <td>{{prof.mobile}}</td>
+        <td>{{prof.serviceName}}</td>
+        <td>{{prof.serviceType}}</td>
+        <td><button (click)="addProfessional(prof)">add professional</button></td>
+        <td><button (click)="removeProfessional(prof)">remove professional</button></td>
+</tr>
+</tbody>
+</table>
+</form>
+    <!--<button (click)="regEvent(registerForm.value, imageForm.value)">Add Event</button>-->
+    <button (click)="regEvent(registerForm.value)">Add Event</button>
+</div>
+<br><br><br><br>

@@ -1,0 +1,44 @@
+<br><br><br><br><br><br>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+        <form #paymentForm="ngForm" (ngSubmit)="addPayment(paymentForm.value)">
+        <div class="row">
+          <div class="col-50">
+            <label for="ccnum">Enter no. of tickets:</label>
+            <input type="number" name="ntickets" [(ngModel)]='ntickets'>
+            <h3>Payment</h3>
+            <label for="ccnum">Payment Id:</label>
+            <input type="number" name="paymentId"  [(ngModel)]='payment.paymentId'>
+            <label for="cname">Name on Card</label>
+            <input type="text" name="nameOnCard"  [(ngModel)]='payment.nameOnCard' placeholder="John More Doe">
+            <label for="ccnum">Card number</label>
+            <input type="text" name="cardNum"  [(ngModel)]='payment.cardNum' placeholder="1111-2222-3333-4444">
+            <h4>Event Details : </h4>
+            <p> Name   : {{Event.eventName}}</p>
+            <p> Venue  : {{Event.venue}}</p>
+            <p> Date   : {{Event.eventDate}}</p>
+            <p> Amount : {{ntickets}} * {{Event.ticketPrice}}</p>
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Expire date</label>
+                <input type="date"  [(ngModel)]='payment.expiryDate' name="expiryDate" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="password" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+

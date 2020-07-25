@@ -9,7 +9,7 @@
 </head>
 
 <br><br>
-
+<br><br>
 <section>
     <article>
         <img src="assets/img/event.jpeg" alt="image">
@@ -19,7 +19,7 @@
         <p style="color:whitesmoke">Rel-event allows users to create event or book tickets
             of an event in a snap.
         </p>
-        <button class="btn success">create an event</button>
+        <button (click)="redirect()" class="btn success">Create an event</button>
     </nav>
 </section>
 
@@ -29,6 +29,7 @@
 <div class="row">
     <div class="column" style  = " opacity: 0.95;">
       <img src="/assets/img/Talks.jpg" alt="Snow" style="width:100%">
+      <button (click)="bookTicket()">talks</button>
       <div class="text-block1">
         <h1>Talks</h1>
       </div>
@@ -36,12 +37,14 @@
     </div>
     <div class="column" style  = "opacity: 0.90;">
       <img src="/assets/img/comedyshows.jpg" alt="Forest" style="width:100%;height:355px">
+      <button (click)="bookTicket()">comedy shows</button>
       <div class="text-block2">
         <h1>Comedy Shows</h1>
       </div>
     </div>
     <div class="column" style  = " opacity: 0.90;" >
       <img src="./assets/img/musicshows.jpg" alt="Mountains" style="width:100%; height :356px">
+      <button (click)="bookTicket()">music shows</button>
       <div class="text-block3">
         <h1>Music Shows</h1>
       </div>
@@ -51,6 +54,7 @@
 <div class="row">
   <div class="column" style  = " opacity: 0.90;">
     <img src="/assets/img/meetups.jpg" alt="Snow" style="width:100%">
+    <button (click)="bookTicket()">meetups</button>
     <div class="text-block4">
       <h1>Meet-Ups</h1>
     </div>
@@ -58,12 +62,14 @@
   </div>
   <div class="column" style  = " opacity: 0.90;">
     <img src="/assets/img/performances.jpg" alt="Forest" style="width:100%;height:336px">
+    <button (click)="bookTicket()">performances</button>
     <div class="text-block5">
       <h1>Perfomances</h1>
     </div>
   </div>
   <div class="column" style  = " opacity: 0.95;">
     <img src="./assets/img/workshopd.jpeg" alt="Mountains" style="width:100%; height:338px">
+    <button (click)="bookTicket()">workshop</button>
     <div class="text-block6">
       <h1>Workshops</h1>
     </div>

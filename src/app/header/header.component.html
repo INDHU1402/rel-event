@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
   </head>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -12,12 +13,43 @@
         <h4 class="navbar-text">Rel-event</h4>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="home">Home</a></li>
+        <li><a routerLink="home">Home<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Expand your service</a></li>
-        <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+        <li>
+          <!--
+          <div *ngIf="!db">
+            <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><button class="glyphicon glyphicon-user" (click)="signInWithGoogle()">SignInWithGoogle<span class="fa fa-google"></span></button></li>
+          </div> 
+
+          <div *ngIf="db">
+            <h4 class="card-title">{{ db }}</h4>
+            <li><button class="glyphicon glyphicon-user" (click)="logout()">logout</button></li>
+          </div>
+        -->
+          <div *ngIf="!user">
+            <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><button class="glyphicon glyphicon-user" (click)="signInWithGoogle()">SignInWithGoogle<span class="fa fa-google"></span></button></li>
+          </div>
+
+          <div *ngIf="user">
+          <h4 class="card-title">{{ user.name }}</h4>
+          <p class="card-text">{{ user.email }}</p>
+          <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+          </div>
+          <!--
+          <div *ngIf="!user && db">
+            <h4 class="card-title">{{ db }}</h4>
+          </div>
+        -->
+        </li>
+
+
       </ul>
-    </div>
+      </div>
   </nav>
-  <br><br>
+  

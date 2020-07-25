@@ -1,5 +1,6 @@
-<br><br>
-<div class="container">
+<br><br><br><br><br><br>
+<div class="row">
+<div class="col-sm-6">
     <br><br>
 <form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
     <div class="underlay-photo"></div> 
@@ -16,17 +17,20 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Login as user</h4>
     <br>
-    <input type="text" class="login-username" name="loginId" ngModel #loginId="ngModel" autofocus="true" required="true" placeholder="UserID" />
+    <input type="text" class="login-username" name="userName" ngModel #userName="ngModel" autofocus="true" required="true" placeholder="UserName" />
     <br>
     <input type="password" class="login-password" name="password" ngModel #password="ngModel"required="true" placeholder="Password" />
     <br><br>
     <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+    <br><br>
+    <p>Don't have an account?&nbsp;<button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button></p>
+    <br>
   </form>
 </div>
 <br><br><br>
-<!--<div class="container">
+<div class="col-sm-6">
     <br><br>
-<form class="login-form">
+    <form #profForm="ngForm" class="form-group" (ngSubmit)="profSubmit(profForm.value)" novalidate>
     <div class="underlay-photo"></div> 
     <p class="login-text">
       <span class="fa-stack fa-lg">
@@ -41,11 +45,17 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Login as worker</h4>
     <br>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="WorkerID" />
+    <input type="text" class="login-username" name="professionalName" ngModel #userName="ngModel" autofocus="true" required="true" placeholder="professionalName" />
     <br>
-    <input type="password" class="login-password" required="true" placeholder="Password" />
+    <input type="password" class="login-password" name="password" ngModel #password="ngModel"required="true" placeholder="Password" />
     <br><br>
-    <input type="submit" name="signup-worker" value="Login" class="login-submit"/>
+    <button class="btn btn-primary" [disabled]="!profForm.valid">Login</button>
+    <br><br>
+    <p>Don't have an account?&nbsp;<button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button></p>
+    <br>
   </form>
 </div>
-<br><br><br>-->
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+</div>

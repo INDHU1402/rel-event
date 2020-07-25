@@ -1,7 +1,8 @@
 <br><br>
+
 <div class="container">
     <br><br>
-<form class="login-form">
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
     <div class="underlay-photo"></div> 
     <p class="login-text">
       <span class="fa-stack fa-lg">
@@ -12,21 +13,26 @@
     <br>
     <h4 style="color: white;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Please fill this form to create an account as user</h4>
+        Create an account as user</h4>
     <br>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="Name" />
-    <input type="tel" class="login-username" required="true" placeholder="Mobile no."/>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="UserID" />
-    <input type="password" class="login-password" required="true" placeholder="Password" />
-    <input type="password" class="login-password" required="true" placeholder="Confirm Password" />
+    <input type="text" class="login-username" name="userId" ngModel autofocus="true" required="true" placeholder="userId" />
+    <input type="tel" class="login-username" required="true" name="contact" ngModel placeholder="Mobile no."/>
+    <input type="text" class="login-username" autofocus="true" name="emailId" ngModel required="true" placeholder="emailId" />
+    <input type="text" class="login-username" autofocus="true" name="userName" ngModel required="true" placeholder="userName" />
+    <input type="password" class="login-password" required="true" name="password" ngModel placeholder="Password" />
+    <input type="password" class="login-password" required="true" name="confirmpassword" ngModel placeholder="Confirm Password" />
     <br><br>
     <input type="submit" name="signup-user" value="Signup" class="login-submit"/>
+    <br>
+    
   </form>
 </div>
+
 <br><br><br>
+
 <div class="container">
     <br><br>
-<form class="login-form">
+    <form #profForm="ngForm" (ngSubmit)="registerProf(profForm.value)">
     <div class="underlay-photo"></div> 
     <p class="login-text">
       <span class="fa-stack fa-lg">
@@ -37,24 +43,21 @@
     <br>
     <h4 style="color: white;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Please fill this form to create an account as worker</h4>
+        Create an account as professional</h4>
     <br>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="Name" />
-    <input type="text" class="login-username" autofocus="true" placeholder="Shop name (if there)" />
-    <select name="category" id="category" class="login-username">
-        <option value="photographer">photographer</option>
-        <option value="decarator">decarator</option>
-        <option value="entertainer">entertainer</option>
-        <option value="food supplier">food supplier</option>
-        <option value="venue owner">venue owner</option>
-        <option value="others">others</option>
+    <input type="text" class="login-username" name="professionalId" ngModel autofocus="true" required="true" placeholder="professionalId" />
+    <input type="text" class="login-username" name="professionalName" ngModel autofocus="true" required="true" placeholder="professional name" />
+    <input type="text" class="login-username" name="address" ngModel autofocus="true" required="true" placeholder="address" />
+    <input type="number" class="login-username" name="experience" ngModel autofocus="true" required="true" placeholder="Experience in years" />
+    <input type="text" class="login-username" autofocus="true" name="mailId" ngModel required="true" placeholder="mailId" />
+    <input type="tel" class="login-username"autofocus="true" name="mobile" ngModel  required="true" placeholder="Mobile no."/>
+    <select name="serviceType" id="category" ngModel class="login-username">
+      <option hidden value="" disabled selected>Select one category </option> 
+      <option *ngFor="let service of serviceType">{{service}}</option>
     </select>
-    <input type="number" class="login-username" name="experience" placeholder="Experience in years" required="true" min="0">
-    <input type="textarea" class="login-username" autofocus="true" required="true" placeholder="Address" />
-    <input type="tel" class="login-username" required="true" placeholder="Mobile no."/>
-    <input type="text" class="login-username" autofocus="true" required="true" placeholder="WorkerID" />
-    <input type="password" class="login-password" required="true" placeholder="Password" />
-    <input type="password" class="login-password" required="true" placeholder="Confirm Password" />
+    <input type="text" class="login-username" autofocus="true" name="serviceName" ngModel required="true" placeholder="serviceName" />
+    <input type="password" class="login-password" required="true" name="password" ngModel placeholder="Password" />
+    <input type="password" class="login-password" required="true" name="confirmpassword" ngModel placeholder="Confirm Password" />
     <br><br>
     <input type="submit" name="signup-worker" value="Signup" class="login-submit"/>
   </form>

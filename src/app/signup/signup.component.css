@@ -88,7 +88,7 @@ input:focus :-ms-input-placeholder {
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background: url('https://31.media.tumblr.com/41c01e3f366d61793e5a3df70e46b462/tumblr_n4vc8sDHsd1st5lhmo1_1280.jpg');
+  background: url('src/assets/img/blackSmokejpg');
   background-size: cover;
   -moz-animation: grayscale(30%);
   z-index: -1;
@@ -105,3 +105,4 @@ input:focus :-ms-input-placeholder {
     -webkit-filter: grayscale(30%) hue-rotate(360deg);
   }
 }
+
