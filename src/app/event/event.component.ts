@@ -56,7 +56,7 @@ export class EventComponent implements OnInit {
 
   regEvent(registerForm: any): void {
     this.eventDetails.professionalList = this.chosenProfessional;
-    this.eventDetails.user = this.User;
+    this.eventDetails.user.userId = this.User.userId;
     console.log(this.eventDetails.professionalList);
     //this.service.registerEvent(this.eventDetails, this.fileToUpload).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
     this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );

@@ -32,9 +32,9 @@ export class PaymentComponent implements OnInit {
 
   addPayment(paymentForm : any) : void {
     this.payment.amount = this.Event.ticketPrice;
-    this.payment.event = this.Event;
-    this.payment.user = this.User;
-    console.log(this.payment);
+    this.payment.event.eventId = this.Event.eventId;
+    this.payment.user.userId = this.User.userId;
+    console.log("payment - "+this.payment);
     this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
     localStorage.setItem('howMany', JSON.stringify(this.ntickets));
     this.router.navigate(['bill']);

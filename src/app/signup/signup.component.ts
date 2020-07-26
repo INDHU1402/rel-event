@@ -11,14 +11,17 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others']
 
-  constructor(private service: UserService,private router: Router) { }
+  constructor(private service: UserService,private router: Router) {
+   
+   }
   username : string;
 
   ngOnInit(): void {
     }
 
   register(registerForm: any): void {
-    if (registerForm.password === registerForm.confirmpassword) {
+    
+    if (registerForm.password === registerForm.confirmpassword ) {
       delete registerForm.confirmpassword;
       this.service.registerUser(registerForm).subscribe((result: any) => { console.log(result); } );
       console.log(registerForm);
