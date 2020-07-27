@@ -9,19 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others']
-
-  constructor(private service: UserService,private router: Router) {
-   
-   }
+  serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others'];
   username : string;
+  constructor(private service: UserService,private router: Router) {
+   }
 
   ngOnInit(): void {
     }
 
   register(registerForm: any): void {
-    
-    if (registerForm.password === registerForm.confirmpassword ) {
+    if (registerForm.password === registerForm.confirmpassword) {
       delete registerForm.confirmpassword;
       this.service.registerUser(registerForm).subscribe((result: any) => { console.log(result); } );
       console.log(registerForm);

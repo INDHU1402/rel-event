@@ -17,7 +17,7 @@ export class PaymentComponent implements OnInit {
 
   constructor(private service: UserService,private router: Router) {
     this.ntickets = 1;
-    this.payment = {paymentId: '',amount: '', cardNum: '',expiryDate: '',nameOnCard: '',
+    this.payment = {cardNum: '',nameOnCard: '',expiryDate: '',amount: '',
     event: {eventId:'', eventType:'', about:'', attendeesCount:'', category:'', eventDate:'', eventName:'',
     organiserName:'', sponsor:'', ticketPrice:'', venue:''},
     user: {userId:'', contact:'', emailId:'', password:'', userName:''}};
@@ -34,7 +34,7 @@ export class PaymentComponent implements OnInit {
     this.payment.amount = this.Event.ticketPrice;
     this.payment.event.eventId = this.Event.eventId;
     this.payment.user.userId = this.User.userId;
-    console.log("payment - "+this.payment);
+    console.log(this.payment);
     this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
     localStorage.setItem('howMany', JSON.stringify(this.ntickets));
     this.router.navigate(['bill']);

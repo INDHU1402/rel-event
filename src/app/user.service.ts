@@ -16,27 +16,27 @@ export class UserService {
    }
   
   getUser(userName: any,password: any) {
-    return this.httpClient.get('RELEVENT_(1)/webapi/myresource/UserLogin/' + userName + '/' + password);
+    return this.httpClient.get('RELEVENT/webapi/myresource/UserLogin/' + userName + '/' + password);
    }
    
    registerUser(user: any) {
-    return this.httpClient.post('RELEVENT_(1)/webapi/myresource/regUser/', user);
+    return this.httpClient.post('RELEVENT/webapi/myresource/regUser/', user);
    }
   
    getProfessional(professionalName: any,password: any) {
-    return this.httpClient.get('RELEVENT_(1)/webapi/myresource/ProfLogin/' + professionalName + '/' + password);
+    return this.httpClient.get('RELEVENT/webapi/myresource/ProfLogin/' + professionalName + '/' + password);
    }
    
    registerProfessional(professional: any) {
-    return this.httpClient.post('RELEVENT_(1)/webapi/myresource/regProfessional/', professional);
+    return this.httpClient.post('RELEVENT/webapi/myresource/regProfessional/', professional);
    }
 
    getProfessionalList() {
-    return this.httpClient.get('RELEVENT_(1)/webapi/myresource/ProfList');
+    return this.httpClient.get('RELEVENT/webapi/myresource/ProfList');
    }
    
    getEventList() {
-    return this.httpClient.get('RELEVENT_(1)/webapi/myresource/EventList'); 
+    return this.httpClient.get('RELEVENT/webapi/myresource/EventList'); 
    }
    
    /* registerEvent(eventDetails : any, fileToUpload: File) {
@@ -61,12 +61,11 @@ export class UserService {
 
    registerEvent(eventDetails : any) {
      console.log(eventDetails);
-    return this.httpClient.post('RELEVENT_(1)/webapi/myresource/regEvent/', eventDetails);
+    return this.httpClient.post('RELEVENT/webapi/myresource/regEvent/', eventDetails);
    }
 
    registerPayment(paymentDetails : any) {
-    return this.httpClient.post('RELEVENT_(1)/webapi/myresource/regPayment/', paymentDetails);
-    console.log(paymentDetails);
+    return this.httpClient.post('RELEVENT/webapi/myresource/regPayment/', paymentDetails);
    }
 
    setUserLoggedIn(): void { // login success

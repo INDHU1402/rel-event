@@ -15,7 +15,7 @@ export class EventComponent implements OnInit {
   Category: any = ['conference', 'workshop', 'seminar', 'hackathon', 'tech-fest', 'talk', 'training session', 'others']
   professionals: any;
   chosenProfessional = [];
-  eventDetails = {eventId:'', eventType:'', about:'', attendeesCount:'', category:'', eventDate:'', eventName:'',
+  eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventDate:'', eventName:'',
                   organiserName:'', sponsor:'', ticketPrice:'', venue:'',
                   user: {userId:'', contact:'', emailId:'', password:'', userName:''},
                   professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:''}]};
