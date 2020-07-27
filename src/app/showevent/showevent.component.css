@@ -87,11 +87,28 @@ input:focus :-ms-input-placeholder {
   top: 0;
 }
 .underlay-photo {
-  animation: hue-rotate 6s infinite;
-  background: url('https://images.unsplash.com/photo-1553321326-d952d6269f13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80');
+  background-image: url("src/assets/img/blackwall.jpeg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  -moz-animation: grayscale(30%);
-  z-index: -1;
+  position: relative;
+  
+
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .underlay-black {
   background: rgba(0, 0, 0, 0.7);
@@ -162,8 +179,11 @@ body {
 /* ================ The Timeline ================ */
 
 .timeline {
+  float:left;
+  max-height: 900px;
+  
   position: relative;
-  width: 660px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 1em 0;
@@ -218,7 +238,6 @@ body {
 .flag-wrapper {
   position: relative;
   display: inline-block;
-  
   text-align: center;
 }
 
@@ -305,6 +324,36 @@ body {
 .direction-l .time-wrapper {
   float: left;
 }
+.team
+{
+padding-top: 50px;
+padding-bottom:50px;
+color: #555;
+}
+h1{
+text-align: center;
+color: #555 !important;
+padding-bottom:10px;
+}
+h1::after
+{
+content:' ';
+background: #007bff;
+display:vlock;
+height: 3px;
+width: 170px;
+margin: 20px auto 5px;
+}
+.profile-pic
+{
+margin-top:25px;
+}
+.profile-pic .img-box
+{
+opacity: 1;
+display:block;
+position: relative;
+}
 
 .direction-r .time-wrapper {
   float: right;
@@ -318,12 +367,32 @@ body {
 
 .desc {
   margin: 1em 0.75em 0 0;
-  
+  color:white;
   font-size: 0.77777em;
   font-style: italic;
   line-height: 1.5em;
 }
+.row1 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
+/* Create four equal columns that sits next to each other */
+.column1 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column1 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
 .direction-r .desc {
   margin: 1em 0 0 0.75em;
 }

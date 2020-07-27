@@ -1,44 +1,41 @@
-<br><br><br><br><br><br><br><br><br>
-<!--
-<div class="container" style="margin-left: 700px;">
-<article class="ticket">
-    <header class="ticket__wrapper">
-      <div class="ticket__header">
-        Tickets : 5 🎟
+<div class="hero-image">
+  <br><br> <br><br> <br><br><br><br>
+  <div class="container" style="margin-left: 700px;">
+    <article class="ticket">
+      <header class="ticket__wrapper">
+        <div class="ticket__header">
+          Tickets : {{num}} 🎟
+        </div>
+        <div class="ticket__header">
+          <p><span class="glyphicon glyphicon-user"></span>
+            Booked by : {{User.userName}} </p>
+        </div>
+      </header>
+      <div class="ticket__divider">
+        <div class="ticket__notch"></div>
+        <div class="ticket__notch ticket__notch--right"></div>
       </div>
-      <div class="ticket__header">
-        <p><span class="glyphicon glyphicon-user"></span>  
-        Booked by : Abcd </p> 
+      <div class="ticket__body">
+        <section class="ticket__section">
+          <h4><b>Event</b></h4>
+          <h3>{{Event.eventName}}</h3>
+          <h4><b>On</b></h4>
+          <h3>{{Event.eventDate | date}}</h3>
+          <h3>{{Event.eventDate | date : 'mediumTime'}}</h3>
+        </section>
+        <section class="ticket__section">
+          <h4><b>Venue</b></h4>
+          <h3>{{Event.venue}}</h3>
+        </section>
       </div>
-    </header>
-    <div class="ticket__divider">
-      <div class="ticket__notch"></div>
-      <div class="ticket__notch ticket__notch--right"></div>
-    </div>
-    <div class="ticket__body">
-      <section class="ticket__section">
-        <h4><b>Event</b></h4>
-        <h3>Tech fest</h3>
-        <h4><b>On</b></h4>
-        <h3>July 31, 2020</h3>
-        <h3>4PM to 6PM</h3>
-      </section>
-      <section class="ticket__section">
-        <h4><b>Venue</b></h4>
-        <h3>BITS Pilani, Hyderabad</h3>
-      </section>
-    </div>
-    <footer class="ticket__footer">
-      <span>Total Paid</span>
-      <span>{{120 | currency:'USD'}}</span>
-    </footer>
-  </article>
+      <footer class="ticket__footer">
+        <span>Total Paid</span>
+        <span>{{Event.ticketPrice}}*{{num}}</span>
+      </footer>
+    </article>
   </div>
-<br><br><br><br><br><br>
-
-
- <br><br><br><br><br><br>
--->
+</div>
+<!--
 <div class="container">
 <article class="ticket">
     <header class="ticket__wrapper">
@@ -73,4 +70,4 @@
   </article>
   </div>
 
-<br><br><br><br><br><br> 
+<br><br><br><br><br><br> -->

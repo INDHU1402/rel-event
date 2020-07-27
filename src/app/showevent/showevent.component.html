@@ -1,129 +1,95 @@
-<br><br>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
 
-<!--Testing
+</head>
 
-<div class="hero-image">
+<div class="hero-image"><br><br><br><br>
+  <h1 style="font-size:50px;color: black;"><b>{{event.eventName}}</b></h1>
   <div class="hero-text">
-    <h1 style="font-size:50px">I am Jane Doe</h1>
-    <h3>And I'm a Photographer</h3>
-    <button>Hire me</button>
+
+    <h2><b>Venue</b></h2>
+    <h3>{{event.venue}}</h3>
+<br>
+    <h2><b>Date and Time</b></h2>
+    <h3>{{event.eventDate | date}}<br>{{event.eventDate | date : 'mediumTime'}} </h3>
+    <br>
+    <h2><b>Ticket Price</b></h2>
+    <h3>{{event.ticketPrice | currency:'INR'}}</h3>
+    <button type="button" (click)="payment()" name="payment" class="btn btn-primary" >Buy Tickets</button>
+    
   </div>
 </div>
 
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
+  rel='stylesheet' type='text/css'>
+<div class="underlay-photo">
+  <br><br><br>
+  <div class="row">
+    <div class="column">
+      <ul class="timeline" style="margin-left: 60px;">
 
-<ul class="timeline">
-
-	<li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">Freelancer</span>
-				<span class="time-wrapper"><span class="time">2013 - present</span></span>
-			</div>
-			<div class="desc">My current employment. Way better than the position before!</div>
-		</div>
-	</li>
-  
-	<li>
-		<div class="direction-l">
-			<div class="flag-wrapper">
-				<span class="flag">Apple Inc.</span>
-				<span class="time-wrapper"><span class="time">2011 - 2013</span></span>
-			</div>
-			<div class="desc">My first employer. All the stuff I've learned and projects I've been working on.</div>
-		</div>
-	</li>
-
-	<li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">Harvard University</span>
-				<span class="time-wrapper"><span class="time">2008 - 2011</span></span>
-			</div>
-			<div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
-		</div>
-  </li>
-  
-  <li>
-		<div class="direction-r">
-			<div class="flag-wrapper">
-				<span class="flag">Harvard University</span>
-				<span class="time-wrapper"><span class="time">2008 - 2011</span></span>
-			</div>
-			<div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
-		</div>
-	</li>
-  
-</ul>
-
-      <section id="team">
-        <div class="container">
-          <h1>Guests</h1>
-          <div class="row">
-            <div class="col-md-3 profile-pic text-center">
-              <div class="image-box">
-                <img src="#" class="img-responsive">
-                <ul>
-                  <a href="#"><span><i class="fa fa-facebook"></i></span></a>
-                  <a href="#"><span><i class="fa fa-twitter"></i></span></a>
-                  <a href="#"><span><i class="fa fa-linkedin"></i></span></a>
-                </ul>
-                <div>
-                  <h2>Akarsh</h2>
-                  <h3>Founder/ CEO</h3>
-                  <p>manages overall working</p>
-                </div>
-              </div>
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="flag">Freelancer</span>
+              <span class="time-wrapper"><span class="time">2013 - present</span></span>
             </div>
-            <div class="col-md-3 profile-pic text-center">
-              <div class="image-box">
-                <img src="src/assets/img/bg.jpg" class="img-responsive">
-                <ul>
-                  <a href="#"><span><i class="fa fa-facebook"></i></span></a>
-                  <a href="#"><span> <i class="fa fa-twitter"></i></span></a>
-                  <a href="#"><span> <i class="fa fa-linkedin"></i></span></a>
-                </ul>
-                <div>
-                  <h2>Ranveer Singh</h2>
-                  <h3>Business Header</h3>
-                  <p>checks Business deals</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 profile-pic text-center">
-              <div class="image-box">
-                <img src="src/assets/img/bg.jpg" class="img-responsive">
-                <ul>
-                  <a href="#"><span><i class="fa fa-facebook"></i></span></a>
-                  <a href="#"><span><i class="fa fa-twitter"></i></span></a>
-                  <a href="#"><span><i class="fa fa-linkedin"></i></span></a>
-                </ul>
-                <div>
-                  <h2>Manjeera Tripati</h2>
-                  <h3>Marketing Head</h3>
-                  <p>controls marketing</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 profile-pic text-center">
-              <div class="image-box">
-                <img src="src/assets/img/bg.jpg" class="img-responsive">
-                <ul>
-                  <a href="#"><span> <i class="fa fa-facebook"></i></span></a>
-                  <a href="#"><span> <i class="fa fa-twitter"></i></span></a>
-                  <a href="#"><span> <i class="fa fa-linkedin"></i></span></a>
-                </ul>
-                <div>
-                  <h2>Arjun Kapur</h2>
-                  <h3>UI Designer</h3>
-                  <p>designs the ideas</p>
-                </div>
-              </div>
-            </div>
+            <div class="desc">My current employment. Way better than the position before!</div>
           </div>
-        </div>
-      </section>
-    -->
+        </li>
+
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="flag">Apple Inc.</span>
+              <span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+            </div>
+            <div class="desc">My first employer. All the stuff I've learned and projects I've been working on.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="flag">Harvard University</span>
+              <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+            </div>
+            <div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="flag">Harvard University</span>
+              <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+            </div>
+            <div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="column">
+      <h2 style="color:white"><b>ABOUT</b></h2>
+      <h4 style="color:white"> {{event.about}}
+      </h4>
+    </div>
+  </div>
+</div>
+<div>
+  <h1>brought to you by</h1>
+  
+  <h2>{{event.organiserName}}</h2>
+</div>
+<br><br>
+<!--
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -191,7 +157,7 @@
   </div>
 </div>
 
-<br><br><br>
+<br><br><br>-->
 <!--
 <table class="table table-bordered table-sm text-center" style="background-color: white;">
     <thead>
