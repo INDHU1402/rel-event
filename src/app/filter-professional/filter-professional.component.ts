@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 
 export class FilterProfessionalComponent implements OnInit {
   term:string;
-  
+
   professionals: any;
   eventDetails : any;
   User:any;

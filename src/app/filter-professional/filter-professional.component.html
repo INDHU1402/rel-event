@@ -11,7 +11,38 @@
 
 <div class="form-group">
     <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+</div>
+
+<div  *ngFor='let prof of professionals  | filter : term'>
+  <br>
+<div class="user-profile">
+	<img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+  <br>  
+  <div class="username">{{prof.professionalName}}</div>
+  <div class="bio">
+    {{prof.serviceName}}
+  	{{prof.serviceType}}
   </div>
+    <div class="description">
+      {{prof.address}}
+  </div><br>
+  <button (click)="addProfessional(prof)">add professional</button>
+  <button (click)="removeProfessional(prof)">remove professional</button>
+  <ul class="data">
+    <li>
+      <span class="entypo-heart"> 127</span>
+    </li>
+    <li>
+      <span class="entypo-eye"> 853</span>
+    </li>
+    <li>
+      <span class="entypo-user"> 311</span>
+    </li>
+ </ul>
+</div>
+</div>
+
+<!--
 <table class="table table-bordered table-sm text-center" style="background-color: white;">
     <thead>
         <tr class="bg-info text-white">
@@ -41,6 +72,7 @@
             <td><button (click)="removeProfessional(prof)">remove professional</button></td>
         </tr>
     </tbody>
-   
 </table>
-  <button (click)="regEvent()">Proceed</button>
+-->
+
+<button (click)="regEvent()">Proceed</button>
