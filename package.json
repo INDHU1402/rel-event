@@ -19,10 +19,12 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "angular-mat-datepicker": "0.0.2",
     "angularx-social-login": "^3.2.0",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "ng2-search-filter": "^0.5.1",
+    "ngx-bootstrap": "^5.6.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

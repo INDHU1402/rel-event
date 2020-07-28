@@ -13,8 +13,6 @@
         <div class="underlay-photo"></div>
         <i class="glyphicon glyphicon-plus-sign" style="color: white; font-size: 50px; float: left;"></i>
         <p style="color:white; font-size: 40px;">Create an event</p>
-        <!--<input type="text" class="login-username" name="eventId" autofocus="true" required="true"
-            placeholder="eventId" /> -->
         <input type="text" class="login-username" autofocus="true" name="eventName" [(ngModel)]='eventDetails.eventName'
             required="true" placeholder="eventName" />
         <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType' class="login-username">
@@ -41,9 +39,34 @@
             [(ngModel)]='eventDetails.ticketPrice' required="true" placeholder="ticketPrice" />
         <input type="text" class="login-username" autofocus="true" name="venue" [(ngModel)]='eventDetails.venue'
             required="true" placeholder="venue" />
-        <br><br>
-        <p>upload-images works!</p>
 
+        <div class="row">
+            <div class="col-sm-6">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h4 style="color: aliceblue;">Choose start and end date of event</h4>
+        <br>
+        <div class="col-xs-12 col-12 col-md-4 form-group">
+            <input type="text" placeholder="Daterangepicker" class="form-control" bsDaterangepicker>
+        </div>
+        <br><br><br>
+</div>
+<div class="col-sm-6">
+    <br>
+        <h4 style="color: aliceblue;">Choose start and end time of event</h4>
+        <div class="row">
+        <div class="col-sm-2">
+        <h5 style="color: aliceblue;">Start time</h5>
+        <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+        </div>
+        <div class="col-sm-2">
+        <h5 style="color: aliceblue;">End time</h5>
+        <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+        </div>
+    </div>
+        </div>
+    </div>
+        
+        <br><br>
         <!--<form #imageForm=ngForm (ngSubmit)="OnSubmit(imageForm.value)">
     <img [src]="imageUrl" style="width: 250px; height: 200px;">
     <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">-->

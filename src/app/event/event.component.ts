@@ -13,20 +13,14 @@ export class EventComponent implements OnInit {
   Types: any = ['public', 'private']
   Sponsor: any = ['yes', 'no']
   Category: any = ['conference', 'workshop', 'seminar', 'hackathon', 'tech-fest', 'talk', 'training session', 'others']
-  
   eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventDate:'', eventName:'',
                   organiserName:'', sponsor:'', ticketPrice:'', venue:'',
                   user: {userId:'', contact:'', emailId:'', password:'', userName:''},
-                  professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:''}]};
-  //fileToUpload: File;
-  //reader: FileReader;
-  //imageUrl: string; 
+                  professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:''}]}; 
   User: any;
   
   constructor(private service: UserService, private router: Router) {
-    //this.imageUrl = '/assets/img/bg4.jpg';
-    
-   }
+  }
 
   ngOnInit(): void {
   //  this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );

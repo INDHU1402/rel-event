@@ -1,3 +1,5 @@
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -14,9 +16,7 @@ import { AuthGuard } from './auth.guard';
 import { EventComponent } from './event/event.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import {
-  GoogleLoginProvider,
-} from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { BookticketComponent } from './bookticket/bookticket.component';
 import { ShoweventComponent } from './showevent/showevent.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -58,6 +58,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     HttpClientModule, 
     SocialLoginModule,
     Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoot)
   ],
   providers: [
