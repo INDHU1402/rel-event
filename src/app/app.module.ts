@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { EventComponent } from './event/event.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {
   GoogleLoginProvider,
 } from 'angularx-social-login';
@@ -20,6 +21,7 @@ import { BookticketComponent } from './bookticket/bookticket.component';
 import { ShoweventComponent } from './showevent/showevent.component';
 import { PaymentComponent } from './payment/payment.component';
 import { BillComponent } from './bill/bill.component';
+import { FilterProfessionalComponent } from './filter-professional/filter-professional.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -29,6 +31,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'showEvent', component: ShoweventComponent},
                          {path:'payment', component: PaymentComponent},
                          {path:'bill', component: BillComponent},
+                         {path:'filerProfessional', component: FilterProfessionalComponent}
                          
 ];
 
@@ -45,6 +48,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ShoweventComponent,
     PaymentComponent,
     BillComponent,
+    FilterProfessionalComponent,
 
   ],
   imports: [
@@ -53,6 +57,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     AppRoutingModule,
     HttpClientModule, 
     SocialLoginModule,
+    Ng2SearchPipeModule,
     RouterModule.forRoot(appRoot)
   ],
   providers: [

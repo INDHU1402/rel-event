@@ -1,4 +1,12 @@
 <br><br><br><br><br><br>
+<div class="container">
+    <h2 style = "color:white"><b>Step 1</b></h2>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        0%
+      </div>
+    </div>
+  </div>
 <div class="container" style="background-color: black">
     <br><br>
     <form #registerForm="ngForm">
@@ -40,7 +48,7 @@
     <img [src]="imageUrl" style="width: 250px; height: 200px;">
     <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">-->
 
-        <table class="table table-bordered table-sm text-center" style="background-color: white;">
+        <!--<table class="table table-bordered table-sm text-center" style="background-color: white;">
             <thead>
                 <tr class="bg-info text-white">
                     <th>ID</th>
@@ -70,8 +78,8 @@
                 </tr>
             </tbody>
         </table>
-    </form>
-    <!--<button (click)="regEvent(registerForm.value, imageForm.value)">Add Event</button>-->
-    <button (click)="regEvent(registerForm.value)">Add Event</button>
+    -->
+</form>
+       <button (click)="regEvent(registerForm.value)">Add Event</button>
 </div>
 <br><br><br><br>

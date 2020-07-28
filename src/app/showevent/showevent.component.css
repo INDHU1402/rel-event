@@ -493,16 +493,22 @@ position: relative;
 }
 
 }
-.hero-image {
-  background-image: url("src/assets/img/conf.jpg");
-  background-color: #cccccc;
-  height: 900px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+<div class="hero-image"><br><br><br><br>
+  <h1 style="font-size:50px;color: black;"><b>{{event.eventName}}</b></h1>
+  <div class="hero-text">
 
-}
+    <h2><b>Venue</b></h2>
+    <h3>{{event.venue}}</h3>
+<br>
+    <h2><b>Date and Time</b></h2>
+    <h3>{{event.eventDate | date}}<br>{{event.eventDate | date : 'mediumTime'}} </h3>
+    <br>
+    <h2><b>Ticket Price</b></h2>
+    <h3>{{event.ticketPrice | currency:'INR'}}</h3>
+    <button type="button" (click)="payment()" name="payment" class="btn btn-primary" >Buy Tickets</button>
+    
+  </div>
+</div>
 .hero-text {
   text-align: center;
   position: absolute;
