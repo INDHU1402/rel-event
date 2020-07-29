@@ -22,6 +22,8 @@ import { ShoweventComponent } from './showevent/showevent.component';
 import { PaymentComponent } from './payment/payment.component';
 import { BillComponent } from './bill/bill.component';
 import { FilterProfessionalComponent } from './filter-professional/filter-professional.component';
+import { ExpandserviceComponent } from './expandservice/expandservice.component';
+import { BlogComponent } from './blog/blog.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -31,7 +33,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'showEvent', component: ShoweventComponent},
                          {path:'payment', component: PaymentComponent},
                          {path:'bill', component: BillComponent},
-                         {path:'filerProfessional', component: FilterProfessionalComponent}
+                         {path:'filerProfessional', component: FilterProfessionalComponent},
+                         {path:'blog', component:BlogComponent},
+                         {path:'expandService', component:ExpandserviceComponent}
                          
 ];
 
@@ -49,6 +53,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     PaymentComponent,
     BillComponent,
     FilterProfessionalComponent,
+    ExpandserviceComponent,
+    BlogComponent,
 
   ],
   imports: [
