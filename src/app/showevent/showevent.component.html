@@ -1,4 +1,4 @@
-<head>
+<!--<head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,23 +12,89 @@
 
     <h1><b>Venue</b></h1>
     <h2>{{event.venue}}</h2>
-    <!--<h2><b>Date and Time</b></h2>
-    <h3>{{event.eventDate | date}}<br>{{event.eventDate | date : 'mediumTime'}} </h3>-->
+    <h2><b>Date and Time</b></h2>
+    <h3>{{event.eventDate | date}}<br>{{event.eventDate | date : 'mediumTime'}} </h3>
     <br>
     <h2><b>Ticket Price</b></h2>
     <h3>{{event.ticketPrice | currency:'INR'}}</h3>
     <br><br>
     <br><br><br><br>
-    <div class="container" style= "color:white">
-      <br><br><br><br>
-      <h1>CountDown</h1>
-      <ul>
-        <li><span id="days"></span>days</li>
-        <li><span id="hours"></span>Hours</li>
-        <li><span id="minutes"></span>Minutes</li>
-        <li><span id="seconds"></span>Seconds</li>
-      </ul>
-    </div>
+    
     <button type="button" (click)="payment()" name="payment" class="btn btn-primary">Buy Tickets</button> 
   </div>
-</div>
+</div>-->
+
+
+
+
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  </head>
+  
+  <br><br>
+  <div class="container">
+      <br><br>
+      <div class="underlay-photo"></div>
+    <div class="one">
+    
+    <div class="w3-container w3-tangerine">
+       <p style="padding-top:10%;">
+          {{event.eventName}}
+       </p>
+      </div>
+      <br>
+        
+      <p style="color: white;text-align:right;padding-right:20% ;font-size:200%;"> 
+        Bought to you by : {{event.organiserName}}
+      </p>
+      <br><br>
+  
+      <p style="color: white;text-align:left;padding-left:10%;padding-right: 10%; font-size:200%;">
+    
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<u><b>About The Event :</b></u>
+        <br>
+        {{event.About}}
+      </p>
+      <br><br>
+  
+      <p  style="color: white;text-align:left;padding-left:10%;padding-right: 10%; font-size:200%;">
+  
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>&nbsp;<u><b>Date and Time :</b></u> : {{event.eventDate | date}}<br>{{event.eventDate | date : 'mediumTime'}}
+      </p>
+      <br><br>
+  
+      <p  style="color: white;text-align:left;padding-left:10%;padding-right: 10%; font-size:200%;">
+        
+        <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<u><b>Venue</b></u> :
+        <br>
+        {{event.venue}}
+      </p>
+      <br><br>
+      
+      <p  style="color: white;text-align:left;padding-left:10%;padding-right: 10%; font-size:200%;">
+        <i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;<u><b>Price</b></u> : {{event.ticketPrice | currency:'INR'}}
+      </p>
+      <br><br>
+      
+      <div class="container" style= "color:white; text-align: center;">
+        <br><br><br><br>
+        <h1>CountDown</h1>
+        <ul>
+          <li><span id="days"></span>days</li>
+          <li><span id="hours"></span>Hours</li>
+          <li><span id="minutes"></span>Minutes</li>
+          <li><span id="seconds"></span>Seconds</li>
+        </ul>
+      </div>
+  
+  
+      <div  style="color: white;padding-left:10%;padding-right: 10%;padding-bottom: 10%; font-size:200%;text-align: center;">
+        <button type="button" (click)="payment()" name="payment" class="btn btn-primary" >Buy Tickets</button>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
