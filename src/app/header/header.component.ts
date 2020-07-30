@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 export class HeaderComponent implements OnInit {
   user: any;
   loggedIn: boolean;
-  db : string;
+  db : any;
   constructor(private authService: SocialAuthService, private router: Router,private service: UserService) {}
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
       this.loggedIn = (user != null);
       console.log(this.user);
   });
-  this.db = localStorage.getItem('name');
+  this.db = JSON.parse(localStorage.getItem('userDetails'));
   console.log(this.db);
 }
   signOut(): void {
@@ -29,14 +29,19 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() : void {
+    this.authService.signOut();
     this.loggedIn = false;
     this.router.navigate(['home']);
   }
 
   signInWithGoogle(): void {
-    this.service.setUserLoggedIn();
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.router.navigate(['home']);
   }
+
+  status() : boolean {
+    return this.service.getUserLogged();
+  }
 }
+
 
