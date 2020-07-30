@@ -38,26 +38,14 @@ export class UserService {
    getEventList() {
     return this.httpClient.get('RELEVENT/webapi/myresource/EventList'); 
    }
-   
-   /* registerEvent(eventDetails : any, fileToUpload: File) {
-     const endpoint = 'RELEVENT/webapi/myresource/regEvent';
-     const formData:FormData = new FormData;
-     formData.append('Image', fileToUpload, fileToUpload.name);
-     formData.append('eventId', eventDetails.eventId);
-     formData.append('eventName', eventDetails.eventName);
-     formData.append('about', eventDetails.about);
-     formData.append('attendeesCount', eventDetails.attendeesCount);
-     formData.append('category', eventDetails.category);
-     formData.append('eventDate', eventDetails.eventDate);
-     formData.append('eventType', eventDetails.eventType);
-     formData.append('organiserName', eventDetails.organiserName);
-     formData.append('sponsor', eventDetails.sponsor);
-     formData.append('ticketPrice', eventDetails.ticketPrice);
-     formData.append('venue', eventDetails.venue);
-     formData.append('user', eventDetails.user);
-     formData.append('professionalList', eventDetails.professionalList);
-     return this.httpClient.post(endpoint, formData);
-   } */
+
+   addBlog(blog: any) {
+    return this.httpClient.post('RELEVENT/webapi/myresource/addBlog/', blog);
+   }
+
+   getBlogList() {
+    return this.httpClient.get('RELEVENT/webapi/myresource/BlogList');
+   }
 
    registerEvent(eventDetails : any) {
      console.log(eventDetails);

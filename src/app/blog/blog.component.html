@@ -2,22 +2,20 @@
 
 <button (click)="addblog()" class="btn btn-info">add blog</button>
 
+<div *ngFor='let blog of blogs'>
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4">
             <div class="card"  style="height:250px; width:500px;">
 
                 <div class="card-img-overlay">
-                    <p><b> # Photography </b></p>
+                    <p><b> # {{blog.category}}</b></p>
                 </div>
 
                 <div class="card-body">
-                    <h3 class="card-title">
-                        3 things to master in photography</h3>
+                    <h3 class="card-title">{{ blog.title }}</h3>
                       <p class="card-text">
-                        1. Get familiar with your camera. ... <br>
-                        2. Watch online tutorials. ... <br>
-                        4. Practice, practice and practice! ... <br>
+                        {{blog.content}}
                       </p>
                       <button (click)="readmore()" class="btn btn-info">Read more</button>
                 </div>
@@ -26,5 +24,5 @@
         </div>
     </div>
 </div>
-
+</div>
 <br><br><br><br><br>

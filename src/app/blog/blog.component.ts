@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,10 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  blogs : any;
+  constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.service.getBlogList() .subscribe((result: any) => { console.log(result); this.blogs = result} );
   }
 
   addblog() {
