@@ -23,6 +23,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { BillComponent } from './bill/bill.component';
 import { FilterProfessionalComponent } from './filter-professional/filter-professional.component';
 import { ExpandserviceComponent } from './expandservice/expandservice.component';
+import { BlogformComponent } from './blogform/blogform.component';
 import { BlogComponent } from './blog/blog.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -35,6 +36,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'bill', component: BillComponent},
                          {path:'filerProfessional', component: FilterProfessionalComponent},
                          {path:'blog', component:BlogComponent},
+                         {path:'blogform', component:BlogformComponent},
                          {path:'expandService', component:ExpandserviceComponent}
                          
 ];
@@ -54,6 +56,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     BillComponent,
     FilterProfessionalComponent,
     ExpandserviceComponent,
+    BlogformComponent,
     BlogComponent,
 
   ],
