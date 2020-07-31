@@ -22,12 +22,12 @@ export class BlogformComponent implements OnInit {
   }
 
   addblog(blogForm:any) {
-    /*if (this.User != null) {
-      this.blogDetails.user.userId = this.User.userId;
+    if (this.User != null) {
+      this.blogDetails.userblog.userId = this.User.userId;
     }
     if (this.Professional != null) {
-      this.blogDetails.professional.professionalId = this.Professional.professionalId;
-    }*/
+      this.blogDetails.profblog.professionalId = this.Professional.professionalId;
+    }
     console.log(this.blogDetails);
     this.service.addBlog(this.blogDetails).subscribe((result: any) => { result = this.blogDetails; console.log(result) } );
   }

@@ -1,0 +1,38 @@
+<br><br><br>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+
+<div class="w3-container w3-black" style="height:300px; text-align: center">
+    <br><br><br>
+    <h1 style="font-size: 50px">{{blog.title}}</h1>
+    <br>
+    <h3> # {{blog.category}} </h3>
+  </div>
+  <br><br><br><br>
+  
+  <div class="w3-container" style="text-align: center">
+    <p>{{blog.content}}</p>
+  </div>
+
+  <br><br><br><br>
+
+  <div *ngIf="userName">
+  <div class="row" style="text-align: center">
+      <div class="col-sm-6">
+          <p>By {{userName}} </p>
+      </div>
+  </div>
+  </div>
+
+  <div *ngIf="profName">
+    <div class="row" style="text-align: center">
+        <div class="col-sm-6">
+            <p>By {{profName}} </p>
+        </div>
+    </div>
+    </div>
+
+  <br><br><br><br><br><br>

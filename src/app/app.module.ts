@@ -26,6 +26,7 @@ import { ExpandserviceComponent } from './expandservice/expandservice.component'
 import { BlogformComponent } from './blogform/blogform.component';
 import { BlogComponent } from './blog/blog.component';
 import { GetintroPipe } from './getintro.pipe';
+import { ReadblogComponent } from './readblog/readblog.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -38,6 +39,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'filerProfessional', component: FilterProfessionalComponent},
                          {path:'blog', component:BlogComponent},
                          {path:'blogform', component:BlogformComponent},
+                         {path:'readblog', component:ReadblogComponent},
                          {path:'expandService', component:ExpandserviceComponent}
                          
 ];
@@ -60,6 +62,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     BlogformComponent,
     BlogComponent,
     GetintroPipe,
+    ReadblogComponent,
 
   ],
   imports: [

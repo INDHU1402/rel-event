@@ -19,8 +19,9 @@ export class BlogComponent implements OnInit {
     this.router.navigate(['blogform']);
   }
 
-  readmore() {
-    this.router.navigate(['blogform']);
+  readmore(blog: any) {
+    localStorage.setItem('Blog', JSON.stringify(blog));
+    this.router.navigate(['readblog']);
   }
   
 }
