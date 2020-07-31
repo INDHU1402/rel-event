@@ -65,7 +65,9 @@ export class UserService {
    registerPayment(paymentDetails : any) {
     return this.httpClient.post('RESTAPI/webapi/myresource/regPayment/', paymentDetails);
    }
-
+   getEventById(eventId:number) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/getEvent/'+ eventId); 
+   }
    setUserLoggedIn(): void { // login success
     this.isUserLogged = true;
    }
