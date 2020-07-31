@@ -1,0 +1,114 @@
+<br><br><br><br><br>
+<form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
+   
+   <mat-horizontal-stepper [linear]="" #stepper>
+      <mat-step>
+        <!-- <form [formGroup]="firstFormGroup">-->
+
+            <input type="text" class="login-username" autofocus="true" name="eventName" [(ngModel)]='eventDetails.eventName' required="true" placeholder="eventName" />
+            
+            <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType' class="login-username">
+               <option hidden value="" disabled selected>Choose type </option>
+               <option *ngFor="let type of Types">{{type}}</option>
+            </select>
+
+            <input type="text" class="login-username" autofocus="true" name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about">
+            
+            <input type="number" class="login-username" autofocus="true" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true" placeholder="attendeesCount" />
+            <br><br>
+
+            <select name="category" id="category" [(ngModel)]='eventDetails.category' class="login-username">
+               <option hidden value="" disabled selected>Choose category </option>
+               <option *ngFor="let category of Category">{{category}}</option>
+            </select>
+
+            <input type="text" class="login-username" autofocus="true" name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true" placeholder="organiserName" />
+            
+            <select name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor' class="login-username">
+               <option hidden value="" disabled selected>Allow sponsors?</option>
+               <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
+            </select>
+            <br><br>
+
+            <input type="number" class="login-username" autofocus="true" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true" placeholder="ticketPrice" />
+            
+             <input type="text" class="login-username" autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true" placeholder="venue" />
+
+            <div class="row">
+               <div class="col-sm-6">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <h4 style="color: aliceblue;">Choose start and end date of event</h4>     <br>
+                  
+                  <input class="login-username" type="date" name="eventStartDate" [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
+                  
+                  <input class="login-username" type="date" name="eventEndDate" [(ngModel)]='eventDetails.eventEndDate'
+                     required="true" placeholder="Event end date">       <br><br><br>
+                     </div>
+                  </div>
+                  <div>
+                     <button mat-button matStepperNext>Next</button>
+                   </div>
+                  
+         <!--</form>-->
+      </mat-step>
+      <!--Step - 2-->
+      <mat-step>
+        <!-- <form [formGroup]="secondFormGroup">-->
+            <div class="container">
+               <h2 style="color:black"><b>Step 2</b></h2>
+               <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                     style="width:25%">25%
+                  </div>
+               </div>
+            </div>
+
+            <!--<div class="form-group">
+               <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+            </div>-->
+
+            <!--<div *ngFor='let prof of professionals  | filter : term'>-->
+               <div *ngFor='let prof of professionals' >
+               <br>
+               <div class="user-profile">
+                  <img class="avatar"  src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+                  <br>
+                  <div class="username">{{prof.professionalName}}</div>
+                  <div class="bio">
+                     {{prof.serviceName}}
+                     {{prof.serviceType}}
+                  </div>
+                  <div class="description">
+                     {{prof.address}}
+                  </div><br>
+                  <button (click)="addProfessional(prof)">add professional</button>
+                  <button (click)="removeProfessional(prof)">remove professional</button>
+                  <ul class="data">
+                     <li>
+                        <span class="entypo-heart"> 127</span>
+                     </li>
+                     <li>
+                        <span class="entypo-eye"> 853</span>
+                     </li>
+                     <li>
+                        <span class="entypo-user"> 311</span>
+                     </li>
+                  </ul>
+               </div>
+               </div>
+               <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+         <!--</form>-->
+      </mat-step>
+      
+      <mat-step>
+        <img [src]="imageUrl">
+          <input type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+            (change)="handleFileInput($event.target.files)">
+          <button class="btn btn-primary" [disabled]="eventDetails.poster=='' || !registerForm.valid">Add Event</button>
+          <!--<button (click)="eventSubmit(registerForm.value)">Submit</button>-->
+      </mat-step>
+   </mat-horizontal-stepper>
+   </form>
+   <br><br><br><br>

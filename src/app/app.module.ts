@@ -27,6 +27,10 @@ import { BlogformComponent } from './blogform/blogform.component';
 import { BlogComponent } from './blog/blog.component';
 import { GetintroPipe } from './getintro.pipe';
 import { ReadblogComponent } from './readblog/readblog.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { MatStepperModule} from '@angular/material/stepper';
+import { MatInputModule} from '@angular/material/input';
+import { MatButtonModule} from '@angular/material/button';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -40,7 +44,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'blog', component:BlogComponent},
                          {path:'blogform', component:BlogformComponent},
                          {path:'readblog', component:ReadblogComponent},
-                         {path:'expandService', component:ExpandserviceComponent}
+                         {path:'expandService', component:ExpandserviceComponent},
+                         {path:'createEvent', component:CreateEventComponent}
                          
 ];
 
@@ -63,11 +68,13 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     BlogComponent,
     GetintroPipe,
     ReadblogComponent,
+    CreateEventComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatStepperModule, MatInputModule, MatButtonModule,
     AppRoutingModule,
     HttpClientModule, 
     SocialLoginModule,

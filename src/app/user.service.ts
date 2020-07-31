@@ -7,6 +7,16 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   private isUserLogged: any;
 
+  
+  postFile(regForm,fileToUpload : File){
+    const endpoint ='RESTAPI/webapi/myresource/regEvent/';
+    const formData:FormData=new FormData();
+    console.log("success");
+    formData.append('poster',fileToUpload,fileToUpload.name);
+    formData.append('eventDetails',JSON.stringify(regForm));
+    console.log("1");
+    return this.httpClient.post(endpoint,formData);
+  }
   registerProf(profForm: any) {
     throw new Error("Method not implemented.");
   }
@@ -16,44 +26,44 @@ export class UserService {
    }
   
   getUser(userName: any,password: any) {
-    return this.httpClient.get('RELEVENT/webapi/myresource/UserLogin/' + userName + '/' + password);
+    return this.httpClient.get('RESTAPI/webapi/myresource/UserLogin/' + userName + '/' + password);
    }
    
    registerUser(user: any) {
-    return this.httpClient.post('RELEVENT/webapi/myresource/regUser/', user);
+    return this.httpClient.post('RESTAPI/webapi/myresource/regUser/', user);
    }
   
    getProfessional(professionalName: any,password: any) {
-    return this.httpClient.get('RELEVENT/webapi/myresource/ProfLogin/' + professionalName + '/' + password);
+    return this.httpClient.get('RESTAPI/webapi/myresource/ProfLogin/' + professionalName + '/' + password);
    }
    
    registerProfessional(professional: any) {
-    return this.httpClient.post('RELEVENT/webapi/myresource/regProfessional/', professional);
+    return this.httpClient.post('RESTAPI/webapi/myresource/regProfessional/', professional);
    }
 
    getProfessionalList() {
-    return this.httpClient.get('RELEVENT/webapi/myresource/ProfList');
+    return this.httpClient.get('RESTAPI/webapi/myresource/ProfList');
    }
    
    getEventList() {
-    return this.httpClient.get('RELEVENT/webapi/myresource/EventList'); 
+    return this.httpClient.get('RESTAPI/webapi/myresource/EventList'); 
    }
 
    addBlog(blog: any) {
-    return this.httpClient.post('RELEVENT/webapi/myresource/addBlog/', blog);
+    return this.httpClient.post('RESTAPI/webapi/myresource/addBlog/', blog);
    }
 
    getBlogList() {
-    return this.httpClient.get('RELEVENT/webapi/myresource/BlogList');
+    return this.httpClient.get('RESTAPI/webapi/myresource/BlogList');
    }
 
    registerEvent(eventDetails : any) {
      console.log(eventDetails);
-    return this.httpClient.post('RELEVENT/webapi/myresource/regEvent/', eventDetails);
+    return this.httpClient.post('RESTAPI/webapi/myresource/regEvent/', eventDetails);
    }
 
    registerPayment(paymentDetails : any) {
-    return this.httpClient.post('RELEVENT/webapi/myresource/regPayment/', paymentDetails);
+    return this.httpClient.post('RESTAPI/webapi/myresource/regPayment/', paymentDetails);
    }
 
    setUserLoggedIn(): void { // login success

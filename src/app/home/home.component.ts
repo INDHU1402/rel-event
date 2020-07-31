@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   redirect(): void {
-    this.router.navigate(['event']);
+    this.router.navigate(['createEvent']);
   }
 
   bookTicket(): void {
