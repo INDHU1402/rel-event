@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h3 class="card-title">{{ blog.title }}</h3>
                       <p class="card-text">
-                        {{blog.content}}
+                        {{blog.content | getintro}}
                       </p>
                       <button (click)="readmore()" class="btn btn-info">Read more</button>
                 </div>

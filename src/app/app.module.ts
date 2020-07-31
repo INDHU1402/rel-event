@@ -25,6 +25,7 @@ import { FilterProfessionalComponent } from './filter-professional/filter-profes
 import { ExpandserviceComponent } from './expandservice/expandservice.component';
 import { BlogformComponent } from './blogform/blogform.component';
 import { BlogComponent } from './blog/blog.component';
+import { GetintroPipe } from './getintro.pipe';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -58,6 +59,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ExpandserviceComponent,
     BlogformComponent,
     BlogComponent,
+    GetintroPipe,
 
   ],
   imports: [

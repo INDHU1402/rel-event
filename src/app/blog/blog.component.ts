@@ -22,4 +22,5 @@ export class BlogComponent implements OnInit {
   readmore() {
     this.router.navigate(['blogform']);
   }
+  
 }
