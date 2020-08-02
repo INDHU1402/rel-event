@@ -2,9 +2,12 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<div class="hero-image" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event1.poster}});"><br><br><br><br>
+
+<div class="hero-image" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event1.poster}});">
+  <br><br><br><br>
   <h1 style="font-size:50px;color: black;margin-left: 750px;"><b>{{event.eventName}}</b></h1>
   <br><br><br>
   <div class="hero-text">
@@ -12,15 +15,15 @@
     <h1><b>Venue</b></h1>
     <h2><b>{{event.venue}}</b></h2>
     <br><br><br><br>
-    <h2 style = "color:white"><b>Date and Time</b></h2>
-    <h3 style = "color:white"><b>{{event.eventStartDate | date}}</b></h3>
-      <br>
-     <h3> <b>{{event.eventStartDate | date : 'mediumTime'}}</b> </h3>
+    <h2 style="color:white"><b>Date and Time</b></h2>
+    <h3 style="color:white"><b>{{event.eventStartDate | date}}</b></h3>
+    <br>
+    <h3> <b>{{event.eventStartDate | date : 'mediumTime'}}</b> </h3>
     <br>
     <h2><b>Ticket Price</b></h2>
     <h3><b>{{event.ticketPrice | currency:'INR'}}</b></h3>
-   
-    <div class="container" style= "color:white">
+
+    <div class="container" style="color:white">
       <br><br><br><br>
       <h1><b>CountDown</b></h1>
       <ul>
@@ -30,6 +33,79 @@
         <li><span id="seconds"></span>Seconds</li>
       </ul>
     </div>
-    <button type="button" (click)="payment()" name="payment" class="btn btn-primary">Buy Tickets</button> 
+    <button type="button" (click)="payment()" name="payment" class="btn btn-primary">Buy Tickets</button>
   </div>
+
 </div>
+<br><br>
+<div class="hero-image1" style="background-image:url('/assets/img/timeline.jpeg')">
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="timeline" style="margin-left: 350px;">
+    <div class="container1 left">
+      <div class="date" style="margin-right:-90px;color: white;">{{event.startTime}}</div>
+      <i class="icon fa fa-home"></i>
+      <div class="content">
+        <h2></h2>
+        <p>
+          {{event.startOverview}}
+        </p>
+      </div>
+    </div>
+    <div class="container1 right">
+      <div class="date" style="margin-left:-90px;color: white;">{{event.time1}}</div>
+      <i class="icon fa fa-gift"></i>
+      <div class="content">
+        <h2>t</h2>
+        <p>
+          {{event.overview1}}
+        </p>
+      </div>
+    </div>
+    <div class="container1 left">
+      <div class="date" style="margin-left:-90px;color: white;">{{event.time2}}</div>
+      <i class="icon fa fa-user"></i>
+      <div class="content">
+        <h2></h2>
+        <p>
+          {{event.overview2}}
+        </p>
+      </div>
+    </div>
+    <div class="container1 right">
+      <div class="date" style="margin-left:-90px;color: white;">{{event.endTime}}</div>
+      <i class="icon fa fa-running"></i>
+      <div class="content">
+        <h2></h2>
+        <p>
+          {{event.endOverview}}
+        </p>
+      </div>
+    </div>
+
+  </div></div>
+  <br><br>
+ 
+  <div>
+
+    <div class="row">
+      <div class="column" style="margin-left: 390px;">
+        <div class="container2">
+          <img src="/assets/img/team2.jpg" alt="Avatar" class="image">
+          <div class="overlay">{{event.guest1}}</div>
+        </div>
+      </div>
+      <div class="column" style="margin-left: 190px;">
+        <div class="container2">
+          <img src="/assets/img/team3.jpg" alt="Avatar" class="image">
+          <div class="overlay">{{event.guest2}}</div>
+        </div>
+      </div>
+      <div class="column" style="margin-left: 190px;">
+        <div class="container2">
+          <img src="/assets/img/team4.jpg" alt="Avatar" class="image">
+          <div class="overlay">{{event.guest3}}</div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>

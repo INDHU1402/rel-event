@@ -20,8 +20,9 @@ export class CreateEventComponent implements OnInit {
    Sponsor: any = ['yes', 'no']
    chosenProfessional = [];
    Category: any = ['conference', 'workshop', 'seminar', 'hackathon', 'tech-fest', 'talk', 'training session', 'others']
-   eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',
+   eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
                    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
+                   startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',
                    user: {userId:'', contact:'', emailId:'', password:'', userName:''},
                    professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:''}]}; 
    User: any;
@@ -46,6 +47,7 @@ export class CreateEventComponent implements OnInit {
    }
    eventSubmit(regForm:any): void {
      this.eventDetails.professionalList = this.chosenProfessional;
+     this.eventDetails.user.userId = this.User.userId;
      console.log(this.eventDetails);
      this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
        data => { 
@@ -57,6 +59,7 @@ export class CreateEventComponent implements OnInit {
    }
    handleFileInput(file:FileList){
      console.log("in handle");
+     
      this.fileToUpload = file.item(0);
      this.reader = new FileReader();
      this.reader.readAsDataURL(this.fileToUpload);
