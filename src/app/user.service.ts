@@ -33,6 +33,10 @@ export class UserService {
     return this.httpClient.get('RELEVENT/webapi/myresource/CheckUser/' + userName);
    }
    
+   verification(mail : string, name : string, mobile : string) {
+    return this.httpClient.get('RELEVENT/webapi/myresource/verification/'+ mail + '/' + name + '/' + mobile);
+   }
+
    registerUser(user: any) {
     return this.httpClient.post('RELEVENT/webapi/myresource/regUser/', user);
    }

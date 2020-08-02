@@ -31,6 +31,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { MatStepperModule} from '@angular/material/stepper';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
+import { OtpComponent } from './otp/otp.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -45,7 +46,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'blogform', component:BlogformComponent},
                          {path:'readblog', component:ReadblogComponent},
                          {path:'expandService', component:ExpandserviceComponent},
-                         {path:'createEvent', component:CreateEventComponent}
+                         {path:'createEvent', component:CreateEventComponent},
+                         {path:'otp', component:OtpComponent},
                          
 ];
 
@@ -69,6 +71,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     GetintroPipe,
     ReadblogComponent,
     CreateEventComponent,
+    OtpComponent,
 
   ],
   imports: [

@@ -88,7 +88,7 @@ input:focus :-ms-input-placeholder {
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background: url('src/assets/img/blackSmokejpg');
+  background: url('/assets/img/blackSmokejpg');
   background-size: cover;
   -moz-animation: grayscale(30%);
   z-index: -1;

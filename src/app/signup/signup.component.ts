@@ -25,9 +25,8 @@ export class SignupComponent implements OnInit {
       this.service.isUsernameExists(registerForm.userName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
 
       if (result) {
-        this.service.registerUser(registerForm).subscribe((result: any) => { console.log(result); });
-        console.log(registerForm);
-        this.router.navigate(['login']);
+        localStorage.setItem('userobject', JSON.stringify(registerForm));
+        this.router.navigate(['otp']);
       }
       else {
         alert('Username already exists');
