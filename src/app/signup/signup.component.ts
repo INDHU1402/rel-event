@@ -10,19 +10,28 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others'];
-  username : string;
-  constructor(private service: UserService,private router: Router) {
-   }
+  username: string;
+  check: boolean;
+  constructor(private service: UserService, private router: Router) {
+  }
 
   ngOnInit(): void {
-    }
+  }
 
   register(registerForm: any): void {
     if (registerForm.password === registerForm.confirmpassword) {
       delete registerForm.confirmpassword;
-      this.service.registerUser(registerForm).subscribe((result: any) => { console.log(result); } );
-      console.log(registerForm);
-      this.router.navigate(['login']);
+
+      this.service.isUsernameExists(registerForm.userName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
+
+      if (result) {
+        this.service.registerUser(registerForm).subscribe((result: any) => { console.log(result); });
+        console.log(registerForm);
+        this.router.navigate(['login']);
+      }
+      else {
+        alert('Username already exists');
+      } });
     }
     else {
       alert('Please write correct password');
@@ -32,7 +41,7 @@ export class SignupComponent implements OnInit {
   registerProf(profForm: any): void {
     if (profForm.password === profForm.confirmpassword) {
       delete profForm.confirmpassword;
-      this.service.registerProfessional(profForm).subscribe((result: any) => { console.log(result); } );
+      this.service.registerProfessional(profForm).subscribe((result: any) => { console.log(result); });
       console.log(profForm);
       this.router.navigate(['login']);
     }
