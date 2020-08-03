@@ -10,11 +10,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user : any;
+  link : string;
+  mail : string;
   constructor(private service: UserService,private router: Router) { }
   
   ngOnInit(): void {
 
   }
+/*
+  resetPassword() {
+    this.service.forgotpassword(this.mail).subscribe((result: any) => {console.log(result);});
+    alert('Please Enter the OTP to continue');
+    this.router.navigate(['otp']);
+  }*/
   
   loginSubmit(loginForm: any): void{
     this.service.getUser(loginForm.userName,loginForm.password).subscribe((result: any) => {

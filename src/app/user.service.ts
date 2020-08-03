@@ -32,7 +32,15 @@ export class UserService {
    isUsernameExists(userName: string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/CheckUser/' + userName);
    }
-   
+
+  /* getUserByUserName(userName : string) {
+    return this.httpClient.get('RELEVENT/webapi/myresource/getUserByUserName/'  + userName);
+   }
+
+   forgotpassword(mail: string) {
+    return this.httpClient.get('RELEVENT/webapi/myresource/forgotpassword/' + mail);
+   }
+   */
    verification(mail : string, name : string, mobile : string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/verification/'+ mail + '/' + name + '/' + mobile);
    }

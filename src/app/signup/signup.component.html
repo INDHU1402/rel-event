@@ -2,7 +2,7 @@
 
 <div class="container">
     <br><br>
-    <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+    <form #registerForm="ngForm">
     <div class="underlay-photo"></div> 
     <p class="login-text">
       <span class="fa-stack fa-lg">
@@ -16,16 +16,50 @@
         Create an account as user</h4>
     <br>
    <!--<input type="text" class="login-username" name="userId" ngModel autofocus="true" required="true" placeholder="userId" />-->
-   <input type="text" class="login-username" autofocus="true" name="userName" ngModel required="true" placeholder="userName" />
-    <input type="tel" class="login-username" required="true" name="contact" ngModel placeholder="Mobile no."/>
-    <input type="text" class="login-username" autofocus="true" name="emailId" ngModel required="true" placeholder="emailId" />
-    <input type="password" class="login-password" required="true" name="password" ngModel placeholder="Password" />
-    <input type="password" class="login-password" required="true" name="confirmpassword" ngModel placeholder="Confirm Password" />
+   <input type="text" class="login-username" autofocus="true" name="userName" [(ngModel)]='user.userName' required="true" placeholder="userName" />
+    <input type="tel" class="login-username" required="true" name="contact" [(ngModel)]='user.contact' placeholder="Mobile no."/>
+    <input type="text" class="login-username" autofocus="true" name="emailId" [(ngModel)]='user.emailId' required="true" placeholder="emailId" />
+    <input type="password" class="login-password" required="true" name="password" [(ngModel)]='user.password' placeholder="Password" />
+    <input type="password" class="login-password" required="true" name="confirmpassword" [(ngModel)]='confirmPassword' placeholder="Confirm Password" />
     <br><br>
-    <input type="submit" name="signup-user" value="Signup" class="login-submit"/>
     <br>
     
   </form>
+</div>
+
+
+<!---Modal-->
+<div class="container" style="text-align: center;">
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  (click)="register()">
+    Signup
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">OTP is sent to given mailID</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <input type="text" name="userotp" [(ngModel)]='userotp' placeholder="Enter OTP">
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="validateOTP()">Check</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 <br><br><br>

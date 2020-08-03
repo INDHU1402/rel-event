@@ -23,10 +23,46 @@
     <br><br>
     <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
     <br><br>
+
     <p>Don't have an account?&nbsp;<button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button></p>
     <br>
   </form>
 </div>
+
+<!--
+
+  <div class="container">
+  <h2>Large Modal</h2>
+ 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Forgot password
+  </button>
+
+ 
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+       
+        <div class="modal-header">
+          <h4 class="modal-title">Password Reset</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+       
+        <div class="modal-body">
+          <input type="text" name="mail" [(ngModel)]='mail' placeholder="Enter your registered mailID">
+        </div>
+       
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="resetPassword()" data-dismiss="modal">Next</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>-->
+
 <br><br><br>
 <div class="col-sm-6">
     <br><br>

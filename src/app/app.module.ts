@@ -32,6 +32,7 @@ import { MatStepperModule} from '@angular/material/stepper';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
 import { OtpComponent } from './otp/otp.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -48,6 +49,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'expandService', component:ExpandserviceComponent},
                          {path:'createEvent', component:CreateEventComponent},
                          {path:'otp', component:OtpComponent},
+                         {path:'forgotpassword', component:ForgotpasswordComponent},
                          
 ];
 
@@ -72,6 +74,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ReadblogComponent,
     CreateEventComponent,
     OtpComponent,
+    ForgotpasswordComponent,
 
   ],
   imports: [
