@@ -40,7 +40,12 @@ export class UserService {
    forgotpassword(mail: string) {
     return this.httpClient.get('RELEVENT/webapi/myresource/forgotpassword/' + mail);
    }
-   */
+   
+*/
+   sponsorship(organiserId : number, text : string) {
+    return this.httpClient.get('RELEVENT/webapi/myresource/sponsor/' + organiserId + '/' + text);
+   }
+
    verification(mail : string, name : string, mobile : string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/verification/'+ mail + '/' + name + '/' + mobile);
    }

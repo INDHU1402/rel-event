@@ -35,4 +35,9 @@ console.log(output);
     this.router.navigate(['payment']);
   }
 
+  Sponsor(event : any) : void {
+    localStorage.setItem('eventDetails', JSON.stringify(event));
+    this.router.navigate(['sponsor']);
+  }
+
 }

@@ -33,6 +33,7 @@ import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
 import { OtpComponent } from './otp/otp.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { SponsorformComponent } from './sponsorform/sponsorform.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -50,6 +51,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'createEvent', component:CreateEventComponent},
                          {path:'otp', component:OtpComponent},
                          {path:'forgotpassword', component:ForgotpasswordComponent},
+                         {path:'sponsor', component:SponsorformComponent},
                          
 ];
 
@@ -75,6 +77,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     CreateEventComponent,
     OtpComponent,
     ForgotpasswordComponent,
+    SponsorformComponent,
 
   ],
   imports: [
