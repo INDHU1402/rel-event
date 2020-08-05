@@ -20,8 +20,6 @@ export class HeaderComponent implements OnInit {
       this.loggedIn = (user != null);
       console.log(this.user);
   });
-  this.db = JSON.parse(localStorage.getItem('userDetails'));
-  console.log(this.db);
 }
   signOut(): void {
     this.authService.signOut();
@@ -40,6 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   status() : boolean {
+    this.db = JSON.parse(localStorage.getItem('userDetails'));
     return this.service.getUserLogged();
   }
 }

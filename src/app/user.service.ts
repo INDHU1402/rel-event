@@ -43,7 +43,7 @@ export class UserService {
    
 */
    sponsorship(organiserId : number, text : string) {
-    return this.httpClient.get('RELEVENT/webapi/myresource/sponsor/' + organiserId + '/' + text);
+    return this.httpClient.get('RESTAPI/webapi/myresource/sponsor/' + organiserId + '/' + text);
    }
 
    verification(mail : string, name : string, mobile : string) {

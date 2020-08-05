@@ -18,8 +18,9 @@ export class PaymentComponent implements OnInit {
   constructor(private service: UserService,private router: Router) {
     this.ntickets = 1;
     this.payment = {cardNum: '',nameOnCard: '',expiryDate: '',amount: '',
-    event: {eventId:'', eventType:'', about:'', attendeesCount:'', category:'', eventDate:'', eventName:'',
-    organiserName:'', sponsor:'', ticketPrice:'', venue:''},
+    event: {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
+    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
+    startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:''},
     user: {userId:'', contact:'', emailId:'', password:'', userName:''}};
    }
 
