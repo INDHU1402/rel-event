@@ -1,62 +1,51 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-  </head>
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <h4 class="navbar-text">Rel-event</h4>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="home">Home<span class="sr-only">(current)</span></a></li>
-        <li><a routerLink="blog">Blog</a></li>
-        <li><a routerLink="expandService">Expand your service</a></li>
-        
-        <li>
-          <!--
-          <div *ngIf="!db">
-            <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><button class="glyphicon glyphicon-user" (click)="signInWithGoogle()">SignInWithGoogle<span class="fa fa-google"></span></button></li>
-          </div> 
-
-          <div *ngIf="db">
-            <h4 class="card-title">{{ db }}</h4>
-            <li><button class="glyphicon glyphicon-user" (click)="logout()">logout</button></li>
-          </div>
-        -->
-          <div *ngIf="!user && !status()">
-            <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><button class="glyphicon glyphicon-user" (click)="signInWithGoogle()">SignInWithGoogle<span class="fa fa-google"></span></button></li>
-          </div>
-
-          <div *ngIf="user">
-          <h4 class="card-title" style="color: aliceblue;">{{ user.name }}</h4>
-          <p class="card-text" style="color: aliceblue;" >{{ user.email }}</p>
-          <button class="btn btn-danger" (click)="signOut()">Sign out</button>
-          </div>
-
-          <div *ngIf="status()">
-            <h4 class="card-title" style="color: aliceblue;"> {{db.userName}} </h4>
-            <p class="card-text" style="color: aliceblue;"> {{db.emailId}}</p>
-            <button class="btn btn-danger" (click)="signOut()">Sign out</button>
-          </div>
-
-          <!--
-          <div *ngIf="!user && db">
-            <h4 class="card-title">{{ db }}</h4>
-          </div>
-        -->
-        </li>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+</head>
 
 
+<nav class="navbar">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button class="navbar-toggler" data-toggle="open-navbar1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#">
+        <h1>Rel-event</h1>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="open-navbar1">
+      <ul class="navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+      <!--  <li class="navbar-dropdown">
+         
+          
+          <a href="#" class="dropdown-toggler" data-dropdown="my-dropdown-id">
+            Categories <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="dropdown" id="my-dropdown-id">
+            <li><a href="#">Actions</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="separator"></li>
+            <li><a href="#">Seprated link</a></li>
+            <li class="separator"></li>
+            <li><a href="#">One more seprated link.</a></li>
+          </ul>
+        </li>-->
+       
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+         <li><a href="#">Expand your service</a></li>
+        <li><a href="#">Login</a>
+        <a href="#">Sign Up</a></li>
       </ul>
-      </div>
-  </nav>
-  
+    </div>
+  </div>
+</nav>
