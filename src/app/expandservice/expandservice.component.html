@@ -1,73 +1,41 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>  
-        
-    <br><br>
-    
-        <br><br>
         <div class="underlay-photo"></div>
         <br><br> <br><br>
     <div class="row">
     <div class="column left" >
     
+      <div *ngFor='let exp of exps'>
         <!-- The App Section -->
         <div class="ncontainer">
           <div class="row">
             <div class="column-66">
-              <h1 class="xlarge-font"><b>Andrew Selton</b></h1>
-              <h1 class="large-font" style="color:MediumSeaGreen;"><b>Photographer</b></h1>
-              <p><span style="font-size:28px">Photography appears to be an industry like no other. It is a magical profession that defies all rules of business and logic. A job where bills do not apply, and money is useless. Or, at least that’s how it seems to a large segment of the population, who expect photographers to work for free.</span></p>
+              <h1 class="xlarge-font"><b>{{exp.professional.professionalName}}</b></h1>
+              <h1 class="large-font" style="color:MediumSeaGreen;"><b>{{exp.professional.serviceType}}</b></h1>
+              <p><span style="font-size:28px">{{exp.experience}}</span></p>
             </div>
             <div class="column-33">
                 <img src="assets/img/team2.jpg" width="335" height="471">
             </div>
           </div>
         </div>
-        
-        <!-- Clarity Section -->
-        <div class="ncontainer" style="background-color:#f1f1f1">
-          <div class="row">
-            <div class="column-33">
-              <img src="assets/img/team3.jpg" alt="App" width="335" height="471">
-            </div>
-            <div class="column-66">
-              <h1 class="xlarge-font"><b>Meny Yaldis</b></h1>
-              <h1 class="large-font" style="color:red;"><b>Decorator</b></h1>
-              <p><span style="font-size:28px">Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span></p>
-            
-            </div>
-          </div>
-        </div>
-        
-        <!-- The App Section -->
-        <div class="ncontainer">
-          <div class="row">
-            <div class="column-66">
-              <h1 class="xlarge-font"><b>Serkan Bolat</b></h1>
-              <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>
-              <p><span style="font-size:28px">Take photos like a pro.You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span></p>
-             
-            </div>
-            <div class="column-33">
-                <img src="assets/img/team4.jpg" width="335" height="471" >
-            </div>
-          </div>
         </div>
     </div>
     
     <div class="column right">
+      <br>
       <button  class="btn btn-primary" (click)="shareExperience()" >Share my experience</button>
-        <u><h1 class="xlarge-font" style="color: #f1f1f1;"><b>How To Expand Your Service In The Most Easiest Way !</b></h1></u>
-        <br><br><br> <br><br> <br><br>
-        <br><br><br> <br><br> <br><br>
-        <br><br><br> <br><br> <br><br>
+      <br><br>
+        <h1 style="color: #f1f1f1; font-size: 50px;"><b>Expand Your Service In </b></h1><br>
+        <h1 style="color: #f1f1f1; font-size: 50px;"><b>A Snap!</b></h1><br>
         <br>
     
         <div class="timeline">
             <div class="timelinecontainer timelineleft">
               <div class="timelinecontent">
                 <h2> <u>STEP 1</u> </h2>
-                <p>Register as a proffessional at Rel-event!</p>
+                <p>Register as a professional at Rel-event!</p>
               </div>
             </div>
             <div class="timelinecontainer timelineright">
@@ -79,7 +47,13 @@
             <div class="timelinecontainer timelineleft">
               <div class="timelinecontent">
                 <h2> <u>STEP 3</u> </h2>
-                <p>Finish events succesfully to get good ratings and get contacted for many more events!</p>
+                <p>Finish events succesfully, get good ratings</p>
+              </div>
+            </div>
+            <div class="timelinecontainer timelineright">
+              <div class="timelinecontent">
+                <h2> <u>STEP 4</u> </h2>
+                <p>Get more oppurtunities and expand your service</p>
               </div>
             </div>
             
@@ -91,4 +65,3 @@
     
     <br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br>
     <br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br>
-    <br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br>

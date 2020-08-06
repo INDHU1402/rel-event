@@ -17,7 +17,7 @@ export class ShareExperienceComponent implements OnInit {
   }
 
   addExperience() {
-    this.exp.professional.professionalId = this.prof.professionalId;
+    this.exp.professional = this.prof;
     console.log(this.exp);
     this.service.addExperience(this.exp).subscribe((details: any) => {console.log(details)});
   }

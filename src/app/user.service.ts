@@ -82,6 +82,10 @@ export class UserService {
     return this.httpClient.get('RESTAPI/webapi/myresource/BlogList');
    }
 
+   getExpList() {
+    return this.httpClient.get('RESTAPI/webapi/myresource/ExpList');
+   }
+
    registerEvent(eventDetails : any) {
      console.log(eventDetails);
     return this.httpClient.post('RESTAPI/webapi/myresource/regEvent/', eventDetails);

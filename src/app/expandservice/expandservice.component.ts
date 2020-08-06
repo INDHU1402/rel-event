@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ExpandserviceComponent implements OnInit {
   prof: any;
+  exps: any;
 
   constructor(private service: UserService,private router: Router) { }
 
   ngOnInit(): void {
+    this.service.getExpList().subscribe((result: any) => { console.log(result); this.exps = result} );
   }
 
   shareExperience(){
