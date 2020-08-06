@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./expandservice.component.css']
 })
 export class ExpandserviceComponent implements OnInit {
+  prof: any;
 
   constructor(private service: UserService,private router: Router) { }
 
@@ -15,7 +16,14 @@ export class ExpandserviceComponent implements OnInit {
   }
 
   shareExperience(){
-    this.router.navigate(['share']);
+    this.prof = JSON.parse(localStorage.getItem('profDetails'));
+    console.log(this.prof);
+    if (this.prof) {
+      this.router.navigate(['share']);
+    }
+    else {
+      alert('Login as professional to share your experience');
+    }
   }
 
 }

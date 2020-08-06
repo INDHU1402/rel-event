@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   user: any;
   loggedIn: boolean;
   db : any;
+  db1: any;
   constructor(private authService: SocialAuthService, private router: Router,private service: UserService) {}
 
   ngOnInit(): void {
@@ -26,6 +27,8 @@ export class HeaderComponent implements OnInit {
     this.service.setUserLoggedOut();
     this.db = null;
     localStorage.setItem("userDetails",JSON.stringify(this.db));
+    this.db1 = null;
+    localStorage.setItem("profDetails",JSON.stringify(this.db));
   }
 
   logout() : void {
@@ -41,6 +44,7 @@ export class HeaderComponent implements OnInit {
 
   status() : boolean {
     this.db = JSON.parse(localStorage.getItem('userDetails'));
+    this.db1 = JSON.parse(localStorage.getItem('profDetails'));
     return this.service.getUserLogged();
   }
 }
