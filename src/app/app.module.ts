@@ -32,6 +32,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { SponsorformComponent } from './sponsorform/sponsorform.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ShareExperienceComponent } from './share-experience/share-experience.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -47,6 +48,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'createEvent', component:CreateEventComponent},
                          {path:'forgotpassword', component:ForgotpasswordComponent},
                          {path:'sponsor', component:SponsorformComponent},
+                         {path:'share', component:ShareExperienceComponent},
                          
 ];
 
@@ -71,6 +73,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ForgotpasswordComponent,
     SponsorformComponent,
     HomepageComponent,
+    ShareExperienceComponent,
 
   ],
   imports: [

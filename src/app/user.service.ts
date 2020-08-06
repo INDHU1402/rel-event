@@ -74,6 +74,10 @@ export class UserService {
     return this.httpClient.post('RESTAPI/webapi/myresource/addBlog/', blog);
    }
 
+   addExperience(exp: any) {
+    return this.httpClient.post('RESTAPI/webapi/myresource/addExperience/', exp);
+   }
+
    getBlogList() {
     return this.httpClient.get('RESTAPI/webapi/myresource/BlogList');
    }

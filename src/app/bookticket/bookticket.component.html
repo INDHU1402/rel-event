@@ -7,7 +7,7 @@
   <h1 class="upcomming" style="color:white">upcomming events</h1>
 
 <div *ngFor='let event of events'>
-  <div class="item">
+  <div class="item" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event.poster}});">
     <div class="item-right">
       <h3>{{event.eventDate | date}}</h3>
       <span class="up-border"></span>
