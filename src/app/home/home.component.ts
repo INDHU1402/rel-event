@@ -7,14 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  user: any;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('userDetails'));
   }
 
   redirect(): void {
-    this.router.navigate(['createEvent']);
+    if (this.user) {
+      this.router.navigate(['createEvent']);
+    }
+    else {
+      alert('Please login to create event');
+    }
   }
 
   bookTicket(): void {

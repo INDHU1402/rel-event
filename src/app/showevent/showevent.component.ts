@@ -14,25 +14,43 @@ export class ShoweventComponent implements OnInit {
   s:String;
   text:String;
   d:String;
+  sponsor:boolean;
+  user:any;
   constructor(private service: UserService, private router: Router) { }
   
   ngOnInit(): void {
     this.event = JSON.parse(localStorage.getItem('eventDetails'));
+    this.user = JSON.parse(localStorage.getItem('userDetails'));
+
     this.service.getEventById(this.event.eventId).subscribe((result: any) => { console.log(result); this.event1 = result} );
   
     this.eventStartdate = new Date(this.event.eventStartDate);
     this.s = new String(this.eventStartdate);
     this.text=this.s.slice(3,-31);
     var b = ",";
-var position = 4;
-var output = [this.text.slice(0,4), b, this.text.slice(position)].join('');
-console.log(output);
+    var position = 4;
+    var output = [this.text.slice(0,4), b, this.text.slice(position)].join('');
+
+    console.log(output);
     localStorage.setItem("EventDate",output);
-       console.log(this.event);
+    console.log(this.event);
+
+    if (this.event.sponsor === "yes") {
+      this.sponsor = true;
+    }
+    else {
+      this.sponsor = false;
+    }
   }
   
   payment() {
-    this.router.navigate(['payment']);
+    console.log(this.user);
+    if(this.user) {
+      this.router.navigate(['payment']);
+    }
+    else {
+      alert('Please login to continue further');
+    }
   }
 
   Sponsor(event : any) : void {
