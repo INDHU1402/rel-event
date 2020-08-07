@@ -1,0 +1,23 @@
+<div *ngFor='let blog of myBlogs'>
+    <div class="container" style="margin-right: 10px;">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div class="card" style="height:250px; width:500px;">
+
+                    <div class="card-img-overlay">
+                        <p><b> # {{blog.category}}</b></p>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="card-title">{{ blog.title }}</h3>
+                        <p class="card-text">
+                            {{blog.content | getintro}}
+                        </p>
+                        <button (click)="readmore(blog)" class="btn btn-info">Read more</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

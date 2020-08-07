@@ -16,7 +16,14 @@
     <option *ngFor="let category of Category">{{category}}</option>
 </select>
 
+<img [src]="imageUrl">
+<div style="margin-left: 20px;">
+<input  style  type="file" name="blogImage" accept="image/*" [(ngModel)]='blogDetails.blogImage'
+   (change)="handleFileInput($event.target.files)">
+   <br>
+</div>
+
 <textarea placeholder="Write content of blog not less than 250 words" rows="20" name="content" [(ngModel)]='blogDetails.content' id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-<button class="btn btn-primary" [disabled]="!blogForm.valid">Add my blog</button>
+<button class="btn btn-primary"  [disabled]="blogDetails.blogImage==''">Add my blog</button>
 </form>
 <br><br><br><br><br><br>

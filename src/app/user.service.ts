@@ -17,10 +17,27 @@ export class UserService {
     console.log("1");
     return this.httpClient.post(endpoint,formData);
   }
+  postBlog(blogForm,fileToUpload : File){
+    const endpoint ='RESTAPI/webapi/myresource/addBlog/';
+    const formData:FormData=new FormData();
+    console.log("success");
+    formData.append('blogImage',fileToUpload,fileToUpload.name);
+    formData.append('blogDetails',JSON.stringify(blogForm));
+    console.log("1");
+    return this.httpClient.post(endpoint,formData);
+  }
+  postserviceImage(profForm,fileToUpload : File){
+    const endpoint ='RESTAPI/webapi/myresource/regProfessional/';
+    const formData:FormData=new FormData();
+    console.log("success");
+    formData.append('serviceImage',fileToUpload,fileToUpload.name);
+    formData.append('profDetails',JSON.stringify(profForm));
+    console.log("1");
+    return this.httpClient.post(endpoint,formData);
+  }
   registerProf(profForm: any) {
     throw new Error("Method not implemented.");
   }
-
   constructor(private httpClient: HttpClient) {
     this.isUserLogged = false;
    }
@@ -42,6 +59,18 @@ export class UserService {
    }
    
 */
+getmyEventsList(organiserId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/ShowEvents/' + organiserId);
+ }
+ getmyBlogsList(userId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/UserBlogs/' + userId);
+ }
+ getmyBookedEventsList(userId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/BookedEvents/' +userId);
+ }
+ updateUser(editObject: any) {
+  return this.httpClient.put('RESTAPI/webapi/myresource/updateUser', editObject);
+}
    sponsorship(organiserId : number, text : string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/sponsor/' + organiserId + '/' + text);
    }

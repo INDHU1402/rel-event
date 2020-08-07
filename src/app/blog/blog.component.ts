@@ -9,14 +9,26 @@ import { UserService } from '../user.service';
 })
 export class BlogComponent implements OnInit {
   blogs : any;
+  User: any;
+  Professional: any;
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getBlogList() .subscribe((result: any) => { console.log(result); this.blogs = result} );
+    this.User = JSON.parse(localStorage.getItem('userDetails'));
+    this.Professional = JSON.parse(localStorage.getItem('profDetails'));
   }
 
   addblog() {
-    this.router.navigate(['blogform']);
+    if (this.User) {
+      this.router.navigate(['blogform']);
+    }
+    else if (this.Professional) {
+      this.router.navigate(['blogform']);
+    }
+    else {
+      alert('Please login to write blog');
+    }
   }
 
   readmore(blog: any) {

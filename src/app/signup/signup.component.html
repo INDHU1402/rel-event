@@ -80,18 +80,25 @@
         Create an account as professional</h4>
     <br>
     <!--<input type="text" class="login-username" name="professionalId" ngModel autofocus="true" required="true" placeholder="professionalId" />-->
-    <input type="text" class="login-username" name="professionalName" ngModel autofocus="true" required="true" placeholder="professional name" />
-    <input type="text" class="login-username" name="address" ngModel autofocus="true" required="true" placeholder="address" />
-    <input type="number" class="login-username" name="experience" ngModel autofocus="true" required="true" placeholder="Experience in years" />
-    <input type="text" class="login-username" autofocus="true" name="mailId" ngModel required="true" placeholder="mailId" />
-    <input type="tel" class="login-username"autofocus="true" name="mobile" ngModel  required="true" placeholder="Mobile no."/>
+    <input type="text" class="login-username" name="professionalName" [(ngModel)]='profDetails.professionalName'  autofocus="true" required="true" placeholder="professional name" />
+    <input type="text" class="login-username" name="address" [(ngModel)]='profDetails.address'  autofocus="true" required="true" placeholder="address" />
+    <input type="number" class="login-username" name="experience" [(ngModel)]='profDetails.experience'  autofocus="true" required="true" placeholder="Experience in years" />
+    <input type="text" class="login-username" autofocus="true" name="mailId" [(ngModel)]='profDetails.mailId'  required="true" placeholder="mailId" />
+    <input type="tel" class="login-username"autofocus="true" name="mobile" [(ngModel)]='profDetails.mobile'   required="true" placeholder="Mobile no."/>
     <select name="serviceType" id="category" ngModel class="login-username">
       <option hidden value="" disabled selected>Select one category </option> 
       <option *ngFor="let service of serviceType">{{service}}</option>
     </select>
-    <input type="text" class="login-username" autofocus="true" name="serviceName" ngModel required="true" placeholder="serviceName" />
-    <input type="password" class="login-password" required="true" name="password" ngModel placeholder="Password" />
-    <input type="password" class="login-password" required="true" name="confirmpassword" ngModel placeholder="Confirm Password" />
+    <input type="text" class="login-username" autofocus="true" name="serviceName" [(ngModel)]='profDetails.serviceName'  required="true" placeholder="serviceName" />
+    <input type="password" class="login-password" required="true" name="password" [(ngModel)]='profDetails.password'  placeholder="Password" />
+    <input type="password" class="login-password" required="true" name="confirmpassword"  ngModel placeholder="Confirm Password" />
+    <img [src]="imageUrl">
+            <div style="margin-left: 60px;">
+            <input  style  type="file" name="serviceImage" accept="image/*" [(ngModel)]='profDetails.serviceImage' 
+               (change)="handleFileInput($event.target.files)">
+               <br>
+            </div>
+            <button class="btn btn-primary" [disabled]="profDetails.serviceImage==''">Add Professional</button>
     <br><br>
     <input type="submit" name="signup-worker" value="Signup" class="login-submit"/>
   </form>

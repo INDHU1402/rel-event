@@ -1,7 +1,34 @@
-<br><br><br><br><br>
+<div class="container">
+<img src="/assets/img/smoke.jpg" style="margin-left: -380px; width: 1845px; height:500px;">
+</div>
 
-<button (click)="addblog()" class="btn btn-info">add blog</button>
+<div class="hero-image">
+    <br><br>
+<button (click)="addblog()" class="btn btn-info" style="margin-left:850px; width: 100px; height: 50px;">
+    <span class="glyphicon glyphicon-plus"></span> 
+    <b>&nbsp;Add blog</b>
+</button>
+</div>
 
+<main>
+    <section class="card-container" style="margin-left: -250px;">
+        <div *ngFor='let blog of blogs'>
+        <div class="card">
+            <div class="card-top">
+                <img src="http://localhost:8080/RESTAPI/images/{{blog.blogImage}}" style="width: 500px; height: 500px;">
+            </div>
+            <div class="card-content">
+                <h4 class="tag tag-travel"># {{blog.category}}</h4>
+                <h3 class="title">{{ blog.title }}</h3>
+                <p>{{blog.content | getintro}}</p>
+            </div>
+            <button (click)="readmore(blog)" class="btn btn-info" style="margin-left: 350px;">Read more</button>
+        </div>
+    </div>
+    </section>
+</main>
+
+<!--
 <div *ngFor='let blog of blogs'>
 <div class="container" style="margin-right: 10px;">
     <div class="row">
@@ -25,5 +52,4 @@
     </div>
 </div>
 </div>
-
-<br><br><br><br><br>
+-->

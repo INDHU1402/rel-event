@@ -33,6 +33,10 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { SponsorformComponent } from './sponsorform/sponsorform.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ShareExperienceComponent } from './share-experience/share-experience.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MyeventsComponent } from './myevents/myevents.component';
+import { MyBlogsComponent } from './my-blogs/my-blogs.component';
+import { BookedEventsComponent } from './booked-events/booked-events.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -49,6 +53,10 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'forgotpassword', component:ForgotpasswordComponent},
                          {path:'sponsor', component:SponsorformComponent},
                          {path:'share', component:ShareExperienceComponent},
+                         {path:'userprofile', component:UserProfileComponent},
+                         {path:'myEvents', component:MyeventsComponent},
+                         {path:'myBlogs', component:MyBlogsComponent},
+                         {path:'bookedEvents', component:BookedEventsComponent},
                          
 ];
 
@@ -74,6 +82,10 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     SponsorformComponent,
     HomepageComponent,
     ShareExperienceComponent,
+    UserProfileComponent,
+    MyeventsComponent,
+    MyBlogsComponent,
+    BookedEventsComponent,
 
   ],
   imports: [

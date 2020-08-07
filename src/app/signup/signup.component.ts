@@ -15,10 +15,17 @@ export class SignupComponent implements OnInit {
   userotp:number;
   confirmPassword:string;
   user = {userName:'', contact:'', emailId:'', password:''};
+  fileToUpload:File;
+  reader:FileReader;
+  imageUrl:String;
+  profDetails= {professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'',serviceImage:'',password:''};
+
   constructor(private service: UserService, private router: Router) {
+    this.imageUrl = 'src/assets/img/birthday.jpg';
   }
 
   ngOnInit(): void {
+
   }
 
   register(): void {
@@ -38,7 +45,16 @@ export class SignupComponent implements OnInit {
       alert('Please write correct password');
     }
   }
-
+   handleFileInput(file:FileList){
+     console.log("in handle");
+     
+     this.fileToUpload = file.item(0);
+     this.reader = new FileReader();
+     this.reader.readAsDataURL(this.fileToUpload);
+     this.reader.onload= (event:any)=>{
+       this.imageUrl= event.target.result;
+     };
+   }
   validateOTP() : void {
     console.log(this.otp);
     console.log(this.userotp);
@@ -54,9 +70,16 @@ export class SignupComponent implements OnInit {
   registerProf(profForm: any): void {
     if (profForm.password === profForm.confirmpassword) {
       delete profForm.confirmpassword;
-      this.service.registerProfessional(profForm).subscribe((result: any) => { console.log(result); });
-      console.log(profForm);
-      this.router.navigate(['login']);
+      this.service.postserviceImage(this.profDetails,this.fileToUpload).subscribe(
+        data => { 
+          console.log('success1');
+          this.imageUrl='/assets/img/bg.jpg';
+          console.log(profForm);
+          this.router.navigate(['login']);
+        }
+        
+        );
+     
     }
     else {
       alert('Please write correct password');

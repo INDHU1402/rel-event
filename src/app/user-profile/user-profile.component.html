@@ -1,0 +1,44 @@
+<p>user-profile works!</p>
+
+<br><br><br><br><br><br>
+<div class="container">
+
+  <!-- The Modal -->
+  <div class="modal" id="userModel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+        
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <h1>Add form content here...</h1>
+                <form class="form-group">
+                        UserId :<input type="number" name="userId" ngModel #editObject.empId="ngModel" class="form-control"><br />
+                        Enter userName :<input type="text"  name="userName"  [(ngModel)]="editObject.userName"class="form-control"><br />
+                        Enter contact :<input type="text" name="contact" [(ngModel)]="editObject.contact" class="form-control"><br />
+                        Enter emailId :<input type="email" name="emailId" [(ngModel)]="editObject.emailId" class="form-control"><br />
+                        Enter Password : <input type="text" name="password" [(ngModel)]="editObject.password" class="form-control"><br />
+                        
+                </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button class="btn btn-primary btn-sm" (click)="updateUser()">Update</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+<p>{{User.userName}}</p>
+<p>{{User.contact}}</p>
+<p>{{User.emailId}}</p>
+<p>{{User.password}}</p>
+<button (click)="showEditPopup(User)" class = "glyphicon glyphicon-pencil">edit</button>
+<br><br><br><br><br><br><br><br><br><br><br><br>

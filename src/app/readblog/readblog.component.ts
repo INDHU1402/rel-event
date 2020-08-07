@@ -7,15 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadblogComponent implements OnInit {
   blog : any;
-  userName : string;
-  profName : string;
   constructor() { }
 
   ngOnInit(): void {
     this.blog = JSON.parse(localStorage.getItem('Blog'));
     console.log(this.blog);
-    this.userName = this.blog.userblog.userName;
-    this.profName = this.blog.profblog.professionalName;
   }
 
 }
