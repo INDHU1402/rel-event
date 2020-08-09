@@ -23,7 +23,7 @@
   </select>
 <br><br>
 <h1 style="color: blanchedalmond;"><b>Upload File</b></h1>
-  <img [src]="imageUrl">
+  <img [src]="imageUrl" style="width:200px;height:200px;">
   <div style="margin-left: 20px;">
     <input style type="file" name="blogImage" accept="image/*" [(ngModel)]='blogDetails.blogImage'
       (change)="handleFileInput($event.target.files)">

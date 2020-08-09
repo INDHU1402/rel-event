@@ -34,12 +34,12 @@ export class HeaderComponent implements OnInit {
   logout() : void {
     this.authService.signOut();
     this.loggedIn = false;
-    this.router.navigate(['home']);
+    this.router.navigate(['homePage']);
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.router.navigate(['home']);
+    this.router.navigate(['homePage']);
   }
 
   status() : boolean {

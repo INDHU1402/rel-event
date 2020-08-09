@@ -1,97 +1,57 @@
-<br><br><br><br><br><br>
-<div class="row">
-<div class="col-sm-6">
-    <br><br>
-<form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
-    <div class="underlay-photo"></div> 
-    <p class="login-text">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-lock fa-stack-1x"></i>
-      </span>
-    </p>
-    <br>
-    <h4 style="color: white;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Login as user</h4>
-    <br>
-    <input type="text" class="login-username" name="userName" ngModel #userName="ngModel" autofocus="true" required="true" placeholder="UserName" />
-    <br>
-    <input type="password" class="login-password" name="password" ngModel #password="ngModel"required="true" placeholder="Password" />
-    <br><br>
-    <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
-    <br><br>
+<div class="hero-image1" >
 
-    <p>Don't have an account?&nbsp;<button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button></p>
-    <br>
-  </form>
-</div>
+  <div class="login-html" style="margin-left: 290px;">
 
-<!--
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="margin-left: 40px;">User</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" style="margin-left: 20px;">Professional</label>
 
-  <div class="container">
-  <h2>Large Modal</h2>
- 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Forgot password
-  </button>
+      <div class="login-form">
 
- 
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-      
-       
-        <div class="modal-header">
-          <h4 class="modal-title">Password Reset</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-       
-        <div class="modal-body">
-          <input type="text" name="mail" [(ngModel)]='mail' placeholder="Enter your registered mailID">
-        </div>
-       
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="resetPassword()" data-dismiss="modal">Next</button>
-        </div>
-        
+          <div class="sign-in-htm">
+              <form #loginForm="ngForm" class="form-group"  (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
+              <div class="group" style="margin-left: 650px; margin-top: 30px;">
+                  <h1 for="user" class="label" style="margin-left: -400px;  font-size:20px;color:black;"><b>Username</b></h1>
+                  <input type="text" class="input" name="userName" ngModel #userName="ngModel" placeholder="userName" style="width: 300px; color: black;">
+              </div>
+              <div class="group"  style="margin-left: 650px; margin-top: 30px;">
+                  <h1 for="pass" class="label" style="margin-left: -400px; font-size:20px;color: black;"><b>Password</b></h1>
+                  <input  type="password" class="input" data-type="password" name="password" ngModel #password="ngModel" placeholder="password" style="width: 300px; color: black;">
+              </div>
+              <div class="group" style="color:white" style="margin-left: 650px; margin-top: 30px">
+                <button class="button" style="width: 300px;">Login as User</button>
+            </div>
+              </form>
+              
+              <div class="hr"></div>
+              <div class="foot-lnk" style="margin-left: -100px;">
+                  <a routerLink="/signup"  style="color: black; "><h4><b>Don't have a account<br>Click here to create</b></h4></a>
+              </div>
+
+          </div>
+
+          <div class="sign-up-htm">
+
+              <form #profForm="ngForm" class="form-group"  (ngSubmit)="profSubmit(profForm.value)" novalidate>
+              <div class="group" style="margin-left: 650px; margin-top: 30px;">
+                  <label for="user" class="label"  style="margin-left: -400px; font-size:20px;color: black;">ProfessionalName</label>
+                  <input type="text" class="input" name="professionalName" ngModel #userName="ngModel" placeholder="professionalName" style="width: 300px; color: black;">
+              </div>
+              <div class="group" style="margin-left: 650px; margin-top: 30px;">
+                  <label for="pass" class="label"  style="margin-left: -400px; font-size:20px;color: black;">Password</label>
+                  <input  type="password" class="input" data-type="password" name="password" ngModel #password="ngModel" placeholder="password" style="width: 300px; color: black;">
+              </div>
+              <div class="group" style="margin-left: 650px; margin-top: 30px;">
+                <button class="button"   style="width: 300px;">Login as Professional</button>
+            </div>
+              </form>
+              
+              <div class="hr"></div>
+              <div class="foot-lnk" style="margin-left: -100px;">
+                  <a routerLink="/signup"  style="color: black;"><h4><b>Don't have a account<br>Click here to create</b></h4></a>
+              </div>
+
+          </div>
+
       </div>
-    </div>
   </div>
-  
-</div>-->
-
-<br><br><br>
-<div class="col-sm-6">
-    <br><br>
-    <form #profForm="ngForm" class="form-group" (ngSubmit)="profSubmit(profForm.value)" novalidate>
-    <div class="underlay-photo"></div> 
-    <p class="login-text">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-lock fa-stack-1x"></i>
-      </span>
-    </p>
-    <br>
-    <h4 style="color: white;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Login as worker</h4>
-    <br>
-    <input type="text" class="login-username" name="professionalName" ngModel #userName="ngModel" autofocus="true" required="true" placeholder="professionalName" />
-    <br>
-    <input type="password" class="login-password" name="password" ngModel #password="ngModel"required="true" placeholder="Password" />
-    <br><br>
-    <button class="btn btn-primary" [disabled]="!profForm.valid">Login</button>
-    <br><br>
-    <p>Don't have an account?&nbsp;<button class="btn btn-primary" (click)="navigateToSignUp()">Sign Up</button></p>
-    <br>
-  </form>
-</div>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
 </div>

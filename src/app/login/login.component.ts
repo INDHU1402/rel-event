@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   user : any;
   link : string;
   mail : string;
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('userDetails', JSON.stringify(result));
       if(result) {
         this.service.setUserLoggedIn();
-        this.router.navigate(['home']);
+        this.router.navigate(['homePage']);
       }
       else {
         alert('Invalid credentials');
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('profDetails', JSON.stringify(result));
         if(result) {
           this.service.setUserLoggedIn();
-          this.router.navigate(['home']); 
+          this.router.navigate(['homePage']); 
         }
         else {
           alert('Invalid credentials');
