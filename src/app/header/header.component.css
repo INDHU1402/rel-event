@@ -94,8 +94,9 @@
 	 margin-bottom: 0.2rem;
 }
  .navbar .navbar-header > a {
-	 font-weight: 500;
-	 color: #3c4250;
+	 font-weight: 800;
+	 color:white;
+	 font-style: bold;
 }
  .navbar .navbar-menu {
 	 display: flex;
