@@ -1,68 +1,69 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<br>
+<div style="background-color: black;">
+  <div class="hero-image1">
+  </div>
+</div>
+<br><br>
+<div style="background-image:url('/assets/img/blue.jpg');">
+  <br> <br> <br> <br> <br> <br>
+  <div class="hero-image2">
+    <div class="timeline" style="margin-left: 750px;">
+      <div class="timelinecontainer timelineleft">
+        <div class="timelinecontent">
+          <h2> <u>STEP 1</u> </h2>
+          <p>Register as a professional at Rel-event!</p>
+        </div>
+      </div>
+      <div class="timelinecontainer timelineright">
+        <div class="timelinecontent">
+          <h2> <u>STEP 2</u> </h2>
+          <p>Get contacted from events!</p>
+        </div>
+      </div>
+      <div class="timelinecontainer timelineleft">
+        <div class="timelinecontent">
+          <h2> <u>STEP 3</u> </h2>
+          <p>Finish events succesfully, get good ratings</p>
+        </div>
+      </div>
+      <div class="timelinecontainer timelineright">
+        <div class="timelinecontent">
+          <h2> <u>STEP 4</u> </h2>
+          <p>Get more oppurtunities and expand your service</p>
+        </div>
+      </div>
 
-        <div class="underlay-photo"></div>
-        <br><br> <br><br>
-    <div class="row">
-    <div class="column left" >
-    
-      <div *ngFor='let exp of exps'>
-        <!-- The App Section -->
-        <div class="ncontainer">
-          <div class="row">
-            <div class="column-66">
-              <h1 class="xlarge-font"><b>{{exp.professional.professionalName}}</b></h1>
-              <h1 class="large-font" style="color:MediumSeaGreen;"><b>{{exp.professional.serviceType}}</b></h1>
-              <p><span style="font-size:28px">{{exp.experience}}</span></p>
-            </div>
-            <div class="column-33">
-                <img src="assets/img/team2.jpg" width="335" height="471">
-            </div>
-          </div>
-        </div>
-        </div>
     </div>
-    
-    <div class="column right">
-      <br>
-      <button  class="btn btn-primary" (click)="shareExperience()" >Share my experience</button>
-      <br><br>
-        <h1 style="color: #f1f1f1; font-size: 50px;"><b>Expand Your Service In </b></h1><br>
-        <h1 style="color: #f1f1f1; font-size: 50px;"><b>A Snap!</b></h1><br>
-        <br>
-    
-        <div class="timeline">
-            <div class="timelinecontainer timelineleft">
-              <div class="timelinecontent">
-                <h2> <u>STEP 1</u> </h2>
-                <p>Register as a professional at Rel-event!</p>
-              </div>
-            </div>
-            <div class="timelinecontainer timelineright">
-              <div class="timelinecontent">
-                <h2> <u>STEP 2</u> </h2>
-                <p>Get contacted from events!</p>
-              </div>
-            </div>
-            <div class="timelinecontainer timelineleft">
-              <div class="timelinecontent">
-                <h2> <u>STEP 3</u> </h2>
-                <p>Finish events succesfully, get good ratings</p>
-              </div>
-            </div>
-            <div class="timelinecontainer timelineright">
-              <div class="timelinecontent">
-                <h2> <u>STEP 4</u> </h2>
-                <p>Get more oppurtunities and expand your service</p>
-              </div>
-            </div>
-            
-          </div>
-          
-    </div> 
-    
+  </div>
+</div>
+<br><br>
+<div class="hero-image4">
+  <br><br><br><br>
+  <h1 style="color:white;font-size:80px;margin-left:620px"><b>EXPERIENCES</b></h1>
+  <br><br>
+  <div *ngFor='let exp of exps'>
+    <!-- The App Section -->
+    <div class="ncontainer">
+      <div class="row">
+        <div class="column-66">
+          <h1 class="xlarge-font"><b>{{exp.professional.professionalName}}</b></h1>
+          <br>
+          <h3 class="large-font" style="color:white">#{{exp.professional.serviceType}}</h3>
+          <br>
+          <h1><span style="font-size:780px" style="color: black;"><b>{{exp.experience}}</b></span></h1>
+        </div>
+        <div class="column-33">
+            <img src="assets/img/team2.jpg" width="335" height="471">
+        </div>
+      </div>
+      
     </div>
-    
-    <br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br>
-    <br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br><br><br><br> <br><br> <br><br>
+    <div>
+      <br><br><br>
+    <button  style="margin-left: 820px;" class="btn btn-primary" (click)="shareExperience()" >Share my experience</button>
+  <br><br>
+  </div>
+</div>
