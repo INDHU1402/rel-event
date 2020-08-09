@@ -1,17 +1,20 @@
-<div class="container">
-<img src="/assets/img/smoke.jpg" style="margin-left: -380px; width: 1845px; height:500px;">
+<div class="hero-image1">
+    <div class="hero-image2">
+   
+</div>
+
 </div>
 
 <div class="hero-image">
-    <br><br>
-<button (click)="addblog()" class="btn btn-info" style="margin-left:850px; width: 100px; height: 50px;">
-    <span class="glyphicon glyphicon-plus"></span> 
-    <b>&nbsp;Add blog</b>
-</button>
-</div>
-
-<main>
-    <section class="card-container" style="margin-left: -250px;">
+    <br><br><br><br><br><br><br><br>
+    <button (click)="addblog()" class="btn btn-info" style="margin-left:850px; width: 100px; height: 50px;">
+        <span class="glyphicon glyphicon-plus"></span> 
+        <b>&nbsp;Add blog</b>  
+    </button>
+<br><br><br><br><br><br>
+    
+   
+    <section class="card-container" style="margin-left: 160px;">
         <div *ngFor='let blog of blogs'>
         <div class="card">
             <div class="card-top">
@@ -26,7 +29,8 @@
         </div>
     </div>
     </section>
-</main>
+<br><br>
+</div>
 
 <!--
 <div *ngFor='let blog of blogs'>

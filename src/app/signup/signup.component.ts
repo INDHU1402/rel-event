@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
   check: boolean;
   otp:number;
   userotp:number;
+  profotp:number;
   confirmPassword:string;
   user = {userName:'', contact:'', emailId:'', password:''};
   fileToUpload:File;
@@ -66,20 +67,36 @@ export class SignupComponent implements OnInit {
       alert("Invalid OTP");
     }
   }
-
-  registerProf(profForm: any): void {
-    if (profForm.password === profForm.confirmpassword) {
-      delete profForm.confirmpassword;
+  validateOTPProf(): void {
+    console.log(this.otp);
+    console.log(this.profotp);
+    if (this.otp == this.profotp) {
       this.service.postserviceImage(this.profDetails,this.fileToUpload).subscribe(
-        data => { 
+        data => {
           console.log('success1');
           this.imageUrl='/assets/img/bg.jpg';
-          console.log(profForm);
           this.router.navigate(['login']);
         }
-        
+       
         );
-     
+    }
+    else {
+      alert("Invalid OTP");
+    }
+  }
+
+  registerProf(): void {
+    console.log(this.user);
+    console.log(this.confirmPassword);
+    if (this.profDetails.password === this.confirmPassword) {
+      this.service.isUsernameExists(this.profDetails.professionalName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
+
+      if (result) {
+        this.service.verification(this.profDetails.mailId, this.profDetails.professionalName,this.profDetails.mobile).subscribe((result1: any) => {this.otp = result1;  console.log(result1);});
+      }
+      else {
+        alert('Username already exists');
+      } });
     }
     else {
       alert('Please write correct password');
