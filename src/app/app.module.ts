@@ -41,6 +41,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProfeventsComponent } from './profevents/profevents.component';
 import { ProfblogsComponent } from './profblogs/profblogs.component';
 import { ProfexpsComponent } from './profexps/profexps.component';
+       
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -99,6 +101,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProfblogsComponent,
     ProfexpsComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -110,7 +113,14 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    RouterModule.forRoot(appRoot)
+    RouterModule.forRoot(appRoot),
+    ToastrModule.forRoot({
+      timeOut:1000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }),
+    
   ],
   providers: [
     {
