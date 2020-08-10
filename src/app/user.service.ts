@@ -59,6 +59,8 @@ export class UserService {
    }
    
 */
+/*User Dashboard */
+
 getmyEventsList(organiserId:number) {
   return this.httpClient.get('RESTAPI/webapi/myresource/ShowEvents/' + organiserId);
  }
@@ -71,6 +73,19 @@ getmyEventsList(organiserId:number) {
  updateUser(editObject: any) {
   return this.httpClient.put('RESTAPI/webapi/myresource/updateUser', editObject);
 }
+
+/*Professional Dashboard */
+
+getMyEvents(professionalId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/MyEvents/' + professionalId);
+ }
+ getMyBlogs(professionalId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/ProfBlogs/' + professionalId);
+ }
+ getMyExperiences(professionalId:number) {
+  return this.httpClient.get('RESTAPI/webapi/myresource/ProfExps/' +professionalId);
+ }
+
    sponsorship(organiserId : number, text : string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/sponsor/' + organiserId + '/' + text);
    }

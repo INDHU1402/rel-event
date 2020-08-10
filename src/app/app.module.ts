@@ -38,6 +38,9 @@ import { MyeventsComponent } from './myevents/myevents.component';
 import { MyBlogsComponent } from './my-blogs/my-blogs.component';
 import { BookedEventsComponent } from './booked-events/booked-events.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ProfeventsComponent } from './profevents/profevents.component';
+import { ProfblogsComponent } from './profblogs/profblogs.component';
+import { ProfexpsComponent } from './profexps/profexps.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'signup', component: SignupComponent},
@@ -58,7 +61,10 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'myEvents', component:MyeventsComponent},
                          {path:'myBlogs', component:MyBlogsComponent},
                          {path:'bookedEvents', component:BookedEventsComponent},
-                         {path:'homePage', component:HomePageComponent}
+                         {path:'homePage', component:HomePageComponent},
+                         {path:'profEvents', component:ProfeventsComponent},
+                         {path:'profBlogs', component:ProfblogsComponent},
+                         {path:'profExps', component:ProfexpsComponent}
                          
 ];
 
@@ -89,6 +95,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     MyBlogsComponent,
     BookedEventsComponent,
     HomePageComponent,
+    ProfeventsComponent,
+    ProfblogsComponent,
+    ProfexpsComponent,
 
   ],
   imports: [
