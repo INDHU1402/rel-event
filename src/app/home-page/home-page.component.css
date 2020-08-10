@@ -156,7 +156,7 @@ body {
     top: 0%;
     overflow: hidden;
     z-index: 0;
-    background: #d3d8e2 url('/assets/img/hhm.png') center center no-repeat;
+    background: #d3d8e2 url('/assets/img/Since.png') center center no-repeat;
     background-size: cover;
 }
 .hero .fake-waves:before {
@@ -711,7 +711,7 @@ input[type="submit"]:hover {
     transform: translate3d(0, 0, 0);
     position: relative;
     width: 25%;
-    height: 100vh;
+    height: 50vh;
     min-height: 600px;
     color: #fff;
     overflow: hidden;
@@ -785,7 +785,7 @@ input[type="submit"]:hover {
 .tl-bg {
     transform: translate3d(0, 0, 0);
     position: absolute;
-    width: 100%;
+    width: 150%;
     height: 100%;
     top: 0;
     left: 0;
