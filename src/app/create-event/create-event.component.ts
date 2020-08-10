@@ -24,7 +24,7 @@ export class CreateEventComponent implements OnInit {
                    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
                    startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',
                    user: {userId:'', contact:'', emailId:'', password:'', userName:''},
-                   professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'', serviceIamge:''}]}; 
+                   professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'', serviceImage:''}]}; 
    User: any;
    constructor(private service: UserService, private router: Router) {
      this.imageUrl = 'src/assets/img/birthday.jpg';
