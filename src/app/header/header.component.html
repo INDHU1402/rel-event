@@ -76,7 +76,7 @@
       
     
 
-    <div *ngIf="status()">
+    <div *ngIf="status() && !db1">
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{db.userName}}
           <span class="caret"></span></button>
@@ -92,7 +92,7 @@
     </div>
 
 
-    <div *ngIf="status()">
+    <div *ngIf="status() && !db">
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{db1.professionalName}}
           <span class="caret"></span></button>
