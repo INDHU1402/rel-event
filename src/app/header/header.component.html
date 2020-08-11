@@ -55,17 +55,11 @@
         &nbsp;&nbsp; &nbsp;&nbsp;
         <li *ngIf="!user && !status()"><button class="btn"  (click)="signInWithGoogle()">SignInWithGoogle<span
               class="fa fa-google"></span></button></li>
-   
 
-    
-      <h4 class="card-title" style="color: aliceblue;"></h4>
-
-      <li *ngIf="user"><a routerLink="userProfile"><span class="glyphicon glyphicon-log-in"></span> Edit Profile</a></li>
       <div *ngIf="user" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{ user.name }}
           <span class="caret"></span></button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-          <li  role="presentation"><a role="menuitem" tabindex="-1" routerLink="userprofile"> Edit Profile</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myEvents">myEvents</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myBlogs">myBlogs</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="bookedEvents">bookedEvents</a></li>

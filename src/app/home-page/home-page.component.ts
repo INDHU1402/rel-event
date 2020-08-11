@@ -11,13 +11,11 @@ export class HomePageComponent implements OnInit {
   user: any;
   service: any;
 
-  constructor(private toastr:ToastrService,private router: Router) { }
+  constructor(private toaster:ToastrService,private router: Router) { }
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('userDetails'));
   }
-  showToatr() {
-    this.toastr.error('Please login to create event', 'RELEVENT says'); 
-  }
+ 
 rd(value){
  localStorage.setItem("category",value);
   
@@ -30,7 +28,8 @@ rd(value){
       this.router.navigate(['createEvent']);
     }
     else {
-      //this.showToatr();
+      console.log("inside toaster");
+      this.toaster.error('Please login to create event', 'RELEVENT says');
       alert('Please login to create event');
     }
   }
