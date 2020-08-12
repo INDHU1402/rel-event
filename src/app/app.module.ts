@@ -41,7 +41,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProfeventsComponent } from './profevents/profevents.component';
 import { ProfblogsComponent } from './profblogs/profblogs.component';
 import { ProfexpsComponent } from './profexps/profexps.component';
-       
+import { AlertsModule } from 'angular-alert-module';      
 import { ToastrModule } from 'ngx-toastr';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -114,6 +114,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoot),
+    AlertsModule.forRoot(),
     ToastrModule.forRoot({
       timeOut:1000,
       progressBar: true,
