@@ -1,5 +1,7 @@
 <div class="user-ragistration" class="bg">
   <div class="container register">
+    <h1 style="color: white;">Register as <b>User</b>... Host your own events, Book a ticket for an event</h1>
+    <h1 style="color: white;">Register as <b>Professional</b>... Expand your service, Get more opportunities</h1>
     <div class="row">
       <div class="col-md-3 register-left">
         <!--<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />-->
@@ -11,7 +13,7 @@
         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-              aria-selected="true" >User</a>
+              aria-selected="false">User</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
@@ -19,7 +21,7 @@
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <h1 class="register-heading" ><b>Register as a User</b></h1>
          
             <div class="row register-form">
@@ -27,22 +29,22 @@
                 <div class="col-md-6">
                   <div class="form-group" style="margin-left:-10px; margin-top: -30px;">
                     <input type="text" class="form-control" name="userName" placeholder="userName *" value=""
-                      [(ngModel)]='user.userName' style="width:250px; height:40px;" />
+                      [(ngModel)]='user.userName' style="width:250px; height:40px;" required />
                   </div>
                   <div class="form-group" style="margin-left:-10px;">
                     <input type="text" class="form-control" name="contact" placeholder="contact *" value=""
-                      [(ngModel)]='user.contact' style="width:250px; height:40px;" />
+                      [(ngModel)]='user.contact' style="width:250px; height:40px;" required/>
                   </div>
                   <div class="form-group" style="margin-left:-10px;">
                     <input type="text" class="form-control" name="emailId" placeholder="emailId *" value=""
-                      [(ngModel)]='user.emailId' style="width:250px; height:40px;" />
+                      [(ngModel)]='user.emailId' style="width:250px; height:40px;" required/>
                   </div>
                   <div class="form-group" style="margin-left:-10px;">
                     <input type="password" class="form-control" name="password" placeholder="password *" value=""
-                      [(ngModel)]='user.password' style="width:250px; height:40px;" />
+                      [(ngModel)]='user.password' style="width:250px; height:40px;" required/>
                   </div>
                   <div class="form-group" style="margin-left:-10px;">
-                    <input type="password" class="login-password" required="true" name="confirmpassword" [(ngModel)]='confirmPassword' placeholder="Confirm Password" style="width:250px; height:40px;" />
+                    <input type="password" class="form-control" required="true" name="confirmpassword" [(ngModel)]='confirmPassword' placeholder="confirmPassword*" style="width:250px; height:40px;" required/>
                   </div>
                 </div>
               </form>
@@ -107,9 +109,9 @@
                       [(ngModel)]='profDetails.mailId' />
                   </div>
                   <div class="form-group" style="margin-left:-210px; width:200px;">
-                    <select class="form-group" name="serviceType" id="category" name="serviceType" [(ngModel)]='profDetails.serviceType'
-                      class="login-username">
-                      <option hidden value="" disabled selected>Select one category </option>
+                    <select name="serviceType" id="category" name="serviceType" [(ngModel)]='profDetails.serviceType'
+                    class="form-control">
+                      <option hidden value="" disabled selected>Select Service type</option>
                       <option *ngFor="let service of serviceType">{{service}}</option>
                     </select>
                   </div>
@@ -128,7 +130,7 @@
                       [(ngModel)]='profDetails.password' />
                   </div>
                   <div class="form-group" style="margin-left:-55px; width:200px;">
-                    <input type="password" class="login-password" required="true" name="confirmpassword" [(ngModel)]='confirmPassword' placeholder="Confirm Password" />
+                    <input type="password" class="form-control" required="true" name="confirmpassword" [(ngModel)]='confirmPassword' placeholder="confirmPassword*" />
                   </div>
                   <div class="form-group" style="margin-left:-55px; width:200px;">
                     <img [src]="imageUrl" style="width:200px;height:100px;">
