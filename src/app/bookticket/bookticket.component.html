@@ -1,6 +1,7 @@
-<br><br><br>
+<!--
 <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  />
+
 
 <div class="container1">
 <div class="container"  style="background-color: black;">
@@ -37,31 +38,21 @@
   </div> 
   </div>
 </div>
+</div> -->
+
+
+<section class="card-container" style="margin-left: 160px;">
+  <div *ngFor='let event of events'>
+  <div class="card">
+      <div class="card-top">
+          <img src="http://localhost:8080/RESTAPI/images/{{event.poster}}" style="width: 500px; height: 500px;">
+      </div>
+      <div class="card-content">
+          <h3 class="title">{{event.eventName}}</h3>
+          <h5 style="font-size: 20px;">{{event.venue}}</h5>
+          <h5 style="font-size: 20px;"> {{event.eventStartDate | date}}</h5> 
+      </div>
+      <button class="bth btn-danger"  (click)="goToEvent(event)" style="border-radius: 25px; margin-left: 160px;">Book now</button>
+  </div>
 </div>
-<!--
-<table class="table table-bordered table-sm text-center" style="background-color: white;">
-    <thead>
-        <tr class="bg-info text-white">
-            <th>NAME</th>
-            <th>EVENT DATE</th>
-            <th>CATEGORY</th>
-            <th>MOBILE-NO.</th>
-            <th>TICKET PRICE</th>
-            <th>VENUE</th>
-            <th>GO TO EVENT</th>
-        </tr>
-    </thead>
-    <tbody>
-<tr *ngFor='let event of events'>
-    <td>{{event.eventName}}</td>
-    <td>{{event.eventDate}}</td>
-    <td>{{event.category}}</td>
-    <td>{{event.organiserName}}</td>
-    <td>{{event.ticketPrice}}</td>
-    <td>{{event.venue}}</td>
-    <button (click)="goToEvent(event)">Go To Event</button>
-</tr>
-</tbody>
-</table>
--->
-<br><br><br><br>
+</section>

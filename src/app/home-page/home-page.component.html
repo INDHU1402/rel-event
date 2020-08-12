@@ -1,104 +1,119 @@
 <div class="hero">
-	<span class="scroll-mobile cursor black fadeInUp"></span>
-	<div class="cta-search">
-		<div class="blob">
-			<svg viewBox="0 0 200 200" xmlns="/assets/img/blogbackground.jpeg">
-				<path fill="#FFF" d="M58.4,-49.5C70,-32.1,69.6,-8.2,64.9,15.7C60.2,39.6,51.1,63.5,34.6,71.1C18.2,78.7,-5.7,70.1,-28.3,59.1C-50.9,48.1,-72.2,34.7,-73.8,19.3C-75.4,3.8,-57.3,-13.7,-41.7,-32C-26.1,-50.3,-13.1,-69.4,5.2,-73.5C23.5,-77.7,46.9,-66.9,58.4,-49.5Z" transform="translate(100 100)" />
-			</svg>
-		</div>
-        
+    <span class="scroll-mobile cursor black fadeInUp"></span>
+    <div class="cta-search">
+        <div class="blob">
+            <svg viewBox="0 0 200 200" xmlns="/assets/img/blogbackground.jpeg">
+                <path fill="#FFF"
+                    d="M58.4,-49.5C70,-32.1,69.6,-8.2,64.9,15.7C60.2,39.6,51.1,63.5,34.6,71.1C18.2,78.7,-5.7,70.1,-28.3,59.1C-50.9,48.1,-72.2,34.7,-73.8,19.3C-75.4,3.8,-57.3,-13.7,-41.7,-32C-26.1,-50.3,-13.1,-69.4,5.2,-73.5C23.5,-77.7,46.9,-66.9,58.4,-49.5Z"
+                    transform="translate(100 100)" />
+            </svg>
+        </div>
+
         <!--<h2>Book a ticket / Expand a service</h2>-->
-		<div id="wrap">
-            
+        <div id="wrap">
+
             <!--<input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">-->
-         
-          </div>
-	</div>
-	<div class="fake-waves">
-		<span class="a"></span>
-		<span class="b"></span>
-		<span class="c"></span>
-	</div>
-	<div class="arc">
-		<svg xmlns="/assets/img/blogbackground.jpeg" width="100%" height="50" viewBox="0.1 0.3 200 19" preserveAspectRatio="none">
-			<g transform="translate(-0.21755166,-100.15454)">
-				<path d="M 0.2688579,100.29477 H 200.98548 c 0,0 -99.37375,39.84098 -200.7166221,0 z"></path>
-			</g>
-		</svg>
-	</div>
+
+        </div>
+    </div>
+    <div class="fake-waves">
+        <span class="a"></span>
+        <span class="b"></span>
+        <span class="c"></span>
+    </div>
+    <div class="arc">
+        <svg xmlns="/assets/img/blogbackground.jpeg" width="100%" height="50" viewBox="0.1 0.3 200 19"
+            preserveAspectRatio="none">
+            <g transform="translate(-0.21755166,-100.15454)">
+                <path d="M 0.2688579,100.29477 H 200.98548 c 0,0 -99.37375,39.84098 -200.7166221,0 z"></path>
+            </g>
+        </svg>
+    </div>
 </div>
 
 <section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-title fadeInUp">
-					<h3>Book your show</h3>
-				</div>
-				<div class="services-container">
-					<div class="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title fadeInUp">
+                    <h3>Book your show</h3>
 
-						<div class="col-md-3">
-							<a routerLink="/ticket" class="itm conference">
-								<div class="caption">
-									<h4>Conference</h4>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a routerLink="/ticket" class="itm workshop">
-								<div class="caption">
-									<h4>Workshop</h4> 
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a routerLink="/ticket" class="itm talk">
-								<div class="caption">
-									<h4>Talk</h4>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-3">
-							<a routerLink="/ticket" class="itm hackathon">
-								<div class="caption">
-									<h4>Hackathon</h4>
-								</div>
-							</a>
+                </div>
+                <div class="services-container">
+                    <div class="slider">
+
+                        <div class="col-md-3">
+                            <input type="hidden" value="seminar" #ref>
+                        
+                            <a  (click)="rd(ref.value)" class="itm conference">
+                                <div class="caption">
+                                    <h4>seminar</h4>
+                                </div>
+                            </a>
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <input type="hidden" value="workshop" #ref1>
+                            <a (click)="rd(ref1.value)" class="itm workshop">
+                                <div class="caption">
+                                    <h4>Workshop</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="hidden" value="talk" #ref2>
+                            <a (click)="rd(ref2.value)" class="itm talk">
+                                <div class="caption">
+                                    <h4>Talk</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="hidden" value="hackathon" #ref3>
+                            <a (click)="rd(ref3.value)" class="itm hackathon">
+                                <div class="caption">
+                                    <h4>Hackathon</h4>
+                                </div>
+                            </a>
                         </div>
 
                     </div>
-                    
+
                     <div class="slider">
+                        
                         <div class="col-md-3">
-							<a routerLink="/ticket" class="itm show">
-								<div class="caption">
-									<h4>Show</h4>
-								</div>
-							</a>
-                        </div>
-                      
-                        <div class="col-md-3">
-							<a routerLink="/ticket" class="itm fest">
-								<div class="caption">
-									<h4>Fest</h4>
-								</div>
-							</a>
+                            <input type="hidden" value="show" #ref4>
+                            <a (click)="rd(ref4.value)" class="itm show">
+                                <div class="caption">
+                                    <h4>Show</h4>
+                                </div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
-							<a routerLink="/ticket" class="itm exhibition">
-								<div class="caption">
-									<h4>Exhibition</h4>
-								</div>
-							</a>
+                            <input type="hidden" value="fest" #ref5>
+                            <a (click)="rd(ref5.value)" class="itm fest">
+                                <div class="caption">
+                                    <h4>Fest</h4>
+                                </div>
+                            </a>
                         </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="col-md-3">
+                            <input type="hidden" value="exhibition" #ref6>
+                            <a (click)="rd(ref6.value)" class="itm exhibition">
+                                <div class="caption">
+                                    <h4>Exhibition</h4>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <br><br>
 
@@ -106,137 +121,159 @@
 <div class="container2" style="text-align: center;"><br><br><br>
     <h1 style="color: white; font-size: 40px;">Create an event in 5 steps</h1><br><br>
     <button (click)="redirect()" class="btn success">Create an event</button><br><br>
-	<br><br>
+    <br><br>
 </div>
 <section id="timeline">
-  
-	<div class="tl-item">
-	  
-	  <div class="tl-bg" style="background-image: url(/assets/img/login.jpg)"></div>
-	  
-	  <div class="tl-year">
-		<p>Step - 1</p>
-	  </div>
-  
-	  <div class="tl-content">
-		<h1>Login as user at Rel-event</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-	  </div>
-  
-	</div>
-  
-	<div class="tl-item">
-	  
-	  <div class="tl-bg" style="background-image: url(/assets/img/form.jpg)"></div>
-	  
-	  <div class="tl-year">
-		<p>Step - 2</p>
-	  </div>
-  
-	  <div class="tl-content">
-		<h1 class="f3 text--accent ttu">Click on create event <br>and fill your details</h1>
-		<p>Suspendisse potenti. Sed sollicitudin eros lorem, eget accumsan risus dictum id. Maecenas dignissim ipsum vel mi rutrum egestas. Donec mauris nibh, facilisis ut hendrerit vel, fringilla sed felis. Morbi sed nisl et arcu.</p>
-	  </div>
-  
-	</div>
-  
-	<div class="tl-item">
-	  
-	  <div class="tl-bg" style="background-image: url(/assets/img/choose.jpg)"></div>
-	  
-	  <div class="tl-year">
-		<p>Step - 3</p>
-	  </div>
-  
-	  <div class="tl-content">
-		<h1 class="f3 text--accent ttu">Choose Venue, Professionals <br>required for an event</h1>
-		<p>Mauris cursus magna at libero lobortis tempor. Suspendisse potenti. Aliquam interdum vulputate neque sit amet varius. Maecenas ac pulvinar nisi. Fusce vitae nunc ultrices, tristique dolor at, porttitor dolor. Etiam id cursus arcu, in dapibus nibh. Pellentesque non porta leo. Nulla eros odio, egestas quis efficitur vel, pretium sed.</p>
-	  </div>
-  
-	</div>
-  
-	<div class="tl-item">
-	  
-	  <div class="tl-bg" style="background-image: url(/assets/img/upload.jpg)"></div>
-	  
-	  <div class="tl-year">
-		<p>Step - 4</p>
-	  </div>
-  
-	  <div class="tl-content">
-		<h1 class="f3 text--accent ttu">Upload Poster of your event</h1>
-		<p>Suspendisse ac mi at dolor sodales faucibus. Nunc sagittis ornare purus non euismod. Donec vestibulum efficitur tortor, eget efficitur enim facilisis consequat. Vivamus laoreet laoreet elit. Ut ut varius metus, bibendum imperdiet ex. Curabitur diam quam, blandit at risus nec, pulvinar porttitor lorem. Pellentesque dolor elit.</p>
-	  </div>
-  
-	</div>
 
-	<div class="tl-item">
-	  
-		<div class="tl-bg" style="background-image: url(/assets/img/done.png)"></div>
-		
-		<div class="tl-year">
-		  <p>Step - 5</p>
-		</div>
-	
-		<div class="tl-content">
-		  <h1>All done ! Now you are organiser, publicize the event and sell tickets</h1>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-		</div>
-	
-	  </div>
-  </section>
+    <div class="tl-item">
 
- <br><br>
+        <div class="tl-bg" style="background-image: url(/assets/img/login.jpg)"></div>
+
+        <div class="tl-year">
+            <p>Step - 1</p>
+        </div>
+
+        <div class="tl-content">
+            <h1>Login as user at Rel-event</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+        </div>
+
+    </div>
+
+    <div class="tl-item">
+
+        <div class="tl-bg" style="background-image: url(/assets/img/form.jpg)"></div>
+
+        <div class="tl-year">
+            <p>Step - 2</p>
+        </div>
+
+        <div class="tl-content">
+            <h1 class="f3 text--accent ttu">Click on create event <br>and fill your details</h1>
+            <p>Suspendisse potenti. Sed sollicitudin eros lorem, eget accumsan risus dictum id. Maecenas dignissim ipsum
+                vel mi rutrum egestas. Donec mauris nibh, facilisis ut hendrerit vel, fringilla sed felis. Morbi sed
+                nisl et arcu.</p>
+        </div>
+
+    </div>
+
+    <div class="tl-item">
+
+        <div class="tl-bg" style="background-image: url(/assets/img/choose.jpg)"></div>
+
+        <div class="tl-year">
+            <p>Step - 3</p>
+        </div>
+
+        <div class="tl-content">
+            <h1 class="f3 text--accent ttu">Choose Venue, Professionals <br>required for an event</h1>
+            <p>Mauris cursus magna at libero lobortis tempor. Suspendisse potenti. Aliquam interdum vulputate neque sit
+                amet varius. Maecenas ac pulvinar nisi. Fusce vitae nunc ultrices, tristique dolor at, porttitor dolor.
+                Etiam id cursus arcu, in dapibus nibh. Pellentesque non porta leo. Nulla eros odio, egestas quis
+                efficitur vel, pretium sed.</p>
+        </div>
+
+    </div>
+
+    <div class="tl-item">
+
+        <div class="tl-bg" style="background-image: url(/assets/img/upload.jpg)"></div>
+
+        <div class="tl-year">
+            <p>Step - 4</p>
+        </div>
+
+        <div class="tl-content">
+            <h1 class="f3 text--accent ttu">Upload Poster of your event</h1>
+            <p>Suspendisse ac mi at dolor sodales faucibus. Nunc sagittis ornare purus non euismod. Donec vestibulum
+                efficitur tortor, eget efficitur enim facilisis consequat. Vivamus laoreet laoreet elit. Ut ut varius
+                metus, bibendum imperdiet ex. Curabitur diam quam, blandit at risus nec, pulvinar porttitor lorem.
+                Pellentesque dolor elit.</p>
+        </div>
+
+    </div>
+
+    <div class="tl-item">
+
+        <div class="tl-bg" style="background-image: url(/assets/img/done.png)"></div>
+
+        <div class="tl-year">
+            <p>Step - 5</p>
+        </div>
+
+        <div class="tl-content">
+            <h1>All done ! Now you are organiser, publicize the event and sell tickets</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+        </div>
+
+    </div>
+</section>
+
+<br><br>
 
 <!--Expand you service-->
 <div class="container" style="text-align: center;">
-<h1>Register as Professional</h1><br>
+    <h1>Register as Professional</h1><br>
 </div>
 
 <div class="stairs">
-	<div class="row_1">
-		<div class="number_1"><h2>05</h2></div>
-		<div class="desc_winning">
-			<dl>
-				<dt>Lead in your sphere, be an <br> eminent service provider</dt>
-			</dl>
-		</div>
-	</div>
-	<div class="row_2">
-		<div class="number_2"><h2>04</h2></div>
-		<div class="desc_working">
-			<dl>
-				<dt>Grab a chance to contribute<br> to Top events</dt>
-				
-			</dl>
-		</div>
-	</div>
-	<div class="row_3">
-		<div class="number_3"><h2>03</h2></div>
-		<div class="desc_searching">
-			<dl>
-				<dt>Link up with other services <br>and increase your network</dt>
-				
-			</dl>
-		</div>
-	</div>
-	<div class="row_4">
-		<div class="number_4"><h2>02</h2></div>
-		<div class="desc_planning">
-			<dl>
-				<dt>Expand your service, increase your opportunities</dt>
-				
-			</dl>
-		</div>
-	</div>
-	<div class="row_5">
-		<div class="number_5"><h2>01</h2></div>
-		<div class="desc_timing">
-			<dl>
-				<dt>Register your service and <br> be a part of Rel-event</dt>
-			</dl>
-		</div>
-	</div>
+    <div class="row_1">
+        <div class="number_1">
+            <h2>05</h2>
+        </div>
+        <div class="desc_winning">
+            <dl>
+                <dt>Lead in your sphere, be an <br> eminent service provider</dt>
+            </dl>
+        </div>
+    </div>
+    <div class="row_2">
+        <div class="number_2">
+            <h2>04</h2>
+        </div>
+        <div class="desc_working">
+            <dl>
+                <dt>Grab a chance to contribute<br> to Top events</dt>
+
+            </dl>
+        </div>
+    </div>
+    <div class="row_3">
+        <div class="number_3">
+            <h2>03</h2>
+        </div>
+        <div class="desc_searching">
+            <dl>
+                <dt>Link up with other services <br>and increase your network</dt>
+
+            </dl>
+        </div>
+    </div>
+    <div class="row_4">
+        <div class="number_4">
+            <h2>02</h2>
+        </div>
+        <div class="desc_planning">
+            <dl>
+                <dt>Expand your service, increase your opportunities</dt>
+
+            </dl>
+        </div>
+    </div>
+    <div class="row_5">
+        <div class="number_5">
+            <h2>01</h2>
+        </div>
+        <div class="desc_timing">
+            <dl>
+                <dt>Register your service and <br> be a part of Rel-event</dt>
+            </dl>
+        </div>
+    </div>
 </div>
 
 <br><br><br>
@@ -244,39 +281,42 @@
 <!---Why Rel-event-->
 
 <div class="container1"> <br><br>
-	<h1 style="margin-left:120px;color: white; font-size: 40px;">Why Rel-event ?</h1><br><br>
-	<div class="row">
-		<br><br>
-		<div class="flip" style="margin-left: 230px;">
-			<div class="front" style="background-image: url(/assets/img/book.jpg);">
-				<br><br><br><br>
-			   <h1 class="text-shadow">Book tickets in a snap</h1>
-			</div>
-			<div class="back">
-			   <h4>Rel-event allows you to book a ticket of any event instantly. All you need to do is... <br>login as user -> choose the event -> Buy tickets</h4>
-			</div>
-		</div>
+    <h1 style="margin-left:120px;color: white; font-size: 40px;">Why Rel-event ?</h1><br><br>
+    <div class="row">
+        <br><br>
+        <div class="flip" style="margin-left: 230px;">
+            <div class="front" style="background-image: url(/assets/img/book.jpg);">
+                <br><br><br><br>
+                <h1 class="text-shadow">Book tickets in a snap</h1>
+            </div>
+            <div class="back">
+                <h4>Rel-event allows you to book a ticket of any event instantly. All you need to do is... <br>login as
+                    user -> choose the event -> Buy tickets</h4>
+            </div>
+        </div>
 
-		<div class="flip" style="margin-left: 100px;">
-			<div class="front" style="background-image: url(/assets/img/event.jpeg)">
-				<br><br><br><br>
-			   <h1 class="text-shadow">Create any type of event</h1>
-			</div>
-			<div class="back">
-			   <h4>Rel-event platform is suitable for Trade Shows, Conferences, Sporting Events, Film Festivals, Association Meetings, and more. You can develop more engaging and more personalised user experience for any type of events.</h4>
-			</div>
-		</div>
+        <div class="flip" style="margin-left: 100px;">
+            <div class="front" style="background-image: url(/assets/img/event.jpeg)">
+                <br><br><br><br>
+                <h1 class="text-shadow">Create any type of event</h1>
+            </div>
+            <div class="back">
+                <h4>Rel-event platform is suitable for Trade Shows, Conferences, Sporting Events, Film Festivals,
+                    Association Meetings, and more. You can develop more engaging and more personalised user experience
+                    for any type of events.</h4>
+            </div>
+        </div>
 
-		<div class="flip" style="margin-left: 100px;">
-			<div class="front" style="background-image: url(/assets/img/expand.jpg)">
-				<br><br><br><br>
-			   <h1 class="text-shadow">Expand your service</h1>
-			</div>
-			<div class="back">
-			   <h4>If you are a Professional Rel-event is best platform for you to increase your opportunities</h4>
-			</div>
-		</div>
-	</div> <br><br>
+        <div class="flip" style="margin-left: 100px;">
+            <div class="front" style="background-image: url(/assets/img/expand.jpg)">
+                <br><br><br><br>
+                <h1 class="text-shadow">Expand your service</h1>
+            </div>
+            <div class="back">
+                <h4>If you are a Professional Rel-event is best platform for you to increase your opportunities</h4>
+            </div>
+        </div>
+    </div> <br><br>
 </div>
 
 

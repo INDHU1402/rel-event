@@ -9,10 +9,14 @@ import { Router } from '@angular/router';
 })
 export class BookticketComponent implements OnInit {
   events : any;
+  cat :string;
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getEventList().subscribe((result: any) => { console.log(result); this.events = result} );
+  
+    this.cat = localStorage.getItem("category");
+    console.log(this.cat);
+    this.service.getEventList(this.cat).subscribe((result: any) => { console.log(result); this.events = result} );
   }
 
   goToEvent(event : any) : void {

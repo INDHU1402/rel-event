@@ -109,11 +109,11 @@ getMyEvents(professionalId:number) {
    getProfessionalList() {
     return this.httpClient.get('RESTAPI/webapi/myresource/ProfList');
    }
-   
-   getEventList() {
-    return this.httpClient.get('RESTAPI/webapi/myresource/EventList'); 
-   }
 
+   getEventList(cat:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/EventList/' + cat); 
+   }
+   
    addBlog(blog: any) {
     return this.httpClient.post('RESTAPI/webapi/myresource/addBlog/', blog);
    }

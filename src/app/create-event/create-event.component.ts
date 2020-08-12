@@ -19,7 +19,7 @@ export class CreateEventComponent implements OnInit {
    term:string;
    Sponsor: any = ['yes', 'no']
    chosenProfessional = [];
-   Category: any = ['conference', 'workshop', 'seminar', 'hackathon', 'tech-fest', 'talk', 'training session', 'others']
+   Category: any = ['workshop', 'seminar', 'hackathon', 'fest', 'talk', 'show', 'exhibition'];
    eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
                    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
                    startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',
