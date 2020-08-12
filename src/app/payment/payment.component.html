@@ -6,18 +6,11 @@
         <form #paymentForm="ngForm" (ngSubmit)="addPayment(paymentForm.value)">
         <div class="row">
           <div class="col-50">
-            <label for="ccnum">Enter no. of tickets:</label>
-            <input type="number" name="ntickets" [(ngModel)]='ntickets'>
             <h3>Payment</h3>
             <label for="cname">Name on Card</label>
             <input type="text" name="nameOnCard"  [(ngModel)]='payment.nameOnCard' placeholder="John More Doe">
             <label for="ccnum">Card number</label>
             <input type="text" name="cardNum"  [(ngModel)]='payment.cardNum' placeholder="1111-2222-3333-4444">
-            <h4>Event Details : </h4>
-            <p> Name   : {{Event.eventName}}</p>
-            <p> Venue  : {{Event.venue}}</p>
-            <p> Date   : {{Event.eventDate}}</p>
-            <p> Amount : {{ntickets}} * {{Event.ticketPrice}}</p>
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Expire date</label>

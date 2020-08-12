@@ -12,11 +12,9 @@ export class PaymentComponent implements OnInit {
   payment : any;
   User : any;
   paymentDetails: any;
-  ntickets : number;
-  howMany: any;
+  n: any;
 
   constructor(private service: UserService,private router: Router) {
-    this.ntickets = 1;
     this.payment = {cardNum: '',nameOnCard: '',expiryDate: '',amount: '',
     event: {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
     organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
@@ -29,6 +27,8 @@ export class PaymentComponent implements OnInit {
     console.log(this.Event);
     this.User = JSON.parse(localStorage.getItem('userDetails'));
     console.log(this.User);
+    this.n = JSON.parse(localStorage.getItem('ntickets'));
+    console.log(this.n);
   }
 
   addPayment(paymentForm : any) : void {
@@ -37,7 +37,6 @@ export class PaymentComponent implements OnInit {
     this.payment.user.userId = this.User.userId;
     console.log(this.payment);
     this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
-    localStorage.setItem('howMany', JSON.stringify(this.ntickets));
     this.router.navigate(['bill']);
   }
 

@@ -25,9 +25,10 @@
       <div class="row">
         <div class="container column left" style="background-color: rgb(236, 230, 230); padding-left: 10%;">
         <h1>{{event.eventName}}</h1>
-        <h2 class="section-heading">{{event.organiserName}}</h2>
-        <h2 class="section-heading">Start Date : {{event.eventStartDate | date}}</h2>
-        <h2 class="section-heading">End Date : {{event.eventEndDate | date}}</h2>
+        <h2 class="section-heading">By {{event.organiserName}}</h2>
+        <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
+        <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
+        <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
         
         <p>
           {{event.about}}
@@ -39,7 +40,6 @@
         <div class="social-icon">
           <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
-        <a class="register-btn hvr-buzz-out" (click)="payment()">Register Now</a>
       </div>
 
     <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event.poster}});background-size: 100% 100%;
@@ -49,7 +49,38 @@
     </section>
     <!-- home section -->
 
-    
+    <div style="text-align: center; margin-left:-420px; margin-top: -80px;">
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+       style="width: 70px;">Register now</button>
+
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="width: 500px;">
+
+          <!-- Modal Header -->
+          <div class="modal-header" style="width: 500px;">
+            <h4 class="modal-title" style="font-size: 30px;">Enter no. of tickets</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+        
+          <div class="modal-body" style="width: 500px;">
+            <input type="number" name="howManyTickets" [(ngModel)]='howManyTickets' placeholder="Enter no. of Tickets">
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer" style="width: 500px;">
+            <button type="button" class="register-btn hvr-buzz-out" (click)="payment()" data-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
     <!-- speakers section -->
 
     <section id="speakers">

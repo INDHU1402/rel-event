@@ -16,6 +16,7 @@ export class ShoweventComponent implements OnInit {
   d:String;
   sponsor:boolean;
   user:any;
+  howManyTickets:string;
   constructor(private service: UserService, private router: Router) { }
   
   ngOnInit(): void {
@@ -44,6 +45,7 @@ export class ShoweventComponent implements OnInit {
   }
   
   payment() {
+    localStorage.setItem("ntickets",this.howManyTickets);
     console.log(this.user);
     if(this.user) {
       this.router.navigate(['payment']);
