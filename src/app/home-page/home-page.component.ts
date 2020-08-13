@@ -34,8 +34,8 @@ rd(value){
       this.alerts.setMessage('Please login to create event','error');
       this.alerts.setDefaults('timeout',2000 );
       console.log('it works');
-      /*alert('Please login to create event');
-      console.log("inside toaster");
+      alert('Please login to create event');
+      /*console.log("inside toaster");
       this.toaster.error('Please login to create event', 'RELEVENT says'); */
 
     }

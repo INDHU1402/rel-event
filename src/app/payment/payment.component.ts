@@ -13,6 +13,8 @@ export class PaymentComponent implements OnInit {
   User : any;
   paymentDetails: any;
   n: any;
+  validity: string;
+  cardType: string;
 
   constructor(private service: UserService,private router: Router) {
     this.payment = {cardNum: '',nameOnCard: '',expiryDate: '',amount: '',
@@ -36,8 +38,29 @@ export class PaymentComponent implements OnInit {
     this.payment.event.eventId = this.Event.eventId;
     this.payment.user.userId = this.User.userId;
     console.log(this.payment);
-    this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
-    this.router.navigate(['bill']);
+    this.service.validateCard(this.payment.cardNum).subscribe((result1: any) => {  
+    console.log(result1); 
+    console.log(this.payment.cardNum.slice(0,2));
+    if(result1) {
+      if(this.payment.cardNum[0] == '4') {
+        this.cardType = "Visa"; 
+        console.log(this.cardType);
+      }
+      if(this.payment.cardNum.slice(0,2) == "51") {
+        this.cardType = "Master";
+        console.log(this.cardType);
+      }
+      if(this.payment.cardNum.slice(0,2) == '31') {
+        this.cardType = "American Express";
+        console.log(this.cardType);
+      }
+      this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
+      this.router.navigate(['bill']);
+    }
+    else {
+      alert('Invalid card number');
+    }
+    });
   }
 
   /*showBill() {

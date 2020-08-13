@@ -12,14 +12,6 @@
 <body>
   <div class="ncontainer">
     <section id="home" >
-<!--
-      <nav>
-        <a href="#home" style="color: #42a8bf">Home</a>
-        <a href="#speakers" style="color: #42a8bf;">Speakers</a>
-        <a href="#agenda" style="color: #42a8bf;">Agenda</a>
-        <a href="#auditorium" style="color: #42a8bf;">Venue</a>
-        <a href="#sponsors" style="color: #42a8bf;">Sponsors</a>
-      </nav> -->
       <br><br>
       <br><br>
       <div class="row">
@@ -29,7 +21,6 @@
         <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
         <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
         <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
-        
         <p>
           {{event.about}}
         </p>
@@ -80,6 +71,16 @@
 
 </div>
 
+<div class="container" style= "color:black; text-align: center;">
+  <br><br><br><br>
+  <h1>CountDown</h1>
+  <ul>
+    <li><span id="days"></span>days</li>
+    <li><span id="hours"></span>Hours</li>
+    <li><span id="minutes"></span>Minutes</li>
+    <li><span id="seconds"></span>Seconds</li>
+  </ul>
+</div>
 
     <!-- speakers section -->
 
@@ -111,7 +112,7 @@
 
       <p class="section-subtitle">Schedule</p>
 
-      <h2 class="agenda-subheading">Milano • Sat 20 September 2018 Sala Pastore</h2>
+      <h2 class="agenda-subheading">{{event.venue}} • {{event.eventStartDate | date}}</h2>
       <div class="events-container">
         <div class="event-hours-container">
           <p class="event-hours">{{event.startTime}}</p>

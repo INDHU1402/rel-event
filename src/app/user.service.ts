@@ -94,6 +94,11 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/verification/'+ mail + '/' + name + '/' + mobile);
    }
 
+   validateCard(cardNumber : string) {
+    console.log("inside service");
+    return this.httpClient.get('RESTAPI/webapi/myresource/cardValidate/'+ cardNumber);
+   }
+
    registerUser(user: any) {
     return this.httpClient.post('RESTAPI/webapi/myresource/regUser/', user);
    }
@@ -110,8 +115,8 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/ProfList');
    }
 
-   getEventList(cat:string) {
-    return this.httpClient.get('RESTAPI/webapi/myresource/EventList/' + cat); 
+   getEventList(cat:string, type:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/EventList/' + cat + '/' + type); 
    }
    
    addBlog(blog: any) {

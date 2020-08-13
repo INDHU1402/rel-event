@@ -16,7 +16,7 @@ export class BookticketComponent implements OnInit {
   
     this.cat = localStorage.getItem("category");
     console.log(this.cat);
-    this.service.getEventList(this.cat).subscribe((result: any) => { console.log(result); this.events = result} );
+    this.service.getEventList(this.cat, "public").subscribe((result: any) => { console.log(result); this.events = result} );
   }
 
   goToEvent(event : any) : void {
