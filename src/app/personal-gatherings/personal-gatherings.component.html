@@ -1,0 +1,345 @@
+<br><br><br><br>
+
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div>
+
+   <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
+
+      <mat-horizontal-stepper [linear]="" #stepper style="background-color:white">
+
+         <mat-step>
+            <div class="hero-image1">
+               <div style="margin-left: 700px;">
+
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">eventName</label>
+                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                        name="eventName" [(ngModel)]='eventDetails.eventName' required="true" placeholder="eventName">
+                  </div>
+
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">Event Type</label>
+                     <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
+                        <option hidden value="" disabled selected>Choose type </option>
+                        <option *ngFor="let type of Types">{{type}}</option>
+                     </select>
+                  </div>
+
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">About</label>
+                     <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
+                        name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about">
+                  </div>
+
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">attendeesCount</label>
+                     <input class="form-control" id="focusedInput" style="width:370px;" type="number" autofocus="true"
+                        name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
+                        placeholder="attendeesCount">
+                  </div>
+
+                  <select name="category" id="category" [(ngModel)]='eventDetails.category'>
+                     <option hidden value="" disabled selected>Choose category </option>
+                     <option *ngFor="let category of Category">{{category}}</option>
+                  </select>
+                  <br><br>
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">organiserName</label>
+                     <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
+                        name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true"
+                        placeholder="organiserName">
+                  </div>
+
+                  <!--<div class="form-group">
+                     <label for="focusedInput" style="color:white">Focused</label>
+                     <input class="form-control" id="focusedInput" style="width:370px;" autofocus="true"
+                        name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
+                        placeholder="ticketPrice" type="number">
+                  </div>-->
+
+                  <select name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+                     <option hidden value="" disabled selected>Allow sponsors?</option>
+                     <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
+                  </select>
+                  <br><br>
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">Venue</label>
+                     <input class="form-control" id="focusedInput" type="text" type="text" style="width:370px;"
+                        autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
+                        placeholder="venue">
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h4 style="color: aliceblue;">Choose start and end date of event</h4> <br>
+
+                        <input class="login-username" type="date" name="eventStartDate"
+                           [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
+
+                        <input class="login-username" type="date" name="eventEndDate"
+                           [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
+                        <br><br><br>
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
+            <div>
+
+               <button mat-button matStepperNext style="margin-left: 1600px;" class="button button4">Next</button>
+            </div>
+
+            <!--</form>-->
+         </mat-step>
+         <mat-step>
+            <!--
+            <div class="container">
+
+               <div class="timeline-block timeline-block-right">
+                  <div class="marker"></div>
+                  <div class="timeline-content">
+                     <h3>Start Time</h3>
+                     <input type="text" autofocus="true" name="startTime" [(ngModel)]='eventDetails.startTime'
+                        required="true" placeholder="Start Time" />
+                     <textarea rows="4" cols="50" autofocus="true" name="startOverview"
+                        [(ngModel)]='eventDetails.startOverview' required="true" placeholder="Start overview">
+               </textarea>
+
+                  </div>
+               </div>
+
+               <div class="timeline-block timeline-block-left">
+                  <div class="marker"></div>
+                  <div class="timeline-content">
+                     <h3>Time 1</h3>
+                     <input type="text" class="login-username" autofocus="true" name="time1"
+                        [(ngModel)]='eventDetails.time1' required="true" placeholder="time1" />
+                     <textarea rows="4" cols="50" autofocus="true" name="Overview1" [(ngModel)]='eventDetails.overview1'
+                        required="true" placeholder="overview1">
+               </textarea>
+
+                  </div>
+               </div>
+
+               <div class="timeline-block timeline-block-right">
+                  <div class="marker"></div>
+                  <div class="timeline-content">
+                     <h3>Time 2</h3>
+                     <input type="text" class="login-username" autofocus="true" name="time2"
+                        [(ngModel)]='eventDetails.time2' required="true" placeholder="time2" />
+                     <textarea rows="4" cols="50" autofocus="true" name="Overview2" [(ngModel)]='eventDetails.overview2'
+                        required="true" placeholder="overview2">
+               </textarea>
+
+                  </div>
+               </div>
+
+               <div class="timeline-block timeline-block-left">
+                  <div class="marker"></div>
+                  <div class="timeline-content">
+                     <h3>First Year</h3>
+                     <input type="text" class="login-username" autofocus="true" name="endTime"
+                        [(ngModel)]='eventDetails.endTime' required="true" placeholder="end Time" />
+                     <textarea rows="4" cols="50" autofocus="true" name="endOverview"
+                        [(ngModel)]='eventDetails.endOverview' required="true" placeholder="end overview">
+               </textarea>
+
+                  </div>
+               </div>
+
+
+            </div>
+            -->
+            <div>
+               <div class="timeline" style="margin-left: 480px;">
+                  <ul>
+                     <li>
+                        <span>Start</span>
+                        <div class="content">
+                           <div style="margin-left: 100px;">
+                              <div class="form-group">
+
+                                 <input class="form-control" id="focusedInput" type="text"
+                                    style="width:240px; color: black;" autofocus="true" name="startTime"
+                                    [(ngModel)]='eventDetails.startTime' required="true" placeholder="Start Time">
+                                 <br>
+                                 <textarea rows="3" cols="45" autofocus="true" name="startOverview"
+                                    style="color: black;" [(ngModel)]='eventDetails.startOverview' required="true"
+                                    placeholder="Start overview">
+                                 </textarea>
+                              </div>
+                           </div>
+
+                        </div>
+                     </li>
+                     <li>
+                        <span>Time/Day</span>
+                        <div class="content">
+                           <div style="margin-left: 100px;">
+                              <div class="form-group">
+
+                                 <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                    autofocus="true" name="time1" [(ngModel)]='eventDetails.time1' required="true"
+                                    placeholder="time1">
+                                 <br>
+                                 <textarea rows="3" cols="45" style="color: black;" autofocus="true" name="Overview1"
+                                    [(ngModel)]='eventDetails.overview1' required="true" placeholder="overview1">
+                                 </textarea>
+                              </div>
+                           </div>
+
+                        </div>
+                     </li>
+                     <li>
+                        <span>Time/Day</span>
+                        <div class="content">
+                           <div style="margin-left: 100px;">
+                              <div class="form-group">
+
+                                 <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                    autofocus="true" name="time2" [(ngModel)]='eventDetails.time2' required="true"
+                                    placeholder="time2">
+                                 <br>
+                                 <textarea rows="3" cols="45" autofocus="true" style="color: black;" name="Overview2"
+                                    [(ngModel)]='eventDetails.overview2' required="true" placeholder="overview2">
+                                 </textarea>
+                              </div>
+                           </div>
+
+                        </div>
+                     </li>
+                     <li>
+                        <span>End</span>
+                        <div style="margin-left: 100px;">
+                           <div class="form-group">
+
+                              <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                 autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime' required="true"
+                                 placeholder="end Time">
+                              <br>
+                              <textarea rows="3" cols="45" autofocus="true" style="color: black;" name="endOverview"
+                                 [(ngModel)]='eventDetails.endOverview' required="true" placeholder="end overview">
+                              </textarea>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <br>
+
+                  <button mat-button matStepperNext class="button button4">Next</button>
+               </div>
+            </div>
+         </mat-step>
+
+         <br><br><br><br><br><br>
+         <mat-step>
+            <div class="hero-image2">
+               <div style="margin-left: 700px;">
+                  <br>
+                  <h1 style="font-size: 40px;color:white"><b>Guest Details</b></h1>
+                  <br><br><br>
+
+                  <div class="form-group">
+
+                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                        name="guest1" [(ngModel)]='eventDetails.guest1' required="true" placeholder="Guest">
+                  </div>
+                  <div class="form-group">
+
+                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                        name="guest2" [(ngModel)]='eventDetails.guest2' required="true" placeholder="Guest">
+                  </div>
+                  <div class="form-group">
+
+                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                        name="guest3" [(ngModel)]='eventDetails.guest3' required="true" placeholder="Guest">
+                  </div>
+               </div>
+            </div>
+            <div>
+               <button mat-button matStepperNext style="margin-left: 1600px;" class="button button4">Next</button>
+            </div>
+         </mat-step>
+         <!--Step - 2-->
+         <mat-step>
+            <!-- <form [formGroup]="secondFormGroup">-->
+            <!-- <div class="container">
+               <h2 style="color:black"><b>Step 2</b></h2>
+               <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                     style="width:25%">25%
+                  </div>
+               </div>
+            </div>
+         <div class="form-group">
+               <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+            </div>-->
+
+
+            <div class="hero-image3">
+               <div *ngFor='let prof of professionals  | filter : term'>
+                  <br>
+                  <div class="user-profile">
+                     <img class="avatar"
+                        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s"
+                        alt="Ash" />
+                     <br>
+                     <div class="username">{{prof.professionalName}}</div>
+                     <div class="bio">
+                        {{prof.serviceName}}
+                        {{prof.serviceType}}
+                     </div>
+                     <div class="description">
+                        {{prof.address}}
+                     </div><br>
+                     <button class="button button2" (click)="addProfessional(prof)">add professional</button>
+
+                     <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
+                     <ul class="data">
+                        <li>
+                           <span class="entypo-heart"> 127</span>
+                        </li>
+                        <li>
+                           <span class="entypo-eye"> 853</span>
+                        </li>
+                        <li>
+                           <span class="entypo-user"> 311</span>
+                        </li>
+                     </ul>
+                     <br>
+
+                  </div>
+               </div>
+            </div>
+
+
+            <div>
+               <button mat-button matStepperNext style="margin-left: 1600px;" class="button button4">Next</button>
+            </div>
+
+         </mat-step>
+
+         <mat-step>
+            <img [src]="imageUrl">
+            <div style="margin-left: 20px;" class="hero-image1">
+               <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+                  (change)="handleFileInput($event.target.files)">
+               <br>
+            </div>
+            <button class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
+               Event</button>
+            <!--<button (click)="eventSubmit(registerForm.value)">Submit</button>-->
+         </mat-step>
+      </mat-horizontal-stepper>
+   </form>
+</div>
+<br>
