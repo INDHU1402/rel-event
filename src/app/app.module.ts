@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -29,9 +28,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { MatStepperModule} from '@angular/material/stepper';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { SponsorformComponent } from './sponsorform/sponsorform.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { ShareExperienceComponent } from './share-experience/share-experience.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyeventsComponent } from './myevents/myevents.component';
@@ -45,9 +42,10 @@ import { AlertsModule } from 'angular-alert-module';
 import { ToastrModule } from 'ngx-toastr';
 import { CulturalComponent } from './cultural/cultural.component';
 import { PersonalGatheringsComponent } from './personal-gatherings/personal-gatherings.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { ProfsignupComponent } from './profsignup/profsignup.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
-                         {path:'signup', component: SignupComponent},
                          {path:'login', component: LoginComponent},
                          {path:'ticket', component: BookticketComponent},
                          {path:'showEvent', component: ShoweventComponent},
@@ -58,7 +56,6 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'readblog', component:ReadblogComponent},
                          {path:'expandService', component:ExpandserviceComponent},
                          {path:'createEvent', component:CreateEventComponent},
-                         {path:'forgotpassword', component:ForgotpasswordComponent},
                          {path:'sponsor', component:SponsorformComponent},
                          {path:'share', component:ShareExperienceComponent},
                          {path:'userprofile', component:UserProfileComponent},
@@ -69,6 +66,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'profEvents', component:ProfeventsComponent},
                          {path:'profBlogs', component:ProfblogsComponent},
                          {path:'profExps', component:ProfexpsComponent},
+                         {path:'usersignup', component:UsersignupComponent},
+                         {path:'profsignup', component:ProfsignupComponent},
                          {path:'cultural', component:CulturalComponent},
                          {path:'personalGathering', component:PersonalGatheringsComponent}
                          
@@ -80,7 +79,6 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SignupComponent,
     LoginComponent,
     BookticketComponent,
     ShoweventComponent,
@@ -92,9 +90,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     GetintroPipe,
     ReadblogComponent,
     CreateEventComponent,
-    ForgotpasswordComponent,
     SponsorformComponent,
-    HomepageComponent,
     ShareExperienceComponent,
     UserProfileComponent,
     MyeventsComponent,
@@ -106,7 +102,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProfexpsComponent,
     CulturalComponent,
     PersonalGatheringsComponent,
-
+    UsersignupComponent,
+    ProfsignupComponent
 
   ],
   imports: [

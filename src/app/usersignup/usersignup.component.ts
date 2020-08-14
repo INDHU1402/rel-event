@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-usersignup',
+  templateUrl: './usersignup.component.html',
+  styleUrls: ['./usersignup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class UsersignupComponent implements OnInit {
+
   serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others'];
   check: boolean;
   otp:number;
@@ -102,5 +102,4 @@ export class SignupComponent implements OnInit {
       alert('Please write correct password');
     }
   }
-
 }
