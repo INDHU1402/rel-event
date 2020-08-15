@@ -1,0 +1,291 @@
+<head>
+    <title>Business Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+    <!----- <a href="#services" style="color:black;background-color: black;" class="button">Click Here</a>navigationbar--->
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:-20px">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#top">HOME </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Basic Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Venue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Choose Professionals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promo">Additional Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#price">Upload Poster</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div class="hero-image8"></div>
+    <div style="background-color: black;">
+        <section class="ps-timeline-sec">
+            <div class="container">
+                <ol class="ps-timeline">
+                    <li>
+                        <div class="img-handler-top">
+                            <img src="/assets/img/d.png" style="height: 200px;width: 400px;margin-left:-140px;"
+                                alt="" />
+                        </div>
+                        <div class="ps-bot">
+                            <p style="color:white">Fill Basic Information</p>
+                            <br>
+                            <div class="container" style="width:200px;background-color:#ffff66;">
+                                <a href="#about" style="color:black;width:300px;height: 28px;" class="button">
+                                    <h1><b style="color:black">Step-1</b></h1>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="ps-sp-top">01</span>
+                    </li>
+                    <li>
+                        <div class="img-handler-bot">
+                            <img src="http://www.physology.co.uk/wp-content/uploads/2016/02/ps-elem_13.png"
+                                style="margin-left:-50px;" alt="" />
+                            <img src="/assets/img/d1.png" style="width:200px;margin-top: -160px;" alt="" />
+                        </div>
+                        <div class="ps-top">
+                            <p style="color:white">Select Venue and Choose Profesional</p>
+                            <br>
+                            <div class="container" style="width:200px;background-color: #ffff66;">
+                                <a href="#services" style="color:black;width:300px;height: 28px;" class="button">
+                                    <h1><b style="color:black">Step-2</b></h1>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="ps-sp-bot">02</span>
+                    </li>
+                    <li>
+                        <div class="img-handler-top">
+                            <img src="/assets/img/dd.png" alt="" />
+                        </div>
+                        <div class="ps-bot">
+                            <p style="color:white">Provide Additional Details</p>
+                            <br>
+                            <div class="container" style="width:200px;background-color: #ffff66;">
+
+                                <a href="#team" style="color:black;width:300px;height: 28px;" class="button">
+                                    <h1><b style="color:black">Step-3</b></h1>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="ps-sp-top">03</span>
+                    </li>
+                    <li>
+                        <div class="img-handler-bot">
+                            <img src="/assets/img/upload.png" style="width:200px;margin-top: 10px;" alt="" />
+
+                        </div>
+                        <div class="ps-top">
+                            <p style="color:white">Upload Poster or Image</p>
+                            <br>
+                            <div class="container" style="width:200px;background-color: #ffff66;">
+
+                                <a href="#promo" style="color:black;width:300px;height: 28px;" class="button">
+                                    <h1><b style="color:black">Step-4</b></h1>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="ps-sp-bot">04</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </div>
+    <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
+        <!----about--->
+        <section id="about" style="background-color: black;">
+            <div class="hero-image1">
+                <br><br> <br><br> <br><br>
+                <div class="form-group">
+
+                    <input class="form-control" id="focusedInput" type="text" style="margin-left:1000px;width:370px;"
+                        autofocus="true" name="eventName" [(ngModel)]='eventDetails.eventName' required="true"
+                        placeholder="eventName">
+                </div>
+                <div class="form-group" style="margin-top:100px;">
+
+                    <input class="form-control" id="focusedInput" style="margin-left:1000px;width:370px;" type="text"
+                        autofocus="true" name="about" [(ngModel)]='eventDetails.about' required="true"
+                        placeholder="about">
+                </div>
+            </div>
+
+            <div class="hero-image2" style="margin-top:-200px;">
+                <div class="form-group" style="margin-left:-850px;">
+
+                    <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType'
+                        style="margin-top: 290px;">
+                        <option hidden value="" disabled selected>Choose type </option>
+                        <option *ngFor="let type of Types">{{type}}</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-left:825px;margin-top: -60px;">
+                    <select name="category" id="category" [(ngModel)]='eventDetails.category'>
+                        <option hidden value="" disabled selected>Choose category </option>
+                        <option *ngFor="let category of Category">{{category}}</option>
+                    </select>
+                </div>
+                <div style="margin-left:-780px;margin-top:200px;">
+                    <input style="width:300px;" class="login-username" type="date" name="eventStartDate"
+                        [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
+                </div>
+                <div style="margin-left:840px;margin-top:-60px;">
+                    <input class="login-username" type="date" name="eventEndDate"
+                        [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
+                </div>
+            </div>
+        </section>
+
+
+        <!-----services---->
+        <section id="services" style="background-color: black;">
+            <div class="hero-image3" style="margin-top:-300px;">
+                <br><br><br><br><br>
+                <label for="focusedInput" style="color:white">Choose Venue</label>
+                <div class="form-group" style="margin-left:600px;">
+
+                    <input class="form-control" id="focusedInput" type="text" type="text" style="width:370px;"
+                        autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
+                        placeholder="venue">
+                </div>
+            </div>
+            <div class="hero-image4" style="margin-top:-100px;">
+            </div>
+        </section>
+
+        <!------Team Members------>
+        <section id="team" style="background-color: black;">
+            <div class="hero-image5" style="margin-top:-100px;">
+                <br><br><br><br><br> <br><br><br><br><br><br><br><br>
+                <div class="form-group" style="margin-left:400px">
+                    <label for="focusedInput" style="color:white">attendeesCount</label>
+                    <input class="form-control" id="focusedInput" style="width:300px;" type="number" autofocus="true"
+                        name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
+                        placeholder="attendeesCount">
+                </div>
+                <div class="form-group" style="margin-left:1350px;margin-top:-70px;">
+                    <label for="focusedInput" style="color:white">Focused</label>
+                    <input class="form-control" id="focusedInput" style="width:260px;" autofocus="true"
+                        name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
+                        placeholder="ticketPrice" type="number">
+                </div>
+            </div>
+            <div class="hero-image6" style="margin-top:-100px;">
+                <br><br><br> <br><br><br> <br><br><br>
+                <div class="timeline" style="margin-left: 600px;">
+                    <ul>
+                        <li>
+                            <span>Start</span>
+                            <div class="content">
+                                <div style="margin-left: 100px;">
+                                    <div class="form-group">
+
+                                        <input class="form-control" id="focusedInput" type="text"
+                                            style="width:240px; color: black;" autofocus="true" name="startTime"
+                                            [(ngModel)]='eventDetails.startTime' required="true"
+                                            placeholder="Start Time">
+                                        <br>
+                                        <textarea rows="3" cols="45" autofocus="true" name="startOverview"
+                                            style="color: black;" [(ngModel)]='eventDetails.startOverview'
+                                            required="true" placeholder="Start overview">
+                                     </textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <span>Time/Day</span>
+                            <div class="content">
+                                <div style="margin-left: 100px;">
+                                    <div class="form-group">
+
+                                        <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                            autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
+                                            required="true" placeholder="time2">
+                                        <br>
+                                        <textarea rows="3" cols="45" autofocus="true" style="color: black;"
+                                            name="Overview2" [(ngModel)]='eventDetails.overview2' required="true"
+                                            placeholder="overview2">
+                                 </textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <span>End</span>
+                            <div style="margin-left: 100px;">
+                                <div class="form-group">
+
+                                    <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                        autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime'
+                                        required="true" placeholder="end Time">
+                                    <br>
+                                    <textarea rows="3" cols="45" autofocus="true" style="color: black;"
+                                        name="endOverview" [(ngModel)]='eventDetails.endOverview' required="true"
+                                        placeholder="end overview">
+                                  </textarea>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!---promo-->
+        <section id="promo" style="background-color: black;">
+            <div class="hero-image7" style="margin-top:-100px;">
+                <img [src]="imageUrl">
+                <div style="margin-left: -100px;margin-top: 320px;" >
+                    <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+                        (change)="handleFileInput($event.target.files)">
+                    <br>
+                </div>
+                <br>
+                <button class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
+                    Event</button>
+            </div>
+
+        </section>
+
+    </form>
+</body>

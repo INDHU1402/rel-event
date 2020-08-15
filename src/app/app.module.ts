@@ -45,6 +45,7 @@ import { PersonalGatheringsComponent } from './personal-gatherings/personal-gath
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { ProfsignupComponent } from './profsignup/profsignup.component';
 import { EventComponent } from './event/event.component';
+import { CreateEventFormComponent } from './create-event-form/create-event-form.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -105,7 +106,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     PersonalGatheringsComponent,
     UsersignupComponent,
     ProfsignupComponent,
-    EventComponent
+    EventComponent,
+    CreateEventFormComponent
 
   ],
   imports: [
