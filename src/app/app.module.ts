@@ -44,6 +44,7 @@ import { CulturalComponent } from './cultural/cultural.component';
 import { PersonalGatheringsComponent } from './personal-gatherings/personal-gatherings.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { ProfsignupComponent } from './profsignup/profsignup.component';
+import { EventComponent } from './event/event.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -103,7 +104,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     CulturalComponent,
     PersonalGatheringsComponent,
     UsersignupComponent,
-    ProfsignupComponent
+    ProfsignupComponent,
+    EventComponent
 
   ],
   imports: [
