@@ -71,7 +71,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'usersignup', component:UsersignupComponent},
                          {path:'profsignup', component:ProfsignupComponent},
                          {path:'cultural', component:CulturalComponent},
-                         {path:'personalGathering', component:PersonalGatheringsComponent}
+                         {path:'personalGathering', component:PersonalGatheringsComponent},
+                         {path:'event', component:EventComponent},
+                         {path:'eventform', component:CreateEventFormComponent}
                          
 ];
 
