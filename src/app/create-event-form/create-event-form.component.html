@@ -18,7 +18,7 @@
 
 
     <!----- <a href="#services" style="color:black;background-color: black;" class="button">Click Here</a>navigationbar--->
-    <section id="nav-bar">
+    <!--<section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-dark ">
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -28,7 +28,9 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:-20px">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#top">HOME </a>
+                        
+                        <h1 id="about">My Header</h1>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Basic Details</a>
@@ -49,8 +51,8 @@
                 </ul>
             </div>
         </nav>
-    </section>
-    <div class="hero-image8"></div>
+    </section>-->
+  
     <div style="background-color: black;">
         <section class="ps-timeline-sec">
             <div class="container">
@@ -127,7 +129,7 @@
     </div>
     <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
         <!----about--->
-        <section id="about" style="background-color: black;">
+        <section id="about"  name="about" style="background-color: black;">
             <div class="hero-image1">
                 <br><br> <br><br> <br><br>
                 <div class="form-group">
@@ -172,7 +174,7 @@
 
 
         <!-----services---->
-        <section id="services" style="background-color: black;">
+        <section id="services"  name="services" style="background-color: black;">
             <div class="hero-image3" style="margin-top:-300px;">
                 <br><br><br><br><br>
                 <label for="focusedInput" style="color:white">Choose Venue</label>
@@ -188,7 +190,7 @@
         </section>
 
         <!------Team Members------>
-        <section id="team" style="background-color: black;">
+        <section id="team" name="team" style="background-color: black;">
             <div class="hero-image5" style="margin-top:-100px;">
                 <br><br><br><br><br> <br><br><br><br><br><br><br><br>
                 <div class="form-group" style="margin-left:400px">
@@ -272,7 +274,7 @@
         </section>
 
         <!---promo-->
-        <section id="promo" style="background-color: black;">
+        <section id="promo" anme="promo" style="background-color: black;">
             <div class="hero-image7" style="margin-top:-100px;">
                 <img [src]="imageUrl">
                 <div style="margin-left: -100px;margin-top: 320px;" >

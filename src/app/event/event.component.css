@@ -22,6 +22,14 @@ body {
     position: relative;
     width: 1560px;
 }
+.hero-image8{
+    background-image: url('/assets/img/col.png');
+    height:400px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 1500px;
+   position: relative;
+  }
 .slider::before, .slider::after {
     content: "";
     height: 100px;
@@ -210,3 +218,47 @@ body {
     width: 65.3332%;
     }
   
+
+
+
+
+    .text {
+        transition: background-size 0.4s ease;
+        background: linear-gradient(to bottom, transparent 62%, #fff87e 0) center center/0% 75% no-repeat;
+        font-family: Quicksand;
+        font-size: 3rem;
+        padding: 0 6px 2px 6px;
+        cursor: pointer;
+        color: rgba(80, 89, 113, 0.7);
+        letter-spacing: 0.08rem;
+   }
+    .text:hover {
+        background-size: 100% 100%;
+   }
+    .text:active {
+        background-size: 80% 100%;
+   }
+    .text-container {
+        z-index: 1;
+        position: relative;
+        background-color: #fff;
+        padding: 60px;
+        box-shadow: 0 0 90px 10px rgba(95, 124, 179, 0.15);
+   }
+    .wrapper {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+    }
+    .wrapper:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: rgba(78, 171, 239, 0.13);
+        z-index: 0;
+   }
+    
