@@ -17,4 +17,9 @@ myEvents:any;
     this.service.getmyEventsList(this.User.userId).subscribe((result: any) => {
       console.log(result);this.myEvents= result });
   }
+
+  showProfessionals(eventId : number) : void {
+    localStorage.setItem('eventProf', JSON.stringify(eventId));
+    this.router.navigate(['eventprofs']);
+  }
 }

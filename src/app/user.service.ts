@@ -115,6 +115,10 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/ProfList');
    }
 
+   getProfListofEvent(eventId : number) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/getEventProfs/' + eventId);
+   }
+
    getEventList(cat:string, type:string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/EventList/' + cat + '/' + type); 
    }

@@ -1,42 +1,43 @@
 <br><br><br>
-<link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  />
+<link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash"
+  rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <div class="container1">
-<div class="container"  style="background-color: black;">
-  <h1 class="upcomming" style="color:white">MyEvents</h1>
+  <div class="container" style="background-color: black;">
+    <h1 class="upcomming" style="color:white">MyEvents</h1>
 
-<div *ngFor='let event of myEvents'>
-  <div class="item">
-    <div class="item-right">
-      <h3>{{event.eventDate | date}}</h3>
-      <span class="up-border"></span>
-      <span class="down-border"></span>
+    <div *ngFor='let event of myEvents'>
+      <div class="item">
+        <div class="item-right">
+          <h3>{{event.eventDate | date}}</h3>
+          <span class="up-border"></span>
+          <span class="down-border"></span>
+        </div>
+        <div class="item-left">
+          <p class="event">{{event.category}}</p>
+          <h2>{{event.eventName}}</h2>
+
+          <div class="sce">
+            <div class="icon">
+              <i class="fa fa-table" style="width: 30px; height: 30px;"></i>
+            </div>
+
+            <p>{{event.eventDate | date : 'mediumTime'}} </p>
+          </div>
+          <div class="fix"></div>
+          <div class="loc">
+            <div class="icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <p>{{event.venue}}</p>
+          </div>
+          <div class="fix"></div>
+          <button (click)="showProfessionals(event.eventId)">Rate professionals</button>
+        </div>
+      </div>
     </div>
-    <div class="item-left">
-      <p class="event">{{event.category}}</p>
-      <h2>{{event.eventName}}</h2>
-      
-      <div class="sce">
-        <div class="icon">
-          <i class="fa fa-table" style="width: 30px; height: 30px;"></i>
-        </div>
-        
-        <p>{{event.eventDate | date : 'mediumTime'}} </p>
-      </div>
-      <div class="fix"></div>
-      <div class="loc">
-        <div class="icon">
-          <i class="fa fa-map-marker"></i>
-        </div>
-        <p>{{event.venue}}</p>
-      </div>
-      <div class="fix"></div>
-
-    </div> 
-  </div> 
   </div>
-</div>
 </div>
 <br><br><br><br>
 <!--
