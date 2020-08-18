@@ -47,6 +47,8 @@ import { ProfsignupComponent } from './profsignup/profsignup.component';
 import { EventComponent } from './event/event.component';
 import { CreateEventFormComponent } from './create-event-form/create-event-form.component';
 import { EventProfsComponent } from './event-profs/event-profs.component';
+import { TechFormComponent } from './tech-form/tech-form.component';
+import { ProffcartComponent } from './proffcart/proffcart.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -112,7 +114,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProfsignupComponent,
     EventComponent,
     CreateEventFormComponent,
-    EventProfsComponent
+    EventProfsComponent,
+    TechFormComponent,
+    ProffcartComponent
 
   ],
   imports: [
