@@ -1,0 +1,236 @@
+/* ------------- */
+/* Basic Setting */
+/* ------------- */
+
+html,
+body {
+    box-sizing: border-box;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 640px;
+    background-image:url('/assets/img/blodd.png') ;
+    background-size: cover;
+}
+
+::selection {
+    color: #fff;
+    background-color: #005aee;
+}
+
+/* ======================== */
+/* Just Copy The Code Below */
+
+/* ------------- */
+/* Content Style */
+/* ------------- */
+
+.text-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    width: 450px;
+    max-width: 1200px;
+    height: auto;
+    margin: 20px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+}
+
+.card {
+    height:550px;
+    width:450px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 40px 40px -20px #8fc7d544;
+    overflow: hidden;
+}
+
+.card-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 20px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+}
+
+.text-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .25;
+    /*background-image: url("https://images.unsplash.com/photo-1595495745640-534ca1c3297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80");*/
+    background-size: cover;
+    background-position: center;
+}
+
+.text-card .content {
+    position: relative;
+    z-index: 100;
+}
+
+.text-card .author-section {
+    position: relative;
+    display: flex;
+    height: 40px;
+}
+
+.text-card .author-avator {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.text-card .author-name {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 700;
+    font-size: .875em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    transition: 250ms;
+}
+
+.text-card .author-avator-link {
+    margin-right: 20px;
+    border-radius: 40px;
+} 
+
+.text-card .author-name-link {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+}
+
+.text-card p {
+    padding: 50px 0;
+    line-height: 1.75;
+    font-weight: 300;
+    color: #303336;
+}
+
+.text-card button {
+    padding: 10px 25px;
+    border: 1px solid #ebebeb77;
+    border-radius: 50px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .875em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #303336;
+    background-color: #ffffff00;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.text-card button:hover {
+    border: 1px solid #ebebebbb;
+}
+
+
+/* Display this style when screen-width is lower than 425px */
+@media only screen and (max-width: 425px) {
+
+    .text-card {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/* Just Copy The Code Above */
+/* ======================== */
+
+
+/* ----------- */
+/* UI Designer */
+/* ----------- */
+
+.designer {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 300ms;
+}
+.card-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 20px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+}
+.designer a {
+    text-decoration: none;
+    color: white;
+}
+
+body:hover .designer {
+    opacity: 1;
+}
+
+.hero-image99{
+    background-image: url('/assets/img/ggg.png');
+  height:500px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:1200px;
+  
+   position: relative;
+  }

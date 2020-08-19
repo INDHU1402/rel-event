@@ -43,6 +43,7 @@ export class TechFormComponent implements OnInit {
     this.chosenProfessional.splice(i, 1);
     console.log(prof + "removed");
   }
+ 
   eventSubmit(regForm:any): void {
     this.eventDetails.professionalList = this.chosenProfessional;
     this.eventDetails.user.userId = this.User.userId;

@@ -26,7 +26,6 @@ export class ProfsignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   register(): void {
