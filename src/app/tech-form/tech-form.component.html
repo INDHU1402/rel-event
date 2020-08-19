@@ -1,89 +1,95 @@
 <div class="hero-image8" style="background-color:black ;"></div>
 <!-- The Modal -->
-<div class="modal fade" id="timeline">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h1 class="modal-title"><b>Timeline</b></h1>
-            </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="timeline" style="margin-left: 35px;">
-                    <ul>
-                        <li>
-                            <span>Start</span>
-                            <div class="content">
-                                <div style="margin-left: 100px;">
-                                    <div class="form-group">
+<form #registerForm="ngForm" class="form-group" class="form-wrapper">
 
-                                        <input class="form-control" id="focusedInput" type="text"
-                                            style="width:240px; color: black;" autofocus="true" name="startTime"
-                                            [(ngModel)]='eventDetails.startTime' required="true"
-                                            placeholder="Start Time">
-                                        <br>
-                                        <textarea rows="3" cols="45" autofocus="true" name="startOverview"
-                                            style="color: black;" [(ngModel)]='eventDetails.startOverview'
-                                            required="true" placeholder="Start overview">
-                                 </textarea>
+
+ 
+    <div class="modal fade" id="timeline">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+    
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="modal-title"><b>Timeline</b></h1>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="timeline" style="margin-left: 35px;">
+                        <ul>
+                            <li>
+                                <span>Start</span>
+                                <div class="content">
+                                    <div style="margin-left: 100px;">
+                                        <div class="form-group">
+    
+                                            <input class="form-control" id="focusedInput" type="text"
+                                                style="width:240px; color: black;" autofocus="true" name="startTime"
+                                                [(ngModel)]='eventDetails.startTime' 
+                                                placeholder="Start Time">
+                                            <br>
+                                            <textarea rows="3" cols="45" autofocus="true" name="startOverview"
+                                                style="color: black;" [(ngModel)]='eventDetails.startOverview'
+                                                 placeholder="Start overview">
+                                     </textarea>
+                                        </div>
                                     </div>
+    
                                 </div>
-
-                            </div>
-                        </li>
-                        <li>
-                            <span>Time/Day</span>
-                            <div class="content">
+                            </li>
+                            <li>
+                                <span>Time/Day</span>
+                                <div class="content">
+                                    <div style="margin-left: 100px;">
+                                        <div class="form-group">
+    
+                                            <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                                autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
+                                                 placeholder="time2">
+                                            <br>
+                                            <textarea rows="3" cols="45" autofocus="true" style="color: black;"
+                                                name="Overview2" [(ngModel)]='eventDetails.overview2' required="true">
+                                 </textarea>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </li>
+                            <li>
+                                <span>End</span>
                                 <div style="margin-left: 100px;">
                                     <div class="form-group">
-
+    
                                         <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                            autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
-                                            required="true" placeholder="time2">
+                                            autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime'
+                                            placeholder="end Time">
                                         <br>
                                         <textarea rows="3" cols="45" autofocus="true" style="color: black;"
-                                            name="Overview2" [(ngModel)]='eventDetails.overview2' required="true"
-                                            placeholder="overview2">
-                             </textarea>
+                                            name="endOverview" [(ngModel)]='eventDetails.endOverview'
+                                            placeholder="end overview">
+                                  </textarea>
                                     </div>
                                 </div>
-
-                            </div>
-                        </li>
-                        <li>
-                            <span>End</span>
-                            <div style="margin-left: 100px;">
-                                <div class="form-group">
-
-                                    <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                        autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime'
-                                        required="true" placeholder="end Time">
-                                    <br>
-                                    <textarea rows="3" cols="45" autofocus="true" style="color: black;"
-                                        name="endOverview" [(ngModel)]='eventDetails.endOverview' required="true"
-                                        placeholder="end overview">
-                              </textarea>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+                            </li>
+    
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
+
+
     <div class="container1" style="background-color: black;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
@@ -192,6 +198,16 @@
             </div>
 
             <div class="flip" style="margin-left: 100px;">
+                <div class="front" style="background-image: url(/assets/img/venue.png);height: 350px;">
+                    <br><br><br><br>
+                    <h1 class="text-block">Choose professionals for my event</h1>
+                </div>
+                <div class="back" style="height:350px;">
+                    <button (click)="goTocart()">Choose professionals</button>
+                </div>
+            </div>
+
+            <div class="flip" style="margin-left: 100px;">
                 <div class="front" style="background-image: url(/assets/img/attendees.png);height: 350px;">
                     <br><br><br><br>
                     <h1 class="text-block">Attendees Count</h1>
@@ -282,10 +298,9 @@
                             (change)="handleFileInput($event.target.files)">
                         <br>
                     </div>
-                    <button class="btn btn-primary" [disabled]="eventDetails.poster=='' ">Add Event</button>
                 </div>
             </div>
-
+            <button class="btn btn-primary" (click)="eventSubmit()" [disabled]="eventDetails.poster=='' ">Add Event</button>
 
         </div> <br><br>
     </div>

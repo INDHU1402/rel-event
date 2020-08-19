@@ -38,21 +38,32 @@ export class CreateEventFormComponent implements OnInit {
      console.log(prof + "added");
    }
  
+   goTocart() {
+    console.log(this.eventDetails);
+    localStorage.setItem('event', JSON.stringify(this.eventDetails));
+    this.router.navigate(['cart']);
+  }
+
    removeProfessional(prof : any) : void {
      const i = this.chosenProfessional.findIndex((profs) => {return prof.professionalId === profs.professionalId});
      this.chosenProfessional.splice(i, 1);
      console.log(prof + "removed");
    }
+
    eventSubmit(regForm:any): void {
-     this.eventDetails.professionalList = this.chosenProfessional;
-     this.eventDetails.user.userId = this.User.userId;
-     console.log(this.eventDetails);
-     this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
-       data => { 
-         console.log('success1');
-         this.imageUrl='/assets/img/bg.jpg';
-       }
-       );
+    this.chosenProfessional = JSON.parse(localStorage.getItem('chosenProf'));
+    this.eventDetails = JSON.parse(localStorage.getItem('event'));
+    console.log("event object " + this.eventDetails);
+    console.log(this.chosenProfessional);
+    this.eventDetails.professionalList = this.chosenProfessional;
+    this.eventDetails.user.userId = this.User.userId;
+    console.log(this.eventDetails);
+    this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
+      data => { 
+        console.log('success1');
+        this.imageUrl='/assets/img/bg.jpg';
+      }
+      );
    //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
    }
    handleFileInput(file:FileList){

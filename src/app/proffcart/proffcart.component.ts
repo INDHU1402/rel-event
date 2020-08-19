@@ -10,23 +10,23 @@ import { Router } from '@angular/router';
 export class ProffcartComponent implements OnInit {
 professionals:any;
 chosenProfessional = [];
-n:string;
 prof:any;
-  constructor(private service: UserService, private router: Router) { 
-    this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
-    console.log("in constructor");
-
-  }
+  
+constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
-   
-    console.log("ngOnInit");
+    this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
   }
-  addProfessional(prof1 : any) : void{
-   this.chosenProfessional.push(prof1);
-   localStorage.setItem('n', JSON.stringify(prof1));
-   this.prof = JSON.parse(localStorage.getItem('n'));
-    console.log(prof1 + "added");
+
+  addProfessional(prof : any) : void{
+   this.chosenProfessional.push(prof);
+  console.log(prof + "added");
+  }
+
+  done() {
+    console.log(this.chosenProfessional);
+    localStorage.setItem('chosenProf', JSON.stringify(this.chosenProfessional));
+    this.router.navigate(['eventform']);
   }
 
   removeProfessional(prof : any) : void {

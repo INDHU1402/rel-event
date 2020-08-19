@@ -24,6 +24,7 @@ export class TechFormComponent implements OnInit {
                   user: {userId:'', contact:'', emailId:'', password:'', userName:''},
                   professionalList :[{professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'', serviceImage:''}]}; 
   User: any;
+  EventDetails: any;
   constructor(private service: UserService, private router: Router) {
     this.imageUrl = 'src/assets/img/birthday.jpg';
    }
@@ -33,18 +34,17 @@ export class TechFormComponent implements OnInit {
     console.log(this.User);
     this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
   }
-  addProfessional(prof : any) : void{
-    this.chosenProfessional.push(prof);
-    console.log(prof + "added");
-  }
 
-  removeProfessional(prof : any) : void {
-    const i = this.chosenProfessional.findIndex((profs) => {return prof.professionalId === profs.professionalId});
-    this.chosenProfessional.splice(i, 1);
-    console.log(prof + "removed");
+  goTocart() {
+    console.log(this.eventDetails);
+    localStorage.setItem('event', JSON.stringify(this.eventDetails));
+    this.router.navigate(['cart']);
   }
  
-  eventSubmit(regForm:any): void {
+  eventSubmit(): void {
+    this.chosenProfessional = JSON.parse(localStorage.getItem('chosenProf'));
+    this.eventDetails = JSON.parse(localStorage.getItem('event'));
+    console.log(this.chosenProfessional);
     this.eventDetails.professionalList = this.chosenProfessional;
     this.eventDetails.user.userId = this.User.userId;
     console.log(this.eventDetails);

@@ -78,7 +78,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'event', component:EventComponent},
                          {path:'eventform', component:CreateEventFormComponent},
                          {path:'eventprofs', component:EventProfsComponent},
-                         {path:'techform', component:TechFormComponent}
+                         {path:'techform', component:TechFormComponent},
+                         {path:'cart', component:ProffcartComponent}
                          
 ];
 

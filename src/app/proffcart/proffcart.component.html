@@ -1,70 +1,26 @@
-<nav class="navbar navbar-default navbar-inverse no-corners">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img
-          src="https://tangible.st.imagecentre.co.nz/static/img/tangible-logo.png"></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-default btn-info navbar-btn">Login</button>
-        <button type="button" data-cart-toggle class="btn btn-default navbar-btn">Cart <span class="badge"
-            data-cart-item-count>2</span></button>
-      </div>
-    </div>
-    <!-- /.navbar-collapse -->
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Service</th> 
+    <th>Experience</th>
+    <th>Add</th>
+    <th>Remove</th>
+  </tr>
+  <div *ngFor="let prof of professionals">
+  <tr>
+    <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{prof.serviceImage}});background-size: 100% 100%;
+    background-repeat: no-repeat; padding-right: 10%;" ></div>
+    <td>{{prof.professionalName}}</td>
+    <td>{{prof.serviceType}}</td>
+    <td>{{prof.experience}}</td>
+    <td><button (click)="addProfessional(prof)">add professional</button></td>
+    <td><button (click)="removeProfessional(prof)">remove professional</button></td>
+    <td>{{prof.experience}}</td>
+  </tr>
   </div>
-  <!-- /.container-fluid -->
-</nav>
-
-<div data-cart-products class="container">
-<div *ngFor='let pr of professionals'>
- 
-    <div class="col-xs-4 col-md-3" data-cart-product>
-      <div class="thumbnail">
-        <img data-image src="http://placehold.it/350x350" alt="thumbnail">
-        <div class="caption">
-          <h3>{{pr.professionalName}}</h3>
-          <p>{{pr.serviceName}}
-            {{pr.serviceType}}</p>
-          <button (click)="addProfessional(pr)" data-cart-thumb="http://placehold.it/350x350"
-               data-cart-add="true" >Add to cart</button>
-        </div>
-      </div>
-    </div>
+  <div *ngFor="let x of chosenProfessional">
+    <p>{{x.professionalName}}</p>
+    <p>{{x.serviceType}}</p>
   </div>
-</div>
-
-<div data-cart class="cart panel panel-primary no-corners expanded">
-  <div class="panel-heading no-corners">
-    <h3>Your cart</h3>
-  </div>
-  <div data-cart-items-container class="panel-body">
-    <div data-cart-item class="cart-item row template">
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <img data-cart-thumb src="" alt="">
-        </div>
-      </div>
-      <div class="col-md-6">
-       <!-- -->
-        <h4></h4>
-        <h5></h5>
-        <input [value]="prof.professionalName">
-        <button class="btn btn-warning" (click)="removeProfessional(prof)" data-cart-remove>Remove</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
+</table>
+<button (click)="done()">Done</button>
