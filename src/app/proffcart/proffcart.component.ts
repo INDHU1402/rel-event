@@ -26,7 +26,7 @@ constructor(private service: UserService, private router: Router) { }
   done() {
     console.log(this.chosenProfessional);
     localStorage.setItem('chosenProf', JSON.stringify(this.chosenProfessional));
-    this.router.navigate(['eventform']);
+    this.router.navigate(['techform']);
   }
 
   removeProfessional(prof : any) : void {

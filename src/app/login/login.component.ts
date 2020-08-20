@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('userDetails', JSON.stringify(result));
       if(result) {
         this.service.setUserLoggedIn();
-        this.router.navigate(['homePage']);
+        this.router.navigate(['']);
       }
       else {
         alert('Invalid credentials');
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('profDetails', JSON.stringify(result));
         if(result) {
           this.service.setUserLoggedIn();
-          this.router.navigate(['homePage']); 
+          this.router.navigate(['']); 
         }
         else {
           alert('Invalid credentials');

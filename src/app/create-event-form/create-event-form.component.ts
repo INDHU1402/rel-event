@@ -64,6 +64,8 @@ export class CreateEventFormComponent implements OnInit {
         this.imageUrl='/assets/img/bg.jpg';
       }
       );
+    alert('Event created successfully!');
+    this.router.navigate(['']);
    //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
    }
    handleFileInput(file:FileList){
