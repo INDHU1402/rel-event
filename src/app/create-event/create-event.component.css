@@ -42,7 +42,7 @@
 	position: relative;
   }
   .hero-image3 {
-	background-image: url("/assets/img/bricks.jpg");
+	background-image: url("/assets/img/table.jpg");
 	height:800px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -187,4 +187,142 @@ margin-right: 20px;
 		font-size:15px;
 	}
 
+}
+
+
+.custom-counter {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+  }
+  
+  .custom-counter li {
+	counter-increment: step-counter;
+	margin-bottom: 10px;
+  }
+  
+  .custom-counter li::before {
+	content: counter(step-counter);
+	margin-right: 5px;
+	font-size: 80%;
+	background-color: rgb(0,200,200);
+	color: white;
+	font-weight: bold;
+	padding: 3px 8px;
+	border-radius: 3px;
+  }
+
+
+
+.text-card {
+    position: relative;
+    width: 570px;
+    height: 230px;
+    margin: 20px;
+    padding: 50px;
+    border-radius: 10px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+    background-color: #fff;
+    box-shadow: 0 40px 40px -20px #8fc7d577;
+}
+
+.text-card .author-section {
+    position: relative;
+    display: flex;
+    height: 40px;
+}
+
+.text-card .author-avator {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.text-card .author-name {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 700;
+    font-size: .875em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    transition: 250ms;
+}
+
+.text-card .author-avator-link {
+    margin-right: 20px;
+    border-radius: 40px;
+} 
+
+.text-card .author-name-link {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+}
+
+.text-card p {
+    padding: 50px 0;
+    line-height: 1.75;
+    font-weight: 300;
+    color: #7b8591;
+}
+
+.text-card button {
+    padding: 10px 25px;
+    border: 1px solid #ebebeb;
+    border-radius: 50px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .875em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #303336;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.text-card button:hover {
+    border: 1px solid #bebebe;
+}
+
+
+/* Display this style when screen-width is lower than 425px */
+@media only screen and (max-width: 425px) {
+
+    .text-card {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
+.designer {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-weight: 400;
+    color: #46a2b9;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 300ms;
+}
+
+.designer a {
+    text-decoration: none;
+    color: #23515d;
 }
