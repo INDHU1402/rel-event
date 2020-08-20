@@ -30,11 +30,15 @@
       <span class="card-media-body-heading">{{event.about}}</span>
       <div class="card-media-body-supporting-bottom">
         <span class="card-media-body-supporting-bottom-text subtle">{{event.venue}}</span>
-        <span class="card-media-body-supporting-bottom-text subtle u-float-right">&ndash; {{event.ticketPrice}}</span>
+        <span class="card-media-body-supporting-bottom-text subtle u-float-right">Rs. {{event.ticketPrice}}</span>
       </div>
       <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
         <span class="card-media-body-supporting-bottom-text subtle">#{{event.eventType}} #{{event.category}}</span>
-        <a href="#/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">VIEW TICKETS</a>
+        <a class="card-media-body-supporting-bottom-text card-media-link u-float-right">No.of Tickects Booked : {{len}} </a>
+        <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rateProf" style="width: auto; align-content: center;">
+          Rate Professionals
+      </button>
       </div>
     </div>
   </div>
@@ -42,4 +46,45 @@
 </div>
 
 </div>
+</div>
+
+
+
+
+<div class="modal fade" data-backdrop="false" id="rateProf">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <h4 class="modal-title">Rate Professional</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body" style="background-color: black;">
+            
+              
+          <div *ngFor="let prof of eventProfs">
+            <p> {{prof.professionalName}} </p>
+        
+              <br><br>
+
+              <h6 class="text-primary">
+                <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"></ngb-rating>
+                <button (click)="addRating(prof.professionalId, currentRate)" style="color: white;">Rate</button>
+
+              </h6>
+          </div>
+              
+          </div>
+         
+         
+          <div class="modal-footer">
+            <button (click)="submit()" style="color: white;">Rate</button>
+
+          </div>
+
+      </div>
+  </div>
 </div>

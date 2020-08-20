@@ -49,6 +49,7 @@ import { CreateEventFormComponent } from './create-event-form/create-event-form.
 import { EventProfsComponent } from './event-profs/event-profs.component';
 import { TechFormComponent } from './tech-form/tech-form.component';
 import { ProffcartComponent } from './proffcart/proffcart.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -139,6 +140,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
       progressAnimation: 'increasing',
       preventDuplicates: true
     }),
+    NgbModule,
     
   ],
   providers: [
