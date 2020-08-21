@@ -17,7 +17,7 @@ export class PersonalGatheringsComponent implements OnInit {
   term:string;
   Sponsor: any = ['yes', 'no']
   chosenProfessional = [];
-  Category: any = ['Birthday', 'Wedding', 'Reception', 'Sangeeth'];
+  Category: any = ['conference', 'workshop', 'hackathon', 'fest', 'talk', 'tradeShow'];
   eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
                   organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
                   startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',

@@ -1,5 +1,7 @@
 <head>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +15,12 @@
 
          <mat-step>
             <div class="hero-image1">
-               <br><br>
-               <h1 style="color: white; margin-left: 800px;"><b>Basic Info</b></h1>
+               <br><br><br>
+              
+               <div class="container" style="background-color:rgba(51, 3, 85, 0.952); width:500px;">
+                  <br>
+               <h1 style="color: white;"><b>Basic Info</b></h1>
                <br>
-               <div style="margin-left: 700px;">
-
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">EventName</label>
                      <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
@@ -42,19 +45,14 @@
                   </select>
                   <br><br>
 
-                  <div class="row">
-                     <div class="col-sm-6">
-                       
                         <h4 style="color:white"><b>Choose start and end date of event</b></h4>
 
                         <input class="login-username" type="date" name="eventStartDate"
                            [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input class="login-username" type="date" name="eventEndDate"
-                           [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
+                           [(ngModel)]='eventDetails.eventEndDate' required="true"  placeholder="Event end date">
                         <br><br><br>
-                     </div>
-                  </div>
 
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">About</label>
@@ -72,7 +70,6 @@
                   </div>
 
                </div>
-
 
             </div>
             <div>

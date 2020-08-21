@@ -1,5 +1,3 @@
-<br><br><br><br>
-
 <head>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -11,82 +9,68 @@
 
    <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
 
-      <mat-horizontal-stepper [linear]="" #stepper style="background-color:white">
+      <mat-horizontal-stepper [linear]="" #stepper style="background-color:black">
 
          <mat-step>
             <div class="hero-image1">
+               <br><br>
+               <h1 style="color: white; margin-left: 800px;"><b>Basic Info</b></h1>
+               <br>
                <div style="margin-left: 700px;">
 
                   <div class="form-group">
-                     <label for="focusedInput" style="color:white">eventName</label>
+                     <label for="focusedInput" style="color:white">EventName</label>
                      <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
                         name="eventName" [(ngModel)]='eventDetails.eventName' required="true" placeholder="eventName">
                   </div>
 
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">Event Type</label>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
                         <option hidden value="" disabled selected>Choose type </option>
                         <option *ngFor="let type of Types">{{type}}</option>
                      </select>
                   </div>
 
-                  <div class="form-group">
-                     <label for="focusedInput" style="color:white">About</label>
-                     <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
-                        name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about">
-                  </div>
-
-                  <div class="form-group">
-                     <label for="focusedInput" style="color:white">attendeesCount</label>
-                     <input class="form-control" id="focusedInput" style="width:370px;" type="number" autofocus="true"
-                        name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
-                        placeholder="attendeesCount">
-                  </div>
-
+                  <label for="focusedInput" style="color:white">Event Category</label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <select name="category" id="category" [(ngModel)]='eventDetails.category'>
                      <option hidden value="" disabled selected>Choose category </option>
                      <option *ngFor="let category of Category">{{category}}</option>
                   </select>
                   <br><br>
-                  <div class="form-group">
-                     <label for="focusedInput" style="color:white">organiserName</label>
-                     <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
-                        name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true"
-                        placeholder="organiserName">
-                  </div>
 
-                  <!--<div class="form-group">
-                     <label for="focusedInput" style="color:white">Focused</label>
-                     <input class="form-control" id="focusedInput" style="width:370px;" autofocus="true"
-                        name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
-                        placeholder="ticketPrice" type="number">
-                  </div>-->
-
-                  <select name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
-                     <option hidden value="" disabled selected>Allow sponsors?</option>
-                     <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
-                  </select>
-                  <br><br>
-                  <div class="form-group">
-                     <label for="focusedInput" style="color:white">Venue</label>
-                     <input class="form-control" id="focusedInput" type="text" type="text" style="width:370px;"
-                        autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
-                        placeholder="venue">
-                  </div>
                   <div class="row">
                      <div class="col-sm-6">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <h4 style="color: aliceblue;">Choose start and end date of event</h4> <br>
+                       
+                        <h4 style="color:white"><b>Choose start and end date of event</b></h4>
 
                         <input class="login-username" type="date" name="eventStartDate"
                            [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
-
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input class="login-username" type="date" name="eventEndDate"
                            [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
                         <br><br><br>
                      </div>
                   </div>
+
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">About</label>
+                     <textarea class="form-control" id="focusedInput" style="width:370px;" rows="4" columns="13" type="text" autofocus="true"
+                        name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="write what is the event about">
+                     </textarea>
+                  </div>
+               
+                  <div class="form-group">
+                     <label for="focusedInput" style="color:white">Venue</label>
+                     <textarea class="form-control" id="focusedInput" type="text" type="text"  rows="4" columns="13" style="width:370px;"
+                        autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
+                        placeholder="venue">
+                     </textarea>
+                  </div>
+
                </div>
 
 
@@ -244,26 +228,58 @@
          <mat-step>
             <div class="hero-image2">
                <div style="margin-left: 700px;">
-                  <br>
-                  <h1 style="font-size: 40px;color:white"><b>Guest Details</b></h1>
+                  <br><br><br>
+                  <h1 style="font-size: 40px;color:white"><b>Additional Info</b></h1>
                   <br><br><br>
 
-                  <div class="form-group">
-
-                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
-                        name="guest1" [(ngModel)]='eventDetails.guest1' required="true" placeholder="Guest">
-                  </div>
-                  <div class="form-group">
-
-                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
-                        name="guest2" [(ngModel)]='eventDetails.guest2' required="true" placeholder="Guest">
-                  </div>
-                  <div class="form-group">
-
-                     <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
-                        name="guest3" [(ngModel)]='eventDetails.guest3' required="true" placeholder="Guest">
-                  </div>
+               <div class="form-group">
+                  <label for="focusedInput" style="color:white">Organiser Name</label>
+                  <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
+                     name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true"
+                     placeholder="Who is organising this event?">
                </div>
+
+
+               <div class="form-group">
+                  <label for="focusedInput" style="color:white">Ticket Price</label>
+                  <input class="form-control" id="focusedInput" style="width:370px;" autofocus="true"
+                     name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
+                     placeholder="Fee of event (if any)" type="number">
+               </div>
+
+               <div class="form-group">
+                  <label for="focusedInput" style="color:white">Attendees Count</label>
+                  <input class="form-control" id="focusedInput" style="width:370px;" type="number" autofocus="true"
+                     name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
+                     placeholder="Expected number of attendees">
+               </div>
+             <br>
+               <label for="focusedInput" style="color:white">Sponsorship</label>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <select name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+                  <option hidden value="" disabled selected>Allow sponsors?</option>
+                  <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
+               </select><br><br><br>
+
+               <label for="focusedInput" style="color:white">Guests / Speakers details </label>
+               <br><br>
+               <div class="form-group">
+
+                  <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                     name="guest1" [(ngModel)]='eventDetails.guest1' required="true" placeholder="Guest / Speaker details (if any)">
+               </div>
+               <div class="form-group">
+
+                  <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                     name="guest2" [(ngModel)]='eventDetails.guest2' required="true" placeholder="Guest / Speaker details (if any)">
+               </div>
+               <div class="form-group">
+
+                  <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
+                     name="guest3" [(ngModel)]='eventDetails.guest3' required="true" placeholder="Guest / Speaker details (if any)">
+               </div>
+
+            </div>
             </div>
             <div>
                <button mat-button matStepperNext style="margin-left: 1600px;" class="button button4">Next</button>
@@ -286,39 +302,35 @@
 
 
             <div class="hero-image3">
-               <div *ngFor='let prof of professionals  | filter : term'>
-                  <br>
-                  <div class="user-profile">
-                     <img class="avatar"
-                        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s"
-                        alt="Ash" />
-                     <br>
-                     <div class="username">{{prof.professionalName}}</div>
-                     <div class="bio">
-                        {{prof.serviceName}}
-                        {{prof.serviceType}}
+               
+               <br><br>
+               
+               <h1 style="color: white;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Unity is strength choose professionals for event, make it successful!</h1>
+               <div class="container" style="background-color: white; margin-left: 1300px; width:400px;">
+                  <h1>Chosen Professionals</h1>
+                  <ol class="custom-counter" *ngFor="let x of chosenProfessional">
+                     <li>{{x.professionalName}}, {{x.serviceType}}, {{x.serviceName}}, {{x.address}}</li>
+                   </ol>
+                </div>
+
+                <div *ngFor='let prof of professionals'>
+                  <section class="text-card">
+                     <div class="content"><br>
+                         <div class="author-section">
+                            <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                         </div>
+                         <br><br>
+                         <button class="button button2" (click)="addProfessional(prof)">add professional</button>
+                         <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
                      </div>
-                     <div class="description">
-                        {{prof.address}}
-                     </div><br>
-                     <button class="button button2" (click)="addProfessional(prof)">add professional</button>
-
-                     <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
-                     <ul class="data">
-                        <li>
-                           <span class="entypo-heart"> 127</span>
-                        </li>
-                        <li>
-                           <span class="entypo-eye"> 853</span>
-                        </li>
-                        <li>
-                           <span class="entypo-user"> 311</span>
-                        </li>
-                     </ul>
-                     <br>
-
-                  </div>
+                 </section>
                </div>
+             
             </div>
 
 
@@ -329,8 +341,16 @@
          </mat-step>
 
          <mat-step>
-            <img [src]="imageUrl">
-            <div style="margin-left: 20px;" class="hero-image1">
+            <div style="margin-left: 1000px;">
+               <br>
+            <h1 style="color: white; font-size: 50px;">Upload event poster</h1>
+            <h3 style="color: white;">Don't have a poster? create it now</h3>
+            <a href="https://www.postermywall.com/index.php/l/online-poster-maker#.Xz1RYnUzaJE">Create Poster</a><br>
+            <a href="https://piktochart.com/formats/posters/">Create Poster</a> <br>
+            <a href="https://venngage.com/features/poster-maker">Create Poster</a> <br>      
+         </div>
+            <img [src]="imageUrl" style="height: 500px; width: 500px;">
+            <div style="margin-left: 20px;">
                <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
                   (change)="handleFileInput($event.target.files)">
                <br>

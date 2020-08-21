@@ -40,7 +40,6 @@ import { ProfblogsComponent } from './profblogs/profblogs.component';
 import { ProfexpsComponent } from './profexps/profexps.component';
 import { AlertsModule } from 'angular-alert-module';      
 import { ToastrModule } from 'ngx-toastr';
-import { CulturalComponent } from './cultural/cultural.component';
 import { PersonalGatheringsComponent } from './personal-gatherings/personal-gatherings.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { ProfsignupComponent } from './profsignup/profsignup.component';
@@ -74,7 +73,6 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'profExps', component:ProfexpsComponent},
                          {path:'usersignup', component:UsersignupComponent},
                          {path:'profsignup', component:ProfsignupComponent},
-                         {path:'cultural', component:CulturalComponent},
                          {path:'personalGathering', component:PersonalGatheringsComponent},
                          {path:'event', component:EventComponent},
                          {path:'eventform', component:CreateEventFormComponent},
@@ -111,7 +109,6 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProfeventsComponent,
     ProfblogsComponent,
     ProfexpsComponent,
-    CulturalComponent,
     PersonalGatheringsComponent,
     UsersignupComponent,
     ProfsignupComponent,

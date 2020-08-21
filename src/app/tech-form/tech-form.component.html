@@ -104,20 +104,25 @@
                 </div>
                 <div class="back" style="height:350px">
                     <div class="form-group">
-                        <h2 for="focusedInput" style="color:white">eventName</h2>
+                        <h2 for="focusedInput" style="color:white">Event Name</h2>
                         <input class="form-control" id="focusedInput" type="text" style="width:270px;" autofocus="true"
                             name="eventName" [(ngModel)]='eventDetails.eventName' required="true"
                             placeholder="eventName">
                     </div>
-                    <div class="form-group">
-                        <h2 for="focusedInput" style="color:white">About</h2>
-                        <input class="form-control" id="focusedInput" style="width:270px;" type="text" autofocus="true"
-                            name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about">
-                    </div>
-                    <h2 for="focusedInput" style="color:white">organiserName</h2>
+                    <h2 for="focusedInput" style="color:white">Organiser Name</h2>
                     <input class="form-control" id="focusedInput" style="width:270px;" type="text" autofocus="true"
                         name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true"
                         placeholder="organiserName">
+                        <br>
+                        <div class="back" style="height:350px;">
+                  
+                            <h2 for="focusedInput" style="color:white">Event category</h2>
+        
+                            <select style="color:black;" name="category" id="category" [(ngModel)]='eventDetails.category'>
+                                <option hidden value="" disabled selected>Choose category </option>
+                                <option *ngFor="let category of Category">{{category}}</option>
+                            </select>
+                        </div>
 
                 </div>
             </div>
@@ -125,24 +130,14 @@
             <div class="flip" style="margin-left: 100px;height: 350px;">
                 <div class="front" style="background-image: url(/assets/img/category.jpg);height: 350px;">
                     <br><br><br><br>
-                    <h1 class="text-block">Event category</h1>
+                    <h1 class="text-block">About event</h1>
                 </div>
                 <div class="back" style="height:350px;">
-                    <div class=" form-group">
-                        <h2 for="focusedInput" style="color:white">Event Type</h2>
-
-                        <select style="color:black;" name="eventType" id="category"
-                            [(ngModel)]='eventDetails.eventType'>
-                            <option hidden value="" disabled selected>Choose type </option>
-                            <option *ngFor="let type of Types">{{type}}</option>
-                        </select>
+                    <div class="form-group">
+                        <h2 for="focusedInput" style="color:white">About</h2>
+                        <textarea class="form-control" id="focusedInput" style="width:270px;" rows="5" cols="10" type="text" autofocus="true"
+                            name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about"></textarea>
                     </div>
-                    <h2 for="focusedInput" style="color:white">Event category</h2>
-
-                    <select style="color:black;" name="category" id="category" [(ngModel)]='eventDetails.category'>
-                        <option hidden value="" disabled selected>Choose category </option>
-                        <option *ngFor="let category of Category">{{category}}</option>
-                    </select>
                 </div>
             </div>
 
@@ -187,23 +182,16 @@
             <div class="flip" style="margin-left: 100px;">
                 <div class="front" style="background-image: url(/assets/img/venue.png);height: 350px;">
                     <br><br><br><br>
-                    <h1 class="text-block">venue</h1>
+                    <h1 class="text-block">Venue</h1>
                 </div>
                 <div class="back" style="height:350px;">
-                    <h2 for="focusedInput" style="color:white">venue</h2>
-                    <input class="form-control" id="focusedInput" type="text" type="text" style="width:270px;"
+                    <h2 for="focusedInput" style="color:white">Venue</h2>
+                    <textarea class="form-control" id="focusedInput" type="text" type="text" rows="5" cols="7"style="width:270px;"
                         autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
-                        placeholder="venue">
-                </div>
-            </div>
+                        placeholder="add venue"></textarea>
 
-            <div class="flip" style="margin-left: 100px;">
-                <div class="front" style="background-image: url(/assets/img/venue.png);height: 350px;">
-                    <br><br><br><br>
-                    <h1 class="text-block">Choose professionals for my event</h1>
-                </div>
-                <div class="back" style="height:350px;">
-                    <button (click)="goTocart()">Choose professionals</button>
+                        <br><br>
+                        <button (click)="goTocart()" style="background-color: black;">Choose professionals</button>
                 </div>
             </div>
 
@@ -292,7 +280,7 @@
                 </div>
                 <div class="back" style="height:350px;;">
                     <h2 for="focusedInput" style="color:white">Upload here</h2>
-                    <img [src]="imageUrl">
+                    <img [src]="imageUrl" style="height:250px; width:300px;">
                     <div style="margin-left: 20px;" class="hero-image1">
                         <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
                             (change)="handleFileInput($event.target.files)">
@@ -300,7 +288,13 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" (click)="eventSubmit()" [disabled]="eventDetails.poster=='' ">Add Event</button>
+            <br>
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br>
+            <button class="btn btn-primary" (click)="eventSubmit()" style="height:40px;" [disabled]="eventDetails.poster=='' ">Add Event</button>
 
         </div> <br><br>
     </div>

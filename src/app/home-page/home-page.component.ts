@@ -24,21 +24,6 @@ rd(value){
  console.log(value);
   this.router.navigate(['ticket']);
 }
-tech(){
-
-  this.router.navigate(['createEvent']);
-}
-cultural(){
-
-  this.router.navigate(['cultural']);
-}
-
-PersonalGathering(){
-
-  this.router.navigate(['personalGathering']);
-}
-
-
   redirect(): void {
     if (this.user) {
       this.router.navigate(['event']);

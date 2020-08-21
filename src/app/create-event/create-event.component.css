@@ -26,7 +26,7 @@
 	position: relative;
   }
   .hero-image1 {
-	background-image: url("/assets/img/pinky.jpg");
+	background-image: url("/assets/img/show.jpg");
 	height: 800px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 	position: relative;
   }
   .hero-image2 {
-	background-image: url("/assets/img/techg.png");
+	background-image: url("/assets/img/music1.jpg");
 	height:800px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -42,7 +42,7 @@
 	position: relative;
   }
   .hero-image3 {
-	background-image: url("/assets/img/table.jpg");
+	background-image: url("/assets/img/carnival.jpg");
 	height:auto;
 	background-position: center;
 	background-repeat: no-repeat;

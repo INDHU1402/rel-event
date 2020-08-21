@@ -17,7 +17,7 @@ export class TechFormComponent implements OnInit {
   term:string;
   Sponsor: any = ['yes', 'no']
   chosenProfessional = [];
-  Category: any = ['workshop', 'seminar', 'hackathon', 'fest', 'talk', 'show', 'exhibition'];
+  Category: any = ['Birthday', 'Wedding', 'Party', 'Picnic', 'others'];
   eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
                   organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
                   startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',
@@ -45,6 +45,7 @@ export class TechFormComponent implements OnInit {
     this.chosenProfessional = JSON.parse(localStorage.getItem('chosenProf'));
     this.eventDetails = JSON.parse(localStorage.getItem('event'));
     console.log(this.chosenProfessional);
+    this.eventDetails.eventType = "private";
     this.eventDetails.professionalList = this.chosenProfessional;
     this.eventDetails.user.userId = this.User.userId;
     console.log(this.eventDetails);

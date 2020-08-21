@@ -1,20 +1,20 @@
-<br><br><br><br><br><br>
-<div style="background-image: linear-gradient(#5f5b63,#fdfbff);">
+<div style="background-color: black; height:800px;">
+  <br><br><br><br><br><br>
 <div class="row">
   <div class="col-75">
-    <div class="container">
+    <div class="container" style="border-radius: 20px; width:500px;">
         <form #paymentForm="ngForm" (ngSubmit)="addPayment(paymentForm.value)">
         <div class="row">
           <div class="col-50">
-            <h3>Payment</h3>
+            <br>
+            <h2>Payment</h2>
             <label for="cname">Name on Card</label>
             <input type="text" name="nameOnCard"  [(ngModel)]='payment.nameOnCard' placeholder="John More Doe">
             <label for="ccnum">Card number</label>
             <input type="text" name="cardNum"  [(ngModel)]='payment.cardNum' placeholder="1111-2222-3333-4444">
-            <p>Card type : {{ cardType }}</p>
             <div class="row">
               <div class="col-50">
-                <label for="expyear">Expire date</label>
+                <label for="expyear">Expiry date</label>
                 <input type="date"  [(ngModel)]='payment.expiryDate' name="expiryDate" placeholder="2018">
               </div>
               <div class="col-50">
@@ -25,10 +25,8 @@
           </div>
           
         </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <br>
+        <input type="submit" value="Continue" class="btn">
       </form>
     </div>
   </div>
