@@ -25,6 +25,7 @@
 	 flex-wrap: wrap;
 	 align-items: center;
 	 justify-content: space-between;
+	
 }
  @media (max-width: 768px) {
 	 .navbar, .navbar .container {
@@ -35,6 +36,8 @@
 	 padding: 1.15rem 1rem;
 	 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
 	 background-color: #fff;
+	 position: fixed;
+	 
 	/* |----------------------------------- | Start navbar logo or brand etc.. |----------------------------------- */
 	/* |----------------------------------- | Start navbar menu |----------------------------------- */
 }

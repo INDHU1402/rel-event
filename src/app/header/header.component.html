@@ -8,69 +8,49 @@
 </head>
 
 
-<nav class="navbar" style="background-color:black">
+<nav class="navbar-fixed-top navbar navbar-expand-lg " style="background-color:black">
   <div class="container">
 
-    <div class="navbar-header">
-      <button class="navbar-toggler" data-toggle="open-navbar1">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <img src="/assets/img/Relevent.png" style="height: 70px; width: 300px; margin-left: -350px;">
+      
+    <img src="/assets/img/Relevent.png" style="height: 70px; width: 300px; margin-left: -350px;">
 
-    </div>
-
-    <div class="navbar-menu" id="open-navbar1">
-      <ul class="navbar-nav" style="margin-right: -290px;">
-        <li><a routerLink="" style="color:rgb(255, 255, 255);font-size: 5mm;">Home<span
-              class="sr-only">(current)</span></a></li>
+        <a routerLink="homePage" style="color:rgb(255, 255, 255);font-size: 5mm;">Home<span
+              class="sr-only">(current)</span></a>
+              &nbsp;&nbsp; &nbsp;&nbsp;
+        <a routerLink="blog" style="color:rgb(255, 255, 255);font-size: 5mm;">Blog</a>
         &nbsp;&nbsp; &nbsp;&nbsp;
-        <li><a routerLink="blog" style="color:rgb(255, 255, 255);font-size: 5mm;">Blog</a></li>
-        &nbsp;&nbsp; &nbsp;&nbsp;
-        <li><a routerLink="expandService" style="color:rgb(255, 255, 255);font-size: 5mm;">Expand your service</a></li>
+        <a routerLink="expandService" style="color:rgb(255, 255, 255);font-size: 5mm;">Expand your service</a>
         &nbsp;&nbsp; &nbsp;&nbsp;
 
-        <li>
-          <!--
-          <div *ngIf="!db">
-            <li><a routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><button class="glyphicon glyphicon-user" (click)="signInWithGoogle()">SignInWithGoogle<span class="fa fa-google"></span></button></li>
-          </div> 
+      
+     
 
-          <div *ngIf="db">
-            <h4 class="card-title">{{ db }}</h4>
-            <li><button class="glyphicon glyphicon-user" (click)="logout()">logout</button></li>
-          </div>
-              <div *ngIf="!user && !status()">
-           <div *ngIf="user">
-              </div>
-              </div>
-              <button class="btn btn-danger" (click)="signOut()">Sign out</button>
-        -->
-
-        <li *ngIf="!user && !status()"><a routerLink="login" style="color:rgb(255, 255, 255);font-size: 5mm;"><span
+        <a routerLink="login" *ngIf="!user && !status()" style="color:rgb(255, 255, 255);font-size: 5mm;"><span
               class="glyphicon glyphicon-user"></span> Login</a>
           &nbsp;&nbsp; &nbsp;&nbsp;
-          
-        <li *ngIf="!user && !status()">
-          <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
-          data-toggle="dropdown">Signup<span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left:1100px;">
+      
+          <div *ngIf="!user && !status()"><button class="btn" style="color: aliceblue;" (click)="signInWithGoogle()">SignInWithGoogle<span
+            class="fa fa-google"></span></button></div>
+            &nbsp;&nbsp;
+        <div *ngIf="!user && !status()">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
+          data-toggle="dropdown">Signup</button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left:950px;">
           <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="usersignup">User</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="profsignup">Professional</a></li>
         </ul>
-        </li>
+      </div>
         &nbsp;&nbsp; &nbsp;&nbsp;
-        <li *ngIf="!user && !status()"><button class="btn" (click)="signInWithGoogle()">SignInWithGoogle<span
-              class="fa fa-google"></span></button></li>
+
+       
 
         <div *ngIf="user" class="dropdown">
+          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 5mm;">Launch Your Event</a>
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
             data-toggle="dropdown">{{ user.name }}
             <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left:250px;">
             <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myEvents">myEvents</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myBlogs">myBlogs</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="bookedEvents">bookedEvents</a></li>
@@ -81,12 +61,13 @@
 
 
 
-        <div *ngIf="status() && !db1">
-          <div class="dropdown">
+        <div *ngIf="status() && !db1" class="dropdown">
+          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 5mm;">Launch Your Event</a> 
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
               data-toggle="dropdown">{{db.userName}}
               <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left:250px;">
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="userprofile"> Edit Profile</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myEvents">myEvents</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="myBlogs">myBlogs</a></li>
@@ -94,27 +75,30 @@
               <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" (click)="signOut()" tabindex="-1" href="#">Sign out</a></li>
             </ul>
-          </div>
+         
         </div>
 
 
-        <div *ngIf="status() && !db">
-          <div class="dropdown">
+        <div *ngIf="status() && !db" class="dropdown">
+          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 5mm;">Launch Your Event</a> 
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
               data-toggle="dropdown">{{db1.professionalName}}
               <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="margin-left:250px;">
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="profEvents">myEvents</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="profBlogs">myBlogs</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" routerLink="profExps">my Experiences</a></li>
               <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" (click)="signOut()" tabindex="-1" href="#">Sign out</a></li>
             </ul>
-          </div>
+         
+
+         
 
         </div>
 
-      </ul>
-    </div>
+   
+    
   </div>
 </nav>
