@@ -49,6 +49,9 @@ export class UserService {
    isUsernameExists(userName: string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/CheckUser/' + userName);
    }
+   isProfessionalExists(professionalName: string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/CheckProf/' + professionalName);
+   }
 
   /* getUserByUserName(userName : string) {
     return this.httpClient.get('RELEVENT/webapi/myresource/getUserByUserName/'  + userName);
