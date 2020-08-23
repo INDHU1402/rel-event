@@ -142,6 +142,10 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/ExpList');
    }
 
+   shareMyEvent(eventId:number, organiserId:number, to:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/shareEvent/' + eventId + '/' + organiserId + '/' + to);
+   }
+
    registerEvent(eventDetails : any) {
      console.log(eventDetails);
     return this.httpClient.post('RESTAPI/webapi/myresource/regEvent/', eventDetails);

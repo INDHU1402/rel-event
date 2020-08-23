@@ -14,6 +14,8 @@ myEvents:any;
   currentRate : any ;
   len: number;
   rates = [];
+  to:string;
+  eventId:number;
   howManyBooked:Number;
 
   constructor(private service: UserService,private router: Router) { }
@@ -32,6 +34,17 @@ myEvents:any;
         this.rates.push(this.currentRate);
       }
       console.log(this.rates);
+  }
+
+  setEvent(id : number) {
+    this.eventId = id;
+  }
+
+  shareEvent() {
+    console.log(this.eventId);
+    console.log(this.User.userId);
+    console.log(this.to);
+    this.service.shareMyEvent(this.eventId, this.User.userId, this.to).subscribe((result: any) => {console.log(result); });
   }
 
   addRating(id : any, rate : any) : void {

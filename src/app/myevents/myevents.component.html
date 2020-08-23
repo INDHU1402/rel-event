@@ -39,6 +39,9 @@
         <button type="button" (click)="getProfs(event.eventId)" class="btn btn-primary" data-toggle="modal" data-target="#rateProf" style="width: auto; align-content: center;">
           Rate Professionals
       </button>
+      <button type="button" (click)="setEvent(event.eventId)" class="btn btn-primary" data-toggle="modal" data-target="#shareEvent" style="width: auto; align-content: center;">
+        Share my event
+    </button>
       </div>
     </div>
   </div>
@@ -83,6 +86,33 @@
          
           <div class="modal-footer">
             <button (click)="submit()" style="color: white;">Rate</button>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" data-backdrop="false" id="shareEvent">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <h4 class="modal-title">Share your event</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body" style="background-color: black;">
+              <input type="email" name="to" placeholder="Enter mailID" [(ngModel)]='to' style="width:400px;">      
+          </div>
+         
+         
+          <div class="modal-footer">
+            <button (click)="shareEvent()" style="width: 100px; color:black">Share</button>
 
           </div>
 
