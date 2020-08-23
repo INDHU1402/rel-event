@@ -11,11 +11,11 @@
               <form #loginForm="ngForm" class="form-group"  (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
               <div class="group" style="margin-left: 650px; margin-top: 30px;">
                   <h1 for="user" class="label" style="margin-left: -400px;  font-size:20px;color:black;"><b>Username</b></h1>
-                  <input type="text" class="input" name="name" [(ngModel)]='name' placeholder="userName" style="width: 300px; color: black;">
+                  <input type="text" class="input" name="userName" ngModel #userName="ngModel" placeholder="userName" style="width: 300px; color: black;">
               </div>
               <div class="group"  style="margin-left: 650px; margin-top: 30px;">
                   <h1 for="pass" class="label" style="margin-left: -400px; font-size:20px;color: black;"><b>Password</b></h1>
-                  <input  type="password" class="input" data-type="password" name="password"  [(ngModel)]='password' placeholder="password" style="width: 300px; color: black;">
+                  <input  type="password" class="input" data-type="password" name="password" ngModel #password="ngModel" placeholder="password" style="width: 300px; color: black;">
               </div>
               <div class="group" style="color:white" style="margin-left: 650px; margin-top: 30px">
                 <button class="button" style="width: 300px;">Login as User</button>
@@ -29,7 +29,7 @@
 
           </div>
 
-        <!--<div class="sign-up-htm">
+          <div class="sign-up-htm">
 
               <form #profForm="ngForm" class="form-group"  (ngSubmit)="profSubmit(profForm.value)" novalidate>
               <div class="group" style="margin-left: 650px; margin-top: 30px;">
@@ -50,7 +50,7 @@
                   <a routerLink="/profsignup"  style="color: black;"><h4><b>Don't have a account<br>Click here to create</b></h4></a>
               </div>
 
-        </div>-->  
+          </div>
 
       </div>
   </div>

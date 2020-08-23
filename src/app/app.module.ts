@@ -49,6 +49,9 @@ import { EventProfsComponent } from './event-profs/event-profs.component';
 import { TechFormComponent } from './tech-form/tech-form.component';
 import { ProffcartComponent } from './proffcart/proffcart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { DateComponent } from './date/date.component';
+import {MatNativeDateModule} from '@angular/material/core';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -68,7 +71,6 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'myBlogs', component:MyBlogsComponent},
                          {path:'bookedEvents', component:BookedEventsComponent},
                          {path:'', component:HomePageComponent},
-                         {path:'homePage', component:HomePageComponent},
                          {path:'profEvents', component:ProfeventsComponent},
                          {path:'profBlogs', component:ProfblogsComponent},
                          {path:'profExps', component:ProfexpsComponent},
@@ -117,17 +119,20 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     CreateEventFormComponent,
     EventProfsComponent,
     TechFormComponent,
-    ProffcartComponent
+    ProffcartComponent,
+    DateComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatStepperModule, MatInputModule, MatButtonModule,
+   MatNativeDateModule,
     AppRoutingModule,
     HttpClientModule, 
     SocialLoginModule,
     Ng2SearchPipeModule,
+    MatDatepickerModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoot),

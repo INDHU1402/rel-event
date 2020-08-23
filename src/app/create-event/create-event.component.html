@@ -45,14 +45,25 @@
                   </select>
                   <br><br>
 
-                        <h4 style="color:white"><b>Choose start and end date of event</b></h4>
+                        <h4 style="color:white"><b>Event date</b></h4>
 
-                        <input class="login-username" type="date" name="eventStartDate"
-                           [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="login-username" type="date" name="eventEndDate"
-                           [(ngModel)]='eventDetails.eventEndDate' required="true"  placeholder="Event end date">
-                        <br><br><br>
+                        <mat-form-field class="example-full-width" appearance="fill" style="width:200px;">
+                           <mat-label>Choose start date</mat-label>
+                           <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:white" name="eventdate" [(ngModel)]='eventdate'>
+                           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                           <mat-datepicker #picker></mat-datepicker>
+                         </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                         <label for="focusedInput" style="color:white">Number of days</label>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                         <select name="howManyDays" id="category" [(ngModel)]='howManyDays'>
+                           <option hidden value="" disabled selected>No. of days </option>
+                           <option *ngFor="let day of days">{{day}}</option>
+                        </select>
+
+                        <button (click)="getdate()">Event Date</button>
+                        <p style="color: white;">From {{eventdate | date}} to {{d | date}}</p>
+                    
 
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">About</label>
