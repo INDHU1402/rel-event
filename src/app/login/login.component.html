@@ -1,57 +1,47 @@
-<div class="hero-image1" >
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="login-html" style="margin-left: 290px;">
+<head>
+  <meta charset="utf-8">
+  <title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
 
-      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="margin-left: 40px;">User</label>
-      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" style="margin-left: 20px;">Professional</label>
+  </script>
+</head>
 
+<body>
+  <div class="hero-image1">
+    <div class="container">
+      <br>
+      <h1 style="font-size:20px;color:white"><b>Login To Continue</b></h1>
       <div class="login-form">
-
-          <div class="sign-in-htm">
-              <form #loginForm="ngForm" class="form-group"  (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
-              <div class="group" style="margin-left: 650px; margin-top: 30px;">
-                  <h1 for="user" class="label" style="margin-left: -400px;  font-size:20px;color:black;"><b>Username</b></h1>
-                  <input type="text" class="input" name="userName" ngModel #userName="ngModel" placeholder="userName" style="width: 300px; color: black;">
-              </div>
-              <div class="group"  style="margin-left: 650px; margin-top: 30px;">
-                  <h1 for="pass" class="label" style="margin-left: -400px; font-size:20px;color: black;"><b>Password</b></h1>
-                  <input  type="password" class="input" data-type="password" name="password" ngModel #password="ngModel" placeholder="password" style="width: 300px; color: black;">
-              </div>
-              <div class="group" style="color:white" style="margin-left: 650px; margin-top: 30px">
-                <button class="button" style="width: 300px;">Login as User</button>
+        <div class="sign-in-htm">
+          <form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
+            <div class="group" style="margin-top: 30px;">
+              <h1 for="user" class="label" style="  font-size:20px;color:white;">
+                <b>Username</b></h1>
+              <input type="text" class="input" name="name" [(ngModel)]='name' placeholder="userName"
+                style="width: 300px; color: black;">
             </div>
-              </form>
-              
-              <div class="hr"></div>
-              <div class="foot-lnk" style="margin-left: -100px;">
-                  <a routerLink="/usersignup"  style="color: black; "><h4><b>Don't have a account<br>Click here to create</b></h4></a>
-              </div>
-
-          </div>
-
-          <div class="sign-up-htm">
-
-              <form #profForm="ngForm" class="form-group"  (ngSubmit)="profSubmit(profForm.value)" novalidate>
-              <div class="group" style="margin-left: 650px; margin-top: 30px;">
-                  <label for="user" class="label"  style="margin-left: -400px; font-size:20px;color: black;">ProfessionalName</label>
-                  <input type="text" class="input" name="professionalName" ngModel #userName="ngModel" placeholder="professionalName" style="width: 300px; color: black;">
-              </div>
-              <div class="group" style="margin-left: 650px; margin-top: 30px;">
-                  <label for="pass" class="label"  style="margin-left: -400px; font-size:20px;color: black;">Password</label>
-                  <input  type="password" class="input" data-type="password" name="password" ngModel #password="ngModel" placeholder="password" style="width: 300px; color: black;">
-              </div>
-              <div class="group" style="margin-left: 650px; margin-top: 30px;">
-                <button class="button"   style="width: 300px;">Login as Professional</button>
+            <div class="group" style=" margin-top: 30px;">
+              <h1 for="pass" class="label" style="font-size:20px;color: white;">
+                <b>Password</b></h1>
+              <input type="password" class="input" data-type="password" name="password" [(ngModel)]='password'
+                placeholder="password" style="width: 300px; color: black;">
             </div>
-              </form>
-              
-              <div class="hr"></div>
-              <div class="foot-lnk" style="margin-left: -100px;">
-                  <a routerLink="/profsignup"  style="color: black;"><h4><b>Don't have a account<br>Click here to create</b></h4></a>
-              </div>
-
-          </div>
-
+            <div class="group" style="color:black;">
+              <button class="button" class="btn btn-warning" style="width: 150px;"><b>Login</b> </button>
+            </div>
+          </form>
+        </div>
       </div>
+
+
+    </div>
   </div>
-</div>
+</body>
+

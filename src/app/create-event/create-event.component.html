@@ -6,21 +6,96 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
+<div class="hero-image8" style="background-color:black ;"></div>
 <div>
+   <div style="background-color: black;">
+      <section class="ps-timeline-sec">
+          <div class="container">
+              <ol class="ps-timeline">
+                  <li>
+                      <div class="img-handler-top">
+                          <img src="/assets/img/d.png" style="height: 200px;width: 400px;margin-left:-140px;"
+                              alt="" />
+                      </div>
+                      <div class="ps-bot">
+                          <p style="color:white">Fill Basic Information</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color:#ffff66;">
+                              <a href="#about" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-1</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-top">01</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-bot">
+                          <img src="http://www.physology.co.uk/wp-content/uploads/2016/02/ps-elem_13.png"
+                              style="margin-left:-50px;" alt="" />
+                          <img src="/assets/img/d1.png" style="width:200px;margin-top: -160px;" alt="" />
+                      </div>
+                      <div class="ps-top">
+                          <p style="color:white">Select Venue and Choose Profesional</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+                              <a href="#services" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-2</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-bot">02</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-top">
+                          <img src="/assets/img/dd.png" alt="" />
+                      </div>
+                      <div class="ps-bot">
+                          <p style="color:white">Provide Additional Details</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+
+                              <a href="#team" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-3</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-top">03</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-bot">
+                          <img src="/assets/img/upload.png" style="width:200px;margin-top: 10px;" alt="" />
+
+                      </div>
+                      <div class="ps-top">
+                          <p style="color:white">Upload Poster or Image</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+
+                              <a href="#promo" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-4</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-bot">04</span>
+                  </li>
+              </ol>
+          </div>
+      </section>
+  </div>
 
    <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
 
       <mat-horizontal-stepper [linear]="" #stepper style="background-color:black">
 
          <mat-step>
+           
             <div class="hero-image1">
                <br><br><br>
               
-               <div class="container" style="background-color:rgba(51, 3, 85, 0.952); width:500px;">
-                  <br>
+               <div class="container" style="width:500px;margin-left:1000px;">
+                  <br><br><br><br><br>
                <h1 style="color: white;"><b>Basic Info</b></h1>
-               <br>
+               
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">EventName</label>
                      <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
@@ -149,7 +224,7 @@
 
             </div>
             -->
-            <div>
+            <div class="hero-image9">
                <div class="timeline" style="margin-left: 480px;">
                   <ul>
                      <li>
@@ -223,23 +298,22 @@
                         </div>
                      </li>
                   </ul>
+                  <div style="margin-top: -40px;scroll-margin-left: 30px;">
+                     <br>
+   
+                     <button mat-button matStepperNext class="button button4">Next</button>
+                  </div>
                </div>
-               <div>
-                  <br>
-
-                  <button mat-button matStepperNext class="button button4">Next</button>
-               </div>
+              
             </div>
          </mat-step>
 
          <br><br><br><br><br><br>
          <mat-step>
             <div class="hero-image2">
-               <div style="margin-left: 700px;">
-                  <br><br><br>
-                  <h1 style="font-size: 40px;color:white"><b>Additional Info</b></h1>
-                  <br><br><br>
-
+               <br><br><br><br><br><br><br><br><br>
+               <div style="margin-left: 1100px;">
+                 
                <div class="form-group">
                   <label for="focusedInput" style="color:white">Organiser Name</label>
                   <input class="form-control" id="focusedInput" style="width:370px;" type="text" autofocus="true"
@@ -288,10 +362,11 @@
                </div>
 
             </div>
-            </div>
             <div>
                <button mat-button matStepperNext style="margin-left: 1600px;" class="button button4">Next</button>
             </div>
+            </div>
+           
          </mat-step>
          <!--Step - 2-->
          <mat-step>
@@ -349,23 +424,26 @@
          </mat-step>
 
          <mat-step>
-            <div style="margin-left: 1000px;">
+            <div class="hero-image7">
+               <br><br><br>
+            <div style="margin-left: 700px;margin-top:100px">
                <br>
-            <h1 style="color: white; font-size: 50px;">Upload event poster</h1>
-            <h3 style="color: white;">Don't have a poster? create it now</h3>
+            
+           <!-- <h3 style="color: white;">Don't have a poster? create it now</h3>
             <a href="https://www.postermywall.com/index.php/l/online-poster-maker#.Xz1RYnUzaJE">Create Poster</a><br>
             <a href="https://piktochart.com/formats/posters/">Create Poster</a> <br>
-            <a href="https://venngage.com/features/poster-maker">Create Poster</a> <br>      
+            <a href="https://venngage.com/features/poster-maker">Create Poster</a> <br>      -->
          </div>
-            <img [src]="imageUrl" style="height: 500px; width: 500px;">
-            <div style="margin-left: 20px;">
-               <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+            <img [src]="imageUrl" style="height: 500px; width: 500px;margin-left: 1000px;">
+            <div style="margin-left: 1000px;;">
+               <input type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
                   (change)="handleFileInput($event.target.files)">
                <br>
             </div>
-            <button class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
+            <button style="margin-left: 1000px;" class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
                Event</button>
             <!--<button (click)="eventSubmit(registerForm.value)">Submit</button>-->
+            </div>
          </mat-step>
       </mat-horizontal-stepper>
    </form>
