@@ -14,6 +14,7 @@ export class MyBlogsComponent implements OnInit {
   
     ngOnInit(): void {
       this.User = JSON.parse(localStorage.getItem('userDetails'));
+      console.log("user = " + JSON.stringify(this.User));
       this.service.getmyBlogsList(this.User.userId).subscribe((result: any) => {
         console.log(result);this.myBlogs= result });
     

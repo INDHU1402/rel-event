@@ -17,6 +17,7 @@ myEvents:any;
   to:string;
   eventId:number;
   howManyBooked:Number;
+  values: string;
 
   constructor(private service: UserService,private router: Router) { }
 
@@ -30,10 +31,10 @@ myEvents:any;
     this.service.getProfListofEvent(eventId).subscribe((result: any) => {
       console.log(result); this.eventProfs = result
       this.len = (result.length); });
-      for (let i = 0; i < this.len; i++) {
+     /*  for (let i = 0; i < this.len; i++) {
         this.rates.push(this.currentRate);
       }
-      console.log(this.rates);
+      console.log("Inside getProfs() " + this.rates);*/
   }
 
   setEvent(id : number) {
@@ -53,6 +54,7 @@ myEvents:any;
   }
 
   submit() {
-    console.log(this.rates);
+    this.values = this.rates.toString();
+    console.log(this.values);
   }
 }

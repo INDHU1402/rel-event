@@ -46,6 +46,10 @@ export class UserService {
     return this.httpClient.get('RESTAPI/webapi/myresource/UserLogin/' + userName + '/' + password);
    }
 
+   getSocialUser(userName:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/getSocialUser/' + userName);
+   }
+
    isUsernameExists(userName: string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/CheckUser/' + userName);
    }
