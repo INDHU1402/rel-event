@@ -25,7 +25,9 @@ rd(value){
   this.router.navigate(['ticket']);
 }
   redirect(): void {
-    if (this.user) {
+    this.user = JSON.parse(localStorage.getItem('userDetails'));
+    console.log('event user = '+this.user);
+    if (this.user != null) {
       this.router.navigate(['event']);
     }
     else {
