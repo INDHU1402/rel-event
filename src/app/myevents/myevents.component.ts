@@ -17,7 +17,9 @@ myEvents:any;
   to:string;
   eventId:number;
   howManyBooked:Number;
-  values: string;
+  profs = [];
+  rates1: string;
+  profs1: string;
 
   constructor(private service: UserService,private router: Router) { }
 
@@ -49,12 +51,15 @@ myEvents:any;
   }
 
   addRating(id : any, rate : any) : void {
-    this.rates.push(id, rate);
+    this.profs.push(id)
+    this.rates.push(rate);
     console.log(rate+ "added");
   }
 
   submit() {
-    this.values = this.rates.toString();
-    console.log(this.values);
+    this.rates1 = this.rates.toString();
+    this.profs1 = this.profs.toString();
+    this.service.rateEvent(this.profs1, this.rates1).subscribe((result: any) => {console.log(result); });
+    console.log("added rating");
   }
 }

@@ -50,6 +50,10 @@ export class UserService {
     return this.httpClient.get('RESTAPI/webapi/myresource/getSocialUser/' + userName);
    }
 
+   rateEvent(profs:string, values:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/rateProfs/' + profs + '/' + values);
+   }
+
    isUsernameExists(userName: string) {
     return this.httpClient.get('RESTAPI/webapi/myresource/CheckUser/' + userName);
    }
