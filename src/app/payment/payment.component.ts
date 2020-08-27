@@ -8,21 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  Event : any;
-  payment : any;
-  User : any;
+  Event: any;
+  payment: any;
+  User: any;
   paymentDetails: any;
   n: any;
   validity: string;
   cardType: string;
+  payotp: number;
+  otp: number;
 
-  constructor(private service: UserService,private router: Router) {
-    this.payment = {cardNum: '',nameOnCard: '',expiryDate: '',amount: '',
-    event: {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
-    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
-    startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:''},
-    user: {userId:'', contact:'', emailId:'', password:'', userName:''}};
-   }
+  constructor(private service: UserService, private router: Router) {
+    this.payment = {
+      cardNum: '', nameOnCard: '', expiryDate: '', amount: '',
+      event: {
+        eventType: '', about: '', attendeesCount: '', category: '', eventName: '', guest1: '', guest2: '', guest3: '',
+        organiserName: '', sponsor: '', ticketPrice: '', venue: '', eventStartDate: '', eventEndDate: '', poster: '',
+        startTime: '', endTime: '', startOverview: '', endOverview: '', time1: '', time2: '', overview1: '', overview2: ''
+      },
+      user: { userId: '', contact: '', emailId: '', password: '', userName: '' }
+    };
+  }
 
   ngOnInit(): void {
     this.Event = JSON.parse(localStorage.getItem('eventDetails'));
@@ -33,34 +39,45 @@ export class PaymentComponent implements OnInit {
     console.log(this.n);
   }
 
-  addPayment(paymentForm : any) : void {
+  addPayment(): void {
     this.payment.amount = this.Event.ticketPrice;
     this.payment.event.eventId = this.Event.eventId;
     this.payment.user.userId = this.User.userId;
     console.log(this.payment);
-    this.service.validateCard(this.payment.cardNum).subscribe((result1: any) => {  
-    console.log(result1); 
-    console.log(this.payment.cardNum.slice(0,2));
-    if(result1) {
-      if(this.payment.cardNum[0] == '4') {
-        this.cardType = "Visa"; 
-        console.log(this.cardType);
+    this.service.validateCard(this.payment.cardNum).subscribe((result1: any) => {
+      console.log(result1);
+      console.log(this.payment.cardNum.slice(0, 2));
+      if (result1) {
+        this.service.verification(this.User.emailId, this.User.userName, this.User.contact).subscribe((result2: any) => { this.otp = result2; console.log(result2); });
+        if (this.payment.cardNum[0] == '4') {
+          this.cardType = "Visa";
+          console.log(this.cardType);
+        }
+        if (this.payment.cardNum.slice(0, 2) == "51") {
+          this.cardType = "Master";
+          console.log(this.cardType);
+        }
+        if (this.payment.cardNum.slice(0, 2) == '31') {
+          this.cardType = "American Express";
+          console.log(this.cardType);
+        }
       }
-      if(this.payment.cardNum.slice(0,2) == "51") {
-        this.cardType = "Master";
-        console.log(this.cardType);
+      else {
+        alert('Invalid card number');
       }
-      if(this.payment.cardNum.slice(0,2) == '31') {
-        this.cardType = "American Express";
-        console.log(this.cardType);
-      }
-      this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); } );
+    });
+  }
+
+  validateOTP(): void {
+    console.log(this.otp);
+    console.log(this.payotp);
+    if (this.otp == this.payotp) {
+      this.service.registerPayment(this.payment).subscribe((result: any) => { console.log(result); });
       this.router.navigate(['bill']);
     }
     else {
-      alert('Invalid card number');
+      alert("Invalid OTP");
     }
-    });
   }
 
   /*showBill() {

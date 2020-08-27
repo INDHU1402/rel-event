@@ -33,14 +33,14 @@ export class UsersignupComponent implements OnInit {
     console.log(this.user);
     console.log(this.confirmPassword);
     if (this.user.password === this.confirmPassword) {
-      this.service.isUsernameExists(this.user.userName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
-
-      if (result) {
+      this.service.isUsernameExists(this.user.userName).subscribe((result: any) => { this.check = result;  console.log("result user value = " + result);
+      this.service.isProfessionalExists(this.user.userName).subscribe((result3: any) => { this.check = result3;  console.log("result prof value = " + result3);
+      if (result && result3) {
         this.service.verification(this.user.emailId, this.user.userName,this.user.contact).subscribe((result1: any) => {this.otp = result1;  console.log(result1);});
       }
       else {
         alert('Username already exists');
-      } });
+      } }); });
     }
     else {
       alert('Please write correct password');
@@ -89,14 +89,16 @@ export class UsersignupComponent implements OnInit {
     console.log(this.user);
     console.log(this.confirmPassword);
     if (this.profDetails.password === this.confirmPassword) {
-      this.service.isUsernameExists(this.profDetails.professionalName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
-
-      if (result) {
+      this.service.isUsernameExists(this.user.userName).subscribe((result: any) => { this.check = result;  console.log("result user value = " + result);
+      this.service.isProfessionalExists(this.user.userName).subscribe((result3: any) => { this.check = result3;  console.log("result prof value = " + result3);
+      if (result && result3) {
         this.service.verification(this.profDetails.mailId, this.profDetails.professionalName,this.profDetails.mobile).subscribe((result1: any) => {this.otp = result1;  console.log(result1);});
       }
       else {
         alert('Username already exists');
-      } });
+      }
+    });
+  });
     }
     else {
       alert('Please write correct password');

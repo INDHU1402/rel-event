@@ -3,32 +3,64 @@
 <div class="row">
   <div class="col-75">
     <div class="container" style="border-radius: 20px; width:500px;">
-        <form #paymentForm="ngForm" (ngSubmit)="addPayment(paymentForm.value)">
+        <form #paymentForm="ngForm">
         <div class="row">
           <div class="col-50">
             <br>
             <h2>Payment</h2>
             <label for="cname">Name on Card</label>
-            <input type="text" name="nameOnCard"  [(ngModel)]='payment.nameOnCard' placeholder="John More Doe">
+            <input type="text" name="nameOnCard"  [(ngModel)]='payment.nameOnCard' placeholder="John More Doe" required>
             <label for="ccnum">Card number</label>
-            <input type="text" name="cardNum"  [(ngModel)]='payment.cardNum' placeholder="1111-2222-3333-4444">
+            <input type="text" name="cardNum"  [(ngModel)]='payment.cardNum' placeholder="1111-2222-3333-4444" required>
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Expiry date</label>
-                <input type="date"  [(ngModel)]='payment.expiryDate' name="expiryDate" placeholder="2018">
+                <input type="date"  [(ngModel)]='payment.expiryDate' name="expiryDate" placeholder="2018" required>
               </div>
               <div class="col-50">
                 <label for="cvv">CVV / CVC</label>
-                <input type="password" name="cvv" placeholder="***" minlength="3" maxlength="4">
+                <input type="password" name="cvv" placeholder="***" minlength="3" maxlength="4" required>
               </div>
             </div>
           </div>
           
         </div>
-        <br>
-        <input type="submit" value="Continue" class="btn">
+       
       </form>
     </div>
   </div>
 </div>
+<div style="text-align: center; margin-left:200px; margin-top: -10px;">
+  <!-- Button to Open the Modal -->
+  <br>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+      (click)="addPayment()" style="width: 70px;">
+      Continue
+  </button>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <h4 class="modal-title">OTP is sent to given mailID</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <input type="text" name="userotp" [(ngModel)]='payotp' placeholder="Enter OTP">
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      (click)="validateOTP()">Check</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 </div>

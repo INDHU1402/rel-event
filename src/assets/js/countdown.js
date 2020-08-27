@@ -8,11 +8,16 @@ let countDown = new Date(dt).getTime(),
     x = setInterval(function() {    
       let now = new Date().getTime(),
           distance = countDown - now;
-         if(distance > 0 ) {
-          document.getElementById('days').innerText = Math.floor(distance / (day)),
-          document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+          let days = Math.floor(distance / (day));
+          let hours = Math.floor((distance % (day)) / (hour));
+          let mins = Math.floor((distance % (hour)) / (minute));
+          let seconds = Math.floor((distance % (minute)) / second);
+          //console.log('days = '+ days + ' hours = '+ hours + ' mins = ' + mins + ' seconds = '+ seconds);
+         if(days > 0 || hours > 0 || mins > 0 || seconds > 0) {
+          document.getElementById('days').innerText = days,
+          document.getElementById('hours').innerText = hours,
+          document.getElementById('minutes').innerText = mins,
+          document.getElementById('seconds').innerText = seconds;
          }
          else {
           document.getElementById('days').innerText = "over",
