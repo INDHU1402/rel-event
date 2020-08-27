@@ -4,6 +4,82 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<div class="hero-image8" style="background-color:black ;"></div>
+<div>
+   <div style="background-color: black;">
+      <section class="ps-timeline-sec">
+          <div class="container">
+              <ol class="ps-timeline">
+                  <li>
+                      <div class="img-handler-top">
+                          <img src="/assets/img/d.png" style="height: 200px;width: 400px;margin-left:-140px;"
+                              alt="" />
+                      </div>
+                      <div class="ps-bot">
+                          <p style="color:white">Fill Basic Information</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color:#ffff66;">
+                              <a href="#about" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-1</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-top">01</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-bot">
+                          <img src="http://www.physology.co.uk/wp-content/uploads/2016/02/ps-elem_13.png"
+                              style="margin-left:-50px;" alt="" />
+                          <img src="/assets/img/d1.png" style="width:200px;margin-top: -160px;" alt="" />
+                      </div>
+                      <div class="ps-top">
+                          <p style="color:white">Select Venue and Choose Profesional</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+                              <a href="#services" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-2</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-bot">02</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-top">
+                          <img src="/assets/img/dd.png" alt="" />
+                      </div>
+                      <div class="ps-bot">
+                          <p style="color:white">Provide Additional Details</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+
+                              <a href="#team" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-3</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-top">03</span>
+                  </li>
+                  <li>
+                      <div class="img-handler-bot">
+                          <img src="/assets/img/upload.png" style="width:200px;margin-top: 10px;" alt="" />
+
+                      </div>
+                      <div class="ps-top">
+                          <p style="color:white">Upload Poster or Image</p>
+                          <br>
+                          <div class="container" style="width:200px;background-color: #ffff66;">
+
+                              <a href="#promo" style="color:black;width:300px;height: 28px;" class="button">
+                                  <h1><b style="color:black">Step-4</b></h1>
+                              </a>
+                          </div>
+                      </div>
+                      <span class="ps-sp-bot">04</span>
+                  </li>
+              </ol>
+          </div>
+      </section>
+  </div>
 
 <div>
 
@@ -13,11 +89,12 @@
 
          <mat-step>
             <div class="hero-image1">
-               <br><br>
-               <h1 style="color: white; margin-left: 800px;"><b>Basic Info</b></h1>
-               <br>
-               <div style="margin-left: 700px;">
-
+               <br><br><br>
+              
+               <div class="container" style="width:500px;margin-left:1000px;">
+                  <br><br><br><br><br>
+               <h1 style="color: white;"><b>Basic Info</b></h1>
+              
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">EventName</label>
                      <input class="form-control" id="focusedInput" type="text" style="width:370px;" autofocus="true"
@@ -42,19 +119,24 @@
                   </select>
                   <br><br>
 
-                  <div class="row">
-                     <div class="col-sm-6">
-                       
-                        <h4 style="color:white"><b>Choose start and end date of event</b></h4>
+                  <h4 style="color:white"><b>Event date</b></h4>
 
-                        <input class="login-username" type="date" name="eventStartDate"
-                           [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
-                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="login-username" type="date" name="eventEndDate"
-                           [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
-                        <br><br><br>
-                     </div>
-                  </div>
+                  <mat-form-field class="example-full-width" appearance="fill" style="width:200px;">
+                     <mat-label>Choose start date</mat-label>
+                     <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:white" name="eventdate" [(ngModel)]='eventdate'>
+                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                     <mat-datepicker #picker></mat-datepicker>
+                   </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                   <label for="focusedInput" style="color:white">Number of days</label>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <select name="howManyDays" id="category" [(ngModel)]='howManyDays'>
+                     <option hidden value="" disabled selected>No. of days </option>
+                     <option *ngFor="let day of days">{{day}}</option>
+                  </select>
+
+                  <button (click)="getdate()">Event Date</button>
+                  <p style="color: white;">From {{eventdate | date}} to {{d | date}}</p>
 
                   <div class="form-group">
                      <label for="focusedInput" style="color:white">About</label>
@@ -141,7 +223,7 @@
 
             </div>
             -->
-            <div>
+            <div class="hero-image9">
                <div class="timeline" style="margin-left: 480px;">
                   <ul>
                      <li>
@@ -215,22 +297,22 @@
                         </div>
                      </li>
                   </ul>
-               </div>
-               <div>
-                  <br>
 
-                  <button mat-button matStepperNext class="button button4">Next</button>
+                  <div>
+                     <br>
+   
+                     <button mat-button matStepperNext class="button button4">Next</button>
+                  </div>
                </div>
+               
             </div>
          </mat-step>
 
          <br><br><br><br><br><br>
          <mat-step>
             <div class="hero-image2">
-               <div style="margin-left: 700px;">
-                  <br><br><br>
-                  <h1 style="font-size: 40px;color:white"><b>Additional Info</b></h1>
-                  <br><br><br>
+               <br><br><br><br><br><br><br><br><br>
+               <div style="margin-left: 1100px;">
 
                <div class="form-group">
                   <label for="focusedInput" style="color:white">Organiser Name</label>
@@ -341,23 +423,26 @@
          </mat-step>
 
          <mat-step>
-            <div style="margin-left: 1000px;">
+            <div class="hero-image7">
+               <br><br><br>
+            <div style="margin-left: 700px;margin-top:100px">
                <br>
-            <h1 style="color: white; font-size: 50px;">Upload event poster</h1>
+            <!--<h1 style="color: white; font-size: 50px;">Upload event poster</h1>
             <h3 style="color: white;">Don't have a poster? create it now</h3>
             <a href="https://www.postermywall.com/index.php/l/online-poster-maker#.Xz1RYnUzaJE">Create Poster</a><br>
             <a href="https://piktochart.com/formats/posters/">Create Poster</a> <br>
             <a href="https://venngage.com/features/poster-maker">Create Poster</a> <br>      
-         </div>
-            <img [src]="imageUrl" style="height: 500px; width: 500px;">
-            <div style="margin-left: 20px;">
-               <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+            --></div>
+            <img [src]="imageUrl" style="height: 500px; width: 500px;margin-left: 1000px;">
+            <div style="margin-left: 1000px;;">
+               <input type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
                   (change)="handleFileInput($event.target.files)">
                <br>
             </div>
-            <button class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
+            <button style="margin-left: 1000px;" class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
                Event</button>
             <!--<button (click)="eventSubmit(registerForm.value)">Submit</button>-->
+         </div>
          </mat-step>
       </mat-horizontal-stepper>
    </form>
