@@ -17,6 +17,15 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('userDetails'));
   }
+  culturalEvent(){
+    this.router.navigate(['culturalEvent']);
+  }
+  technicalEvent(){
+    this.router.navigate(['technicalEvent']);
+  }
+ personalEvent(){
+    this.router.navigate(['personalEvent']);
+  }
   
 rd(value){
  localStorage.setItem("category",value);

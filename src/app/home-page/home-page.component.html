@@ -1,4 +1,5 @@
-
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></head>
 <div class="hero">
     <span class="scroll-mobile cursor black fadeInUp"></span>
     <div class="cta-search">
@@ -122,9 +123,43 @@
 <div class="container2" style="text-align: center;"><br><br><br>
     <h1 style="color: white; font-size: 40px;">Create an event in 5 steps</h1><br><br>
     <!--<button (click)="redirect()">Create an event</button><br><br>-->
-    <button type="button"  class="btn btn-light" (click)="redirect()" >
+    <button type="button"  class="btn btn-light" data-toggle="modal" data-target="#myModal" >
         Create an Event
     </button>
+                 <!-- The Modal -->
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <p  style="font-family: Comic Sans;font-size:35px">Select Kind of Event</p>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body" style="height: 330px;width:1400px;">
+                                    
+                                    <div class="container11" >
+                                        
+                                        <button class="btn12" (click)="culturalEvent()" style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn11" (click)="technicalEvent()" style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn13" (click)="personalEvent()" style="vertical-align:middle"></button>
+                                        <br><br> 
+                                       
+                                     
+                                            <h1 class="w3-tangerine">Cultural &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                Technical &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                Personal</h1>
+                                            
+                                     
+                                      </div>
+                                      
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
 
     <br><br>
 </div>

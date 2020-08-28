@@ -52,6 +52,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DateComponent } from './date/date.component';
 import {MatNativeDateModule} from '@angular/material/core';
+import { CulturalEventComponent } from './cultural-event/cultural-event.component';
+import { TechnicalEventComponent } from './technical-event/technical-event.component';
+import { PersonalEventComponent } from './personal-event/personal-event.component';
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
@@ -81,7 +84,10 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'eventform', component:CreateEventFormComponent},
                          {path:'eventprofs', component:EventProfsComponent},
                          {path:'techform', component:TechFormComponent},
-                         {path:'cart', component:ProffcartComponent}
+                         {path:'cart', component:ProffcartComponent},
+                         {path:'culturalEvent', component: CulturalEventComponent},
+                         {path:'technicalEvent', component:TechnicalEventComponent},
+                         {path:'personalEvent', component:PersonalEventComponent}
                          
 ];
 
@@ -120,7 +126,10 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     EventProfsComponent,
     TechFormComponent,
     ProffcartComponent,
-    DateComponent
+    DateComponent,
+    CulturalEventComponent,
+    TechnicalEventComponent,
+    PersonalEventComponent
 
   ],
   imports: [
