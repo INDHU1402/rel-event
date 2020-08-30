@@ -49,12 +49,14 @@ export class TechFormComponent implements OnInit {
     this.eventDetails.professionalList = this.chosenProfessional;
     this.eventDetails.user.userId = this.User.userId;
     console.log(this.eventDetails);
+    alert("event created");
     this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
       data => { 
         console.log('success1');
         this.imageUrl='/assets/img/bg.jpg';
       }
       );
+      this.router.navigate(['HomePageComponent']);
   //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
   }
   handleFileInput(file:FileList){
@@ -64,6 +66,7 @@ export class TechFormComponent implements OnInit {
     this.reader = new FileReader();
     this.reader.readAsDataURL(this.fileToUpload);
     this.reader.onload= (event:any)=>{
+      
       this.imageUrl= event.target.result;
     };
   }

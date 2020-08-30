@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-technical-event',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./technical-event.component.css']
 })
 export class TechnicalEventComponent implements OnInit {
+  isLinear = false;
+ 
 
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
   }
-
 }

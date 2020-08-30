@@ -56,6 +56,7 @@ import { CulturalEventComponent } from './cultural-event/cultural-event.componen
 import { TechnicalEventComponent } from './technical-event/technical-event.component';
 import { PersonalEventComponent } from './personal-event/personal-event.component';
 
+
 const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'login', component: LoginComponent},
                          {path:'ticket', component: BookticketComponent},
@@ -152,7 +153,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
       progressAnimation: 'increasing',
       preventDuplicates: true
     }),
-    NgbModule,
+    NgbModule
     
   ],
   providers: [

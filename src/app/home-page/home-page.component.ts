@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['culturalEvent']);
   }
   technicalEvent(){
-    this.router.navigate(['technicalEvent']);
+    this.router.navigate(['createEvent']);
   }
  personalEvent(){
     this.router.navigate(['personalEvent']);
