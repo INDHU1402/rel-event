@@ -1,50 +1,200 @@
 <head>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <title>Business Website</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
+<div class="modal fade" id="timeline">
+   <div class="modal-dialog modal-lg">
+      <div class="modal-content">
 
+         <!-- Modal Header -->
+         <div class="modal-header">
+            <h1 class="modal-title"><b>Agenda</b></h1>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
 
-   <form #registerForm="ngForm"  (ngSubmit)="eventSubmit(registerForm.value)">
+         <!-- Modal body -->
+         <div class="modal-body">
+            <div class="timeline" style="margin-left: 35px;">
+               <ul>
+                  <li>
+                     <span>Start</span>
+                     <div class="content">
+                        <div style="margin-left: 100px;">
+                           <div class="form-group">
 
-      
-      <mat-vertical-stepper [linear]="" #stepper style="background-image: url('/assets/img/techevent.jpg');">
+                              <input class="form-control" id="focusedInput" type="text"
+                                 style="width:240px; color: black;" autofocus="true" name="startTime"
+                                 [(ngModel)]='eventDetails.startTime' placeholder="Start Time">
+                              <br>
+                              <div class="form-group" class="adjust">
+                                 <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                              </div>
+                           </div>
+                        </div>
 
-         <mat-step >
-            <div style="margin-top: -40px;scroll-margin-left: 30px;">
-               <br>  <br>  <br>  <br>  <br>
+                     </div>
+                  </li>
+                  <li>
+                     <span></span>
+                     <div class="content">
+                        <div style="margin-left: 100px;">
+                           <div class="form-group">
 
-               <button mat-button matStepperNext class="button button4">Next</button>
+                              <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                 autofocus="true" name="time2" [(ngModel)]='eventDetails.time2' placeholder="time2">
+                              <br>
+                              <div class="form-group" class="adjust">
+                                 <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </li>
+                  <li>
+                     <span>End</span>
+                     <div style="margin-left: 100px;">
+                        <div class="form-group">
+
+                           <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                              autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime' placeholder="end Time">
+                           <br>
+                           <div class="form-group" class="adjust">
+                              <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                 aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+
+               </ul>
             </div>
+         </div>
+
+         <!-- Modal footer -->
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<form #registerForm="ngForm" (ngSubmit)="eventSubmit(registerForm.value)">
+
+   <div style="background-color:black">
+      <mat-vertical-stepper [linear]="" #stepper style="margin-left:300px; background-color:black;">
+
+         <mat-step>
+
+            <div class="row" style="margin-left:50px;">
+
+               <div class="col-sm-4">
+                  <div class="form-group" class="adjust">
+                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Event Name"><br>
+                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Organiser Name">
+                  </div>
+               </div>
+
+               <div class="col-sm-4">
+                  <div class="form-group" class="adjust">
+                     <select class="form-control" id="exampleFormControlSelect1">
+                        <option hidden value="" disabled selected>Choose Event Type</option>
+                        <option *ngFor="let type of Types">{{type}}</option>
+                     </select><br>
+                     <select class="form-control" id="exampleFormControlSelect1">
+                        <option hidden value="" disabled selected>Choose Event Category</option>
+                        <option *ngFor="let category of Category">{{category}}</option>
+                     </select>
+                  </div>
+               </div>
+
+            </div>
+            <br><br>
+            <button mat-button matStepperNext class="btn btn-success">Next</button>
          </mat-step>
 
          <mat-step>
-            <div style="margin-top: -40px;scroll-margin-left: 30px;">
-          
 
-               <button mat-button matStepperNext class="button button4">Next</button>
+            <div class="row" style="margin-left:50px;">
+
+               <div class="col-sm-3">
+                  <mat-form-field class="example-full-width" appearance="fill" style="width:200px;">
+                     <mat-label>Choose start date</mat-label>
+                     <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:white"
+                        name="eventdate" [(ngModel)]='eventdate'>
+                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                     <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+               </div>
+
+               <div class="col-sm-3">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                     <option hidden value="" disabled selected>Number of days</option>
+                     <option *ngFor="let day of days">{{day}}</option>
+                  </select>
+               </div>
+            </div><br>
+            <button mat-button matStepperNext class="btn btn-success">Next</button>
+
+         </mat-step>
+
+         <mat-step>
+            <div class="row" style="margin-left:50px;">
+
+               <div class="col-sm-4">
+                  <div class="form-group" class="adjust">
+                     <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="What is the Event ?" rows=5></textarea>
+                  </div>
+               </div>
+
+               <div class="col-sm-4">
+                  <div class="form-group" class="adjust">
+                     <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Where is the Event ?" rows=5></textarea>
+                  </div>
+               </div>
+
             </div>
+            <br><br>
+            <button mat-button matStepperNext class="btn btn-success">Next</button>
+
+         </mat-step>
+
+         <mat-step>
+            <br><br><br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
+               style="width: 150px;">
+               Click Here
+            </button>
+
+            <button mat-button matStepperNext class="btn btn-success">Next</button>
+
          </mat-step>
          <mat-step>
             <div style="margin-top: -40px;scroll-margin-left: 30px;">
-               <br>
+               <br><br><br>
+               <h1>My To-Do List jquery</h1>
+               <input type="text" placeholder="Add Speaker/Guest details" [(ngModel)]='item'/>
+               <button (click)="add()">Add Speaker Details</button>
+               
+               <br><br>
 
-               <button mat-button matStepperNext class="button button4">Next</button>
+               <button mat-button matStepperNext class="btn btn-success">Next</button>
             </div>
          </mat-step>
-         <mat-step>
-            <div style="margin-top: -40px;scroll-margin-left: 30px;">
-               <br>
 
-               <button mat-button matStepperNext class="button button4">Next</button>
-            </div>
-         </mat-step>
-      
       </mat-vertical-stepper>
-   
-   </form>
-
+   </div>
+</form>
