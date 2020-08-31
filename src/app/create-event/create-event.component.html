@@ -145,6 +145,17 @@
                   </select>
                </div>
             </div><br>
+
+            <div class="row" style="margin-left:50px;">
+
+               <div class="col-sm-3">
+                  <label>
+                     Time
+                     <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+                     <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                 </label>
+               </div>
+            </div>
             <button mat-button matStepperNext class="btn btn-success">Next</button>
 
          </mat-step>

@@ -55,6 +55,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { CulturalEventComponent } from './cultural-event/cultural-event.component';
 import { TechnicalEventComponent } from './technical-event/technical-event.component';
 import { PersonalEventComponent } from './personal-event/personal-event.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -153,8 +155,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
       progressAnimation: 'increasing',
       preventDuplicates: true
     }),
-    NgbModule
-    
+    NgbModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   providers: [
     {

@@ -20,3 +20,59 @@ button {
   font-size: 15px;
   margin-left: 70px;
 }
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  margin :15% 0 0 0;  
+  padding:50px;
+  font-size:16pt;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+.time-picker {
+  display:flex;
+  align-items:center;
+  margin:0 auto;
+  width:150px;
+  justify-content:space-evenly;
+  border:1px solid #ccc;
+  border-radius:10px;
+  padding:25px;
+}
+.tp-col {
+  display:flex;
+  flex-direction:column;
+  align-items: inherit;
+}
+.tp-hr>span,.tp-min>span {
+  border:1px solid #ccc;
+  padding:4px 4px ;
+  border-radius:4px;
+  width:25px;
+  text-align:center;
+  font-size:15pt;
+}
+.tp-up-arrow,.tp-down-arrow {
+  cursor:pointer;
+  width:15px;
+  height:15px;
+}
+.tp-am-pm {
+  cursor:pointer;
+  display:block;
+  padding:1px 3px;
+  border-radius:5px;
+}
+.tp-am-pm:hover {
+  background:#eaeaea;
+}
+.tp-hr,.tp-min {
+  
+}
