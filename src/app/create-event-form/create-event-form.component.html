@@ -6,288 +6,213 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#myModal").modal('show');
-        });
-    </script>
-
-</head>
-
-<body>
-
-
-    <!----- <a href="#services" style="color:black;background-color: black;" class="button">Click Here</a>navigationbar--->
-    <!--<section id="nav-bar">
-        <nav class="navbar navbar-expand-lg navbar-dark ">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left:-20px">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        
-                        <h1 id="about">My Header</h1>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Basic Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Venue</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Choose Professionals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#promo">Additional Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#price">Upload Poster</a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-    </section>-->
+ </head>
   
-    <div style="background-color: black;">
-        <section class="ps-timeline-sec">
-            <div class="container">
-                <ol class="ps-timeline">
-                    <li>
-                        <div class="img-handler-top">
-                            <img src="/assets/img/d.png" style="height: 200px;width: 400px;margin-left:-140px;"
-                                alt="" />
-                        </div>
-                        <div class="ps-bot">
-                            <p style="color:white">Fill Basic Information</p>
-                            <br>
-                            <div class="container" style="width:200px;background-color:#ffff66;">
-                                <a href="#about" style="color:black;width:300px;height: 28px;" class="button">
-                                    <h1><b style="color:black">Step-1</b></h1>
-                                </a>
+  
+ <div class="modal fade" id="timeline">
+    <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+ 
+          <!-- Modal Header -->
+          <div class="modal-header">
+             <h1 class="modal-title"><b>Agenda</b></h1>
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+ 
+          <!-- Modal body -->
+          <div class="modal-body">
+             <div class="timeline" style="margin-left: 35px;">
+                <ul>
+                   <li>
+                      <span>Start</span>
+                      <div class="content">
+                         <div style="margin-left: 100px;">
+                            <div class="form-group">
+ 
+                               <input class="form-control" id="focusedInput" type="text"
+                                  style="width:240px; color: black;" autofocus="true" name="startTime"
+                                  [(ngModel)]='eventDetails.startTime' placeholder="Start Time">
+                               <br>
+                               <div class="form-group" class="adjust">
+                                  <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                     aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                               </div>
                             </div>
-                        </div>
-                        <span class="ps-sp-top">01</span>
-                    </li>
-                    <li>
-                        <div class="img-handler-bot">
-                            <img src="http://www.physology.co.uk/wp-content/uploads/2016/02/ps-elem_13.png"
-                                style="margin-left:-50px;" alt="" />
-                            <img src="/assets/img/d1.png" style="width:200px;margin-top: -160px;" alt="" />
-                        </div>
-                        <div class="ps-top">
-                            <p style="color:white">Select Venue and Choose Profesional</p>
-                            <br>
-                            <div class="container" style="width:200px;background-color: #ffff66;">
-                                <a href="#services" style="color:black;width:300px;height: 28px;" class="button">
-                                    <h1><b style="color:black">Step-2</b></h1>
-                                </a>
+                         </div>
+ 
+                      </div>
+                   </li>
+                   <li>
+                      <span></span>
+                      <div class="content">
+                         <div style="margin-left: 100px;">
+                            <div class="form-group">
+ 
+                               <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                  autofocus="true" name="time2" [(ngModel)]='eventDetails.time2' placeholder="time2">
+                               <br>
+                               <div class="form-group" class="adjust">
+                                  <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                     aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                               </div>
                             </div>
-                        </div>
-                        <span class="ps-sp-bot">02</span>
-                    </li>
-                    <li>
-                        <div class="img-handler-top">
-                            <img src="/assets/img/dd.png" alt="" />
-                        </div>
-                        <div class="ps-bot">
-                            <p style="color:white">Provide Additional Details</p>
+                         </div>
+ 
+                      </div>
+                   </li>
+                   <li>
+                      <span>End</span>
+                      <div style="margin-left: 100px;">
+                         <div class="form-group">
+ 
+                            <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                               autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime' placeholder="end Time">
                             <br>
-                            <div class="container" style="width:200px;background-color: #ffff66;">
-
-                                <a href="#team" style="color:black;width:300px;height: 28px;" class="button">
-                                    <h1><b style="color:black">Step-3</b></h1>
-                                </a>
+                            <div class="form-group" class="adjust">
+                               <textarea type="text" class="form-control" id="exampleInputEmail1"
+                                  aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
                             </div>
-                        </div>
-                        <span class="ps-sp-top">03</span>
-                    </li>
-                    <li>
-                        <div class="img-handler-bot">
-                            <img src="/assets/img/upload.png" style="width:200px;margin-top: 10px;" alt="" />
-
-                        </div>
-                        <div class="ps-top">
-                            <p style="color:white">Upload Poster or Image</p>
-                            <br>
-                            <div class="container" style="width:200px;background-color: #ffff66;">
-
-                                <a href="#promo" style="color:black;width:300px;height: 28px;" class="button">
-                                    <h1><b style="color:black">Step-4</b></h1>
-                                </a>
-                            </div>
-                        </div>
-                        <span class="ps-sp-bot">04</span>
-                    </li>
-                </ol>
-            </div>
-        </section>
+                         </div>
+                      </div>
+                   </li>
+ 
+                </ul>
+             </div>
+          </div>
+ 
+          <!-- Modal footer -->
+          <div class="modal-footer">
+             <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          </div>
+       </div>
     </div>
-    <form #registerForm="ngForm" class="form-group" class="form-wrapper" (ngSubmit)="eventSubmit(registerForm.value)">
-        <!----about--->
-        <section id="about"  name="about" style="background-color: black;">
-            <div class="hero-image1">
-                <br><br> <br><br> <br><br>
-                <div class="form-group">
-
-                    <input class="form-control" id="focusedInput" type="text" style="margin-left:1000px;width:370px;"
-                        autofocus="true" name="eventName" [(ngModel)]='eventDetails.eventName' required="true"
-                        placeholder="eventName">
+ </div>
+ 
+ 
+ <form #registerForm="ngForm" (ngSubmit)="eventSubmit(registerForm.value)">
+ 
+ 
+       <mat-vertical-stepper class="animation-area" [linear]="" #stepper style="margin-left:300px;">
+ 
+             <ul class= "box-area"> 
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+          
+          <mat-step>
+ 
+             <div class="row" style="margin-left:50px;">
+ 
+                <div class="col-sm-4">
+                   <div class="form-group" class="adjust">
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                         placeholder="Enter Event Name"><br>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                         placeholder="Enter Organiser Name">
+                   </div>
                 </div>
-                <div class="form-group" style="margin-top:100px;">
-
-                    <input class="form-control" id="focusedInput" style="margin-left:1000px;width:370px;" type="text"
-                        autofocus="true" name="about" [(ngModel)]='eventDetails.about' required="true"
-                        placeholder="about">
+ 
+                <div class="col-sm-4">
+                   <div class="form-group" class="adjust">
+                      <select class="form-control" id="exampleFormControlSelect1">
+                         <option hidden value="" disabled selected>Choose Event Type</option>
+                         <option *ngFor="let type of Types">{{type}}</option>
+                      </select><br>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                         <option hidden value="" disabled selected>Choose Event Category</option>
+                         <option *ngFor="let category of Category">{{category}}</option>
+                      </select>
+                   </div>
                 </div>
-            </div>
-
-            <div class="hero-image2" style="margin-top:-200px;">
-                <div class="form-group" style="margin-left:-850px;">
-
-                    <select name="eventType" id="category" [(ngModel)]='eventDetails.eventType'
-                        style="margin-top: 290px;">
-                        <option hidden value="" disabled selected>Choose type </option>
-                        <option *ngFor="let type of Types">{{type}}</option>
-                    </select>
+ 
+             </div>
+             <br><br>
+             <button mat-button matStepperNext class="btn btn-success">Next</button>
+          </mat-step>
+ 
+          <mat-step>
+ 
+             <div class="row" style="margin-left:50px;">
+ 
+                <div class="col-sm-3">
+                   <mat-form-field class="example-full-width" appearance="fill" style="width:200px;">
+                      <mat-label>Choose start date</mat-label>
+                      <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:white"
+                         name="eventdate" [(ngModel)]='eventdate'>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                   </mat-form-field>
                 </div>
-                <div class="form-group" style="margin-left:825px;margin-top: -60px;">
-                    <select name="category" id="category" [(ngModel)]='eventDetails.category'>
-                        <option hidden value="" disabled selected>Choose category </option>
-                        <option *ngFor="let category of Category">{{category}}</option>
-                    </select>
+ 
+                <div class="col-sm-3">
+                   <select class="form-control" id="exampleFormControlSelect1">
+                      <option hidden value="" disabled selected>Number of days</option>
+                      <option *ngFor="let day of days">{{day}}</option>
+                   </select>
                 </div>
-                <div style="margin-left:-780px;margin-top:200px;">
-                    <input style="width:300px;" class="login-username" type="date" name="eventStartDate"
-                        [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
+             </div><br>
+ 
+             <div class="row" style="margin-left:50px;">
+ 
+                <div class="col-sm-3">
+                   <label>
+                      Time
+                      <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+                      <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                  </label>
                 </div>
-                <div style="margin-left:840px;margin-top:-60px;">
-                    <input class="login-username" type="date" name="eventEndDate"
-                        [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
+             </div>
+             <button mat-button matStepperNext class="btn btn-success">Next</button>
+ 
+          </mat-step>
+ 
+          <mat-step>
+             <div class="row" style="margin-left:50px;">
+ 
+                <div class="col-sm-4">
+                   <div class="form-group" class="adjust">
+                      <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                         placeholder="What is the Event ?" rows=5></textarea>
+                   </div>
                 </div>
-            </div>
-        </section>
-
-
-        <!-----services---->
-        <section id="services"  name="services" style="background-color: black;">
-            <div class="hero-image3" style="margin-top:-300px;">
-                <br><br><br><br><br>
-                <label for="focusedInput" style="color:white">Choose Venue</label>
-                <div class="form-group" style="margin-left:600px;">
-
-                    <input class="form-control" id="focusedInput" type="text" type="text" style="width:370px;"
-                        autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
-                        placeholder="venue">
+ 
+                <div class="col-sm-4">
+                   <div class="form-group" class="adjust">
+                      <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                         placeholder="Where is the Event ?" rows=5></textarea>
+                   </div>
                 </div>
-            </div>
-            <div class="hero-image4" style="margin-top:-100px;">
-            </div>
-        </section>
-
-        <!------Team Members------>
-        <section id="team" name="team" style="background-color: black;">
-            <div class="hero-image5" style="margin-top:-100px;">
-                <br><br><br><br><br> <br><br><br><br><br><br><br><br>
-                <div class="form-group" style="margin-left:400px">
-                    <label for="focusedInput" style="color:white">attendeesCount</label>
-                    <input class="form-control" id="focusedInput" style="width:300px;" type="number" autofocus="true"
-                        name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
-                        placeholder="attendeesCount">
-                </div>
-                <div class="form-group" style="margin-left:1350px;margin-top:-70px;">
-                    <label for="focusedInput" style="color:white">Focused</label>
-                    <input class="form-control" id="focusedInput" style="width:260px;" autofocus="true"
-                        name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
-                        placeholder="ticketPrice" type="number">
-                </div>
-            </div>
-            <div class="hero-image6" style="margin-top:-100px;">
-                <br><br><br> <br><br><br> <br><br><br>
-                <div class="timeline" style="margin-left: 600px;">
-                    <ul>
-                        <li>
-                            <span>Start</span>
-                            <div class="content">
-                                <div style="margin-left: 100px;">
-                                    <div class="form-group">
-
-                                        <input class="form-control" id="focusedInput" type="text"
-                                            style="width:240px; color: black;" autofocus="true" name="startTime"
-                                            [(ngModel)]='eventDetails.startTime' required="true"
-                                            placeholder="Start Time">
-                                        <br>
-                                        <textarea rows="3" cols="45" autofocus="true" name="startOverview"
-                                            style="color: black;" [(ngModel)]='eventDetails.startOverview'
-                                            required="true" placeholder="Start overview">
-                                     </textarea>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </li>
-                        <li>
-                            <span>Time/Day</span>
-                            <div class="content">
-                                <div style="margin-left: 100px;">
-                                    <div class="form-group">
-
-                                        <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                            autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
-                                            required="true" placeholder="time2">
-                                        <br>
-                                        <textarea rows="3" cols="45" autofocus="true" style="color: black;"
-                                            name="Overview2" [(ngModel)]='eventDetails.overview2' required="true"
-                                            placeholder="overview2">
-                                 </textarea>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </li>
-                        <li>
-                            <span>End</span>
-                            <div style="margin-left: 100px;">
-                                <div class="form-group">
-
-                                    <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                        autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime'
-                                        required="true" placeholder="end Time">
-                                    <br>
-                                    <textarea rows="3" cols="45" autofocus="true" style="color: black;"
-                                        name="endOverview" [(ngModel)]='eventDetails.endOverview' required="true"
-                                        placeholder="end overview">
-                                  </textarea>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!---promo-->
-        <section id="promo" anme="promo" style="background-color: black;">
-            <div class="hero-image7" style="margin-top:-100px;">
-                <img [src]="imageUrl">
-                <div style="margin-left: -100px;margin-top: 320px;" >
-                    <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
-                        (change)="handleFileInput($event.target.files)">
-                    <br>
-                </div>
-                <br>
-                <button class="btn btn-primary" [disabled]="eventDetails.poster==''">Add
-                    Event</button>
-            </div>
-
-        </section>
-
-    </form>
-</body>
+ 
+             </div>
+             <br><br>
+             <button mat-button matStepperNext class="btn btn-success">Next</button>
+ 
+          </mat-step>
+ 
+          <mat-step>
+             <br><br><br>
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
+                style="width: 150px;">
+                Click Here
+             </button>
+ 
+             <button mat-button matStepperNext class="btn btn-success">Next</button>
+ 
+          </mat-step>
+          <mat-step>
+             <div style="margin-top: -40px;scroll-margin-left: 30px;">
+                <br><br><br>
+                <h1>My To-Do List jquery</h1>
+                <input type="text" placeholder="Add Speaker/Guest details" [(ngModel)]='item'/>
+                <button (click)="add()">Add Speaker Details</button>
+                
+                <br><br>
+ 
+                <button mat-button matStepperNext class="btn btn-success">Next</button>
+             </div>
+          </mat-step>
+       
+       </mat-vertical-stepper>
+ 
+ </form>

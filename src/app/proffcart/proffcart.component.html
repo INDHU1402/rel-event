@@ -1,26 +1,115 @@
-<table id="t01">
-  <tr>
-    <th>Name</th>
-    <th>Service</th> 
-    <th>Experience</th>
-    <th>Add</th>
-    <th>Remove</th>
-  </tr>
-  <div *ngFor="let prof of professionals">
-  <tr>
-    <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{prof.serviceImage}});background-size: 100% 100%;
-    background-repeat: no-repeat; padding-right: 10%;" ></div>
-    <td>{{prof.professionalName}}</td>
-    <td>{{prof.serviceType}}</td>
-    <td>{{prof.experience}}</td>
-    <td><button (click)="addProfessional(prof)">add professional</button></td>
-    <td><button (click)="removeProfessional(prof)">remove professional</button></td>
-    <td>{{prof.experience}}</td>
-  </tr>
+<!--<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+
+
+<div>
+ 
+  
+
+  <div>
+    <div class="filter-wrap">
+      <input [(ngModel)]="searchText" placeholder="Filter Professionals" class="filter-input">
+      <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
+    </div>
   </div>
-  <div *ngFor="let x of chosenProfessional">
-    <p>{{x.professionalName}}</p>
-    <p>{{x.serviceType}}</p>
+
+  <div class="clear-selection" title="Click to Clear Selections" (click)="clearSelection()" *ngIf="selected_count">Clear Selection</div>
+  
+  
+  <ul class="game-list">
+    <li *ngFor="let g of games | filter : searchText" class="game-item"> 
+      <input (change)="getSelected()" type="checkbox"
+               name="games"
+               value="{{g.id}}"
+               [(ngModel)]="g.selected"/> 
+      <span class="game-text">{{g.name}}</span>
+    </li>
+  </ul>
+  
+  
+  <div class="selected-games-wrap">
+      <div class="selected-game" *ngFor="let s of selected_games" >
+        <span>{{s.name}} <span class="delete-game" (click)="deleteGame(s.id)" title="Click to delete">X</span></span>
+      </div>
   </div>
+  
+</div>
+
+
+<div class="form-group col-md-4">
+  <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+</div>
+
+<table class="table table-bordered table-striped table-hover table-sm text-center">
+  <thead>
+      <tr class="bg-info text-white">
+        <th>Name</th>
+        <th>Service</th> 
+        <th>Experience</th>
+        <th>Add</th>
+        <th>Remove</th>
+      </tr>
+  </thead>
+  <tbody>
+    
+      <tr *ngFor='let prof of professionals | filter:searchedKeyword'>
+        <div *ngIf = "!status()">
+      
+        <td>{{prof.professionalName}}</td>
+        <td>{{prof.serviceType}}</td>
+        <td>{{prof.experience}}</td>
+        <td><button (click)="addProfessional(prof)">add professional</button></td>
+        <td><button (click)="removeProfessional(prof)">remove professional</button></td>
+      
+    </div>
+
+    <div *ngIf = "status()">
+      <div *ngFor = 'let s of selected_games'>
+        <div *ngIf = "prof.serviceType === s.name">
+      <td>{{prof.professionalName}}</td>
+      <td>{{prof.serviceType}}</td>
+      <td>{{prof.experience}}</td>
+      <td><button (click)="addProfessional(prof)">add professional</button></td>
+      <td><button (click)="removeProfessional(prof)">remove professional</button></td>
+    </div>
+    </div>
+  </div>
+  </tr>
+
+
+</tbody>
 </table>
-<button (click)="done()">Done</button>
+
+<br><br><br>
+
+<div *ngFor="let x of chosenProfessional">
+  <p>{{x.professionalName}}</p>
+  <p>{{x.serviceType}}</p>
+</div>
+
+<button (click)="done()">Done</button>-->
+
+
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+</div>
+
+<table class="table">
+  <thead>
+      <tr>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Address</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of filterData | filter:term">
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.address}}</td>
+      </tr>
+  </tbody>
+</table>

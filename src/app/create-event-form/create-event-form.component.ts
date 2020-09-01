@@ -1,23 +1,64 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-create-event-form',
-  templateUrl: './create-event-form.component.html',
-  styleUrls: ['./create-event-form.component.css']
+  selector: 'app-create-event',
+  templateUrl: './create-event.component.html',
+  styleUrls: ['./create-event.component.css']
 })
-export class CreateEventFormComponent implements OnInit {
+export class CreateEventComponent implements OnInit {
+  myFilter1 = (d: Date | null): boolean => {
 
+    this.date1 = Number(new Date().toDateString().slice(8,-5));
+    this.month1 = new Date().getMonth();
+    this.year1 = Number(new Date().toDateString().slice(-4));
+  
+    this.date2 = Number(d.toDateString().slice(8,-5));
+    this.month2 = d.getMonth();
+    this.year2 = Number(d.toDateString().slice(-4));
+
+   if (this.year2 > this.year1) {
+     return true;
+   }
+
+   else if (this.year2 == this.year1) {
+     if (this.month2 > this.month1) {
+      return true;
+    }
+     if (this.month2 == this.month1){
+       if(this.date2 > this.date1 + 1) {
+         return true;
+       }
+       else {
+         return false;
+       }
+     }
+   }
+
+   return false;
+  }
+
+  date1:number;
+  month1:number;
+  year1:number;
+
+  date2:number;
+  month2:number;
+  year2:number;
   fileToUpload:File;
    reader:FileReader;
    imageUrl:String;
    Types: any = ['public', 'private']
    professionals: any;
    term:string;
-   Sponsor: any = ['yes', 'no']
+   howManyDays:number;
+   eventdate:Date;
+   d:Date;
+   Sponsor: any = ['yes', 'no'];
    chosenProfessional = [];
-   Category: any = ['workshop', 'seminar', 'hackathon', 'fest', 'talk', 'show', 'exhibition'];
+   days = ['1','2','3','4','5','6','7','8','9'];
+   Category: any = ['Show', 'Carnival', 'Fest', 'Sport Event', 'Plays', 'Charitable event', 'Art event'];
    eventDetails = {eventType:'', about:'', attendeesCount:'', category:'', eventName:'',guest1:'',guest2:'',guest3:'',
                    organiserName:'', sponsor:'', ticketPrice:'', venue:'',eventStartDate:'',eventEndDate:'',poster:'',
                    startTime:'',endTime:'',startOverview:'',endOverview:'',time1:'',time2:'',overview1:'',overview2:'',
@@ -38,34 +79,36 @@ export class CreateEventFormComponent implements OnInit {
      console.log(prof + "added");
    }
  
-   goTocart() {
-    console.log(this.eventDetails);
-    localStorage.setItem('event', JSON.stringify(this.eventDetails));
-    this.router.navigate(['cart']);
-  }
-
    removeProfessional(prof : any) : void {
      const i = this.chosenProfessional.findIndex((profs) => {return prof.professionalId === profs.professionalId});
      this.chosenProfessional.splice(i, 1);
      console.log(prof + "removed");
    }
 
+   getdate() : Date {
+    if (this.howManyDays == 1) {
+      console.log(this.eventdate);
+      return this.eventdate;
+    }
+    this.d = new Date(this.eventdate.getTime() + (1000 * 60 * 60 * 24 * (this.howManyDays - 1)));
+    console.log(this.d);
+    return this.d;
+  }
+
+
    eventSubmit(regForm:any): void {
-    this.chosenProfessional = JSON.parse(localStorage.getItem('chosenProf'));
-    this.eventDetails = JSON.parse(localStorage.getItem('event'));
-    console.log("event object " + this.eventDetails);
-    console.log(this.chosenProfessional);
-    this.eventDetails.professionalList = this.chosenProfessional;
-    this.eventDetails.user.userId = this.User.userId;
-    console.log(this.eventDetails);
-    this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
-      data => { 
-        console.log('success1');
-        this.imageUrl='/assets/img/bg.jpg';
-      }
-      );
-    alert('Event created successfully!');
-    this.router.navigate(['']);
+     this.eventDetails.professionalList = this.chosenProfessional;
+     this.eventDetails.user.userId = this.User.userId;
+     console.log(this.eventDetails);
+     this.eventDetails.eventStartDate = this.eventdate.toDateString();
+     this.eventDetails.eventEndDate = this.getdate().toDateString();
+     
+     this.service.postFile(this.eventDetails,this.fileToUpload).subscribe(
+       data => { 
+         console.log('success1');
+         this.imageUrl='/assets/img/bg.jpg';
+       }
+       );
    //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
    }
    handleFileInput(file:FileList){
