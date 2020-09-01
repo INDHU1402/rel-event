@@ -1,96 +1,45 @@
-/*table {
-    width:100%;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  #t01 tr:nth-child(even) {
-    background-color: #eee;
-  }
-  #t01 tr:nth-child(odd) {
-   background-color: #fff;
-  }
-  #t01 th {
-    background-color: black;
-    color: white;
-  }
-
-  body{
-    font-family: verdana;
-  }
-  
-  .filter-input{
-    font-size:25px;
-    padding:5px;
-    border-radius:3px;
-    border:2px solid #ccc;
-    margin-bottom:5px;
-    padding-right: 30px;
-  }
-  
-  .clear-selection {
-      font-size: 12px;
-      font-weight: bold;
-      color: red;
-      cursor: pointer;
-      position: absolute;
-  }
-  
-  .game-list {
-      margin-top: 35px;
-  }
-  
-  li.game-item {
-      list-style: none;
-      font-size: 20px;
-      padding: 3px 0px;
-  }
-  li.game-item input{
-    height: 20px;
-      width: 20px;
-  }
-  
-  .game-text{
-    vertical-align:top;
-  }
-  
-  .selected-game {
-      display: inline-block;
-      margin-right: 15px;
-      font-size: 24px;
-      background: #B9CFEA;
-      margin-bottom: 10px;
-      padding: 2px 11px 4px 11px;
-      border-radius: 8px;
-  }
-  
-  .delete-game{
-      font-size: 13px;
-      padding: 3px 6px;
-      vertical-align:middle;
-      cursor:pointer;
-  }
-  .delete-game:hover{
-      background: #99ABC1;
-      padding: 3px 6px;
-      border-radius: 15px;
-  }
-  
-  .filter-wrap{
-    position:relative ;
-   
-  }
-  
-  .filter-clear{
-      position: absolute;
-      margin-left: -24px;
-      margin-top: 11px;
-      cursor:pointer;
-  }
-  
-  */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa";
+}
+.col-5 {
+  margin: 0;
+}
+.products {
+  height: auto;
+  background: #fff;
+  box-shadow: 1px 2px 5px #aaa, 2px 3px 6px #000;
+}
+img {
+  width: 90%;
+}
+.h5 {
+  font-size: 1rem;
+}
+p {
+  font-size: 0.7rem;
+}
+.empty {
+  letter-spacing: 0.1em;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+.empty:before {
+  content: ' ';
+  width: 5%;
+  height: 100%;
+  position: absolute;
+  border-bottom: 4px #000 double;
+  top: -45%;
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+.empty:hover:before {
+  width: 100%;
+  opacity: 1;
+}

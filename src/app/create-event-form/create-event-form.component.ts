@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-create-event',
-  templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css']
+  selector: 'app-create-event-form',
+  templateUrl: './create-event-form.component.html',
+  styleUrls: ['./create-event-form.component.css']
 })
-export class CreateEventComponent implements OnInit {
+export class CreateEventFormComponent implements OnInit {
   myFilter1 = (d: Date | null): boolean => {
 
     this.date1 = Number(new Date().toDateString().slice(8,-5));

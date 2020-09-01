@@ -18,7 +18,7 @@ export class HomePageComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('userDetails'));
   }
   culturalEvent(){
-    this.router.navigate(['culturalEvent']);
+    this.router.navigate(['profcart']);
   }
   technicalEvent(){
     this.router.navigate(['createEvent']);

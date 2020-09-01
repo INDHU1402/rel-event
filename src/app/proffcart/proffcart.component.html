@@ -1,115 +1,39 @@
-<!--<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-</head>
-
-
-
-<div>
- 
+div#app
+  h2.d-flex.justify-content-center.mt-2 {{shopname}}
   
-
-  <div>
-    <div class="filter-wrap">
-      <input [(ngModel)]="searchText" placeholder="Filter Professionals" class="filter-input">
-      <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
-    </div>
-  </div>
-
-  <div class="clear-selection" title="Click to Clear Selections" (click)="clearSelection()" *ngIf="selected_count">Clear Selection</div>
-  
-  
-  <ul class="game-list">
-    <li *ngFor="let g of games | filter : searchText" class="game-item"> 
-      <input (change)="getSelected()" type="checkbox"
-               name="games"
-               value="{{g.id}}"
-               [(ngModel)]="g.selected"/> 
-      <span class="game-text">{{g.name}}</span>
-    </li>
-  </ul>
-  
-  
-  <div class="selected-games-wrap">
-      <div class="selected-game" *ngFor="let s of selected_games" >
-        <span>{{s.name}} <span class="delete-game" (click)="deleteGame(s.id)" title="Click to delete">X</span></span>
-      </div>
-  </div>
-  
-</div>
-
-
-<div class="form-group col-md-4">
-  <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
-</div>
-
-<table class="table table-bordered table-striped table-hover table-sm text-center">
-  <thead>
-      <tr class="bg-info text-white">
-        <th>Name</th>
-        <th>Service</th> 
-        <th>Experience</th>
-        <th>Add</th>
-        <th>Remove</th>
-      </tr>
-  </thead>
-  <tbody>
-    
-      <tr *ngFor='let prof of professionals | filter:searchedKeyword'>
-        <div *ngIf = "!status()">
+  div.container-fluid
+    div.row
+      div.col-sm-6.col-md-6.product.d-flex.justify-content-center.flex-wrap.mt-2
+        div.products.col-5.d-flex.flex-column.justify-content-center.align-items-center.my-2.mx-2(v-for="(item,key) in list")
+          img(:src="item.imgUrl", alt="").mt-2
+          h5.mt-2|{{ item.name }}
+          p|{{ item.discribe }}
+          div.w-100.d-flex.justify-content-around.align-items-center.pb-1
+            span|${{ item.price }}
+            input(type="button" value="buy" @click="addCart(item)").btn.btn-sm.btn-info
+       
+      div.col-sm-6.col-md-6.cart.d-flex.mt-2
+        span.empty(v-if="!cart.length")
+          |There is empty !
+        
+        table.table.table.table-light.text-center(v-else)
+            tr
+              th| Product
+              th| Quantity
+              th| Price
+              th| total
+              th| operate
+              
+            tr(v-for="(item,key) in cart" :key="item.id")
+              td {{ item.name }}
+              td
+                button(@click="sub(item)").btn.btn-sm.btn-outline-info.mx-1 -
+                | {{ item.quantity }}
+                button(@click="add(item)").btn.btn-sm.btn-outline-info +
+              td {{ item.price }}
+              td {{ item.quantity * item.price}}
+              td
+                button(@click="del(item)").btn.btn-sm.btn-danger x
+          
       
-        <td>{{prof.professionalName}}</td>
-        <td>{{prof.serviceType}}</td>
-        <td>{{prof.experience}}</td>
-        <td><button (click)="addProfessional(prof)">add professional</button></td>
-        <td><button (click)="removeProfessional(prof)">remove professional</button></td>
-      
-    </div>
-
-    <div *ngIf = "status()">
-      <div *ngFor = 'let s of selected_games'>
-        <div *ngIf = "prof.serviceType === s.name">
-      <td>{{prof.professionalName}}</td>
-      <td>{{prof.serviceType}}</td>
-      <td>{{prof.experience}}</td>
-      <td><button (click)="addProfessional(prof)">add professional</button></td>
-      <td><button (click)="removeProfessional(prof)">remove professional</button></td>
-    </div>
-    </div>
-  </div>
-  </tr>
-
-
-</tbody>
-</table>
-
-<br><br><br>
-
-<div *ngFor="let x of chosenProfessional">
-  <p>{{x.professionalName}}</p>
-  <p>{{x.serviceType}}</p>
-</div>
-
-<button (click)="done()">Done</button>-->
-
-
-<div class="form-group">
-  <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
-</div>
-
-<table class="table">
-  <thead>
-      <tr>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Address</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let item of filterData | filter:term">
-          <td>{{item.firstName}}</td>
-          <td>{{item.lastName}}</td>
-          <td>{{item.address}}</td>
-      </tr>
-  </tbody>
-</table>
+  

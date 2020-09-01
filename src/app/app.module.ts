@@ -56,6 +56,7 @@ import { CulturalEventComponent } from './cultural-event/cultural-event.componen
 import { TechnicalEventComponent } from './technical-event/technical-event.component';
 import { PersonalEventComponent } from './personal-event/personal-event.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { ProfcartComponent } from './profcart/profcart.component';
 
 
 
@@ -90,7 +91,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'cart', component:ProffcartComponent},
                          {path:'culturalEvent', component: CulturalEventComponent},
                          {path:'technicalEvent', component:TechnicalEventComponent},
-                         {path:'personalEvent', component:PersonalEventComponent}
+                         {path:'personalEvent', component:PersonalEventComponent},
+                         {path:'profcart', component:ProfcartComponent}
+                         
                          
 ];
 
@@ -132,7 +135,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     DateComponent,
     CulturalEventComponent,
     TechnicalEventComponent,
-    PersonalEventComponent
+    PersonalEventComponent,
+    ProfcartComponent
 
   ],
   imports: [
