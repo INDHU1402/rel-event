@@ -9,6 +9,8 @@
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Address</th>
+            <th>Add</th>
+            <th>Remove</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +18,15 @@
             <td>{{item.professionalName}}</td>
             <td>{{item.serviceType}}</td>
             <td>{{item.serviceName}}</td>
+            <td><button (click)="addProfessional(item)">add professional</button></td>
+            <td><button (click)="removeProfessional(item)">remove professional</button></td>
         </tr>
     </tbody>
 </table>
+
+<div *ngFor="let x of chosenProfessional">
+    <p>{{x.professionalName}}</p>
+    <p>{{x.serviceType}}</p>
+</div>
+
+<button (click)="done()">Done</button>
