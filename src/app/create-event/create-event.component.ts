@@ -55,6 +55,7 @@ export class CreateEventComponent implements OnInit {
       selected:false
     }
   ]
+  cart: any;
   
   
   // Getting Selected Games and Count
@@ -161,7 +162,9 @@ export class CreateEventComponent implements OnInit {
      this.User = JSON.parse(localStorage.getItem('userDetails'));
      console.log(this.User);
      this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
-     
+  
+     this.cart = JSON.parse(sessionStorage.getItem('chosenProf'));
+     console.log(this.cart);
    }
    addProfessional(prof : any) : void{
      this.chosenProfessional.push(prof);
@@ -215,7 +218,7 @@ export class CreateEventComponent implements OnInit {
  
    done() {
      console.log(this.chosenProfessional);
-     localStorage.setItem('chosenProf', JSON.stringify(this.chosenProfessional));
+
      this.router.navigate(['techform']);
    }
 
@@ -225,4 +228,6 @@ export class CreateEventComponent implements OnInit {
     } 
     return false;
   }
+
+ 
 }

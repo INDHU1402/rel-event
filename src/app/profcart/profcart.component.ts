@@ -117,8 +117,8 @@ export class ProfcartComponent implements OnInit {
  
    done() {
      console.log(this.chosenProfessional);
-     localStorage.setItem('chosenProf', JSON.stringify(this.chosenProfessional));
-     this.router.navigate(['techform']);
+     sessionStorage.setItem('chosenProf', JSON.stringify(this.chosenProfessional));
+     this.router.navigate(['createEvent']);
    }
  
    removeProfessional(prof : any) : void {

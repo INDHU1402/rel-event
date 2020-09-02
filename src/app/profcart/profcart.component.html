@@ -14,7 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   
-<div class="content">
+<div class="content1">
     <div style="margin-left: 300px;">
 
 </div>
@@ -51,9 +51,69 @@
 </div>
 
 
+<h1 style="color: white;">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Unity is strength choose professionals for event, make it successful!</h1>
+
+  <div class="container" style="background-color: white; width:400px;">
+    <h1>Chosen Professionals</h1>
+    <ol class="custom-counter" *ngFor="let x of chosenProfessional">
+       <li>{{x.professionalName}}, {{x.serviceType}}, {{x.serviceName}}, {{x.address}}</li>
+     </ol>
+  </div>
 
 
-<table class="table table-striped" style="text-align: justify;width:100%;
+<div *ngFor="let prof of professionals | filter:term">
+  
+  <ng-container *ngIf = "!status()">
+       
+  <section class="text-card">
+     <div class="content"><br>
+         <div class="author-section">
+            <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+         </div>
+         <br><br>
+         <button class="button button2" (click)="addProfessional(prof)">add professional</button>
+         <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
+
+     </div>
+   </section>
+  </ng-container>
+
+  <ng-container *ngIf = "status()">
+    <ng-container *ngFor = 'let s of selected_games'>
+      <ng-container *ngIf = "prof.serviceType === s.name">
+    
+        <section class="text-card">
+          <div class="content"><br>
+              <div class="author-section">
+                 <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+                 <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+                 <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+              </div>
+              <br><br>
+              <button class="button button2" (click)="addProfessional(prof)">add professional</button>
+              <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
+     
+          </div>
+        </section>
+  </ng-container>
+</ng-container>
+</ng-container>
+
+
+  </div>
+
+  <button class="btn btn-success" (click)="done()">Next</button>
+
+</div>
+    </div>
+</div>
+<!--<table class="table table-striped" style="text-align: justify;width:100%;
 white-space: nowrap;">
     <thead>
         <tr>
@@ -113,3 +173,4 @@ white-space: nowrap;">
 </div>
 </div>
 </div>
+-->

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private isUserLogged: any;
-
+  
   
   postFile(regForm,fileToUpload : File){
     const endpoint ='RESTAPI/webapi/myresource/regEvent/';

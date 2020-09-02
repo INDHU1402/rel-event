@@ -4,38 +4,62 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<div class="hero-image1">
-  <div class="hero-image2">
- </div>
-</div>
-<div class="hero-image">
-  <br><br><br>
-  <h4 id="logo" >blog</h4> 
-  <div style="margin-top:100px;width:400px;margin-left: 730px;">
-<form #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
-  <h1 style="color: blanchedalmond;"><b>Enter Title</b></h1>
-  <input type="text" style="width:390px" name="title" [(ngModel)]='blogDetails.title' id="rcorners" placeholder="Type in title...">
-  <br><br>
-  <h1 style="color: blanchedalmond;"><b>Choose Category</b></h1>
-  <select name="category" id="category" [(ngModel)]='blogDetails.category'>
-    <option hidden value="" disabled selected>Choose category </option>
-    <option *ngFor="let category of Category">{{category}}</option>
-  </select>
-<br><br>
-<h1 style="color: blanchedalmond;"><b>Upload File</b></h1>
-  <img [src]="imageUrl" style="width:200px;height:200px;">
-  <div style="margin-left: 20px;">
-    <input style type="file" name="blogImage" accept="image/*" [(ngModel)]='blogDetails.blogImage'
-      (change)="handleFileInput($event.target.files)">
-    <br>
+
+<body>
+  <div class="hero-image1">
+      <br><br><br><br>
+      <div class="hero-image2">
+      </div>
   </div>
-  <h1 style="color: blanchedalmond;"><b>Write Content</b></h1>
-  <textarea placeholder="Write content of blog not less than 250 words" rows="5" name="content"
-    [(ngModel)]='blogDetails.content' id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off"
-    role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-    <br>
-  <button class="btn btn-primary" [disabled]="blogDetails.blogImage==''">Add my blog</button>
-</form>
-</div>
-</div>
-<br><br>
+  <div class="bg-img">
+      <div class="content">
+          <header>Blog Form</header>
+          <form #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
+              <div class="field">
+                  <span class="fa fa-user"></span>
+                  <input type="text" required placeholder="Title">
+              </div>
+              <div style="float:left;">
+                  <br>
+                  <div class="dropdown">
+                      <button class="dropbtn">Choose category</button>
+                      <div class="dropdown-content">
+                          <div *ngFor="let category of Category">{{category}}</div>
+                      </div>
+                  </div>
+                  <br>
+
+              </div>
+              <br><br>
+              <br><br>
+              <div style="float:left;">
+                  <br>
+                  <label style="width:300px;" class="btn fileUpload btn-default">
+                      Browse Image <input type="file" hidden="">
+               </label>
+               <br>
+              </div>
+              <br>
+              <br><br>
+
+              <div>
+                  <textarea placeholder="Write content of blog not less than 250 words" rows="13" name="content"
+                  [(ngModel)]='blogDetails.content' id="comment_text" cols="60" class="ui-autocomplete-input" autocomplete="off"
+                  role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+              </div>
+             <br><br><br>
+              <div class="field">
+                  <button class="btn btn-primary"  style="width:100%;"[disabled]="blogDetails.blogImage==''">Add my blog</button>     
+              </div>
+
+
+
+          </form>
+                            
+      </div>
+  </div>
+
+
+
+
+</body>
