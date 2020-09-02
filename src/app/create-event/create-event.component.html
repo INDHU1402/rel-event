@@ -6,6 +6,19 @@
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+   integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <div class="modal fade" id="timeline">
@@ -91,7 +104,7 @@
 <form #registerForm="ngForm" (ngSubmit)="eventSubmit(registerForm.value)">
 
    <div style="background-color:black">
-      <mat-vertical-stepper [linear]="" #stepper style="margin-left:300px; background-color:black;">
+      <mat-vertical-stepper [linear]="" #stepper style="margin-left:300px;">
 
          <mat-step>
 
@@ -194,16 +207,106 @@
 
          </mat-step>
          <mat-step>
-            <div style="margin-top: -40px;scroll-margin-left: 30px;">
-               <br><br><br>
-               <h1>My To-Do List jquery</h1>
-               <input type="text" placeholder="Add Speaker/Guest details" [(ngModel)]='item'/>
-               <button (click)="add()">Add Speaker Details</button>
+            <div class="content">
+               <div>
+           
+           </div>
+               <div class="row"> 
+                 
+               <div class="col-sm-2" style="background-color:lavender;">
+               <h2>Choose Category</h2>
+           
+             <ul class="game-list">
+               <li *ngFor="let g of games | filter : searchText" class="game-item"> 
+                 <input (change)="getSelected()" type="checkbox"
+                          name="games"
+                          value="{{g.id}}"
+                          [(ngModel)]="g.selected"/> 
+                 <span class="game-text">{{g.name}}</span>
+               </li>
+             </ul>
+             
+             
+             <div class="selected-games-wrap">
+                 <div class="selected-game" *ngFor="let s of selected_games" >
+                   <span>{{s.name}} <span class="delete-game" (click)="deleteGame(s.id)" title="Click to delete">X</span></span>
+                 </div>
+             </div>
+           </div>
+           
+           
+           
+           
+           <div class="col-sm-8" style="background-color:lavenderblush;">
+           
+           <div class="form-group">
+               <input type="text" class="form-control" placeholder="Search " [(ngModel)]="term">
+           </div>
+           
+           
+           
+           
+           <table class="table table-striped" style="text-align: justify;width:100%;
+           white-space: nowrap;">
+               <thead>
+                   <tr>
+                     <th>Name</th>
+                     <th>Service</th> 
+                     <th>Experience</th>
+                     <th>Add</th>
+           
+                   </tr>
+               </thead>
+               <tbody>
+                 
+                   <tr *ngFor="let prof of professionals | filter:term">
+                     <ng-container *ngIf = "!status()">
+                  
+                     <td>{{prof.professionalName}}</td>
+                     <td>{{prof.serviceType}}</td>
+                     <td>{{prof.experience}}</td>
+                     <td><button (click)="addProfessional(prof)">Add professional</button></td>
+           
+            
+                     </ng-container>
+             
+                 <ng-container *ngIf = "status()">
+                   <ng-container *ngFor = 'let s of selected_games'>
+                     <ng-container *ngIf = "prof.serviceType === s.name">
+                   
+                   <td>{{prof.professionalName}}</td>
+                   <td>{{prof.serviceType}}</td>
+                   <td>{{prof.experience}}</td>
+                   <td><button (click)="addProfessional(prof)">add professional</button></td>
+                   
                
-               <br><br>
-
-               <button mat-button matStepperNext class="btn btn-success">Next</button>
-            </div>
+                 </ng-container>
+               </ng-container>
+               </ng-container>
+               
+           </tr>
+             
+             
+             </tbody>
+             </table>
+             
+             <br><br><br>
+             
+             <div class= "card" *ngFor="let x of chosenProfessional" style="text-align: center;">
+               <p>Professional Name : {{x.professionalName}}</p>
+               <p>Service : {{x.serviceType}}</p>
+               <button (click)="removeProfessional(x)">remove professional</button>
+             </div>
+           
+           
+             <br>
+             <div style="text-align: center;">
+             <button (click)="done()">Done</button>
+           </div>
+           </div>
+           </div>
+           </div>
+           
          </mat-step>
 
       </mat-vertical-stepper>
