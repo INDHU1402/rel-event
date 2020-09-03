@@ -42,10 +42,11 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['readblog']);
   }
   
-  shareEvent(eventId : number) {
-    console.log(this.User.userId);
-    console.log(this.to);
-    this.service.shareMyEvent(eventId, this.User.userId, this.to).subscribe((result: any) => {console.log(result); });
+  shareEvent() {
+    console.log('event id = ' + this.eventId);
+    console.log('user id = ' + this.User.userId);
+    console.log('to = ' + this.to);
+    this.service.shareMyEvent(this.eventId, this.User.userId, this.to).subscribe((result: any) => {console.log(result); });
   }
 
   goToEvent(event: any): void {
