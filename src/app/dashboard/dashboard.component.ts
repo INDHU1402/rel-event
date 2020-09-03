@@ -14,6 +14,12 @@ export class DashboardComponent implements OnInit {
   eventProfs = [];
   myBookedEvents: any;
   myBlogs: any;
+  eventId:number;
+  to:string;
+  rates = [];
+  profs = [];
+  rates1: string;
+  profs1: string;
 
   constructor(private service: UserService, private router: Router) { 
     this.editObject = {userId:'',userName: '',contact: '', emailId: '',password: ''};
@@ -36,10 +42,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['readblog']);
   }
   
-  getProfs(eventId: number) {
-    this.service.getProfListofEvent(eventId).subscribe((result: any) => {
-      console.log(result); this.eventProfs = result
-    });
+  shareEvent(eventId : number) {
+    console.log(this.User.userId);
+    console.log(this.to);
+    this.service.shareMyEvent(eventId, this.User.userId, this.to).subscribe((result: any) => {console.log(result); });
   }
 
   goToEvent(event: any): void {
@@ -51,10 +57,34 @@ export class DashboardComponent implements OnInit {
     this.editObject = user;
     jQuery('#userModel').modal('show');
   }
+
   updateUser() {
     this.service.updateUser(this.editObject).subscribe();
     console.log(this.editObject);
     this.router.navigate(['dashboard']);
+  }
+
+  getProfs(eventId: number) {
+    this.service.getProfListofEvent(eventId).subscribe((result: any) => {
+      console.log(result); this.eventProfs = result
+    });
+  }
+
+  setEvent(id : number) {
+    this.eventId = id;
+  }
+
+  addRating(id : any, rate : any) : void {
+    this.profs.push(id)
+    this.rates.push(rate);
+    console.log(rate+ "added");
+  }
+
+  submit() {
+    this.rates1 = this.rates.toString();
+    this.profs1 = this.profs.toString();
+    this.service.rateEvent(this.profs1, this.rates1).subscribe((result: any) => {console.log(result); });
+    console.log("added rating");
   }
 
 }
