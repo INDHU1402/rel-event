@@ -1,47 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Example of Auto Loading Bootstrap Modal on Page Load</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script>
-
-  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Sign in</title>
 </head>
 
-<body>
-  <div class="hero-image1">
-    <div class="container">
-      <br>
-      <h1 style="font-size:20px;color:white"><b>Login To Continue</b></h1>
-      <div class="login-form">
-        <div class="sign-in-htm">
-          <form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
-            <div class="group" style="margin-top: 30px;">
-              <h1 for="user" class="label" style="  font-size:20px;color:white;">
-                <b>Username</b></h1>
-              <input type="text" class="input" name="name" [(ngModel)]='name' placeholder="userName"
-                style="width: 300px; color: black;">
-            </div>
-            <div class="group" style=" margin-top: 30px;">
-              <h1 for="pass" class="label" style="font-size:20px;color: white;">
-                <b>Password</b></h1>
-              <input type="password" class="input" data-type="password" name="password" [(ngModel)]='password'
-                placeholder="password" style="width: 300px; color: black;">
-            </div>
-            <div class="group" style="color:black;">
-              <button class="button" class="btn btn-warning" style="width: 150px;"><b>Login</b> </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-
+<div>
+  <div class="main">
+    <p class="sign" style="text-align: center;">Sign in</p>
+    <form #loginForm="ngForm"class="form1"(ngSubmit)="loginSubmit(loginForm.value)" novalidate>
+      <input class="un " type="text" name="name" [(ngModel)]='name'  style="text-align: center;" placeholder="Username">
+      <input class="pass" type="password" name="password" [(ngModel)]='password' style="text-align: center;" placeholder="Password">
+      <a class="submit" style="text-align: center;">Sign in</a>
+      <p class="forgot"  style="text-align: center;"><a href="#">Forgot Password?</a></p>
+            
+        </form>    
     </div>
+     
   </div>
-</body>
 
+</html>
