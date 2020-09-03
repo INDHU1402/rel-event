@@ -18,7 +18,7 @@ export class CreateEventComponent implements OnInit {
   searchText:string = "";
   selected_count:number = 0;
 
-  
+   
   // Data Object to List Games
   games = [
     {
@@ -162,9 +162,8 @@ export class CreateEventComponent implements OnInit {
      this.User = JSON.parse(localStorage.getItem('userDetails'));
      console.log(this.User);
      this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
+    console.log(this.professionals);
   
-     this.cart = JSON.parse(sessionStorage.getItem('chosenProf'));
-     console.log(this.cart);
    }
    addProfessional(prof : any) : void{
      this.chosenProfessional.push(prof);
