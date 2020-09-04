@@ -219,7 +219,7 @@ export class PersonalEventComponent implements OnInit {
      done() {
        console.log(this.chosenProfessional);
   
-       this.router.navigate(['createEvent']);
+       this.router.navigate(['personalEvent']);
      }
   
      status() {

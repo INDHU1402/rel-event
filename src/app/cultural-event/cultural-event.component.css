@@ -1,0 +1,294 @@
+.adjust {
+    width:400px;
+  }
+  input::placeholder {
+    font-size:15px;
+  }
+  textarea::placeholder {
+    font-size:20px;
+  }
+  textarea {
+    font-size:20px;
+  }
+  input,select {
+    height: 40px;
+    font-size: 15px;
+  }
+  button {
+    height: 30px;
+    width:70px;
+    font-size: 15px;
+    margin-left: 70px;
+  
+  }
+  @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin :15% 0 0 0;  
+    padding:50px;
+    font-size:16pt;
+  }
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }
+  .time-picker {
+    display:flex;
+    align-items:center;
+    margin:0 auto;
+    width:150px;
+    justify-content:space-evenly;
+    border:1px solid #ccc;
+    border-radius:10px;
+    padding:25px;
+  }
+  .tp-col {
+    display:flex;
+    flex-direction:column;
+    align-items: inherit;
+  }
+  .tp-hr>span,.tp-min>span {
+    border:1px solid #ccc;
+    padding:4px 4px ;
+    border-radius:4px;
+    width:25px;
+    text-align:center;
+    font-size:15pt;
+  }
+  .tp-up-arrow,.tp-down-arrow {
+    cursor:pointer;
+    width:15px;
+    height:15px;
+  }
+  .tp-am-pm {
+    cursor:pointer;
+    display:block;
+    padding:1px 3px;
+    border-radius:5px;
+  }
+  .tp-am-pm:hover {
+    background:#eaeaea;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  body{
+    font-family: verdana;
+  }
+  
+  .content {
+    max-width: 1600px;
+    margin: auto;
+  
+  }
+  .filter-input{
+    font-size:25px;
+    padding:5px;
+    border-radius:3px;
+    border:2px solid #ccc;
+    margin-bottom:5px;
+    padding-right: 30px;
+  }
+  
+  .clear-selection {
+      font-size: 12px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+      position: absolute;
+  }
+  
+  .game-list {
+      margin-top: 35px;
+  }
+  
+  li.game-item {
+      list-style: none;
+      font-size: 20px;
+      padding: 3px 0px;
+  }
+  li.game-item input{
+    height: 20px;
+      width: 20px;
+  }
+  
+  .game-text{
+    vertical-align:top;
+  }
+  
+  .selected-game {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 24px;
+      background: #B9CFEA;
+      margin-bottom: 10px;
+      padding: 2px 11px 4px 11px;
+      border-radius: 8px;
+  }
+  
+  .delete-game{
+      font-size: 13px;
+      padding: 3px 6px;
+      vertical-align:middle;
+      cursor:pointer;
+  }
+  .delete-game:hover{
+      background: #99ABC1;
+      padding: 3px 6px;
+      border-radius: 15px;
+  }
+  
+  .filter-wrap{
+    position:relative ;
+   
+  }
+  
+  .filter-clear{
+      position: absolute;
+      margin-left: -24px;
+      margin-top: 11px;
+      cursor:pointer;
+  }
+  
+  .hero-image {
+    background-image: url('/assets/img/creback.jpeg');
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+  }
+  
+  
+  
+  
+  .text-card {
+    position: relative;
+    width: 570px;
+    height: 230px;
+    margin: 20px;
+    padding: 50px;
+    border-radius: 10px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #303336;
+    background-color: #fff;
+    box-shadow: 0 40px 40px -20px #8fc7d577;
+  }
+  
+  .text-card .author-section {
+    position: relative;
+    display: flex;
+    height: 40px;
+  }
+  
+  .text-card .author-avator {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    object-position: center;
+    object-fit: cover;
+  }
+  
+  .text-card .author-name {
+    position: relative;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 700;
+    font-size: .875em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    transition: 250ms;
+  }
+  
+  .text-card .author-avator-link {
+    margin-right: 20px;
+    border-radius: 40px;
+  } 
+  
+  .text-card .author-name-link {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+  }
+  
+  .text-card p {
+    padding: 50px 0;
+    line-height: 1.75;
+    font-weight: 300;
+    color: #7b8591;
+  }
+  
+  .text-card button {
+    padding: 10px 25px;
+    border: 1px solid #ebebeb;
+    border-radius: 50px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .875em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #303336;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 300ms;
+  }
+  
+  .text-card button:hover {
+    border: 1px solid #bebebe;
+  }
+  
+  
+  /* Display this style when screen-width is lower than 425px */
+  @media only screen and (max-width: 425px) {
+  
+    .text-card {
+        width: 100%;
+        height: auto;
+    }
+  
+  }*/
+  
+  
+  .designer {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-weight: 400;
+    color: #46a2b9;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 300ms;
+  }
+  
+  .designer a {
+    text-decoration: none;
+    color: #23515d;
+  }
+  .content1 {
+  max-width: 1600px;
+  margin: auto;
+  margin-top: 150px;
+  margin-left: 280px;
+  }
+  
+  
