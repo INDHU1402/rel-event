@@ -8,8 +8,8 @@
   .card{
     border: 0.40rem solid #f8f9fa;
     top: 10%;
-    height: 700px;
-    background-color:black;
+    height: 1000px;
+    background-color:rgb(56, 46, 46);
   }
   .bg {
     background-image: url("/assets/img/prof.jpg");
