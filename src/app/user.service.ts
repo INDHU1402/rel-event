@@ -180,4 +180,8 @@ getMyEvents(professionalId:number) {
      return this.isUserLogged;
 }
 
+  myrating(profId : number ) : any {
+    return this.httpClient.get('RESTAPI/webapi/myresource/AllRatings/' + profId );
+  }
+
 }

@@ -49,7 +49,7 @@
                                <div class="form-group" class="adjust">
                                   <textarea type="text" class="form-control" name="Overview1"
                                   [(ngModel)]='eventDetails.overview1'
-                                     aria-describedby="emailHelp" placeholder="Glance of what happens at checkpoint-1" rows=4></textarea>
+                                     aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
                                </div>
                             </div>
                          </div>
@@ -70,7 +70,7 @@
                                <div class="form-group" class="adjust">
                                   <textarea type="text" class="form-control" name="Overview2"
                                   [(ngModel)]='eventDetails.overview2'
-                                     aria-describedby="emailHelp" placeholder="Glance of what happens at checkpoint-2" rows=4></textarea>
+                                     aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
                                </div>
                             </div>
                          </div>
@@ -142,11 +142,11 @@
             
               <div class="container" style="background-color: white; width:400px;">
                 <h1>Chosen Professionals</h1>
-                <ol class="custom-counter" *ngFor="let x of chosenProfessional">
-                   <li>Professional Name: {{x.professionalName}}<br> Service Type: {{x.serviceType}}<br> Service Name: {{x.serviceName}}<br> Address: {{x.address}} <br>
-                      
+                <ul class="custom-counter" *ngFor="let x of chosenProfessional">
+                   <li>Professional Name: {{x.professionalName}}<br> Service Type: {{x.serviceType}}<br> Service Name: {{x.serviceName}}<br> Address: {{x.address}} <br>  <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="removeProfessional(x)">Remove</button>
+                     <br>                      
                    </li>
-                 </ol>
+                 </ul>
               </div>
             
             
@@ -161,10 +161,12 @@
                         <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
                         <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
                         <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                        <!--<button (click) = "rate()"> </button>
+                        <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{r}}</h6><br>--> 
                      </div>
                      <br><br>
-                     <button class="button button2" (click)="addProfessional(prof)">add professional</button>
-                     <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
+                     <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
+                     
             
                  </div>
                </section>
@@ -183,8 +185,8 @@
                              <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
                           </div>
                           <br><br>
-                          <button class="button button2" (click)="addProfessional(prof)">add professional</button>
-                          <button class="button button2" (click)="removeProfessional(prof)">remove professional</button>
+                          <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
+                          
                  
                       </div>
                     </section>
@@ -204,7 +206,7 @@
  
           <!-- Modal footer -->
           <div class="modal-footer">
-             <button type="button" class="btn btn-primary" (click)="done()" data-dismiss="modal">Done</button>
+             <button type="button" class="btn btn-primary" (click)="done()" data-dismiss="modal">Submit</button>
           </div>
        </div>
     </div>

@@ -1,6 +1,15 @@
 <br><br><br><br><br><br>
+
+<div class="form-group" >
+    <br>
+    <input type="text" class="form-control" placeholder="Search " style="width: 600px; margin-left: 550px;" [(ngModel)]="term">
+    <br>
+</div>
+
+
+
 <section class="card-container" style="margin-left: 160px;">
-  <div *ngFor='let event of events'>
+  <div *ngFor="let event of events |  filter:term">
   <div class="card">
       <div class="card-top">
           <img src="http://localhost:8080/RESTAPI/images/{{event.poster}}" style="width: 500px; height: 500px;">
@@ -10,7 +19,7 @@
           <h5 style="font-size: 20px;"><b>At </b>{{event.venue}}</h5>
           <h5 style="font-size: 20px;"> <b>From </b>{{event.eventStartDate}} <b>To</b> {{event.eventEndDate}}</h5> 
       </div>
-      <button class="bth btn-danger"  (click)="goToEvent(event)" style="border-radius: 25px; margin-left: 160px; width:100px;">Book now</button>
+      <button class="bth btn-danger"  (click)="goToEvent(event)" style="border-radius: 25px; margin-left: 160px; width:150px;">Book now</button>
   </div>
 </div>
 </section>

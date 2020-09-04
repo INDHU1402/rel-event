@@ -232,7 +232,7 @@ body {
     top: 0%;
     overflow: hidden;
     z-index: 0;
-    background: #d3d8e2 url('/assets/img/Since.png') center center no-repeat;
+    background: #d3d8e2 url('/assets/img/hhm.png') center center no-repeat;
     background-size: cover;
 }
 .hero .fake-waves:before {

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class BookticketComponent implements OnInit {
   events : any;
   cat :string;
+  term: string;
   constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {

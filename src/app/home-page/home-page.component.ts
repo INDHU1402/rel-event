@@ -18,13 +18,49 @@ export class HomePageComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('userDetails'));
   }
   culturalEvent(){
-    this.router.navigate(['profcart']);
+    if (this.user != null) {
+      this.router.navigate(['culturalEvent']);
+    } 
+    else {
+      // this.alerts.setMessage('Please login to create event','error');
+       //this.alerts.setDefaults('timeout',2000 );
+       //console.log('it works');
+       alert('Please login to create event');
+       /*console.log("inside toaster");
+       this.toaster.error('Please login to create event', 'RELEVENT says'); */
+ 
+     }
+    
   }
   technicalEvent(){
-    this.router.navigate(['createEvent']);
+    if (this.user != null) {
+      this.router.navigate(['technicalEvent']);
+    }
+    else {
+      // this.alerts.setMessage('Please login to create event','error');
+       //this.alerts.setDefaults('timeout',2000 );
+       //console.log('it works');
+       alert('Please login to create event');
+       /*console.log("inside toaster");
+       this.toaster.error('Please login to create event', 'RELEVENT says'); */
+ 
+     }
+
   }
  personalEvent(){
+  if (this.user != null) {
     this.router.navigate(['personalEvent']);
+  }
+  else {
+    // this.alerts.setMessage('Please login to create event','error');
+     //this.alerts.setDefaults('timeout',2000 );
+     //console.log('it works');
+     alert('Please login to create event');
+     /*console.log("inside toaster");
+     this.toaster.error('Please login to create event', 'RELEVENT says'); */
+
+   }
+
   }
   
 rd(value){
