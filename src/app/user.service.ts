@@ -106,6 +106,10 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/verification/'+ mail + '/' + name + '/' + mobile);
    }
 
+   verification1(mail : string, name : string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/verification1/'+ mail + '/' + name);
+   }
+
    validateCard(cardNumber : string) {
     console.log("inside service");
     return this.httpClient.get('RESTAPI/webapi/myresource/cardValidate/'+ cardNumber);

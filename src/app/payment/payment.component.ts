@@ -48,7 +48,7 @@ export class PaymentComponent implements OnInit {
       console.log(result1);
       console.log(this.payment.cardNum.slice(0, 2));
       if (result1) {
-        this.service.verification(this.User.emailId, this.User.userName, this.User.contact).subscribe((result2: any) => { this.otp = result2; console.log(result2); });
+        this.service.verification1(this.User.emailId, this.User.userName).subscribe((result2: any) => { this.otp = result2; console.log(result2); });
         if (this.payment.cardNum[0] == '4') {
           this.cardType = "Visa";
           console.log(this.cardType);
