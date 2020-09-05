@@ -12,8 +12,8 @@ export class LoginComponent implements OnInit {
   user: any;
   link: string;
   mail: string;
-  check1:true;
- check2:false;
+  check1="true";
+ check2="false";
   name:string;
   password:string;
   

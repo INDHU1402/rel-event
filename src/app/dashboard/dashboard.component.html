@@ -157,7 +157,7 @@
 
 
             <div class="modal-footer">
-                <button (click)="shareEvent()" class="btn btn-success" style="height:35px; border-radius:5px;">
+                <button (click)="shareEvent()" class="btn1" style="height:35px; border-radius:5px;">
                     <p>Share</p>
                 </button>
 
@@ -181,51 +181,55 @@
             <!-- Modal body -->
             <div class="modal-body">
 
-              
-                        <div *ngFor="let prof of eventProfs">
-                            <p style="font-size:20px;"> {{prof.professionalName}} </p>
-                            <p style="font-size:20px;"> {{prof.serviceType}} </p>
-                            <p style="font-size:20px;"> {{prof.serviceName}} </p>
-                            <br><br>
 
-                            <h6 class="text-primary" style="color:white; font-size:20px;">
-                                <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false" style="zoom:150%">
-                                </ngb-rating>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button (click)="addRating(prof.professionalId, currentRate)" class="btn btn-primary"
-                                    style="height:35px; border-radius:5px;">
-                                    <p>Rate</p>
-                                </button>
+                <div *ngFor="let prof of eventProfs">
+                    <p style="font-size:20px;"> {{prof.professionalName}} </p>
+                    <p style="font-size:20px;"> {{prof.serviceType}} </p>
+                    <p style="font-size:20px;"> {{prof.serviceName}} </p>
+                    <br><br>
 
-                            </h6>
-                        </div>
+                    <h6 class="text-primary" style="color:white; font-size:20px;">
+                        <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false" style="zoom:150%">
+                        </ngb-rating>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button (click)="addRating(prof.professionalId, currentRate)" class="btn1" 
+                            style="height:35px; border-radius:5px;">
+                            <p>Rate</p>
+                        </button>
 
-                    </div>
-
-
-
-                <div class="modal-footer">
-                    <button (click)="submit()" class="btn btn-success" style="height:35px; border-radius:5px;">
-                        <p>Done</p>
-                    </button>
-
+                    </h6>
                 </div>
 
             </div>
+
+
+
+            <div class="modal-footer">
+                <button (click)="submit()" class="btn1" style="height:35px; border-radius:5px;">
+                    <p>Done</p>
+                </button>
+
+            </div>
+
         </div>
     </div>
+</div>
 
-<br><br><br><br>
-<br><br><br><br>
+<br><br><br>
+<div style="background-image: url('/assets/img/abs1.jpg'); min-height:896px; height:auto;">
     <section class="py-5 header">
+
         <div class="container py-4">
 
+
             <div class="row">
-                <div class="col-md-3" style="width: 400px; margin-left:-200px; zoom:120%">
+                <div class="col-md-3" style="width: 400px; margin-left:-200px; zoom:140%">
                     <!-- Tabs nav -->
+
                     <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
                         aria-orientation="vertical">
-
+                        <br>
+                        <h1>Hi, Preetha</h1>
                         <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill"
                             href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">
                             <i class="fa fa-user-circle-o mr-2"></i>
@@ -250,12 +254,13 @@
                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"
                             href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                             <i class="fa fa-star mr-2"></i>
-                            <span class="font-weight-bold small text-uppercase">Reviews</span>
-                            <br>
+                            <span class="font-weight-bold small text-uppercase">Reviews</span></a>
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"
+                            href="#v-pills-share" role="tab" aria-controls="v-pills-share" aria-selected="false">
                             <i class="fa fa-share-alt mr-2"></i>
                             <span class="font-weight-bold small text-uppercase">Share Event</span></a>
 
-                      <!-- <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
+                        <!-- <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
                             href="#v-pills-history" role="tab" aria-controls="v-pills-history" aria-selected="false">
                             <i class="fa fa-history mr-2"></i>
                             <span class="font-weight-bold small text-uppercase">History</span></a>
@@ -264,7 +269,7 @@
                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
                             href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                             <i class="fa fa-gear mr-2"></i>
-                            <span class="font-weight-bold small text-uppercase">Settings</span></a> --> 
+                            <span class="font-weight-bold small text-uppercase">Settings</span></a> -->
 
                     </div>
                 </div>
@@ -272,18 +277,12 @@
 
                 <div class="col-md-9" style="width: 1500px;">
                     <!-- Tabs content -->
-                    <div class="contanier">
-                        <img src="/assets/img/smoke.jpg" style="border-radius: 20px; width:1300px; height:400px;">
-                        <p style="font-size:35px; margin-top:-200px; margin-left: 150px;color:white;">Welcome back,
-                            {{User.userName}}</p>
-                    </div>
-                    <br><br><br><br><br><br><br><br><br><br>
-
+                    <br><br><br><br>
                     <div class="tab-content" id="v-pills-tabContent">
 
                         <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home"
                             role="tabpanel" aria-labelledby="v-pills-home-tab"
-                            style="width: 1300px; border-radius: 20px; ">
+                            style="width: 1000px; border-radius: 20px; ">
 
                             <!-- The Modal -->
                             <div class="modal" id="userModel" data-backdrop="false">
@@ -321,112 +320,185 @@
                                 </div>
                             </div>
 
-                            <h2 class="font-italic mb-4">Personal information</h2>
+                            <h2 class="font-awesome mb-4">Profile</h2>
                             <br><br>
-                            <div class="profile-card">
-                                <div class="image-container">
-                                    <img src="/assets/img/nature.jpeg" style="width:400px;">
 
-                                </div>
-                                <div class="main-container" style="color: black;">
-                                    <p style="color: black;"><i class="fa fa-user" aria-hidden="true"></i>
-                                        {{User.userName}}</p>
-                                    <p><i class="fa fa-envelope" aria-hidden="true"></i>
-                                        {{User.emailId}}</p>
-                                    <p><i class="fa fa-phone" aria-hidden="true"></i>
-                                        {{User.contact}}</p>
-                                    <p><i class="fa fa-key" aria-hidden="true"></i>
-                                        {{User.password}}</p>
-                                    <hr>
-                                    <button type="button" (click)="showEditPopup(User)" class="edit-btn">E D I
-                                        T</button>
-                                </div>
+
+                            <div class="main-container" style="color: green">
+                                <p style="font-size:20px;"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                                    {{User.userName}}</p>
+                                <p style="font-size:20px;"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                                    {{User.emailId}}</p>
+                                <p style="font-size:20px;"><i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                                    {{User.contact}}</p>
+                                <p style="font-size:20px;"><i class="fa fa-key fa-2x" aria-hidden="true"></i>
+                                    {{User.password}}</p>
+                                <hr>
+                                <button type="button" (click)="showEditPopup(User)" class="edit-btn">Edit Profile</button>
                             </div>
+
                         </div>
 
                         <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-events"
                             role="tabpanel" aria-labelledby="v-pills-events-tab"
-                            style="width: 1300px; border-radius: 20px; ">
-                            <h2 class="font-italic mb-4">My Events</h2>
-
+                            style="width: 1000px; border-radius: 20px; ">
+                            <h2>My Events</h2>
+                            <hr />
+                            <br>
                             <div *ngFor='let event of myEvents'>
-                                <div class="card">
-                                    <img src="http://localhost:8080/RESTAPI/images/{{event.poster}}" alt="Denim Jeans"
-                                        style="height:200px;">
-                                    <h1>{{event.eventName}}</h1>
-                                    <p>At {{event.venue}}</p>
-                                    <p>From {{event.eventStartDate}} to {{event.eventEndDate}}</p>
-                                    <p class="price">Rs. {{event.ticketPrice}}</p>
-                                    <p>{{event.about}}</p>
-                                    <p><button class="button1" (click)="goToEvent(event)"
-                                            style="border-radius: 25px;">Go to
-                                            event</button></p>
+                                <div class="card" style="zoom:150%;">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-5">
+                                            <img class="card-img"
+                                                src="http://localhost:8080/RESTAPI/images/{{event.poster}}"
+                                                alt="Suresh Dasari Card">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h2 class="card-title">{{event.eventName}}</h2>
+                                                <p class="card-text">At {{event.venue}}</p>
+                                                <h5>From {{event.eventStartDate}} to {{event.eventEndDate}}</h5>
+                                                <p><button class="btn btn-danger" (click)="goToEvent(event)"
+                                                        style="border-radius: 25px; width:100px;">Go to
+                                                        event</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br><br>
                             </div>
 
                         </div>
 
                         <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-blog"
                             role="tabpanel" aria-labelledby="v-pills-blog-tab"
-                            style="width: 1300px; border-radius: 20px; ">
-                            <h4 class="font-italic mb-4">My blogs</h4>
+                            style="width: 1000px; border-radius: 20px; ">
+                            <h2>My Blogs</h2>
+                            <hr />
+                            <br>
                             <div *ngFor='let x of myBlogs'>
-                                <div class="card">
-                                    <img src="/assets/img/bg1.jpg" alt="Denim Jeans" style="height:200px;">
-                                    <h1>{{x.title}}</h1>
-                                    <p># {{x.category}}</p>
-                                    <p>Written on {{x.blogDate | date}}</p>
-                                    <p>{{x.content | getintro}}</p>
-                                    <p><button class="button1" (click)="readmore(blog)" style="border-radius: 25px;">Go
-                                            to
-                                            Blog</button></p>
+
+                                <div class="card" style="zoom:150%;">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-5">
+                                            <img class="card-img"
+                                                src="http://localhost:8080/RESTAPI/images/{{x.blogImage}}"
+                                                alt="Suresh Dasari Card">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h2 class="card-title">{{x.title}}</h2>
+                                                <p class="card-text"># {{x.category}}</p>
+                                                <p>{{x.content | getintro}}</p>
+                                                <h5>Written on {{x.blogDate | date}}</h5>
+                                                <p><button class="btn btn-danger" (click)="readmore(blog)"
+                                                        style="border-radius: 25px; width:100px;">Go
+                                                        to
+                                                        Blog</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br><br>
                             </div>
                         </div>
 
                         <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab" style="width: 1300px; border-radius: 20px; ">
-                            <h4 class="font-italic mb-4">Bookings</h4>
+                            aria-labelledby="v-pills-profile-tab" style="width: 1000px; border-radius: 20px; ">
+                            <h2>Bookings</h2>
+                            <hr />
+                            <br>
                             <div *ngFor='let payment of myBookedEvents'>
-                                <div class="card">
-                                    <img src="/assets/img/bg.jpg" alt="Denim Jeans" style="height:200px;">
-                                    <h1>{{payment.event.eventName}}</h1>
-                                    <p>At {{payment.event.venue}}</p>
-                                    <p>From {{payment.event.eventStartDate}} to {{payment.event.eventEndDate}}</p>
-                                    <p class="price">Rs. {{payment.event.ticketPrice}}</p>
-                                    <p>{{payment.event.about}}</p>
-                                    <p><button class="button1" (click)="goToEvent(event)"
-                                            style="border-radius: 25px;">Go to
-                                            event</button></p>
+                                <div class="card" style="zoom:150%;">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-5">
+                                            <img class="card-img"
+                                                src="http://localhost:8080/RESTAPI/images/{{payment.event.poster}}"
+                                                alt="Suresh Dasari Card">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h2 class="card-title">{{payment.event.eventName}}</h2>
+                                                <p class="card-text">At {{payment.event.venue}}</p>
+                                                <h5>From {{payment.event.eventStartDate}} to
+                                                    {{payment.event.eventEndDate}}</h5>
+                                                <p><button class="btn btn-danger" (click)="goToEvent(event)"
+                                                        style="border-radius: 25px; width:100px;">Go to
+                                                        event</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br><br>
                             </div>
                         </div>
 
                         <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-messages" role="tabpanel"
-                            aria-labelledby="v-pills-messages-tab" style="width: 1300px; border-radius: 20px; ">
-                            <h4 class="font-italic mb-4">Reviews</h4>
+                            aria-labelledby="v-pills-messages-tab" style="width: 1000px; border-radius: 20px; ">
 
+                            <h2>Rate Professionals</h2>
+                            <hr />
+                            <br>
                             <div *ngFor='let event of myEvents'>
-                                <div class="card">
-                                    <img src="http://localhost:8080/RESTAPI/images/{{event.poster}}" alt="Denim Jeans"
-                                        style="height:200px;">
-                                    <h1>{{event.eventName}}</h1>
-                                    <p>At {{event.venue}}</p>
-                                    <p>From {{event.eventStartDate}} to {{event.eventEndDate}}</p>
-
-                                    <p><button class="bth btn-danger" (click)="setEvent(event.eventId)"
-                                            style="border-radius: 25px; width:200px;" data-toggle="modal"
-                                            data-target="#shareEvent">
-                                            Share event</button></p>
-                                    <p><button class="bth btn-danger" (click)="getProfs(event.eventId)"
-                                            style="border-radius: 25px; width:200px;" data-toggle="modal"
-                                            data-target="#rateProf">
-                                            Rate professionals</button></p>
+                                <div class="card" style="zoom:150%;">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-5">
+                                            <img class="card-img"
+                                                src="http://localhost:8080/RESTAPI/images/{{event.poster}}"
+                                                alt="Suresh Dasari Card">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h2 class="card-title">{{event.eventName}}</h2>
+                                                <p class="card-text">At {{event.venue}}</p>
+                                                <h5>From {{event.eventStartDate}} to {{event.eventEndDate}}</h5>
+                                                <p><button class="btn btn-danger" (click)="getProfs(event.eventId)"
+                                                        style="border-radius: 25px; width:100px;" data-toggle="modal"
+                                                        data-target="#rateProf">
+                                                        Rate professionals</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br><br>
                             </div>
+
                         </div>
 
-                      <!--  <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-history"
+
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-share" role="tabpanel"
+                            aria-labelledby="v-pills-share-tab" style="width: 1000px; border-radius: 20px; ">
+                            <h2>Share Event</h2>
+                            <hr />
+                            <br>
+                            <div *ngFor='let event of myEvents'>
+                                <div class="card" style="zoom:150%;">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-5">
+                                            <img class="card-img"
+                                                src="http://localhost:8080/RESTAPI/images/{{event.poster}}"
+                                                alt="Suresh Dasari Card">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="card-body">
+                                                <h2 class="card-title">{{event.eventName}}</h2>
+                                                <p class="card-text">At {{event.venue}}</p>
+                                                <h5>From {{event.eventStartDate}} to {{event.eventEndDate}}</h5>
+                                                <p><button class="bth btn-danger" (click)="setEvent(event.eventId)"
+                                                    style="border-radius: 25px; width:100px;" data-toggle="modal"
+                                                    data-target="#shareEvent">
+                                                    Share event</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br>
+                            </div>
+
+                        </div>
+
+                        <!--  <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-history"
                             role="tabpanel" aria-labelledby="v-pills-history-tab"
                             style="width: 1300px; border-radius: 20px; ">
                             <h4 class="font-italic mb-4">History</h4>
@@ -453,3 +525,5 @@
             </div>
         </div>
     </section>
+    <br><br><br><br>
+</div>

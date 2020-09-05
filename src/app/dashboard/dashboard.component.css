@@ -1,102 +1,100 @@
 .body {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 .nav-pills-custom .nav-link {
-    color: #aaa;
-    background: #fff;
-    position: relative;
+  color: #aaa;
+  background: #fff;
+  position: relative;
 }
 
 .nav-pills-custom .nav-link.active {
-    color: #45b649;
-    background: #fff;
+  color: #45b649;
+  background: #fff;
 }
 
 /* Add indicator arrow for the active tab */
 @media (min-width: 992px) {
-    .nav-pills-custom .nav-link::before {
-        content: '';
-        display: block;
-        border-top: 8px solid transparent;
-        border-left: 10px solid #fff;
-        border-bottom: 8px solid transparent;
-        position: absolute;
-        top: 50%;
-        right: -10px;
-        transform: translateY(-50%);
-        opacity: 0;
-    }
+  .nav-pills-custom .nav-link::before {
+      content: '';
+      display: block;
+      border-top: 8px solid transparent;
+      border-left: 10px solid #fff;
+      border-bottom: 8px solid transparent;
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      opacity: 0;
+  }
 }
 
 .nav-pills-custom .nav-link.active::before {
-    opacity: 1;
+  opacity: 1;
+}
+.bcontent {
+margin-top: 10px;
+}
+/*UPDATE PROFILE*/
+.profile-card{
+  width:400px;
+  margin:auto;
+  background: #fff;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+  border-radius:20px;
+}
+.image-container{
+  position: relative;
+}
+.info{
+  color:#4b4fe2;
+  margin-right:16px;
 }
 
- /*UPDATE PROFILE*/
-.profile-card{
-    width:400px;
-    margin:auto;
-    background: #fff;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
-    border-radius:20px;
-  }
-  .image-container{
-    position: relative;
-  }
-  .info{
-    color:#4b4fe2;
-    margin-right:16px;
-  }
-  
-  .main-container{
-    padding:20px;
-  }
-  .edit-btn{
-    width:100px;
-    color:#fff;
-    margin-top:20px;
-    height:50px;
-    background-color:black;
-    border:none;
-  }
+.main-container{
+  padding:20px;
+}
 
 /*MY EVENTS*/
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-  }
-  
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-  
-  .button1 {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .button1:hover {
-    opacity: 0.7;
-  }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
 
-  textarea {
-      font-size:17px;
-  }
-  button {
+.card-img {
+  height:180px;
+}
+
+/* .button1 {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.button1:hover {
+  opacity: 0.7;
+} */
+.btn1::placeholder {
+  font-size:17px;
+  text-align: center;
+}
+.btn1 {
+  background-color:lightseagreen;
+  color:black;
+}
+textarea {
     font-size:17px;
-  }
-  textarea::placeholder, button::placeholder{
-      font-size:17px;
-      text-align: center;
-  }
+}
+
+textarea::placeholder {
+    font-size:17px;
+    text-align: center;
+}

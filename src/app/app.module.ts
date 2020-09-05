@@ -58,6 +58,8 @@ import { PersonalEventComponent } from './personal-event/personal-event.componen
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { ProfcartComponent } from './profcart/profcart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfDashBoardComponent } from './prof-dash-board/prof-dash-board.component';
+import { BlogFormComponent } from './blog-form/blog-form.component';
 
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -67,7 +69,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'payment', component: PaymentComponent},
                          {path:'bill', component: BillComponent},
                          {path:'blog', component:BlogComponent},
-                         {path:'blogform', component:BlogformComponent},
+                         {path:'blogform', component:BlogFormComponent},
                          {path:'readblog', component:ReadblogComponent},
                          {path:'expandService', component:ExpandserviceComponent},
                          {path:'createEvent', component:CreateEventComponent},
@@ -93,7 +95,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'technicalEvent', component:TechnicalEventComponent},
                          {path:'personalEvent', component:PersonalEventComponent},
                          {path:'profcart', component:ProfcartComponent},
-                         {path:'dashboard', component:DashboardComponent}
+                         {path:'dashboard', component:DashboardComponent},
+                         {path:'profdashboard', component:ProfDashBoardComponent}
                          
                          
 ];
@@ -138,7 +141,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     TechnicalEventComponent,
     PersonalEventComponent,
     ProfcartComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfDashBoardComponent,
+    BlogFormComponent
 
   ],
   imports: [
