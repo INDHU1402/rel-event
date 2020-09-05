@@ -213,7 +213,7 @@
  <form #registerForm="ngForm" (ngSubmit)="eventSubmit(registerForm.value)">
  
     <div class = "hero-image" >
-       <mat-vertical-stepper [linear]="" #stepper style="margin-left:400px; margin-top: 100px; background-color: transparent; ">
+       <mat-horizontal-stepper [linear]="" #stepper style="margin-left:200px; margin-top: 100px; background-color: transparent; ">
  
           <mat-step>
  
@@ -323,18 +323,18 @@
             
             
              <div class="form-group" class="adjust">
-                <input type="number" class="form-control" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' aria-describedby="emailHelp"
+                <input type="number" style ="width:500px;" class="form-control" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' aria-describedby="emailHelp"
                    placeholder="Enter Ticket Price"><br>
              
              </div>
  
              <div class="form-group" class="adjust">
-                <input type="number" class="form-control" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' aria-describedby="emailHelp"
+                <input type="number" style ="width:500px;" class="form-control" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' aria-describedby="emailHelp"
                    placeholder="Enter Attendees Count"><br>
              
              </div>
              <div class="form-group" class="adjust">
-             <select class="form-control" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+             <select class="form-control" style ="width:500px;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
                 <option hidden value="" disabled selected>Allow sponsors?</option>
                 <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
              </select>
@@ -353,17 +353,17 @@
           
           <mat-step>
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" name="guest1" [(ngModel)]='eventDetails.guest1' aria-describedby="emailHelp"
+                <input type="text" class="form-control" style ="width:500px;" name="guest1" [(ngModel)]='eventDetails.guest1' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
     
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" name="guest2" [(ngModel)]='eventDetails.guest2' aria-describedby="emailHelp"
+                <input type="text" class="form-control" style ="width:500px;" name="guest2" [(ngModel)]='eventDetails.guest2' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
     
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" name="guest3" [(ngModel)]='eventDetails.guest3' aria-describedby="emailHelp"
+                <input type="text" class="form-control" style ="width:500px;" name="guest3" [(ngModel)]='eventDetails.guest3' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
              <br>
@@ -403,7 +403,7 @@
  
         
  
-       </mat-vertical-stepper>
+       </mat-horizontal-stepper>
  
        <br><br>
        <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >Add Event</button>
