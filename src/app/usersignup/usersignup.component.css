@@ -10,15 +10,21 @@ h2{
 a{
   color: #333;
 }
+input, button {
+  font-size:16px;
+}
 a:hover{
   color: #da5767;
   text-decoration: none;
 }
 .card{
-  border: 0.40rem solid #f8f9fa;
+  border: 0.40rem solid gray;
   top: 10%;
-  height: 500px;
+  zoom:110%;
+  height: 510px;
   background-color: white;
+  border-radius:20px;
+  border-style: dotted;
 }
 .form-control{
   background-color: #f8f9fa;
@@ -27,13 +33,12 @@ a:hover{
   margin-bottom: 1.3rem;
 }
 .bg {
-  background-image: url("/assets/img/lightt.png");
-  height: 900px;
+  background-image: url("/assets/img/1991.png");
+  height: 957px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin-top: 100px;
 
 }
 

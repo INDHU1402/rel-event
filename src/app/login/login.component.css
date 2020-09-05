@@ -1,13 +1,17 @@
 body {
-  background-image: url('/assets/img/1991.png');
+  background-image: url('/assets/img/abc.jpg');
   font-family: 'Ubuntu', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main {
   background-color: #FFFFFF;
+  border-style: dashed;
+  border-color: indigo;
   width: 400px;
   height: 400px;
-  zoom:110%;
+  zoom:120%;
   margin-left:-100px;;
   margin: 7em auto;
   border-radius: 1.5em;

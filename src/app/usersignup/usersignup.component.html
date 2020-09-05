@@ -1,34 +1,35 @@
 <div class="bg">
+    <br><br><br><br><br>
 <div class="container">
     <br><br><br><br>
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card">
                 <br>
-                <h2 class="card-title text-center">Register As User </h2>
-                <div class="card-body py-md-4">
+                <h2 class="card-title text-center">Register as User </h2>
+                <div class="card-body py-md-4" style="margin-left:-20px;">
                     <form #registerForm="ngForm">
                         <div class="form-group" style="margin-left: 85px;">
-                            <input type="text" class="form-control" name="userName" placeholder="userName *" value=""
+                            <input type="text" class="form-control" name="userName" placeholder="UserName" value=""
                                 [(ngModel)]='user.userName' style="width:250px; height:40px;" required />
                         </div>
                         <div class="form-group" style="margin-left: 85px;">
-                            <input type="text" class="form-control" name="contact" placeholder="contact *" value=""
+                            <input type="text" class="form-control" name="contact" placeholder="Contact" value=""
                                 [(ngModel)]='user.contact' style="width:250px; height:40px;" required />
                         </div>
 
 
                         <div class="form-group" style="margin-left: 85px;">
-                            <input type="text" class="form-control" name="emailId" placeholder="emailId *" value=""
+                            <input type="text" class="form-control" name="emailId" placeholder="EmailId" value=""
                                 [(ngModel)]='user.emailId' style="width:250px; height:40px;" required />
                         </div>
                         <div class="form-group" style="margin-left: 85px;">
-                            <input type="password" class="form-control" name="password" placeholder="password *"
+                            <input type="password" class="form-control" name="password" placeholder="Password"
                                 value="" [(ngModel)]='user.password' style="width:250px; height:40px;" required />
                         </div>
                         <div class="form-group" style="margin-left: 85px;">
-                            <input type="password" class="form-control" required="true" name="confirmpassword"
-                                [(ngModel)]='confirmPassword' placeholder="confirmPassword*"
+                            <input type="password" class="form-control" required="true" name="confirmPassword"
+                                [(ngModel)]='confirmPassword' placeholder="Confirm Password"
                                 style="width:250px; height:40px;" required />
                         </div>
                     </form>
@@ -36,9 +37,10 @@
                 <div style="text-align: center; margin-left:200px; margin-top: -10px;">
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-                        (click)="register()" style="width: 70px;">
+                        (click)="register()" style="margin-left:-200px; width: 90px;">
                         Signup
                     </button>
+                    <br><br>
                     <!-- The Modal -->
                     <div class="modal fade" id="myModal">
                         <div class="modal-dialog modal-lg">
