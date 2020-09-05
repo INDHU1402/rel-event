@@ -12,6 +12,7 @@ export class CreateEventComponent implements OnInit {
   chosenProfessional = [];
   term: string;
   name: string;
+  value : number;
 
   selected_games: { name: string; id: number; selected: boolean; }[];
 
@@ -186,6 +187,13 @@ export class CreateEventComponent implements OnInit {
     return this.d;
   }
 
+
+  getRating (profId : number) {
+    this.service.myrating(profId).subscribe((op: any) => { 
+      console.log(op);
+      this.value = op;
+    } );
+  }
 
    eventSubmit(regForm:any): void {
      this.eventDetails.professionalList = this.chosenProfessional;

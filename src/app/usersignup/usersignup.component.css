@@ -18,7 +18,7 @@ a:hover{
   text-decoration: none;
 }
 .card{
-  border: 0.40rem solid gray;
+  border: 0.50rem solid gray;
   top: 10%;
   zoom:110%;
   height: 510px;
@@ -33,7 +33,7 @@ a:hover{
   margin-bottom: 1.3rem;
 }
 .bg {
-  background-image: url("/assets/img/1991.png");
+  background-image: url("/assets/img/abs2.jpg");
   height: 957px;
   background-position: center;
   background-repeat: no-repeat;

@@ -13,7 +13,7 @@ export class PersonalEventComponent implements OnInit {
     chosenProfessional = [];
     term: string;
     name: string;
-  
+    value : number;
     selected_games: { name: string; id: number; selected: boolean; }[];
   
     searchText:string = "";
@@ -162,9 +162,7 @@ export class PersonalEventComponent implements OnInit {
      ngOnInit(): void {
        this.User = JSON.parse(localStorage.getItem('userDetails'));
        console.log(this.User);
-       this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} );
-      console.log(this.professionals);
-    
+       this.service.getProfessionalList().subscribe((result: any) => { console.log(result); this.professionals = result} ); 
      }
      addProfessional(prof : any) : void{
        this.chosenProfessional.push(prof);
@@ -188,6 +186,14 @@ export class PersonalEventComponent implements OnInit {
     }
   
   
+    getRating (profId : number) {
+      this.service.myrating(profId).subscribe((op: any) => { 
+        console.log(op);
+        this.value = op;
+      } );
+    }
+
+    
      eventSubmit(regForm:any): void {
        this.eventDetails.professionalList = this.chosenProfessional;
        this.eventDetails.user.userId = this.User.userId;

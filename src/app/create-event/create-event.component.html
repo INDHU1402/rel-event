@@ -171,6 +171,8 @@
                        <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
                        <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
                        <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                       <button class="button button2" (click)="getRating(prof.professionalId)">Rating</button>
+                       <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>
                     </div>
                     <br><br>
                     <button class="button button2" (click)="addProfessional(prof)">add professional</button>
