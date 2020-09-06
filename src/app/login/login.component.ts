@@ -22,7 +22,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isLoading = false;
   
+  toggleLoading = () => {
+    this.isLoading = true;
+
+    //Faking an API call
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
+  };
   /*
     resetPassword() {
       this.service.forgotpassword(this.mail).subscribe((result: any) => {console.log(result);});
@@ -33,6 +42,7 @@ fs(){
   this.router.navigate(['']);
 }
   loginSubmit(loginForm: any): void {
+    this.isLoading = true;
     this.service.isUsernameExists(this.name).subscribe((result1: any) => {
       this.check1 = result1; console.log("result value = " + result1);
     });
@@ -46,6 +56,9 @@ fs(){
             this.service.getProfessional(this.name, this.password).subscribe((result4: any) => {
               console.log("---" + result4);
               localStorage.setItem('profDetails', JSON.stringify(result4));
+              setTimeout(() => {
+                this.isLoading = false;
+              }, 2000);
               if (result4) {
                 this.service.setUserLoggedIn();
                 this.router.navigate(['']);
@@ -55,6 +68,9 @@ fs(){
                 this.service.getUser(this.name, this.password).subscribe((result3: any) => {
                   console.log(result3);
                   localStorage.setItem('userDetails', JSON.stringify(result3));
+                  setTimeout(() => {
+                    this.isLoading = false;
+                  }, 2000);
                   if (result3) {
                     this.service.setUserLoggedIn();
                     this.router.navigate(['']);

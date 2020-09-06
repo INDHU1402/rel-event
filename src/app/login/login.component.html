@@ -15,8 +15,11 @@
     <form #loginForm="ngForm"class="form1"(ngSubmit)="loginSubmit(loginForm.value)" novalidate>
       <input class="un " type="text" name="name" [(ngModel)]='name'  style="text-align: center;" placeholder="Username">
       <input class="pass" type="password" name="password" [(ngModel)]='password' style="text-align: center;" placeholder="Password">
-      <button class="submit" style="text-align: center;" data-dismiss="modal">Sign in</button>
-        </form>    
+      <button class="button" [disabled]="isLoading" class="submit" style="text-align: center;" data-dismiss="modal">
+        <img *ngIf="isLoading" style="width : 24px" src="/assets/img/126.gif" />
+        Sign in
+      </button>
+    </form>    
     </div>
      
   </div>
