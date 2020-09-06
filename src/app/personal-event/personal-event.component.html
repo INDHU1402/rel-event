@@ -152,6 +152,7 @@
            
              <div *ngFor="let r of ids">
                 <p>{{r}}</p>
+                <div class="star-rating-display" data-rating={{r}}></div>
              </div>
              
            <div *ngFor="let prof of professionals | filter:term">
@@ -191,7 +192,7 @@
                             <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>
                            </div>
                          <br><br>
-                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">pAdd</button>
+                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add</button>
                       
                      </div>
                    </section>

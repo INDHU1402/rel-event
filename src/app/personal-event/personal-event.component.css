@@ -291,3 +291,40 @@ margin-top: 150px;
 margin-left: 280px;
 }
 
+.star-rating-display {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 4rem;
+  display: inline-block;
+  position: relative;
+}
+.star-rating-display:before, .star-rating-display:after {
+  content: "★★★★★";
+  display: block;
+  white-space: nowrap;
+}
+.star-rating-display:before {
+  color: gold;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  overflow: hidden;
+}
+.star-rating-display:after {
+  z-index: 0;
+}
+.star-rating-display[data-rating="1"]:before {
+  width: 20%;
+}
+.star-rating-display[data-rating="2"]:before {
+  width: 40%;
+}
+.star-rating-display[data-rating="3"]:before {
+  width: 60%;
+}
+.star-rating-display[data-rating="4"]:before {
+  width: 80%;
+}
+.star-rating-display[data-rating="5"]:before {
+  width: 100%;
+}
