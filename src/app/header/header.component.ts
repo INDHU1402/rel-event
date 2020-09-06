@@ -73,11 +73,6 @@ export class HeaderComponent implements OnInit {
   status(): boolean {
     this.db = JSON.parse(localStorage.getItem('userDetails'));
     this.db1 = JSON.parse(localStorage.getItem('profDetails'));
-    console.log("user "+this.db);
-    console.log("prof "+this.db1);
-    
-
-
     return this.service.getUserLogged();
   }
 }
