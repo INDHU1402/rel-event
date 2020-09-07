@@ -245,6 +245,11 @@
                             <i class="glyphicon glyphicon-pencil mr-2"></i>
                             <span class="font-weight-bold small text-uppercase">&nbsp;My Blogs</span></a>
 
+                            <a class="nav-link mb-3 p-3 shadow" id="v-pills-exps-tab" data-toggle="pill"
+                            href="#v-pills-exps" role="tab" aria-controls="v-pills-events" aria-selected="false">
+                            <i class="glyphicon glyphicon-folder-open mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">&nbsp;My Experiences</span></a>
+
                       
 
                         <!-- <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
@@ -373,7 +378,7 @@
 
                         <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-blog"
                             role="tabpanel" aria-labelledby="v-pills-blog-tab"
-                            style="width: 1000px; border-radius: 20px; ">
+                            style="width: 1000px;margin-top:10px; border-radius: 20px; ">
                             <h2>My Blogs</h2>
                             <hr />
                             <br>
@@ -384,7 +389,7 @@
                                         <div class="col-sm-5">
                                             <img class="card-img"
                                                 src="http://localhost:8080/RESTAPI/images/{{x.blogImage}}"
-                                                alt="Suresh Dasari Card">
+                                                alt="Soman Dasari Card">
                                         </div>
                                         <div class="col-sm-7">
                                             <div class="card-body">
@@ -403,6 +408,33 @@
                                 <br><br>
                             </div>
                         </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-exps"
+                        role="tabpanel" aria-labelledby="v-pills-exps-tab"
+                        style="width: 1000px; border-radius: 20px; ">
+                        <h2>My Experiences</h2>
+                        <hr />
+                        <br>
+                        <div *ngFor='let x of exps'>
+
+                            <div class="card" style="zoom:150%;">
+                                <div class="row no-gutters">
+                                    <div class="col-sm-5">
+                                        
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="card-body">
+                                            <h2 class="card-title">{{x.experience}}</h2>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+
 
 
 

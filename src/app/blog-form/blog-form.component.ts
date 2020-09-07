@@ -24,6 +24,7 @@ export class BlogFormComponent implements OnInit {
   ngOnInit(): void {
     this.User = JSON.parse(localStorage.getItem('userDetails'));
     this.Professional = JSON.parse(localStorage.getItem('profDetails'));
+   
   }
 
   handleFileInput(file:FileList){

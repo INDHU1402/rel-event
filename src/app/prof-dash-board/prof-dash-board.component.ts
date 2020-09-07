@@ -11,6 +11,8 @@ export class ProfDashBoardComponent implements OnInit {
 Prof:any;
 myEvents:any;
 editObject:any;
+exps:any;
+myBlogs:any;
   constructor(private service: UserService,private router: Router) {
 
     this.editObject= {professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'',serviceImage:'',password:''};
@@ -20,6 +22,10 @@ editObject:any;
     this.Prof = JSON.parse(localStorage.getItem('profDetails'));
     this.service.getMyEvents(this.Prof.professionalId).subscribe((result: any) => {
       console.log(result);this.myEvents= result });
+      this.service.getMyExp(this.Prof.professionalId).subscribe((result: any) => { console.log(result); this.exps = result} );
+      this.service.getMyBlogs(this.Prof.professionalId).subscribe((result: any) => {
+        console.log(result);this.myBlogs= result });
+
   }
   showEditPopup(user: any) {
     this.editObject = user;

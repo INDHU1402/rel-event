@@ -11,7 +11,7 @@
  <div style="background-color:whitesmoke">
 <div class="hero-image2"></div>
 <div class="card-form">
-    <form class="signup">
+    <form class="signup" #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
       <div class="form-title">Get Started</div>
       <div class="form-body">
         <div class="row">
