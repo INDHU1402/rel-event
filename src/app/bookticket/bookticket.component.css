@@ -323,10 +323,11 @@
   }
   
   .hero-image {
-    background-image: url('src/assets/img/pw.png'); /* The image used */
+    background-image: url('src/assets/img/abs4.jpg'); /* The image used */
   
     background-color: #cccccc; /* Used if the image is unavailable */
-    height: 850px; /* You must set a specified height */
+    min-height:877px;
+    height: auto; /* You must set a specified height */
     width:100%;
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
