@@ -18,15 +18,19 @@
 	 box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
 }
  .card-form .form-title {
+
+	
 	 width: 100%;
 	 display: flex;
 	 align-items: center;
 	 justify-content: center;
 	 height: 80px;
+
 	 font-size: 30px;
 	 font-weight: 40px;
-	 background: #27ae60;
-     border-radius: 10px 10px 0 0;
+	 background: #d1e0e0;
+	 border-radius: 10px 10px 0 0;
+	 
 }
  .card-form .form-body {
 	 padding: 10px;
@@ -92,10 +96,19 @@
 }
 .hero-image2 {
     background-image: url('/assets/img/writeBlog.png');
-    height: 680px;
+    height: 380px;
     
     background-position: center;
     background-repeat: no-repeat;
-  /*background-size: cover;*/
+  background-size: 1500px;
     position: relative;
   }
+  .hero-image3 {
+    background-image: url('/assets/img/gg.jpg');
+     
+    background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
+    position: relative;
+  }
+  

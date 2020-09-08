@@ -1,47 +1,53 @@
 <head>
-    <title>Business Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
- </head>
-  
- <div style="background-color:whitesmoke">
-<div class="hero-image2"></div>
-<div class="card-form">
-    <form class="signup" #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
-      <div class="form-title">Get Started</div>
-      <div class="form-body">
-        <div class="row">
-          <input type="text" placeholder="Title of Blog" [(ngModel)]='blogDetails.title' >
-          <br>
-          <select name="category" id="category" [(ngModel)]='blogDetails.category'>
-            <option hidden value="" disabled selected>Related to...</option>
-            <option *ngFor="let category of Category">{{category}}</option>
-          </select>
-        </div>
-        <div class="row">
-            <textarea placeholder="Write your blog, the content is not less than 250 words" rows="8" name="content"
-            id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" [(ngModel)]='blogDetails.content'></textarea>
-        </div>
+  <title>Business Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<br><br><br><br>
+<div style="background-color:whitesmoke">
 
-      </div>
-      <div class="rule"></div>
-      <div class="form-footer">
-        <div class="row">
+
+  <div class="hero-image3">
+    <br><br>
+    <div class="card-form">
+      <form class="signup" #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
+        <div class="form-title">Get Started</div>
+        <div class="form-body">
+          <div class="row">
+            <input type="text" placeholder="Title of Blog" [(ngModel)]='blogDetails.title'>
+            <br>
+            <select name="category" id="category" [(ngModel)]='blogDetails.category'>
+              <option hidden value="" disabled selected>Related to...</option>
+              <option *ngFor="let category of Category">{{category}}</option>
+            </select>
+          </div>
+          <div class="row">
+            <textarea placeholder="Write your blog, the content is not less than 250 words" rows="8" name="content"
+              id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off"
+              [(ngModel)]='blogDetails.content'></textarea>
+          </div>
+
+        </div>
+        <div class="rule"></div>
+        <div class="form-footer">
+          <div class="row">
             <img [src]="imageUrl" style="width:120px;height:120px;">
             <div style="margin-left: 50px;">
               <input style type="file" name="blogImage" accept="image/*" [(ngModel)]='blogDetails.blogImage'
                 (change)="handleFileInput($event.target.files)">
-            <small>Upload Blog Image</small>
+              <small>Upload Blog Image</small>
               <br>
             </div>
-            <button style="margin-left:170px; margin-top:-30px;">Publish My Blog<span class="fa fa-thumbs-o-up"></span></button>
+            <button style="margin-left:170px; margin-top:-30px;">Publish My Blog<span
+                class="fa fa-thumbs-o-up"></span></button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
+    <br><br>
   </div>
-  <br><br>
-  </div>
+</div>
