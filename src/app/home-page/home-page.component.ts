@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AlertsService } from 'angular-alert-module';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,13 +11,24 @@ import { AlertsService } from 'angular-alert-module';
 })
 export class HomePageComponent implements OnInit {
   user: any;
-  service: any;
+  exps: [];
+  exp1: any;
 
   //constructor(private router: Router) { }
-  constructor(private alerts: AlertsService,private toaster:ToastrService,private router: Router) { }
+  constructor(private alerts: AlertsService, private toaster:ToastrService, private router: Router, private service: UserService) { }
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('userDetails'));
+    this.service.getExpList().subscribe((result: any) => { console.log(result); this.exps = result; } );
   }
+
+  /*status(exp: any) {
+    console.log(this.exps.findIndex(exp));
+    if (this.exps.findIndex(exp) === 0) {
+      return true;
+    }
+    return false;
+  }*/
+
   culturalEvent(){
     if (this.user != null) {
       this.router.navigate(['culturalEvent']);

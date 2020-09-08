@@ -87,9 +87,6 @@ getmyEventsList(organiserId:number) {
 }
 
 /*Professional Dashboard */
-getMyExp(professionalId:number) {
-  return this.httpClient.get('RESTAPI/webapi/myresource/ShowExp/' + professionalId);
- }
 getMyEvents(professionalId:number) {
   return this.httpClient.get('RESTAPI/webapi/myresource/MyEvents/' + professionalId);
  }

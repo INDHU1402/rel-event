@@ -1,7 +1,9 @@
-<head><meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 
-    <br><br><br><br><br>
+<br><br><br><br><br>
 <div class="hero">
     <span class="scroll-mobile cursor black fadeInUp"></span>
     <div class="cta-search">
@@ -125,43 +127,48 @@
 <div class="container2" style="text-align: center;"><br><br><br>
     <h1 style="color: white; font-size: 40px;">Create an event in 5 steps</h1><br><br>
     <!--<button (click)="redirect()">Create an event</button><br><br>-->
-    <button type="button"  class="btn btn-light" data-toggle="modal" data-target="#myModal" >
+    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
         Create an Event
     </button>
-                 <!-- The Modal -->
-                    <div class="modal fade" id="myModal" data-backdrop="false">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <p  style="font-family: Comic Sans;font-size:35px">Select Kind of Event</p>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <p style="font-family: Comic Sans;font-size:35px">Select Kind of Event</p>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-                                <!-- Modal body -->
-                                <div class="modal-body" style="height: 330px;width:1400px;">
-                                    
-                                    <div class="container11" >
-                                        
-                                        <button class="btn12" data-dismiss="modal" (click)="culturalEvent()" style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button class="btn11" data-dismiss="modal" (click)="technicalEvent()" style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button class="btn13" data-dismiss="modal" (click)="personalEvent()" style="vertical-align:middle"></button>
-                                        <br><br> 
-                                       
-                                     
-                                            <h1 class="w3-tangerine">Cultural &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                Technical &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                Personal</h1>
-                                            
-                                     
-                                      </div>
-                                      
-                                </div>
-                              
-                            </div>
-                        </div>
+                <!-- Modal body -->
+                <div class="modal-body" style="height: 330px;width:1400px;">
+
+                    <div class="container11">
+
+                        <button class="btn12" data-dismiss="modal" (click)="culturalEvent()"
+                            style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn11" data-dismiss="modal" (click)="technicalEvent()"
+                            style="vertical-align:middle"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn13" data-dismiss="modal" (click)="personalEvent()"
+                            style="vertical-align:middle"></button>
+                        <br><br>
+
+
+                        <h1 class="w3-tangerine">Cultural
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Technical
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Personal</h1>
+
+
                     </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <br><br>
 </div>
@@ -177,7 +184,7 @@
 
         <div class="tl-content">
             <h1>Login as user at Rel-event</h1>
-            
+
         </div>
 
     </div>
@@ -192,7 +199,7 @@
 
         <div class="tl-content">
             <h1 class="f3 text--accent ttu">Click on create event <br>and fill your details</h1>
-            
+
         </div>
 
     </div>
@@ -207,7 +214,7 @@
 
         <div class="tl-content">
             <h1 class="f3 text--accent ttu">Choose Venue, Professionals <br>required for an event</h1>
-            
+
         </div>
 
     </div>
@@ -222,7 +229,7 @@
 
         <div class="tl-content">
             <h1 class="f3 text--accent ttu">Upload Poster of your event</h1>
-          
+
         </div>
 
     </div>
@@ -237,7 +244,7 @@
 
         <div class="tl-content">
             <h1>All done ! Now you are organiser, publicize the event and sell tickets</h1>
-          
+
         </div>
 
     </div>
@@ -350,7 +357,53 @@
 </div>
 
 
+<div class="container" style="background-color: white;">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-10 offset-1 mt-5">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner mt-4">
 
+                    <div *ngFor='let exp of exps'>
 
-<br>
-<br>
+                        <!--<div *ngIf="status(exp)">
+                            <div class="carousel-item text-center active">
+                                <img src="http://localhost:8080/RESTAPI/images/{{exp.professional.serviceImage}}"
+                                    style="height:150px; width:150px; border-radius: 50%;" alt="First slide">
+                                <h3 class="mt-4 mb-0"><strong
+                                        class="text-warning text-uppercase">{{exp.professional.professionalName}}</strong>
+                                </h3>
+                                <h3 class="text-dark m-0">{{exp.professional.serviceType}}</h3>
+                                <br>
+                                <p style="color:black; font-size:17px;">{{exp.experience}}</p>
+                                <br><br>
+                            </div>
+                        </div>-->
+
+                       
+                            <div class="carousel-item text-center active">
+                                <img src="http://localhost:8080/RESTAPI/images/{{exp.professional.serviceImage}}"
+                                    style="height:150px; width:150px; border-radius: 50%;" alt="First slide">
+                                <h3 class="mt-4 mb-0"><strong
+                                        class="text-warning text-uppercase">{{exp.professional.professionalName}}</strong>
+                                </h3>
+                                <h3 class="text-dark m-0">{{exp.professional.serviceType}}</h3>
+                                <br>
+                                <p style="color:black; font-size:17px;">{{exp.experience}}</p>
+                                <br><br>
+                            </div>
+                   
+                    </div>
+
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev" style="color: black;">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -22,7 +22,7 @@ myBlogs:any;
     this.Prof = JSON.parse(localStorage.getItem('profDetails'));
     this.service.getMyEvents(this.Prof.professionalId).subscribe((result: any) => {
       console.log(result);this.myEvents= result });
-      this.service.getMyExp(this.Prof.professionalId).subscribe((result: any) => { console.log(result); this.exps = result} );
+      this.service.getMyExperiences(this.Prof.professionalId).subscribe((result: any) => { console.log(result); this.exps = result} );
       this.service.getMyBlogs(this.Prof.professionalId).subscribe((result: any) => {
         console.log(result);this.myBlogs= result });
 
