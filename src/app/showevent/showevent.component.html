@@ -9,20 +9,19 @@
   <title>Conference</title>
 </head>
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 <body>
   <div class="ncontainer">
     <section id="home" >
-      <br><br>
-      <br><br>
-      <div class="row">
+
+      <div class="row" style="background-color: rgb(236, 230, 230);">
         <div class="container column left" style="background-color: rgb(236, 230, 230); padding-left: 10%;">
-        <h1>{{event.eventName}}</h1>
+        <h1 >{{event.eventName}}</h1>
         <h2 class="section-heading">By {{event.organiserName}}</h2>
         <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
         <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
         <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
-        <p>
+        <p style="font-size: 20px;">
           {{event.about}}
         </p>
         <div class="social-icon">
@@ -32,6 +31,10 @@
         <div class="social-icon">
           <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
+        <br>
+        <button class="register-today-btn"data-toggle="modal" data-target="#myModal" style="width: 200px;"
+        >Register Now
+       </button>
       </div>
 
     <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event.poster}});background-size: 100% 100%;
@@ -43,8 +46,9 @@
 
     <div style="text-align: center; margin-left:-420px; margin-top: -80px;">
       <!-- Button to Open the Modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-       style="width: 70px;">Register now</button>
+      
+
+     
 
     <div class="modal fade" id="myModal">
       <div class="modal-dialog modal-lg">
@@ -71,7 +75,7 @@
     </div>
 
 </div>
-
+<br><br>
 <div class="container" style= "color:black; text-align: center;">
   <br><br><br><br>
   <h1>CountDown</h1>
@@ -84,22 +88,22 @@
 </div>
 
     <!-- speakers section -->
-
+    <br><br><br><br>
     <section id="speakers">
       <div class="content-container">
         <div class="content">
           <img class="speaker-icon" src="https://image.ibb.co/ixMeYo/music_microphone_old.png" alt="Microphone Icon" />
       <h2 class="section-heading">Speakers</h2>
 
-          <p class="speakers-address">
+          <p class="speakers-address" style="font-size: 20px;">
             Special Guest : {{event.guest1}}
           </p>
 
-          <p class="speakers-address">
+          <p class="speakers-address" style="font-size: 20px;">
             Special Guest : {{event.guest2}}
           </p>
 
-          <p class="speakers-address">
+          <p class="speakers-address" style="font-size: 20px;">
             Special Guest : {{event.guest3}}
           </p>
         </div>
@@ -116,18 +120,18 @@
       <h2 class="agenda-subheading">{{event.venue}} • {{event.eventStartDate | date}}</h2>
       <div class="events-container">
         <div class="event-hours-container">
-          <p class="event-hours">{{event.startTime}}</p>
-          <p class="event-hours">{{event.time1}}</p>
-          <p class="event-hours">{{event.time2}}</p>
-          <p class="event-hours">{{event.endTime}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.startTime}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.time1}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.time2}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.endTime}}</p>
          
         </div>
 
         <div class="event-title-container">
-          <p class="event-title">{{event.startOverview}}</p>
-          <p class="event-title">{{event.overview1}}</p>
-          <p class="event-title">{{event.overview1}}</p>
-          <p class="event-title">{{event.endOverview}}</p>
+          <p class="event-title" style="font-size: 18px;">{{event.startOverview}}</p>
+          <p class="event-title" style="font-size: 18px;">{{event.overview1}}</p>
+          <p class="event-title" style="font-size: 18px;">{{event.overview1}}</p>
+          <p class="event-title" style="font-size: 18px;">{{event.endOverview}}</p>
         </div>
       </div>
     </section>
@@ -141,7 +145,7 @@
           <h2 class="section-heading">Venue</h2>
           <p class="section-subtitle">The Location</p>
 
-          <p class="auditorium-address">
+          <p class="auditorium-address" style="font-size: 20px;">
             {{event.venue}}
           </p>
 
@@ -183,8 +187,7 @@
         </div>
       </div>
 
-      <a class="register-today-btn" (click)="payment()">Register Today</a>
-
+     
       <span class="copyright">Copyright &copy; All Rights Reserved.</span>
     </footer>
 
