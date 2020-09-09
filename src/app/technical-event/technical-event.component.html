@@ -1,3 +1,4 @@
+
 <head>
   <title>Business Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -214,7 +215,7 @@
 <form #registerForm="ngForm" (ngSubmit)="eventSubmit(registerForm.value)">
 
   <div class = "hero-image" >
-     <mat-vertical-stepper [linear]="" #stepper style="margin-left:400px; margin-top: 100px; background-color: transparent; ">
+     <mat-vertical-stepper [linear]="" #stepper style="margin-left:350px;margin-top: 100px; background-color:transparent ">
 
         <mat-step>
 
@@ -244,7 +245,7 @@
 
            </div>
            <br><br>
-           <button mat-button matStepperNext class="btn btn-dark">Next</button>
+           <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
         </mat-step>
 
         <mat-step>
@@ -262,7 +263,7 @@
               </div>
 
               <div class="col-sm-3">
-                 <select class="form-control" placeholder="Select no.of Days" name="howManyDays" id="category" [(ngModel)]='howManyDays' >
+                 <select class="form-control" placeholder="Select no.of Days" name="howManyDays" id="category" [(ngModel)]='howManyDays' style="color:black" >
                     <option hidden value="" disabled selected>Number of days</option>
                     <option *ngFor="let day of days">{{day}}</option>
                  </select>
@@ -286,8 +287,8 @@
                 </label>
               </div>
 
-           </div>
-           <button mat-button matStepperNext class="btn btn-dark">Next</button>
+            </div><br>
+           <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
 
         </mat-step>
 
@@ -310,7 +311,7 @@
 
            </div>
            <br><br>
-           <button type="button" mat-button matStepperNext class="btn btn-dark">Next</button>
+           <button type="button" mat-button matStepperNext class="btn btn-primary">N e x t</button>
 
         </mat-step>
 
@@ -322,7 +323,7 @@
                  placeholder="Enter Ticket Price"><br>
            
            </div>
-
+s
            <div class="form-group" class="adjust">
               <input type="number" class="form-control" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' aria-describedby="emailHelp"
                  placeholder="Enter Attendees Count"><br>
@@ -336,13 +337,13 @@
         </div>
            <br>
 
-           <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#timeline"
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
            style="width: 200px;">
            Add Your Checkpoints
         </button>
 
        
-           <button mat-button matStepperNext class="btn btn-dark">Next</button>
+           <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
 
         </mat-step>
         
@@ -361,8 +362,8 @@
               <input type="text" class="form-control" name="guest3" [(ngModel)]='eventDetails.guest3' aria-describedby="emailHelp"
                  placeholder="Special Guest"><br>
            </div>
-           <br>
-           <button mat-button matStepperNext class="btn btn-dark">Next</button>
+           
+           <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
 
         </mat-step>
 
@@ -374,7 +375,7 @@
               class="custom-file-input" id="customFile">
               <label class="custom-file-label" for="customFile">Choose file</label>
             </div><br>
-            <button mat-button matStepperNext class="btn btn-dark">Next</button>
+            <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
             <img [src]="imageUrl" style="height: 200px; width: 200px;margin-left: 200px;">
            
             
@@ -387,7 +388,7 @@
         
         <mat-step>
 
-           <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#professionals"
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#professionals"
            style="width: 150px;">
            Add Professionals
         </button>
@@ -401,7 +402,7 @@
      </mat-vertical-stepper>
 
      <br><br>
-     <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >Add Event</button>
+     <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-primary" >Add Event</button>
 
   </div>
 </form>

@@ -1,8 +1,10 @@
+
+
 .adjust {
   width:400px;
 }
 input::placeholder {
-  font-size:15px;
+  font-size:20px;
 }
 textarea::placeholder {
   font-size:20px;
@@ -12,18 +14,24 @@ textarea {
 }
 input,select {
   height: 40px;
-  font-size: 15px;
+  font-size: 20px;
+
+  
+
 }
+
+
 button {
   height: 30px;
   width:70px;
   font-size: 15px;
   margin-left: 70px;
+  
 
 }
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins', sans-serif;
   margin :15% 0 0 0;  
   padding:50px;
   font-size:16pt;
@@ -82,7 +90,7 @@ body {
 }
 
 body{
-  font-family: verdana;
+  font-family:/*'Ubuntu'; */verdana;
 }
 
 .content {
@@ -160,7 +168,7 @@ li.game-item input{
 }
 
 .hero-image {
-  background-image: url('/assets/img/grad.jpeg');
+  background-image: url('/assets/img/logimg.jpg');
   height: 1000px;
   background-position: center;
   background-repeat: no-repeat;
@@ -179,7 +187,7 @@ li.game-item input{
   margin: 20px;
   padding: 50px;
   border-radius: 10px;
-  font-family: 'neuzeit-grotesk', sans-serif;
+  font-family:'neuzeit-grotesk', sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 1em;
@@ -238,7 +246,7 @@ li.game-item input{
   padding: 10px 25px;
   border: 1px solid #ebebeb;
   border-radius: 50px;
-  font-family: 'neuzeit-grotesk', sans-serif;
+  font-family:'neuzeit-grotesk', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: .875em;
