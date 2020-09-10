@@ -2,7 +2,7 @@
     width:400px;
   }
   input::placeholder {
-    font-size:15px;
+    font-size:20px;
   }
   textarea::placeholder {
     font-size:20px;
@@ -12,7 +12,7 @@
   }
   input,select {
     height: 40px;
-    font-size: 15px;
+    font-size: 20px;
   }
   button {
     height: 30px;
@@ -159,8 +159,8 @@
       cursor:pointer;
   }
   
-  .hero-image {
-    background-image: url('/assets/img/creback.jpeg');
+  .bg{
+    background-image: url('/assets/img/absimg1.jpg');
     height: 1000px;
     background-position: center;
     background-repeat: no-repeat;
