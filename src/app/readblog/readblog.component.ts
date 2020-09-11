@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-readblog',
@@ -9,7 +11,7 @@ export class ReadblogComponent implements OnInit {
   blog : any;
   status: boolean;
   status1: boolean;
-  constructor() { }
+  constructor(private router: Router, private service: UserService) { }
 
   ngOnInit(): void {
     this.blog = JSON.parse(localStorage.getItem('Blog'));
@@ -25,6 +27,10 @@ export class ReadblogComponent implements OnInit {
       console.log('is user null = ' + this.status1);
 
     }
+  }
+  prof(p : any) {
+    localStorage.setItem("prof", JSON.stringify(p));
+    this.router.navigate(['professional']);
   }
 
 }

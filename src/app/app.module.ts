@@ -60,6 +60,7 @@ import { ProfcartComponent } from './profcart/profcart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfDashBoardComponent } from './prof-dash-board/prof-dash-board.component';
 import { BlogFormComponent } from './blog-form/blog-form.component';
+import { ProfessionalComponent } from './professional/professional.component';
 
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -96,7 +97,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'personalEvent', component:PersonalEventComponent},
                          {path:'profcart', component:ProfcartComponent},
                          {path:'dashboard', component:DashboardComponent},
-                         {path:'profdashboard', component:ProfDashBoardComponent}
+                         {path:'profdashboard', component:ProfDashBoardComponent},
+                         {path:'professional', component:ProfessionalComponent}
                          
                          
 ];
@@ -143,7 +145,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProfcartComponent,
     DashboardComponent,
     ProfDashBoardComponent,
-    BlogFormComponent
+    BlogFormComponent,
+    ProfessionalComponent
 
   ],
   imports: [
