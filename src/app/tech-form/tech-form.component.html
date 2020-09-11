@@ -1,5 +1,6 @@
-<div class="hero-image8" style="background-color:black ;"></div>
-<!-- The Modal -->
+<br><br>
+<div class="hero-image8" style="background-color: #f0e0e0;"></div>
+<!-- The Modal style="background-color:hsl(218, 43%, 75%)  -->
 
 
 <form #registerForm="ngForm" class="form-group" class="form-wrapper">
@@ -18,7 +19,7 @@
     
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div class="timeline" style="margin-left: 35px;">
+                    <div class="timeline" style="margin-left: 35px;" style = "font-size: 20px;">
                         <ul>
                             <li>
                                 <span>Start</span>
@@ -27,12 +28,12 @@
                                         <div class="form-group">
     
                                             <input class="form-control" id="focusedInput" type="text"
-                                                style="width:240px; color: black;" autofocus="true" name="startTime"
+                                                style="width:240px; color: black;font-size: 20px;" autofocus="true" name="startTime"
                                                 [(ngModel)]='eventDetails.startTime' 
                                                 placeholder="Start Time">
                                             <br>
                                             <textarea rows="3" cols="45" autofocus="true" name="startOverview"
-                                                style="color: black;" [(ngModel)]='eventDetails.startOverview'
+                                                style="color: black;font-size: 20px;" [(ngModel)]='eventDetails.startOverview'
                                                  placeholder="Start overview">
                                      </textarea>
                                         </div>
@@ -46,9 +47,9 @@
                                     <div style="margin-left: 100px;">
                                         <div class="form-group">
     
-                                            <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                            <input class="form-control" id="focusedInput" type="text" style="width:240px;font-size: 20px;"
                                                 autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
-                                                 placeholder="time2">
+                                                 placeholder="Time2">
                                             <br>
                                             <textarea rows="3" cols="45" autofocus="true" style="color: black;"
                                                 name="Overview2" [(ngModel)]='eventDetails.overview2' required="true">
@@ -63,13 +64,13 @@
                                 <div style="margin-left: 100px;">
                                     <div class="form-group">
     
-                                        <input class="form-control" id="focusedInput" type="text" style="width:240px;"
+                                        <input class="form-control" id="focusedInput" type="text" style="width:240px;font-size: 20px;"
                                             autofocus="true" name="endTime" [(ngModel)]='eventDetails.endTime'
-                                            placeholder="end Time">
+                                            placeholder="End Time">
                                         <br>
                                         <textarea rows="3" cols="45" autofocus="true" style="color: black;"
                                             name="endOverview" [(ngModel)]='eventDetails.endOverview'
-                                            placeholder="end overview">
+                                            placeholder="End overview">
                                   </textarea>
                                     </div>
                                 </div>
@@ -90,7 +91,7 @@
 
 
 
-    <div class="container1" style="background-color: black;"> <br><br>
+    <div class="container1" style="background-color:#f0e0e0;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
             <br><br>
@@ -105,20 +106,20 @@
                 <div class="back" style="height:350px">
                     <div class="form-group">
                         <h2 for="focusedInput" style="color:white">Event Name</h2>
-                        <input class="form-control" id="focusedInput" type="text" style="width:270px;" autofocus="true"
+                        <input class="form-control" id="focusedInput" type="text" style="width:270px;font-size: 20px;" autofocus="true"
                             name="eventName" [(ngModel)]='eventDetails.eventName' required="true"
                             placeholder="eventName">
                     </div>
                     <h2 for="focusedInput" style="color:white">Organiser Name</h2>
-                    <input class="form-control" id="focusedInput" style="width:270px;" type="text" autofocus="true"
+                    <input class="form-control" id="focusedInput" style="width:270px;font-size: 20px;" type="text" autofocus="true"
                         name="organiserName" [(ngModel)]='eventDetails.organiserName' required="true"
                         placeholder="organiserName">
                         <br>
                         <div class="back" style="height:350px;">
                   
-                            <h2 for="focusedInput" style="color:white">Event category</h2>
+                            <h2 for="focusedInput" style="color:white;">Event category</h2>
         
-                            <select style="color:black;" name="category" id="category" [(ngModel)]='eventDetails.category'>
+                            <select style="color:black;font-size: 20px;" name="category" id="category" [(ngModel)]='eventDetails.category'>
                                 <option hidden value="" disabled selected>Choose category </option>
                                 <option *ngFor="let category of Category">{{category}}</option>
                             </select>
@@ -135,7 +136,7 @@
                 <div class="back" style="height:350px;">
                     <div class="form-group">
                         <h2 for="focusedInput" style="color:white">About</h2>
-                        <textarea class="form-control" id="focusedInput" style="width:270px;" rows="5" cols="10" type="text" autofocus="true"
+                        <textarea class="form-control" id="focusedInput" style="width:270px;font-size: 20px;" rows="5" cols="10" type="text" autofocus="true"
                             name="about" [(ngModel)]='eventDetails.about' required="true" placeholder="about"></textarea>
                     </div>
                 </div>
@@ -149,18 +150,18 @@
                 <div class="back" style="height:350px;">
                     <h2 for=" focusedInput" style="color:white">start date</h2>
 
-                    <input style="color:black;" class="login-username" type="date" name="eventStartDate"
+                    <input style="color:black;font-size: 20px;" class="login-username" type="date" name="eventStartDate"
                         [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
                     <br><br><br>
                     <h2 for="focusedInput" style="color:white">End date</h2>
 
-                    <input style="color:black;" class="login-username" type="date" name="eventEndDate"
+                    <input style="color:black;font-size: 20px;" class="login-username" type="date" name="eventEndDate"
                         [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
                 </div>
             </div>
         </div> <br><br>
     </div>
-    <div class="container1" style="background-color: black;"> <br><br>
+    <div class="container1" style="background-color: #f0e0e0 "> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
             <br><br>
@@ -173,7 +174,7 @@
                 <div class="back" style="height:350px;">
                     <h2>Click below button to submit timeline</h2>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
-                        style="width: 150px;">
+                        style="width: 150px;font-size: 20px;">
                         Click Here
                     </button>
                 </div>
@@ -186,12 +187,12 @@
                 </div>
                 <div class="back" style="height:350px;">
                     <h2 for="focusedInput" style="color:white">Venue</h2>
-                    <textarea class="form-control" id="focusedInput" type="text" type="text" rows="5" cols="7"style="width:270px;"
+                    <textarea class="form-control" id="focusedInput" type="text" type="text" rows="5" cols="7"style="width:270px;font-size: 20px;"
                         autofocus="true" name="venue" [(ngModel)]='eventDetails.venue' required="true"
                         placeholder="add venue"></textarea>
 
                         <br><br>
-                        <button (click)="goTocart()" style="background-color: black;">Choose professionals</button>
+                        <button (click)="goTocart()" style="background-color: rgb(59, 151, 236);width:250px;font-size: 20px;height: 40px;">Choose professionals</button>
                 </div>
             </div>
 
@@ -203,14 +204,14 @@
                 <div class="back" style="height:350px;">
                     <h2 for="focusedInput" style="color:white">Attendees Count</h2>
                     <br>
-                    <input class="form-control" id="focusedInput" style="width:270px;" type="number" autofocus="true"
+                    <input class="form-control" id="focusedInput" style="width:270px;font-size: 20px;" type="number" autofocus="true"
                         name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' required="true"
-                        placeholder="attendeesCount">
+                        placeholder="attendees Count">
                 </div>
             </div>
         </div> <br><br>
     </div>
-    <div class="container1" style="background-color: black;"> <br><br>
+    <div class="container1" style="background-color: #f0e0e0 ;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
             <br><br>
@@ -221,10 +222,10 @@
                     <h1 class="text-block">Ticket Price</h1>
                 </div>
                 <div class="back" style="height:350px;">
-                    <h2 for="focusedInput" style="color:white">Ticket fee</h2>
-                    <input class="form-control" id="focusedInput" style="width:270px;" autofocus="true"
+                    <h2 for="focusedInput" style="color:white">Ticket Fee</h2>
+                    <input class="form-control" id="focusedInput" style="width:270px;font-size: 20px;" autofocus="true"
                         name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
-                        placeholder="ticketPrice" type="number">
+                        placeholder="Ticket Price" type="number">
                 </div>
             </div>
 
@@ -236,17 +237,17 @@
                 <div class="back" style="height:350px;">
                     <div class="form-group">
                         <h2 for="focusedInput" style="color:white">Guest Details</h2>
-                        <input class="form-control" id="focusedInput" type="text" style="width:270px;" autofocus="true"
+                        <input class="form-control" id="focusedInput" type="text" style="width:270px;font-size: 18px;" autofocus="true"
                             name="guest1" [(ngModel)]='eventDetails.guest1' required="true" placeholder="Guest">
                     </div>
                     <div class="form-group">
 
-                        <input class="form-control" id="focusedInput" type="text" style="width:270px;" autofocus="true"
+                        <input class="form-control" id="focusedInput" type="text" style="width:270px;font-size: 18px;" autofocus="true"
                             name="guest2" [(ngModel)]='eventDetails.guest2' required="true" placeholder="Guest">
                     </div>
                     <div class="form-group">
 
-                        <input class="form-control" id="focusedInput" type="text" style="width:270px;" autofocus="true"
+                        <input class="form-control" id="focusedInput" type="text" style="width:270px;font-size: 18px;" autofocus="true"
                             name="guest3" [(ngModel)]='eventDetails.guest3' required="true" placeholder="Guest">
                     </div>
                 </div>
@@ -259,7 +260,7 @@
                 </div>
                 <div class="back" style="height:350px;">
                     <h2 for="focusedInput" style="color:white">Allow Sponsors ?</h2>
-                    <select style="color:black;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+                    <select style="color:black;font-size: 20px;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
                         <option hidden value="" disabled selected>sponsors</option>
                         <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
                     </select>
@@ -269,7 +270,7 @@
 
         </div> <br><br>
     </div>
-    <div class="container1" style="background-color: black;"> <br><br>
+    <div class="container1" style="background-color: #f0e0e0 ;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
             <br><br>
@@ -294,7 +295,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <br><br>
-            <button class="btn btn-primary" (click)="eventSubmit()" style="height:40px;" [disabled]="eventDetails.poster=='' ">Add Event</button>
+            <button class="btn btn-primary" (click)="eventSubmit()" style="height:40px;font-size: 20px;background-color: rgb(18, 120, 216);" [disabled]="eventDetails.poster=='' ">Add Event</button>
 
         </div> <br><br>
     </div>
