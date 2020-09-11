@@ -99,9 +99,12 @@ export class PersonalEventComponent implements OnInit {
     this.searchText = "";
   }
 
+  prof(p : any) {
+    localStorage.setItem("prof", JSON.stringify(p));
+    this.router.navigate(['professional']);
+  }
 
-
-
+  
   myFilter1 = (d: Date | null): boolean => {
 
     this.date1 = Number(new Date().toDateString().slice(8, -5));

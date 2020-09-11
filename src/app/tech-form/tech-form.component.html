@@ -148,15 +148,14 @@
                     <h1 class="text-block">Date</h1>
                 </div>
                 <div class="back" style="height:350px;">
-                    <h2 for=" focusedInput" style="color:white">start date</h2>
+                    <mat-form-field class="example-full-width" appearance="fill" style="width:200px;background-color:white;">
+                        <mat-label>Choose start date</mat-label>
+                        <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:black"
+                           name="eventdate" [(ngModel)]='eventdate'>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                     </mat-form-field>
 
-                    <input style="color:black;font-size: 20px;" class="login-username" type="date" name="eventStartDate"
-                        [(ngModel)]='eventDetails.eventStartDate' required="true" placeholder="Event start date">
-                    <br><br><br>
-                    <h2 for="focusedInput" style="color:white">End date</h2>
-
-                    <input style="color:black;font-size: 20px;" class="login-username" type="date" name="eventEndDate"
-                        [(ngModel)]='eventDetails.eventEndDate' required="true" placeholder="Event end date">
                 </div>
             </div>
         </div> <br><br>
@@ -217,16 +216,22 @@
             <br><br>
             <div class="flip" style="margin-left: 230px;">
                 <div class="front"
-                    style="background-image: url(/assets/img/ticket.jpeg);background-size: cover;height: 350px;">
+                    style="background-image: url(/assets/img/sponsor&ticket.jpg);background-size:cover;height: 350px;">
                     <br><br><br><br>
-                    <h1 class="text-block">Ticket Price</h1>
+                    <h1 class="text-block">Ticket & Sponsors</h1>
                 </div>
                 <div class="back" style="height:350px;">
                     <h2 for="focusedInput" style="color:white">Ticket Fee</h2>
                     <input class="form-control" id="focusedInput" style="width:270px;font-size: 20px;" autofocus="true"
                         name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' required="true"
-                        placeholder="Ticket Price" type="number">
-                </div>
+                        placeholder="Ticket Price" type="number"><br>
+
+                    <h2 for="focusedInput" style="color:white">Allow Sponsors ?</h2>
+                        <select style="color:black;font-size: 20px;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+                            <option hidden value="" disabled selected>sponsors</option>
+                            <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
+                        </select>
+               </div>
             </div>
 
             <div class="flip" style="margin-left: 100px;">
@@ -252,7 +257,23 @@
                     </div>
                 </div>
             </div>
+
             <div class="flip" style="margin-left: 100px;">
+                <div class="front" style="background-image: url(/assets/img/uploadg.png);height: 350px;">
+                    <br><br><br><br>
+                    <h1 class="text-block">Upload poster</h1>
+                </div>
+                <div class="back" style="height:350px;;">
+                    <h2 for="focusedInput" style="color:white">Upload here</h2>
+                    <img [src]="imageUrl" style="height:250px; width:300px;">
+                    <div style="margin-left: 20px;" class="hero-image1">
+                        <input style type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+                            (change)="handleFileInput($event.target.files)">
+                        <br>
+                    </div>
+                </div>
+            </div>
+         <!----  <div class="flip" style="margin-left: 100px;">
                 <div class="front"
                     style="background-image: url(/assets/img/sponsor.jpg);background-size: cover;height:350px;">
                     <br><br><br><br>
@@ -264,13 +285,17 @@
                         <option hidden value="" disabled selected>sponsors</option>
                         <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
                     </select>
-                </div>
-            </div>
+                </div>--
+            </div>-->
 
 
-        </div> <br><br>
-    </div>
-    <div class="container1" style="background-color: #f0e0e0 ;"> <br><br>
+
+
+        </div> <br>
+        <button class="btn btn-primary" (click)="eventSubmit()" style="height:40px;font-size: 20px;margin-left: 800px;background-color: rgb(18, 120, 216);" [disabled]="eventDetails.poster=='' ">Add Event</button>
+        <br></div>
+       
+  <!--<div class="container1" style="background-color: #f0e0e0 ;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
         <div class="row">
             <br><br>
@@ -298,5 +323,6 @@
             <button class="btn btn-primary" (click)="eventSubmit()" style="height:40px;font-size: 20px;background-color: rgb(18, 120, 216);" [disabled]="eventDetails.poster=='' ">Add Event</button>
 
         </div> <br><br>
-    </div>
+    </div>-->
+
 </form>

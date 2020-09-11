@@ -32,10 +32,20 @@ myBlogs:any;
     jQuery('#userModel').modal('show');
   }
 
+  goToEvent(event: any): void {
+    localStorage.setItem('eventDetails', JSON.stringify(event));
+    this.router.navigate(['showEvent']);
+  }
+
+  readmore(blog: any) {
+    localStorage.setItem('Blog', JSON.stringify(blog));
+    this.router.navigate(['readblog']);
+  }
+
   updateUser() {
     //this.service.updateProf(this.editObject).subscribe();
     console.log(this.editObject);
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['profdashboard']);
   }
 
 }
