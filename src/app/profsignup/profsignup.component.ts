@@ -84,6 +84,17 @@ export class ProfsignupComponent implements OnInit {
     }
   }
 
+
+  isLoading = false;
+  
+  toggleLoading = () => {
+    this.isLoading = true;
+
+    //Faking an API call
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);};
+
   registerProf(): void {
     console.log(this.user);
     console.log(this.confirmPassword);
@@ -91,6 +102,9 @@ export class ProfsignupComponent implements OnInit {
       this.service.isUsernameExists(this.profDetails.professionalName).subscribe((result: any) => { this.check = result;  console.log("result value = " + result);
 
       if (result) {
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 2000);
         this.service.verification(this.profDetails.mailId, this.profDetails.professionalName,this.profDetails.mobile).subscribe((result1: any) => {this.otp = result1;  console.log(result1);});
       }
       else {

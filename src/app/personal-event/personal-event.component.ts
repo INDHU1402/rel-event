@@ -182,6 +182,16 @@ export class PersonalEventComponent implements OnInit {
     });
   }
 
+  isLoading = false;
+  
+  toggleLoading = () => {
+    this.isLoading = true;
+
+    //Faking an API call
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);};
+
   addProfessional(prof: any): void {
     this.chosenProfessional.push(prof);
     console.log(prof + "added");
@@ -225,6 +235,9 @@ export class PersonalEventComponent implements OnInit {
         this.imageUrl = '/assets/img/bg.jpg';
       }
     );
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
     //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
   }
   handleFileInput(file: FileList) {

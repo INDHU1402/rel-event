@@ -149,63 +149,65 @@
                 </ul>
              </div>
            
-           
-             <div *ngFor="let r of ids">
-                <p>{{r}}</p>
-                <div class="star-rating-display" data-rating={{r}}></div>
-             </div>
              
-           <div *ngFor="let prof of professionals | filter:term">
-             
-             <ng-container *ngIf = "!status()">
-                  
-             <section class="text-card">
-                <div class="content"><br>
-                    <div class="author-section">
-                       <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
-                       <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
-                       <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
-                  <!--  <button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
-                       <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>-->   
-                    </div>
-                    <br><br>
-                    <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                    <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="prof(prof)">Know more </button>
-                    
-           
-                </div>
-              </section>
-             </ng-container>
-           
-             <ng-container *ngIf = "status()">
-               <ng-container *ngFor = 'let s of selected_games'>
-                 <ng-container *ngIf = "prof.serviceType === s.name">
-               
-                   <section class="text-card">
-                     <div class="content"><br>
-                         <div class="author-section">
-                            <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
-                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
-                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
-                            <button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
-                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>
-                           </div>
-                         <br><br>
-                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add</button>
+             <div class="col-sm-4">
+               <div *ngFor="let prof of professionals | filter:term">
+                 
+                 <ng-container *ngIf = "!status()">
                       
-                     </div>
-                   </section>
-             </ng-container>
-           </ng-container>
-           </ng-container>
-           
-           
-             </div>
+                 <section class="text-card">
+                    <div class="content"><br>
+                        <div class="author-section">
+                           <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+                           <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+                           <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                       <!--<button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
+                           <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>-->
+                        </div>
+                        <br><br>
+                        <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
+                        <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="prof(prof)">Know more </button>
+                        
+               
+                    </div>
+                  </section>
+                 </ng-container>
+               
+                 <ng-container *ngIf = "status()">
+                   <ng-container *ngFor = 'let s of selected_games'>
+                     <ng-container *ngIf = "prof.serviceType === s.name">
+                   
+                       <section class="text-card">
+                         <div class="content"><br>
+                             <div class="author-section">
+                                <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                                <button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
+                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>
+                               </div>
+                             <br><br>
+                             <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add</button>
+                          
+                         </div>
+                       </section>
+                 </ng-container>
+               </ng-container>
+               </ng-container>
+               
+               
+                 </div>
+               </div>
            
          
            
+               <div class="col-sm-4" *ngFor="let r of ids" style="margin-left:200px; margin-top:200px;">
+                  <p style="font-size:17px;">Rating &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;{{r}} / 5 </p>
+                  <!--<div class="star-rating-display" data-rating={{r}}></div>-->
+               </div>
+               
            </div>
                </div>
            
@@ -409,8 +411,9 @@
       </mat-vertical-stepper>
 
       <br><br>
-      <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >Add Event</button>
-
+      <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >
+      <img *ngIf="isLoading" style="width : 24px" src="/assets/img/126.gif" />
+      Add Event</button>
    </div>
 </form>
 

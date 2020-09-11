@@ -66,7 +66,8 @@
                         <br><br>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ProfModal"
                         (click)="registerProf()" style="width:100px; margin-left:-30px; color:black;">
-                        Signup
+                        <img *ngIf="isLoading" style="width : 24px" src="/assets/img/126.gif" />
+                        Sign up
                     </button>
                     <br><br> <br><br>
 

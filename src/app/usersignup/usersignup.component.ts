@@ -28,6 +28,15 @@ export class UsersignupComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  isLoading = false;
+  
+  toggleLoading = () => {
+    this.isLoading = true;
+
+    //Faking an API call
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);};
 
   register(): void {
     console.log(this.user);
@@ -36,6 +45,9 @@ export class UsersignupComponent implements OnInit {
       this.service.isUsernameExists(this.user.userName).subscribe((result: any) => { this.check = result;  console.log("result user value = " + result);
       this.service.isProfessionalExists(this.user.userName).subscribe((result3: any) => { this.check = result3;  console.log("result prof value = " + result3);
       if (result && result3) {
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 2000);
         this.service.verification(this.user.emailId, this.user.userName,this.user.contact).subscribe((result1: any) => {this.otp = result1;  console.log(result1);});
       }
       else {
