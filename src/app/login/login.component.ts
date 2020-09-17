@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
  check2="false";
   name:string;
   password:string;
+  otp: any;
+  userotp: any;
+  user1: any;
   
   
   constructor(private service: UserService, private router: Router) { }
@@ -41,6 +44,40 @@ export class LoginComponent implements OnInit {
 fs(){
   this.router.navigate(['']);
 }
+
+forgot() {
+  if(this.name) {
+    this.service.getSocialUser(this.name).subscribe((result1: any) => {
+      
+      if (result1) {
+        console.log('result1 = ' + result1);
+        localStorage.setItem('userDetails', JSON.stringify(result1));  
+       this.user1 = JSON.parse(localStorage.getItem('userDetails'));
+       console.log('user1 name = '+ this.user1.userName);
+        this.service.verification(result1.emailId, result1.userName, result1.contact).subscribe((result2: any) => {this.otp = result2;  console.log(result2);});
+      }
+
+      else {
+        alert("Username doesn't exist");
+      }
+    
+    });
+  }
+  else {
+    alert('Enter username to continue');
+  }
+}
+validateOTP() : void {
+  console.log(this.otp);
+  console.log(this.userotp);
+  if (this.otp == this.userotp) {
+    this.router.navigate(['forgot']);
+  }
+  else {
+    alert("Invalid OTP");
+  }
+}
+
   loginSubmit(loginForm: any): void {
     this.isLoading = true;
     this.service.isUsernameExists(this.name).subscribe((result1: any) => {

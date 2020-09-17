@@ -9,13 +9,18 @@
 </head>
 <br><br><br><br>
 <div style="background-color:whitesmoke">
-
-
   <div class="hero-image3">
+<br>
+<br>
+    <div class="hero-image4">
+      <br>
+    <h1 style="font-size: 60px;text-align:center;color: black;
+    text-shadow: 2px 2px 4px #ffffff;margin-top: 10px;"><b>Start writing your Blog</b></h1>
+</div>
     <br><br>
     <div class="card-form">
       <form class="signup" #blogForm="ngForm" (ngSubmit)="addblog(blogForm.value)" novalidate>
-        <div class="form-title">Get Started</div>
+        <div class="form-title">Blog Form</div>
         <div class="form-body">
           <div class="row">
             <input type="text" placeholder="Title of Blog" [(ngModel)]='blogDetails.title'>

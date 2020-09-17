@@ -12,10 +12,11 @@
  .card-form {
      width: 500px;
      zoom:130%;
-     margin-left:400px;
+     margin-left:450px;
 	 border-radius: 10px;
 	 background: white;
 	 box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+	 
 }
  .card-form .form-title {
 
@@ -27,8 +28,8 @@
 	 height: 80px;
 
 	 font-size: 30px;
-	 font-weight: 40px;
-	 background: #d1e0e0;
+	 font-weight: 30px;
+	 background-image: linear-gradient(to right, #ff4dc4 ,white);
 	 border-radius: 10px 10px 0 0;
 	 
 }
@@ -104,11 +105,20 @@
     position: relative;
   }
   .hero-image3 {
-    background-image: url('/assets/img/gg.jpg');
+    background-image: url('/assets/img/tt.jpg');
      
     background-position: center;
     background-repeat: no-repeat;
   background-size: cover;
     position: relative;
   }
-  
+  .hero-image4 {
+    background-image: url('/assets/img/whitewall.jpg');
+     height:100px;
+    background-position: center;
+    background-repeat: no-repeat;
+  background-size: 1000px;
+	position: relative;
+	border: 2px ;
+	border-radius: 25px;
+  }
