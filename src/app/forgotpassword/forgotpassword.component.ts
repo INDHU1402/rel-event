@@ -18,7 +18,7 @@ export class ForgotpasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('userDetails'));
+    this.user = JSON.parse(localStorage.getItem('userForgot'));
     console.log(this.user);
     this.editObject = this.user;
     console.log(this.editObject);
@@ -29,6 +29,8 @@ export class ForgotpasswordComponent implements OnInit {
       this.editObject.password = this.password;
       this.service.updateUser(this.editObject).subscribe();
       console.log(this.editObject);
+      alert('Updated Password, now you can login...');
+      this.router.navigate(['login']);
     }
     else {
       alert('Password did not match');

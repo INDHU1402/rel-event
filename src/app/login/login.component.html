@@ -12,44 +12,17 @@
   <br><br><br><br><br><br><br><br>
 
 
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">OTP is sent to given mailID</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <input type="text" name="userotp" [(ngModel)]='userotp' placeholder="Enter OTP">
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="validateOTP()">Check</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div>
     <div class="main">
       <p class="sign" style="text-align: center;">Sign in</p>
-      <form #loginForm="ngForm" class="form1" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
         <input class="un " type="text" name="name" [(ngModel)]='name' style="text-align: center;"
           placeholder="Username">
         <input class="pass" type="password" name="password" [(ngModel)]='password' style="text-align: center;"
           placeholder="Password">
-        <button (click)="forgot()" data-toggle="modal" data-target="#myModal">Forgot Password ?</button>
-        <button class="button" [disabled]="isLoading" class="submit" style="text-align: center;" data-dismiss="modal">
-          <img *ngIf="isLoading" style="width : 24px" src="/assets/img/126.gif" />
+        <button  class="submit"  class="button" (click)="fp1()">Forgot Password ?</button>
+        <button class="button" [disabled]="isLoading" class="submit" (click)="loginSubmit()" style="text-align: center;">
           Sign in
         </button>
-      </form>
     </div>
 
   </div>

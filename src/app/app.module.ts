@@ -63,6 +63,7 @@ import { BlogFormComponent } from './blog-form/blog-form.component';
 import { ProfessionalComponent } from './professional/professional.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { DetailsComponent } from './details/details.component';
+import { OtpComponent } from './otp/otp.component';
 
 
 const appRoot: Routes = [{path:'home', component: HomeComponent},
@@ -101,7 +102,9 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'dashboard', component:DashboardComponent},
                          {path:'profdashboard', component:ProfDashBoardComponent},
                          {path:'professional', component:ProfessionalComponent},
-                         {path:'forgot', component:ForgotpasswordComponent}
+                         {path:'forgot', component:ForgotpasswordComponent},
+                         {path:'fp1', component:DetailsComponent},
+                         {path:'fp2', component:OtpComponent}
                          
                          
 ];
@@ -151,7 +154,8 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     BlogFormComponent,
     ProfessionalComponent,
     ForgotpasswordComponent,
-    DetailsComponent
+    DetailsComponent,
+    OtpComponent
 
   ],
   imports: [

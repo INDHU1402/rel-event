@@ -5,22 +5,22 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <title>Sign in</title>
+  <title></title>
 </head>
 
 <body>
   <br><br><br><br><br><br><br><br><br><br><br>
 
-
-
   <div>
     <div class="main">
-      <p class="sign" style="text-align: center;">Enter Username</p><br>
-        <input class="un " type="text" name="userName" [(ngModel)]='userName' style="text-align: center;"
+      <p class="sign" style="text-align: center;">Enter OTP</p><br>
+    
+        <input class="un " type="password" name="userotp" [(ngModel)]='userotp' style="text-align: center;"
           placeholder="Username">
-        <button class="button" class="submit" (click)="next()" style="text-align: center;">
+        <button class="button" (click)="validateOTP()" class="submit" style="text-align: center;" >
           Next
         </button>
+
     </div>
 
   </div>

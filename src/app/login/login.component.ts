@@ -44,6 +44,9 @@ export class LoginComponent implements OnInit {
 fs(){
   this.router.navigate(['']);
 }
+fp1(){
+  this.router.navigate(['fp1']);
+}
 
 forgot() {
   if(this.name) {
@@ -78,7 +81,7 @@ validateOTP() : void {
   }
 }
 
-  loginSubmit(loginForm: any): void {
+  loginSubmit(): void {
     this.isLoading = true;
     this.service.isUsernameExists(this.name).subscribe((result1: any) => {
       this.check1 = result1; console.log("result value = " + result1);

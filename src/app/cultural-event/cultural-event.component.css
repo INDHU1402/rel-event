@@ -132,6 +132,7 @@
       background: #B9CFEA;
       margin-bottom: 10px;
       padding: 2px 11px 4px 11px;
+      border-radius: 8px;
   }
   
   .delete-game{
