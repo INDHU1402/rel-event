@@ -223,13 +223,13 @@
 
 
             <div class="row">
-                <div class="col-md-3" style="width: 400px; margin-left:-200px; zoom:140%">
+                <div class="col-md-3" style="width: 400px; margin-left:-140px; zoom:160%">
                     <!-- Tabs nav -->
 
                     <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
                         aria-orientation="vertical">
                         <br>
-                        <h1>Hi, Preetha</h1>
+                        <h1>Hi, {{User.userName}}</h1>
                         <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab" data-toggle="pill"
                             href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">
                             <i class="fa fa-user-circle-o mr-2"></i>
@@ -280,7 +280,7 @@
                     <br><br><br><br>
                     <div class="tab-content" id="v-pills-tabContent">
 
-                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-home"
+                        <div class="tab-pane fade shadow rounded bg-transparent show active p-5" id="v-pills-home"
                             role="tabpanel" aria-labelledby="v-pills-home-tab"
                             style="width: 1000px; border-radius: 20px; ">
 
@@ -297,7 +297,7 @@
 
                                         <!-- Modal body -->
                                         <div class="modal-body" style="width:400px;">
-                                            <h1>Update your profile...</h1>
+                                            <h1 style="font-size:24px;">Update your profile...</h1>
                                             <form class="form-group">
                                                 Enter userName :<input type="text" name="userName"
                                                     [(ngModel)]="editObject.userName" class="form-control"><br />
@@ -339,10 +339,10 @@
 
                         </div>
 
-                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-events"
+                        <div class="tab-pane fade shadow rounded bg-transparent show active p-5" id="v-pills-events"
                             role="tabpanel" aria-labelledby="v-pills-events-tab"
-                            style="width: 1000px; border-radius: 20px; ">
-                            <h2>My Events</h2>
+                            style="width: 1000px; border-radius: 20px; background-color: transparent;">
+                            <h1 style="font-size:24px;">My Events</h1>
                             <hr />
                             <br>
                             <div *ngFor='let event of myEvents'>
@@ -370,10 +370,10 @@
 
                         </div>
 
-                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-blog"
+                        <div class="tab-pane fade shadow rounded bg-transparent show active p-5" id="v-pills-blog"
                             role="tabpanel" aria-labelledby="v-pills-blog-tab"
                             style="width: 1000px; border-radius: 20px; ">
-                            <h2>My Blogs</h2>
+                            <h2 style="font-size:24px;">My Blogs</h2>
                             <hr />
                             <br>
                             <div *ngFor='let x of myBlogs'>
@@ -403,9 +403,9 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile" role="tabpanel"
+                        <div class="tab-pane fade shadow rounded bg-transparent p-5" id="v-pills-profile" role="tabpanel"
                             aria-labelledby="v-pills-profile-tab" style="width: 1000px; border-radius: 20px; ">
-                            <h2>Bookings</h2>
+                            <h2 style="font-size:24px;">Bookings</h2>
                             <hr />
                             <br>
                             <div *ngFor='let payment of myBookedEvents'>
@@ -433,10 +433,10 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-messages" role="tabpanel"
+                        <div class="tab-pane fade shadow rounded bg-transparent p-5" id="v-pills-messages" role="tabpanel"
                             aria-labelledby="v-pills-messages-tab" style="width: 1000px; border-radius: 20px; ">
 
-                            <h2>Rate Professionals</h2>
+                            <h2 style="font-size:24px;">Rate Professionals</h2>
                             <hr />
                             <br>
                             <div *ngFor='let event of myEvents'>
@@ -467,9 +467,9 @@
 
 
 
-                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-share" role="tabpanel"
+                        <div class="tab-pane fade shadow rounded bg-transparent p-5" id="v-pills-share" role="tabpanel"
                             aria-labelledby="v-pills-share-tab" style="width: 1000px; border-radius: 20px; ">
-                            <h2>Share Event</h2>
+                            <h2 style="font-size:24px;">Share Event</h2>
                             <hr />
                             <br>
                             <div *ngFor='let event of myEvents'>

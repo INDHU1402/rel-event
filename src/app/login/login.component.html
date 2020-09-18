@@ -14,15 +14,16 @@
 
   <div>
     <div class="main">
-      <p class="sign" style="text-align: center;">Sign in</p>
+      <p class="sign" style="text-align: center;">Sign in</p><br>
         <input class="un " type="text" name="name" [(ngModel)]='name' style="text-align: center;"
           placeholder="Username">
         <input class="pass" type="password" name="password" [(ngModel)]='password' style="text-align: center;"
-          placeholder="Password">
-        <button  class="submit"  class="button" (click)="fp1()">Forgot Password ?</button>
+          placeholder="Password"><br>
         <button class="button" [disabled]="isLoading" class="submit" (click)="loginSubmit()" style="text-align: center;">
           Sign in
         </button>
+        <br><br>
+        <a (click)="fp1()" style="margin-left:145px;">Forgot Password ?</a>
     </div>
 
   </div>
