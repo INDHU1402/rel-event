@@ -29,4 +29,13 @@ html {
 #contacts {
   text-align: center;
 }
+.bg {
+  background-image: url("/assets/img/abs9.jpg");
+  height: 957px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
 
