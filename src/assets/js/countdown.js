@@ -13,19 +13,13 @@ let countDown = new Date(dt).getTime(),
           let mins = Math.floor((distance % (hour)) / (minute));
           let seconds = Math.floor((distance % (minute)) / second);
           //console.log('days = '+ days + ' hours = '+ hours + ' mins = ' + mins + ' seconds = '+ seconds);
-          if(days > 0 || hours > 0 || mins > 0 || seconds > 0) {	
+         // if(days > 0 || hours > 0 || mins > 0 || seconds > 0) {	
             document.getElementById('days').innerText = days,	
             document.getElementById('hours').innerText = hours,	
             document.getElementById('minutes').innerText = mins,	
             document.getElementById('seconds').innerText = seconds;	
-           }	
-           else {	
-            document.getElementById('days').innerText = "over",	
-            document.getElementById('hours').innerText = "over",	
-            document.getElementById('minutes').innerText = "over",	
-            document.getElementById('seconds').innerText = "over";	
-           }
-         
+         ///  }	
+        
       //do something later when date is reached
       //if (distance < 0) {
       //  clearInterval(x);
