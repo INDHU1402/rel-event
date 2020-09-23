@@ -21,13 +21,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<div class="modal fade" id="timeline">
+<div class="modal fade" id="timeline" style="margin-top: 80px;">
    <div class="modal-dialog modal-lg">
-      <div class="modal-content" style="background-color: #fff1e6;">
+      <div class="modal-content" style="background-color:rgb(27, 108, 133);">
 
          <!-- Modal Header -->
-         <div class="modal-header">
-            <h1 class="modal-title"><b>Agenda</b></h1>
+         <div class="modal-header" style="background-color: rgb(211, 232, 225) ;">
+            <h1 class="modal-title" style="margin-left: 350px;"><b>AGENDA</b></h1>
+            <hr>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
          </div>
 
@@ -36,7 +37,7 @@
             <div class="timeline" style="margin-left: 35px;">
                <ul>
 
-                    
+
                   <li>
                      <span></span>
                      <div class="content">
@@ -44,20 +45,21 @@
                            <div class="form-group">
 
                               <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                 autofocus="true" name="time1" [(ngModel)]='eventDetails.time1' placeholder="Check Point 1">
+                                 autofocus="true" name="time1" [(ngModel)]='eventDetails.time1'
+                                 placeholder="Check Point 1">
                               <br>
                               <div class="form-group" class="adjust">
                                  <textarea type="text" class="form-control" name="Overview1"
-                                 [(ngModel)]='eventDetails.overview1'
-                                    aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                                    [(ngModel)]='eventDetails.overview1' aria-describedby="emailHelp"
+                                    placeholder="Where is the Event ?" rows=4></textarea>
                               </div>
                            </div>
                         </div>
 
                      </div>
                   </li>
-                
-                  
+
+
                   <li>
                      <span></span>
                      <div class="content">
@@ -65,26 +67,27 @@
                            <div class="form-group">
 
                               <input class="form-control" id="focusedInput" type="text" style="width:240px;"
-                                 autofocus="true" name="time2" [(ngModel)]='eventDetails.time2' placeholder="check Point 2">
+                                 autofocus="true" name="time2" [(ngModel)]='eventDetails.time2'
+                                 placeholder="check Point 2">
                               <br>
                               <div class="form-group" class="adjust">
                                  <textarea type="text" class="form-control" name="Overview2"
-                                 [(ngModel)]='eventDetails.overview2'
-                                    aria-describedby="emailHelp" placeholder="Where is the Event ?" rows=4></textarea>
+                                    [(ngModel)]='eventDetails.overview2' aria-describedby="emailHelp"
+                                    placeholder="Where is the Event ?" rows=4></textarea>
                               </div>
                            </div>
                         </div>
 
                      </div>
                   </li>
-                
+
 
                </ul>
             </div>
          </div>
 
          <!-- Modal footer -->
-         <div class="modal-footer">
+         <div class="modal-footer" style="background-color: rgb(211, 232, 225) ;">
             <button type="button" class="btn btn-dark" data-dismiss="modal">Submit</button>
          </div>
       </div>
@@ -92,8 +95,7 @@
 </div>
 
 
-
-<div class="modal fade" id="professionals" >
+<div class="modal fade" id="professionals">
    <div class="modal-dialog modal-lg" >
       <div class="modal-content" style="width: 1000px; margin-left: -100px; background-color: #fff1e6;">
          <!-- Modal Header -->
@@ -103,21 +105,21 @@
          </div>
 
          <!-- Modal body -->
-         <div class="modal-body">
+         <div class="modal-body" style="background-color:black">
             
              
                <div class="row" > 
                  
-               <div class="col-sm-4" style="background-color:#fff1e6;">
-               <h2>Choose Category</h2>
+               <div class="col-sm-4" >
+               <h2 style="color: white;">Choose Category</h2>
            
              <ul class="game-list">
                <li *ngFor="let g of games | filter : searchText" class="game-item"> 
                  <input (change)="getSelected()" type="checkbox"
-                          name="games"
+                          name=" games"
                           value="{{g.id}}"
                           [(ngModel)]="g.selected"/> 
-                 <span class="game-text">{{g.name}}</span>
+                 <span class="game-text">&nbsp;&nbsp;&nbsp;{{g.name}}</span>
                </li>
              </ul>
              
@@ -140,75 +142,71 @@
            
          
            
-             <div class="container" style="background-color: white; width:400px;">
-               <h1>Chosen Professionals</h1>
-               <ul class="custom-counter" *ngFor="let x of chosenProfessional">
-                  <li>Professional Name: {{x.professionalName}}<br> Service Type: {{x.serviceType}}<br> Service Name: {{x.serviceName}}<br> Address: {{x.address}} <br>  <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="removeProfessional(x)">Remove</button>
-                    <br>                      
-                  </li>
-                </ul>
-             </div>
-           
-             
-             <div class="col-sm-4">
-               <div *ngFor="let prof of professionals | filter:term">
+           <div class="container" style=" width:475px;">
+              <h1 style="color: white;">Chosen Professionals</h1>
+              <ul class="card" *ngFor="let x of chosenProfessional" >
+                
+                 <li><b>Professional Name:</b> {{x.professionalName}}<br>
+                    <b> Service Type:</b> {{x.serviceType}}<br>   
+                    <b> Service Name:</b> {{x.serviceName}}<br> 
+                    <b> Address:</b> {{x.address}} <br>  
+                    <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="removeProfessional(x)">Remove</button>
+                   <br>                      
+                 </li>
+               </ul>
+            </div>
+          
+          
+          <div *ngFor="let prof of professionals | filter:term">
+            
+            <ng-container *ngIf = "!status()">
                  
-                 <ng-container *ngIf = "!status()">
-                      
-                 <section class="text-card">
+            <section class="text-card">
+               <div class="content"><br>
+                   <div class="author-section">
+                      <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
+                      <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
+                      <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
+                                            
+                     </div>
+                   <br><br>
+                   <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
+                   
+          
+               </div>
+             </section>
+            </ng-container>
+          
+            <ng-container *ngIf = "status()">
+              <ng-container *ngFor = 'let s of selected_games'>
+                <ng-container *ngIf = "prof.serviceType === s.name">
+              
+                  <section class="text-card">
                     <div class="content"><br>
                         <div class="author-section">
                            <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
                            <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
-                       <!--<button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
-                           <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>-->
                         </div>
                         <br><br>
                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                        <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="prof(prof)">Know more </button>
                         
                
                     </div>
                   </section>
-                 </ng-container>
-               
-                 <ng-container *ngIf = "status()">
-                   <ng-container *ngFor = 'let s of selected_games'>
-                     <ng-container *ngIf = "prof.serviceType === s.name">
-                   
-                       <section class="text-card">
-                         <div class="content"><br>
-                             <div class="author-section">
-                                <img class="author-avator" src="http://localhost:8080/RESTAPI/images/{{prof.serviceImage}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <h6 class="author-name">Name  <br>{{prof.professionalName}}</h6><br>
-                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profession <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceType}} &nbsp;&nbsp;&nbsp;&nbsp;</h6><br>
-                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop name <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prof.serviceName}}</h6><br>
-                                <button class=" btn btn-dark"  style="width: 100px;" (click)="getRating(prof.professionalId)">Rating</button>
-                                <h6 class="author-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</h6><br>
-                               </div>
-                             <br><br>
-                             <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add</button>
-                          
-                         </div>
-                       </section>
-                 </ng-container>
-               </ng-container>
-               </ng-container>
-               
-               
-                 </div>
-               </div>
+            </ng-container>
+          </ng-container>
+          </ng-container>
+          
+           
+             </div>
            
          
            
-               <div class="col-sm-4" *ngFor="let r of ids" style="margin-left:200px; margin-top:200px;">
-                  <p style="font-size:17px;">Rating &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;{{r}} / 5 </p>
-                  <!--<div class="star-rating-display" data-rating={{r}}></div>-->
-               </div>
-               
            </div>
+           
                </div>
            
          </div>
@@ -237,20 +235,14 @@
                      <input type="text" class="form-control" name="organiserName" [(ngModel)]='eventDetails.organiserName' aria-describedby="emailHelp"
                         placeholder="Enter Organiser Name">
                   </div>
+                  <br>
+                  <select class="form-control" name="category" id="category" [(ngModel)]='eventDetails.category'>
+                     <option hidden value="" disabled selected>Choose Event Category</option>
+                     <option *ngFor="let category of Category">{{category}}</option>
+                  </select>
                </div>
 
-               <div class="col-sm-4">
-                  <div class="form-group" class="adjust">
-                     <select class="form-control" name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
-                        <option hidden value="" disabled selected>Choose Event Type</option>
-                        <option *ngFor="let type of Types">{{type}}</option>
-                     </select><br>
-                     <select class="form-control" name="category" id="category" [(ngModel)]='eventDetails.category'>
-                        <option hidden value="" disabled selected>Choose Event Category</option>
-                        <option *ngFor="let category of Category">{{category}}</option>
-                     </select>
-                  </div>
-               </div>
+             
 
             </div>
             <br><br>
@@ -283,7 +275,7 @@
 
                <div class="col-sm-3">
                   <label>
-                     <input placeholder="Start Time" name="startTime"
+                     <input  placeholder="Start Time" name="startTime"
                      [(ngModel)]='eventDetails.startTime' [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
                      <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
                  </label>
@@ -411,7 +403,7 @@
       </mat-vertical-stepper>
 
       <br><br>
-      <button type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >
+      <button disabled="registerForm.form.valid" type="button" style="margin-left: 750px; width: 200px; height :50px; font-size: 20px;" class="btn btn-dark" >
       <img *ngIf="isLoading" style="width : 24px" src="/assets/img/126.gif" />
       Add Event</button>
    </div>

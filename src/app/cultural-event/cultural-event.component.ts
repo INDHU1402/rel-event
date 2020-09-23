@@ -13,7 +13,7 @@ export class CulturalEventComponent implements OnInit {
   chosenProfessional = [];
   term: string;
   name: string;
-
+value:any;
   selected_games: { name: string; id: number; selected: boolean; }[];
 
   searchText:string = "";
@@ -23,22 +23,22 @@ export class CulturalEventComponent implements OnInit {
   // Data Object to List Games
   games = [
     {
-      name:'photographer',
+      name:'Photographer',
       id:1,
       selected:false
     },
     {
-      name:'decorator',
+      name:'Decorator',
       id:2,
       selected:false
     },
     {
-      name:'caterer',
+      name:'Food supplier',
       id:3,
       selected:false
     },
     {
-      name:'Florist',
+      name:'Venue owner',
       id:4,
       selected:false},
     {
@@ -139,7 +139,7 @@ export class CulturalEventComponent implements OnInit {
    reader:FileReader;
    imageUrl:String;
    Types: any = ['public', 'private']
- 
+   serviceType: any = ['Photographer', 'Food supplier', 'Decorator', 'Dancer', 'Singer', 'Venue owner', 'Technician', 'Others'];
    howManyDays:number;
    eventdate:Date;
    d:Date;
@@ -186,6 +186,13 @@ export class CulturalEventComponent implements OnInit {
     console.log(this.d);
     return this.d;
   }
+  getRating(profId: number) {
+    this.service.myrating(profId).subscribe((op: any) => {
+      console.log(op);
+      this.value = op;
+    });
+  }
+
 
 
    eventSubmit(regForm:any): void {

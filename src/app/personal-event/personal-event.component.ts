@@ -21,45 +21,42 @@ export class PersonalEventComponent implements OnInit {
   searchText: string = "";
   selected_count: number = 0;
 
-
-  // Data Object to List Games
+  serviceType: any = ['Photographer', 'Food supplier', 'Decorator', 'Dancer', 'Singer', 'Venue owner', 'Technician', 'Others'];
   games = [
-    {
-      name: 'photographer',
-      id: 1,
-      selected: false
-    },
-    {
-      name: 'decorator',
-      id: 2,
-      selected: false
-    },
-    {
-      name: 'caterer',
-      id: 3,
-      selected: false
-    },
-    {
-      name: 'Florist',
-      id: 4,
-      selected: false
-    },
-    {
-      name: 'Dancer',
-      id: 5,
-      selected: false
-    },
-    {
-      name: 'Singer',
-      id: 6,
-      selected: false
-    },
-    {
-      name: 'Technician',
-      id: 7,
-      selected: false
-    }
-  ]
+      {
+        name:'Photographer',
+        id:1,
+        selected:false
+      },
+      {
+        name:'Decorator',
+        id:2,
+        selected:false
+      },
+      {
+        name:'Food supplier',
+        id:3,
+        selected:false
+      },
+      {
+        name:'Venue owner',
+        id:4,
+        selected:false},
+      {
+        name:'Dancer',
+        id:5,
+        selected:false
+      },
+      {
+        name:'Singer',
+        id:6,
+        selected:false},
+      {
+        name:'Technician',
+        id:7,
+        selected:false
+      }
+    ]
   cart: any;
   i: any;
 
@@ -154,7 +151,7 @@ export class PersonalEventComponent implements OnInit {
   Sponsor: any = ['yes', 'no'];
 
   days = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  Category: any = ['Show', 'Carnival', 'Fest', 'Sport Event', 'Plays', 'Charitable event', 'Art event'];
+  Category: any = ['birthday', 'wedding', 'party', 'reception', 'picnic'];
   eventDetails = {
     eventType: '', about: '', attendeesCount: '', category: '', eventName: '', guest1: '', guest2: '', guest3: '',
     organiserName: '', sponsor: '', ticketPrice: '', venue: '', eventStartDate: '', eventEndDate: '', poster: '',
@@ -223,10 +220,12 @@ export class PersonalEventComponent implements OnInit {
 
 
   eventSubmit(regForm: any): void {
+
     this.eventDetails.professionalList = this.chosenProfessional;
     this.eventDetails.user.userId = this.User.userId;
     console.log(this.eventDetails);
     this.eventDetails.eventStartDate = this.eventdate.toDateString();
+    this.eventDetails.eventType = 'private';
     this.eventDetails.eventEndDate = this.getdate().toDateString();
 
     this.service.postFile(this.eventDetails, this.fileToUpload).subscribe(
@@ -242,7 +241,6 @@ export class PersonalEventComponent implements OnInit {
   }
   handleFileInput(file: FileList) {
     console.log("in handle");
-
     this.fileToUpload = file.item(0);
     this.reader = new FileReader();
     this.reader.readAsDataURL(this.fileToUpload);
@@ -250,9 +248,6 @@ export class PersonalEventComponent implements OnInit {
       this.imageUrl = event.target.result;
     };
   }
-
-
-
   done() {
     console.log(this.chosenProfessional);
 

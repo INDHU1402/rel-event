@@ -23,42 +23,40 @@ export class TechFormComponent implements OnInit {
   selected_count: number = 0;
 
 
-  // Data Object to List Games
-  games = [
+  serviceType: any = ['Photographer', 'Food supplier', 'Decorator', 'Dancer', 'Singer', 'Venue owner', 'Technician', 'Others'];
+games = [
     {
-      name: 'photographer',
-      id: 1,
-      selected: false
+      name:'Photographer',
+      id:1,
+      selected:false
     },
     {
-      name: 'decorator',
-      id: 2,
-      selected: false
+      name:'Decorator',
+      id:2,
+      selected:false
     },
     {
-      name: 'caterer',
-      id: 3,
-      selected: false
+      name:'Food supplier',
+      id:3,
+      selected:false
     },
     {
-      name: 'Florist',
-      id: 4,
-      selected: false
+      name:'Venue owner',
+      id:4,
+      selected:false},
+    {
+      name:'Dancer',
+      id:5,
+      selected:false
     },
     {
-      name: 'Dancer',
-      id: 5,
-      selected: false
-    },
+      name:'Singer',
+      id:6,
+      selected:false},
     {
-      name: 'Singer',
-      id: 6,
-      selected: false
-    },
-    {
-      name: 'Technician',
-      id: 7,
-      selected: false
+      name:'Technician',
+      id:7,
+      selected:false
     }
   ]
   cart: any;
