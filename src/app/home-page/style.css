@@ -1,0 +1,89 @@
+.btn11 {
+    background: #92c7eb;
+    background-image: url("/assets/img/techy.jpg");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 145px;
+    height: 145px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  .btn11:hover
+  {
+    width: 135px;
+    height: 135px;
+  }
+  .btn12 {
+    background: #92c7eb;
+    background-image: url("/assets/img/culturally.jpg");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 145px;
+   
+    height: 145px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  .btn12:hover
+  {
+    width: 135px;
+    height: 135px;
+  }.btn13 {
+    background: #92c7eb;
+    background-image: url("/assets/img/personally.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    border-radius: 900px;
+    padding: 20px;
+    width: 145px;
+
+    height: 145px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  .btn13:hover
+  {
+    width: 135px;
+    height: 135px;
+  }
+  .container11 {
+    position: absolute;
+    top:20%;
+    left: 50%;
+    margin-left: -690px;
+    height:100px;
+  }
+  .container12 {
+    position: absolute;
+    top:20%;
+    left: 80%;
+    margin-left: -690px;
+    height:100px;
+  }
+  .btn14 {
+    background: #92c7eb;
+    background-image: url("/culturally.jpg");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    padding: 20px;
+    width: 500px;
+   
+    height: 500px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+body {
+    background: #fbfcff;
+}

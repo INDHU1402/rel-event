@@ -97,7 +97,7 @@
  
  <div class="modal fade" id="professionals" >
     <div class="modal-dialog modal-lg" >
-       <div class="modal-content" style="width: 1000px; margin-left: -100px; background-color: #fff1e6;">
+       <div class="modal-content" style="width: 1000px; margin-left: -100px; background-color: rgb(211, 232, 225)">
           <!-- Modal Header -->
           <div class="modal-header">
              <h1 class="modal-title"><b>Choose Professionals</b></h1>
@@ -110,8 +110,8 @@
               
                 <div class="row" > 
                   
-                <div class="col-sm-4" style="background-color:#fff1e6;">
-                <h2>Choose Category</h2>
+                <div class="col-sm-4" style="background-color:rgb(245, 247, 246);">
+                <h2 style="text-align: center;">Choose Category</h2>
             
               <ul class="game-list">
                 <li *ngFor="let g of games | filter : searchText" class="game-item"> 
@@ -224,20 +224,20 @@
  
                 <div class="col-sm-4">
                    <div class="form-group" class="adjust">
-                      <input type="text"  class="form-control" name="eventName" [(ngModel)]='eventDetails.eventName' required="true" aria-describedby="emailHelp"
+                      <input  style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" type="text"  class="form-control" name="eventName" [(ngModel)]='eventDetails.eventName' required="true" aria-describedby="emailHelp"
                          placeholder="Enter Event Name"><br>
-                      <input type="text" class="form-control" name="organiserName" [(ngModel)]='eventDetails.organiserName' aria-describedby="emailHelp"
+                      <input  style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" type="text" class="form-control" name="organiserName" [(ngModel)]='eventDetails.organiserName' aria-describedby="emailHelp"
                          placeholder="Enter Organiser Name">
                    </div>
                 </div>
  
                 <div class="col-sm-4">
                    <div class="form-group" class="adjust">
-                      <select class="form-control" name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
+                      <select style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;"class="form-control" name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
                          <option hidden value="" disabled selected>Choose Event Type</option>
                          <option *ngFor="let type of Types">{{type}}</option>
                       </select><br>
-                      <select class="form-control" name="category" id="category" [(ngModel)]='eventDetails.category'>
+                      <select style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" class="form-control" name="category" id="category" [(ngModel)]='eventDetails.category'>
                          <option hidden value="" disabled selected>Choose Event Category</option>
                          <option *ngFor="let category of Category">{{category}}</option>
                       </select>
@@ -246,7 +246,7 @@
  
              </div>
              <br><br>
-             <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
+             <button  style="margin-left: 1400px;" mat-button matStepperNext class="btn btn-primary">N e x t</button>
           </mat-step>
  
           <mat-step>
@@ -254,9 +254,9 @@
              <div class="row" style="margin-left:50px;">
  
                 <div class="col-sm-3" >
-                   <mat-form-field class="example-full-width" appearance="fill" style="width:200px;background-color:white;">
+                   <mat-form-field  class="example-full-width" appearance="fill" style="width:200px;background-color:white;width:300px;margin-left: 350px;margin-top: 40px;height:60px;">
                       <mat-label>Choose start date</mat-label>
-                      <input matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:black"
+                      <input  matInput [matDatepickerFilter]="myFilter1" [matDatepicker]="picker" style="color:black"
                          name="eventdate" [(ngModel)]='eventdate'>
                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                       <mat-datepicker #picker></mat-datepicker>
@@ -267,7 +267,7 @@
 
                 <div class="col-sm-4">
                   <div class="form-group" class="adjust" >
-                     <select class="form-control" name="howManyDays" id="category" [(ngModel)]='howManyDays' >
+                     <select style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;"class="form-control" name="howManyDays" id="category" [(ngModel)]='howManyDays' >
                         <option hidden value="" disabled selected>No. of Days</option>
                         <option *ngFor="let day of days">{{day}}</option>
                      </select><br>
@@ -281,7 +281,7 @@
  
                 <div class="col-sm-3">
                    <label>
-                      <input placeholder="Start Time" name="startTime"
+                      <input style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;"placeholder="Start Time" name="startTime"
                       [(ngModel)]='eventDetails.startTime' [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
                       <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
                   </label>
@@ -289,13 +289,13 @@
  
                 <div class="col-sm-3">
                    <label>
-                      <input placeholder="End Time" name="endTime" [(ngModel)]='eventDetails.endTime' [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
+                      <input style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" placeholder="End Time" name="endTime" [(ngModel)]='eventDetails.endTime' [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
                       <owl-date-time [pickerType]="'timer'" #dt5></owl-date-time>
                   </label>
                 </div>
  
              </div>
-             <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
+             <button style="margin-left: 1400px;"  mat-button matStepperNext class="btn btn-primary">N e x t</button>
  
           </mat-step>
  
@@ -304,21 +304,21 @@
  
                 <div class="col-sm-4">
                    <div class="form-group" class="adjust">
-                      <textarea type="text" class="form-control" name="about" [(ngModel)]='eventDetails.about' aria-describedby="emailHelp"
+                      <textarea  style="margin-left: 350px;margin-top: 40px;" type="text" class="form-control" name="about" [(ngModel)]='eventDetails.about' aria-describedby="emailHelp"
                          placeholder="What is the Event ?" rows=5></textarea>
                    </div>
                 </div>
  
                 <div class="col-sm-4">
                    <div class="form-group" class="adjust">
-                      <textarea type="text" class="form-control" name="venue" [(ngModel)]='eventDetails.venue' required="true" aria-describedby="emailHelp"
+                      <textarea  style="margin-left: 350px;margin-top: 40px;" type="text" class="form-control" name="venue" [(ngModel)]='eventDetails.venue' required="true" aria-describedby="emailHelp"
                          placeholder="Where is the Event ?" rows=5></textarea>
                    </div>
                 </div>
  
              </div>
              <br><br>
-             <button type="button" mat-button matStepperNext class="btn btn-primary">N e x t</button>
+             <button style="margin-left: 1400px;" type="button" mat-button matStepperNext class="btn btn-primary">N e x t</button>
  
           </mat-step>
  
@@ -326,77 +326,74 @@
             
             
              <div class="form-group" class="adjust">
-                <input type="number" style ="width:500px;" class="form-control" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' aria-describedby="emailHelp"
+                <input  type="number" style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" class="form-control" name="ticketPrice" [(ngModel)]='eventDetails.ticketPrice' aria-describedby="emailHelp"
                    placeholder="Enter Ticket Price"><br>
              
              </div>
  
              <div class="form-group" class="adjust">
-                <input type="number" style ="width:500px;" class="form-control" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' aria-describedby="emailHelp"
+                <input type="number" style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" class="form-control" name="attendeesCount" [(ngModel)]='eventDetails.attendeesCount' aria-describedby="emailHelp"
                    placeholder="Enter Attendees Count"><br>
              
              </div>
              <div class="form-group" class="adjust">
-             <select class="form-control" style ="width:500px;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
+             <select class="form-control" style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" name="sponsor" id="category" [(ngModel)]='eventDetails.sponsor'>
                 <option hidden value="" disabled selected>Allow sponsors?</option>
                 <option *ngFor="let sponsor of Sponsor">{{sponsor}}</option>
              </select>
           </div>
              <br>
 
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
-             style="width: 200px;">
+             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#timeline"
+             style="width: 250px;height:70px;margin-left:700px;font-size: 20px;margin-top: 15px;">
              Add Your Checkpoints
           </button>
 
          
-             <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
+             <button mat-button matStepperNext style="margin-left: 1400px;" class="btn btn-primary">N e x t</button>
  
           </mat-step>
           
           <mat-step>
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" style ="width:500px;" name="guest1" [(ngModel)]='eventDetails.guest1' aria-describedby="emailHelp"
+                <input style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" type="text" class="form-control" name="guest1" [(ngModel)]='eventDetails.guest1' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
     
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" style ="width:500px;" name="guest2" [(ngModel)]='eventDetails.guest2' aria-describedby="emailHelp"
+                <input style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" type="text" class="form-control"  name="guest2" [(ngModel)]='eventDetails.guest2' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
     
              <div class="form-group" class="adjust">
-                <input type="text" class="form-control" style ="width:500px;" name="guest3" [(ngModel)]='eventDetails.guest3' aria-describedby="emailHelp"
+                <input style ="width:500px;margin-left:600px;height:55px;margin-top: 20px;" type="text" class="form-control"  name="guest3" [(ngModel)]='eventDetails.guest3' aria-describedby="emailHelp"
                    placeholder="Special Guest"><br>
              </div>
              <br>
-             <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
+             <button style="margin-left: 1400px;" mat-button matStepperNext class="btn btn-primary">N e x t</button>
  
           </mat-step>
  
           <mat-step>
              
-             <div class="custom-file" style="width: 300px;">
-                <input type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
+             <div class="custom-file"style="width:300px;;margin-left: 700px;margin-top:30px;" >
+                <input style="height:60px;" type="file" name="poster" accept="image/*" [(ngModel)]='eventDetails.poster'
                 (change)="handleFileInput($event.target.files)"
                 class="custom-file-input" id="customFile">
                 <label class="custom-file-label" for="customFile">Choose file</label>
               </div><br>
-              <button mat-button matStepperNext class="btn btn-primary">N e x t</button>
-              <img [src]="imageUrl" style="height: 200px; width: 200px;margin-left: 200px;">
              
-              
-              
-              
- 
-               
+              <img [src]="imageUrl" style="height: 200px; margin-left: 700px;width: 200px;margin-top: 20px;">
+
+              <button mat-button matStepperNext class="btn btn-primary"  style="margin-left: 1400px;">N e x t</button>       
+                           
  
           </mat-step>            
           
           <mat-step>
  
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#professionals"
-             style="width: 150px;">
+             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#professionals"
+             style="width: 300px;margin-left: 700px;margin-top:30px;height:40px;font-size: 20px;">
              Add Professionals
           </button>
           
@@ -409,7 +406,7 @@
        </mat-horizontal-stepper>
  
        <br><br>
-       <button type="button" style="margin-left: 850px; width: 200px; height :50px; font-size: 20px;" class="btn btn-primary" >Add Event</button>
+       <button  type="button" disabled="registerForm.form.valid" style="margin-left: 850px; width: 200px; height :50px; font-size: 20px;" class="btn btn-primary"  >Add Event</button>
  
     <!--</div>-->
  </form>
