@@ -13,6 +13,10 @@ export class HomePageComponent implements OnInit {
   user: any;
   exps: [];
   exp1: any;
+  name : string;
+  email : string;
+  num : string;
+  msg : string;
 
   //constructor(private router: Router) { }
   constructor(private alerts: AlertsService, private toaster:ToastrService, private router: Router, private service: UserService) { }
@@ -21,6 +25,10 @@ export class HomePageComponent implements OnInit {
     this.service.getExpList().subscribe((result: any) => { console.log(result); this.exps = result; } );
   }
 
+  sendmsg() : void {
+    this.service.contactUs(this.name, this.msg + ' Here are my details : ' + this.email + ', ' + this.num).subscribe((result: any) => { console.log(result); } );
+    alert('Message sent');
+  }
   /*status(exp: any) {
     console.log(this.exps.findIndex(exp));
     if (this.exps.findIndex(exp) === 0) {

@@ -20,5 +20,7 @@ export class ShareExperienceComponent implements OnInit {
     this.exp.professional = this.prof;
     console.log(this.exp);
     this.service.addExperience(this.exp).subscribe((details: any) => {console.log(details)});
+    alert('Thank you for sharing your experience');
+    this.router.navigate(['expandService']);
   }
 }

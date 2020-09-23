@@ -158,6 +158,10 @@ getMyEvents(professionalId:number) {
     return this.httpClient.get('RESTAPI/webapi/myresource/shareEvent/' + eventId + '/' + organiserId + '/' + to);
    }
 
+   contactUs(name:string, msg:string) {
+    return this.httpClient.get('RESTAPI/webapi/myresource/contact/' + name + '/' + msg);
+   }
+
    registerEvent(eventDetails : any) {
      console.log(eventDetails);
     return this.httpClient.post('RESTAPI/webapi/myresource/regEvent/', eventDetails);

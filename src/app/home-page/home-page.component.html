@@ -410,30 +410,30 @@
             <div class="row input-container" style="margin-left: -20px;">
                     <div class="col-xs-12">
                         <div class="styled-input wide">
-                            <input required />
+                            <input name="name" [(ngModel)]="name" required />
                             <label>Name</label> 
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="styled-input">
-                            <input required />
+                            <input name="email" [(ngModel)]="email" required />
                             <label>Email</label> 
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="styled-input" style="float:right;">
-                            <input required />
+                            <input name="num" [(ngModel)]="num" required />
                             <label>Phone Number</label> 
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="styled-input wide">
-                            <textarea required></textarea>
+                            <textarea name="msg" [(ngModel)]="msg" required></textarea>
                             <label>Message</label>
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="btn-lrg submit-btn">Send Message</div>
+                        <div class="btn-lrg submit-btn" (click)="sendmsg()">Send Message</div>
                     </div>
             </div>
         </div>
