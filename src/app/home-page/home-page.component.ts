@@ -54,7 +54,7 @@ export class HomePageComponent implements OnInit {
   }
   technicalEvent(){
     if (this.user != null) {
-      this.router.navigate(['technicalEvent']);
+      this.router.navigate(['techform']);
     }
     else {
       // this.alerts.setMessage('Please login to create event','error');

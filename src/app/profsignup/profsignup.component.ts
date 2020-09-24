@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProfsignupComponent implements OnInit {
 
-  serviceType: any = ['photographer', 'food supplier', 'decorator', 'entertainer', 'venue owner', 'others'];
+  serviceType: any = ['Photographer', 'Food supplier', 'Decorator', 'Entertainer', 'Dancer', 'Singer', 'Technician'];
   check: boolean;
   otp:number;
   userotp:number;
