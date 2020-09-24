@@ -21,9 +21,7 @@
         <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
         <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
         <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
-        <p style="font-size: 20px;">
-          {{event.about}}
-        </p>
+        
         <div class="social-icon">
           <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
@@ -93,23 +91,57 @@
     <br><br><br><br>
     <section id="speakers">
       <div class="content-container">
-        <div class="content">
-          <img class="speaker-icon" src="https://image.ibb.co/ixMeYo/music_microphone_old.png" alt="Microphone Icon" />
-      <h2 class="section-heading">Speakers</h2>
+   
+          <div class="row">
+            <div class="col-sm-4" style="text-align: center;">
+              <img class="speaker-icon" src="https://image.ibb.co/ixMeYo/music_microphone_old.png" alt="Microphone Icon" />
+              <h2 class="section-heading">Speakers</h2>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest1}}
-          </p>
+              <p class="speakers-address" style="font-size: 20px;">
+                Special Guest : {{event.guest1}}
+              </p>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest2}}
-          </p>
+              <p class="speakers-address" style="font-size: 20px;">
+                Special Guest : {{event.guest2}}
+              </p>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest3}}
-          </p>
+              <p class="speakers-address" style="font-size: 20px;">
+                Special Guest : {{event.guest3}}
+              </p>
         </div>
+
+
+        <div class="col-sm-4" style="text-align: center;" >
+          <span class="glyphicon glyphicon-tasks" style="font-size: 55px;"></span>
+          <h2 class="section-heading">About</h2>
+        <p style="font-size: 15px;">
+          {{event.about}}
+        </p>
+        </div>
+
+        <div class="col-sm-4" style="text-align: center;">
+          <img class="speaker-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
+          <h2 class="section-heading">Venue</h2>
+        
+     
+               <p class="speakers-address" style="font-size: 20px;">
+                 {{event.venue}}
+               </p>
+     
+               <p class="speakers-address" style="font-size: 20px;">
+                 Mob : {{user.contact}}
+               </p>
+     
+               <p class="speakers-address" style="font-size: 20px;">
+                 E-Mail : {{user.emailId}}
+               </p>
+        </div>
+
+     
+        
       </div>
+   
+  </div>
     </section>
 
 
@@ -142,9 +174,34 @@
     <section id="auditorium">
       <div class="content-container">
         <div class="content">
-          <img class="auditorium-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
+         
 
-          <h2 class="section-heading">Venue</h2>
+          <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
+
+      <h2 class="section-heading">Sponsors</h2>
+
+      <p class="section-subtitle">The Conference Partners</p>
+      <br>
+      <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
+         
+        </div>
+      </div>
+    </section>
+    <!--auditorium section 
+
+    <section id="sponsors">
+      <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
+
+      <h2 class="section-heading">Sponsors</h2>
+
+      <p class="section-subtitle">The Conference Partners</p>
+      <br>
+      <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
+    </section>
+
+
+     <img class="auditorium-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
+     <h2 class="section-heading">Venue</h2>
           <p class="section-subtitle">The Location</p>
 
           <p class="auditorium-address" style="font-size: 20px;">
@@ -158,21 +215,7 @@
           <p class="auditorium-email">
             E-Mail : info@salapastore.it
           </p>
-        </div>
-      </div>
-    </section>
-    <!-- auditorium section -->
-
-    <section id="sponsors">
-      <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
-
-      <h2 class="section-heading">Sponsors</h2>
-
-      <p class="section-subtitle">The Conference Partners</p>
-      <br>
-      <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
-    </section>
-    <!-- sponsors section -->
+    sponsors section -->
 
     <footer>
       <p class="footer-title">{{event.eventName}}</p>
