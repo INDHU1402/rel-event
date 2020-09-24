@@ -1,17 +1,15 @@
 
 <br><br><br>
-<br><br><br>
-<br><br><br>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
-
+<div style="background-image:url('/assets/img/bbb.jpg'); background-repeat: no-repeat; background-size: cover;">
+<br><br><br><br><br><br><br><br><br>
 <div class="container">
   <br><br><br><br>
-  <h1>Sponsor for this event</h1>
+  <h1>Sponsor {{event.eventName}} event</h1>
   <br>
   <p>Give your details and get in touch with organiser of the event</p>
   <br>
@@ -26,17 +24,15 @@
       <label for="email">E-Mail</label>
     </div>
     <div class="field">
-      <textarea id="msg" rows="4" name="msg" [(ngModel)]="message" placeholder="You message..."></textarea>
+      <textarea id="msg" rows="4" name="msg" [(ngModel)]="message" placeholder="Your message..."></textarea>
       <label for="msg">Message</label>
     </div>
     <br><br><br>
-    <input class="button" (click)="sponsorShip()" type="submit" value="Send"/>
-    <br><br>
+    <input class="button" (click)="sponsorShip()" type="submit" value="Interested in Sponsoring"/>
+    <br><br><br><br>
   </form>
+ 
 </div>
 </div>
-
-
-<br><br><br>
-<br><br><br>
-<br><br><br>
+<br><br><br><br>
+</div>

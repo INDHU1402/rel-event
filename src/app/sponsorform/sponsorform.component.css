@@ -6,19 +6,19 @@
 }
 
 .container {
-    background-color: black;
+    background-color:rgb(20, 8, 8);
     text-align: center;
     max-width: 1500px;
 }
 
 h1 {
  font-family: 'Times New Roman', Times, serif;
- font-size: 50px;
+ font-size: 60px;
 }
 
 p {
   font-family: 'Times New Roman', Times, serif;
- font-size: 20px;
+ font-size: 25px;
 }
 
 html,
@@ -49,7 +49,6 @@ form * {
   font-size: 20px;
   letter-spacing: 0.075em;
   font-weight: 300;
-  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
 }
