@@ -50,29 +50,31 @@
 
      
 
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="width: 500px;">
-
-          <!-- Modal Header -->
-          <div class="modal-header" style="width: 500px;">
-            <h4 class="modal-title" style="font-size: 30px;">Enter no. of tickets</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-          <!-- Modal body -->
-        
-          <div class="modal-body" style="width: 500px;">
-            <input type="number" name="howManyTickets" [(ngModel)]='howManyTickets' placeholder="Enter no. of Tickets">
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer" style="width: 500px;">
-            <button type="button" class="register-btn hvr-buzz-out" (click)="payment()" data-dismiss="modal">Continue</button>
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" style="width: 500px;">
+  
+            <!-- Modal Header -->
+            <div class="modal-header" style="width: 500px;">
+              <h4 class="modal-title" style="font-size: 30px;">Enter no. of tickets</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+  
+            <!-- Modal body -->
+          
+            <div class="modal-body" style="width: 500px; background-color:rgb(255, 249, 249);">
+              <br>
+              <input type="number" min = "0" name="howManyTickets" [(ngModel)]='howManyTickets' placeholder="Enter no. of Tickets" >
+              <br>
+            </div>
+  
+            <!-- Modal footer -->
+            <div class="modal-footer" style="width: 500px;">
+              <button type="button" class="btn btn primary hvr-buzz-out" style="background-color: black; color: white;" (click)="payment()" data-dismiss="modal">Continue</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 </div>
 <br><br>
