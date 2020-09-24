@@ -57,7 +57,10 @@ value:any;
     }
   ]
   cart: any;
-  
+  portfolio(p : any) {
+    localStorage.setItem("prof", JSON.stringify(p));
+    this.router.navigate(['professional']);
+  }
   
   // Getting Selected Games and Count
   getSelected(){

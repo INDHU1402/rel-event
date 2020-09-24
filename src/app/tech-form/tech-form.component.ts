@@ -18,7 +18,7 @@ export class TechFormComponent implements OnInit {
   ratings = [];
   ids = [];
   selected_games: { name: string; id: number; selected: boolean; }[];
-  
+
   searchText: string = "";
   selected_count: number = 0;
 
@@ -98,11 +98,10 @@ games = [
     this.searchText = "";
   }
 
-  prof(p : any) {
+  portfolio(p : any) {
     localStorage.setItem("prof", JSON.stringify(p));
     this.router.navigate(['professional']);
   }
-
   
   myFilter1 = (d: Date | null): boolean => {
 
@@ -254,6 +253,7 @@ games = [
   done() {
     console.log(this.chosenProfessional);
 
+    this.router.navigate(['personalEvent']);
   }
 
   status() {

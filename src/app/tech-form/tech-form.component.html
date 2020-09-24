@@ -85,7 +85,8 @@
                         </div>
                         <br><br>
                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="close" data-dismiss="modal" class=" btn btn-dark" style="width: 150px;" (click)="portfolio(prof)">Know more </button>
                
                     </div>
                   </section>
@@ -105,7 +106,8 @@
                              </div>
                              <br><br>
                              <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                             
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <button type="button" class="close" data-dismiss="modal" class=" btn btn-dark" style="width: 150px;" (click)="portfolio(prof)">Know more </button>
                     
                          </div>
                        </section>
@@ -125,8 +127,7 @@
      
               <!-- Modal footer -->
               <div class="modal-footer">
-      
-                 <button type="button" class="btn btn-primary" class="close" data-dismiss="modal" (click)="done()" data-dismiss="modal">Submit</button>
+                 <button type="button" class="btn btn-primary" (click)="done()" data-dismiss="modal">Submit</button>
               </div>
            </div>
         </div>
@@ -162,7 +163,7 @@
                                <div class="form-group" class="adjust">
                                   <textarea type="text" class="form-control" name="Overview1"
                                      [(ngModel)]='eventDetails.overview1' aria-describedby="emailHelp"
-                                     placeholder="Where is the Event ?" rows=4></textarea>
+                                     placeholder="Overview at check point 1" rows=4></textarea>
                                </div>
                             </div>
                          </div>
@@ -184,7 +185,7 @@
                                <div class="form-group" class="adjust">
                                   <textarea type="text" class="form-control" name="Overview2"
                                      [(ngModel)]='eventDetails.overview2' aria-describedby="emailHelp"
-                                     placeholder="Where is the Event ?" rows=4></textarea>
+                                     placeholder="Overview at check point 2" rows=4></textarea>
                                </div>
                             </div>
                          </div>
@@ -257,18 +258,7 @@
                             cols="10" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
                             required="true" placeholder="about"></textarea>
                     </div>
-
-                    <h2 for="focusedInput" style="color:white;">Event Type</h2>
-
-                <select style="width:300px;height:60px;"
-                    class="form-control" name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
-                    <option hidden value="" disabled selected>Choose Event Type</option>
-                    <option *ngFor="let type of Types">{{type}}</option>
-                 </select><br>
                 </div>
-               
-
-              
             </div>
 
             <div class="flip" style="margin-left: 100px;height: 350px;">
