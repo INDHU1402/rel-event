@@ -1,0 +1,97 @@
+<div *ngIf="prof">
+
+<div class = "bg">
+<br><br><br><br>
+
+  <br><br><br><br><br><br><br><br><br>
+  <div class="container" style="zoom: 150%;">
+    <div class="row">
+      <div class="col-md-5 w-full" style="min-height: 300px; border-radius:20px; 
+      box-shadow: 0px 11px 35px 2px rgba(99, 78, 102, 0.14);background-image:url('/assets/img/bg2.jpeg');">
+      </div>
+      <div class="col-md-3 p-3 p-sm-5" style="zoom: 140%;">
+        <div>
+          <small>
+            <a href="#" class="text-white"># {{prof.serviceType}}</a>
+          </small>
+        </div><br>
+        <h3 class="font-weight-bold">{{prof.serviceName}}
+        </h3>
+        <h4 class="font-weight">In {{prof.address}}
+        </h4>
+        <div class="my-3 d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center"><br>
+            <small class="ml-2">
+              <h5 class="text-black d-block">By {{prof.professionalName}}
+              </h5>
+              <br>
+            </small>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+
+<br><br><br><br>
+<br><br><br>
+
+<div class="col-lg-11 p-4 p-2 md-4 mx-auto" style="zoom: 150%; text-align: center; font-size: 18px;">
+  <h1 class="font-weight-bold" style="font-size:25px;">About</h1>
+  <p>Hello, I am {{prof.professionalName}}. I'm a {{prof.serviceType}} since {{prof.experience}} years
+  </p>
+  <br><br>
+  <h1 class="font-weight-bold" style="font-size:25px;">My Projects </h1>
+  <div *ngFor='let event of myEvents'>
+    <div class="card" style="width: 600px; margin-left:250px;">
+        <div class="row no-gutters">
+            <div class="col-sm-5">
+                <img class="card-img"
+                    src="http://localhost:8080/RESTAPI/images/{{event.poster}}"
+                    alt="Suresh Dasari Card">
+            </div>
+            <div class="col-sm-7">
+                <div class="card-body">
+                    <h2 class="card-title">{{event.eventName}}</h2>
+                    <p class="card-text">At {{event.venue}}</p>
+                    <h5>From {{event.eventStartDate}} to {{event.eventEndDate}}</h5>
+                    <p><button class="btn btn-danger" (click)="goToEvent(event)"
+                            style="border-radius: 25px; width:100px;">Go to
+                            event</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>
+  <br><br>
+  <h1 class="font-weight-bold" style="font-size:23px;">Wanna meet me, Here are my details </h1>
+    <p class="my-2" style="line-height: 2;">MailId     : {{prof.mailId}} </p>
+    <p class="my-2" style="line-height: 2;">Mobile number : {{prof.mobile}} </p>
+    <p class="my-2" style="line-height: 2;">Rating : {{value}} </p>
+</div>
+
+<br><br><br>
+<div class="section" id="contacts" style="margin-left:-100px;">
+  <h1><span>Find me on</span></h1>
+  
+  <div>
+    <a href="https://www.sololearn.com/" target="_blank">
+      <img alt="SoloLearn" src="https://www.sololearn.com/Uploads/icons/sololearn.png" />
+    </a>
+    <a href="http://facebook.com/iamwireless.org">
+      <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png" />
+    </a>
+    <a href="http://twitter.com/iamwireless">
+      <img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png" />
+    </a>
+  </div>
+  
+</div>
+
+</div>
+</div>
