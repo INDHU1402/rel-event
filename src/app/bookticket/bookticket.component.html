@@ -19,7 +19,7 @@
           <h5 style="font-size: 20px;"><b>At </b>{{event.venue}}</h5>
           <h5 style="font-size: 20px;"> <b>From </b>{{event.eventStartDate}} <b>To</b> {{event.eventEndDate}}</h5> 
       </div>
-      <div *ngIf="calTime(event.startDate | date:'dd-MM-yyyy') === true" class="card h-100">
+      <div *ngIf="calTime(event.eventStartDate | date:'dd-MM-yyyy') === true" >
       <button class="bth btn-danger"  (click)="goToEvent(event)" style="border-radius: 25px; margin-left: 160px; width:150px;">Book now</button>
     </div>
   </div>
