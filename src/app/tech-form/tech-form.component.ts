@@ -153,7 +153,7 @@ games = [
   Sponsor: any = ['yes', 'no'];
 
   days = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  Category: any = ['Show', 'Carnival', 'Fest', 'Sport Event', 'Plays', 'Charitable event', 'Art event'];
+  Category: any = ['Conference','Workshop','Talk','Hackathon','Tradeshow'];
   eventDetails = {
     eventType: '', about: '', attendeesCount: '', category: '', eventName: '', guest1: '', guest2: '', guest3: '',
     organiserName: '', sponsor: '', ticketPrice: '', venue: '', eventStartDate: '', eventEndDate: '', poster: '',
