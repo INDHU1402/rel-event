@@ -27,7 +27,10 @@ export class ProfessionalComponent implements OnInit {
       console.log(result);this.myEvents= result });
 
     this.service.myrating(this.prof.professionalId).subscribe((op: any) => {
-        this.value = op;
+      console.log(op);
+      if (op == 'NaN'){this.value="No Rating";}
+      else{
+        this.value = op;}
       });
   }
 

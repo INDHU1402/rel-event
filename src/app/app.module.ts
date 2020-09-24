@@ -28,6 +28,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { MatStepperModule} from '@angular/material/stepper';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
+import { ProfessionalComponent } from './professional/professional.component'; 
 import { SponsorformComponent } from './sponsorform/sponsorform.component';
 import { ShareExperienceComponent } from './share-experience/share-experience.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -96,7 +97,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'techform', component:TechFormComponent},
                          {path:'cart', component:ProffcartComponent},
                          {path:'culturalEvent', component: CulturalEventComponent},
-                       
+                         {path:'professional', component:ProfessionalComponent}, 
                          {path:'personalEvent', component:PersonalEventComponent},
                          {path:'profcart', component:ProfcartComponent},
                          {path:'dashboard', component:DashboardComponent},
@@ -146,7 +147,7 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProffcartComponent,
     DateComponent,
     CulturalEventComponent,
-  
+    ProfessionalComponent,
     PersonalEventComponent,
     ProfcartComponent,
     DashboardComponent,
