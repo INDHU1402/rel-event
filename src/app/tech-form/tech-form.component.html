@@ -125,7 +125,8 @@
      
               <!-- Modal footer -->
               <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" (click)="done()" data-dismiss="modal">Submit</button>
+      
+                 <button type="button" class="btn btn-primary" class="close" data-dismiss="modal" (click)="done()" data-dismiss="modal">Submit</button>
               </div>
            </div>
         </div>
@@ -256,7 +257,18 @@
                             cols="10" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
                             required="true" placeholder="about"></textarea>
                     </div>
+
+                    <h2 for="focusedInput" style="color:white;">Event Type</h2>
+
+                <select style="width:300px;height:60px;"
+                    class="form-control" name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
+                    <option hidden value="" disabled selected>Choose Event Type</option>
+                    <option *ngFor="let type of Types">{{type}}</option>
+                 </select><br>
                 </div>
+               
+
+              
             </div>
 
             <div class="flip" style="margin-left: 100px;height: 350px;">
