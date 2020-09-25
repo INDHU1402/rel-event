@@ -249,13 +249,6 @@ games = [
   }
 
 
-
-  done() {
-    console.log(this.chosenProfessional);
-
-    this.router.navigate(['personalEvent']);
-  }
-
   status() {
     if ((this.selected_games.length) > 0) {
       return true;

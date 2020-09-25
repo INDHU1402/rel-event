@@ -127,7 +127,7 @@
      
               <!-- Modal footer -->
               <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" (click)="done()" data-dismiss="modal">Submit</button>
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
               </div>
            </div>
         </div>
@@ -209,9 +209,29 @@
 
     <div class="container1" style="background-color:#f0e0e0;"> <br><br>
         <h1 style="margin-left:120px;color: white; font-size: 40px;"></h1><br><br>
+
+        
         <div class="row">
-            <br><br>
+       
             <div class="flip" style="margin-left: 230px;">
+
+                <div class="front" style="background-image: url(/assets/img/category.jpg);height: 350px;">
+                    <br><br><br><br>
+                    <h1 class="text-block">Choose Professionals</h1>
+                </div>
+    
+                <div class="back" style="height:350px;">
+                    <h2>Hire Professionals to help in organising the event</h2>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#professionals"
+                    style="width: 300px;margin-top:30px;height:40px;font-size: 20px;">
+                    Add Professionals
+                 </button>
+                </div>
+              
+            </div>
+
+            <div class="flip" style="margin-left: 100px;height: 350px;">
+                            
                 <div class="front"
                     style="background-image: url(/assets/img/notepad.png);background-size: cover;height: 350px;">
                     <br><br><br><br>
@@ -220,6 +240,7 @@
                     </div>
                 </div>
                 <div class="back" style="height:350px">
+                
                     <div class="form-group">
                         <h2 for="focusedInput" style="color:white">Event Name</h2>
                         <input class="form-control" id="focusedInput" type="text" style="width:300px;height:50px;font-size: 20px;"
@@ -246,20 +267,6 @@
                 </div>
             </div>
 
-            <div class="flip" style="margin-left: 100px;height: 350px;">
-                <div class="front" style="background-image: url(/assets/img/category.jpg);height: 350px;">
-                    <br><br><br><br>
-                    <h1 class="text-block">About event</h1>
-                </div>
-                <div class="back" style="height:350px;">
-                    <div class="form-group">
-                        <h2 for="focusedInput" style="color:white">About</h2>
-                        <textarea class="form-control" id="focusedInput" style="width:300px;font-size: 20px;" rows="5"
-                            cols="10" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
-                            required="true" placeholder="about"></textarea>
-                    </div>
-                </div>
-            </div>
 
             <div class="flip" style="margin-left: 100px;height: 350px;">
                 <div class="front" style="background-image: url(/assets/img/calender.png);height: 350px;">
@@ -286,6 +293,12 @@
                             <option hidden value="" disabled selected>Number of days</option>
                             <option *ngFor="let day of days">{{day}}</option>
                         </select>
+
+                        <select style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" class="form-control"
+                        name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
+                        <option hidden value="" disabled selected>Choose Event Type</option>
+                        <option *ngFor="let type of Types">{{type}}</option>
+                     </select><br>
                
                 </div>
             </div>
@@ -313,19 +326,22 @@
             <div class="flip" style="margin-left: 100px;">
                 <div class="front" style="background-image: url(/assets/img/venue.png);height: 350px;">
                     <br><br><br><br>
-                    <h1 class="text-block">Venue</h1>
+                    <h1 class="text-block">About and Venue</h1>
                 </div>
                 <div class="back" style="height:350px;">
+                    <div class="form-group">
+                        <h2 for="focusedInput" style="color:white">About</h2>
+                        <textarea class="form-control" id="focusedInput" style="width:300px;font-size: 20px;" rows="5"
+                            cols="10" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
+                            required="true" placeholder="about"></textarea>
+                    </div>
                     <h2 for="focusedInput" style="color:white">Venue</h2>
                     <textarea class="form-control" id="focusedInput" type="text" type="text" rows="5" cols="7"
                         style="width:270px;font-size: 20px;" autofocus="true" name="venue"
                         [(ngModel)]='eventDetails.venue' required="true" placeholder="add venue"></textarea>
 
                     <br><br>
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#professionals"
-                    style="width: 300px;margin-top:30px;height:40px;font-size: 20px;">
-                    Add Professionals
-                 </button>
+                
                 </div>
             </div>
 
