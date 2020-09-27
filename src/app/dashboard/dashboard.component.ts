@@ -20,6 +20,12 @@ export class DashboardComponent implements OnInit {
   profs = [];
   rates1: string;
   profs1: string;
+  cy:any;
+  ey:any;
+  cm:any;
+  em:any;
+  cd:any;
+  ed:any;
 
   constructor(private service: UserService, private router: Router) { 
     this.editObject = {userId:'',userName: '',contact: '', emailId: '',password: ''};
@@ -41,7 +47,26 @@ export class DashboardComponent implements OnInit {
     localStorage.setItem('Blog', JSON.stringify(blog));
     this.router.navigate(['readblog']);
   }
-  
+  calTime(endDate:any){
+    var date1 = endDate.split('-')
+    endDate = date1[1] + '/' +date1[0] +'/' +date1[2];
+    this.cy=new Date().getFullYear().toString();
+    this.ey=new Date(endDate).getFullYear().toString();
+    this.cm=new Date().getMonth().toString();
+    this.em=new Date(endDate).getMonth().toString();
+    this.cd=new Date().getDate().toString();
+   this.ed= new Date(endDate).getDate().toString();
+    if (Number(this.ey) <= Number(this.cy)){
+
+      if (Number(this.em) <= Number(this.cm)) {
+
+        if (Number(this.ed) <= Number(this.cd)) {
+
+          return true;
+        }
+      }
+    }
+      }
   shareEvent() {
     console.log('event id = ' + this.eventId);
     console.log('user id = ' + this.User.userId);

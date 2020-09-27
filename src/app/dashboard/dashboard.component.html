@@ -452,7 +452,8 @@
                                                 <h2 class="card-title">{{event.eventName}}</h2>
                                                 <p class="card-text">At {{event.venue}}</p>
                                                 <h5>From {{event.eventStartDate}} to {{event.eventEndDate}}</h5>
-                                                <p><button class="btn btn-danger" (click)="getProfs(event.eventId)"
+                                                              
+                                                <p><button *ngIf="calTime(event.eventEndDate | date:'dd-MM-yyyy') === true" class="btn btn-danger" (click)="getProfs(event.eventId)"
                                                         style="border-radius: 25px; width:100px;" data-toggle="modal"
                                                         data-target="#rateProf">
                                                         Rate professionals</button></p>
