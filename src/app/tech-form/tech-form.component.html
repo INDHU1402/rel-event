@@ -294,7 +294,7 @@
                             <option *ngFor="let day of days">{{day}}</option>
                         </select>
 
-                        <select style="width:300px;margin-left: 350px;margin-top: 40px;height:60px;" class="form-control"
+                        <select style="width:300px;margin-top: 40px;height:60px;" class="form-control"
                         name="eventType" id="category" [(ngModel)]='eventDetails.eventType'>
                         <option hidden value="" disabled selected>Choose Event Type</option>
                         <option *ngFor="let type of Types">{{type}}</option>
@@ -312,13 +312,28 @@
                 <div class="front"
                     style="background-image: url(/assets/img/clock.jpg);background-size: cover;height: 350px;">
                     <br><br><br><br>
+
                     <h1 class="text-block">Timeline</h1>
                 </div>
                 <div class="back" style="height:350px;">
+
+                    <label>
+                        <input style="width:300px;" placeholder="Start Time" name="startTime"
+                           [(ngModel)]='eventDetails.startTime' [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+                        <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                     </label>
+                    <br><br>
+                    <label>
+                     <input style="width:300px;" placeholder="End Time" name="endTime"
+                        [(ngModel)]='eventDetails.endTime' [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
+                     <owl-date-time [pickerType]="'timer'" #dt5></owl-date-time>
+                    </label>
+                    <br><br>
+
                     <h2>Click below button to submit timeline</h2>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeline"
-                        style="width: 150px;font-size: 20px;">
-                        Click Here
+                        style="width: 200px;font-size: 20px;">
+                        Add Checkpoints
                     </button>
                 </div>
             </div>
