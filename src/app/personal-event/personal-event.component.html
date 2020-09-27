@@ -172,7 +172,8 @@
                      </div>
                    <br><br>
                    <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                   
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <button type="button" class="close" data-dismiss="modal" class=" btn btn-dark" style="width: 150px;" (click)="portfolio(prof)">Know more </button>
           
                </div>
              </section>
@@ -192,7 +193,8 @@
                         </div>
                         <br><br>
                         <button type="button" class=" btn btn-dark" style="width: 100px;" (click)="addProfessional(prof)">Add </button>
-                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <button type="button" class="close" data-dismiss="modal" class=" btn btn-dark" style="width: 150px;" (click)="portfolio(prof)">Know more </button>
                
                     </div>
                   </section>
@@ -224,6 +226,18 @@
    <div class = "hero-image" >
       <mat-vertical-stepper [linear]="" #stepper style="margin-left:400px; margin-top: 100px; background-color: transparent; ">
 
+            
+         <mat-step>
+
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#professionals"
+            style="width: 150px;">
+            Add Professionals
+            <button mat-button matStepperNext class="btn btn-dark">Next</button>
+         </button>
+         
+
+
+         </mat-step>
          <mat-step>
 
             <div class="row" style="margin-left:50px;">
@@ -386,17 +400,7 @@
               
 
          </mat-step>            
-         
-         <mat-step>
-
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#professionals"
-            style="width: 150px;">
-            Add Professionals
-         </button>
-         
-
-
-         </mat-step>
+      
 
        
 

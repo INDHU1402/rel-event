@@ -19,11 +19,15 @@
           placeholder="Username">
         <input class="pass" type="password" name="password" [(ngModel)]='password' style="text-align: center;"
           placeholder="Password"><br>
+          <a (click)="fp1()" style="margin-left:145px;"><u>Forgot Password ?</u></a>
+          <br><br>
         <button class="button" [disabled]="isLoading" class="submit" (click)="loginSubmit()" style="text-align: center;">
           Sign in
         </button>
-        <br><br>
-        <a (click)="fp1()" style="margin-left:145px;">Forgot Password ?</a>
+        <br><hr>
+        <button class="button" class="submit" (click)="signInWithGoogle()" style="margin-left:50px; width:300px;">SignInWithGoogle (Only for user)
+        <span class="fa fa-google"></span></button>
+        <br>
     </div>
 
   </div>

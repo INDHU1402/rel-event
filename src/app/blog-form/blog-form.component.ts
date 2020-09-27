@@ -52,6 +52,7 @@ export class BlogFormComponent implements OnInit {
         this.imageUrl='/assets/img/bg.jpg';
       }
       );
+      alert('Added Blog!');
     //this.service.addBlog(this.blogDetails).subscribe((result: any) => { result = this.blogDetails; console.log(result) } );
   }
 

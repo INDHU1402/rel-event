@@ -25,19 +25,11 @@
         <li><a routerLink="" style="font-size: 6mm;">Home<span class="sr-only">(current)</span></a></li>
 
         <li> <a routerLink="blog" style="font-size: 6mm;">Blog</a></li>
-
-
         <li><a routerLink="expandService" style="font-size: 6mm;">Expand your service</a></li>
-
 
         <li> <a routerLink="login" *ngIf="!user && !status()" style="font-size: 6mm;"><span
               class="glyphicon glyphicon-user"></span> Login </a></li>
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-
-        <div style="margin-left:-110px" *ngIf="!user && !status()"><button class="button5"
-            style="font-size: 6mm;border-block-color: black;" (click)="signInWithGoogle()">SignInWithGoogle<span
-              class="fa fa-google"></span></button></div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
         <div *ngIf="!user && !status()">
           <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
@@ -56,7 +48,7 @@
         </div>
 
         <div *ngIf="status() && !db1" class="dropdown">
-          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 6mm;margin-left:-50px;margin-top:7px;">Launch Your Event</a>
+          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 6mm;margin-left:20px;margin-top:12px;">Launch Your Event</a>
           &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
             data-toggle="dropdown">{{db.userName}}
@@ -70,8 +62,9 @@
 
 
         <div *ngIf="status() && !db" class="dropdown">
-          <a routerLink="event" style="color:rgb(255, 255, 255);font-size: 5mm;">Launch Your Event</a>
+   <a routerLink="share" style="color:rgb(255, 255, 255);font-size: 6mm;margin-left:20px;margin-top:12px;">Share My service</a>
           &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
           <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
             data-toggle="dropdown">{{db1.professionalName}}
             <span class="caret"></span></button>

@@ -96,7 +96,7 @@ export class PersonalEventComponent implements OnInit {
     this.searchText = "";
   }
 
-  prof(p : any) {
+  portfolio(p : any) {
     localStorage.setItem("prof", JSON.stringify(p));
     this.router.navigate(['professional']);
   }

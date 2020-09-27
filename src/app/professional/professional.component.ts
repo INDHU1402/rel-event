@@ -11,6 +11,7 @@ export class ProfessionalComponent implements OnInit {
   prof: any;
   myEvents: any;
   status: boolean;
+  value: any;
 
   constructor(private service: UserService,private router: Router) { }
 
@@ -24,6 +25,13 @@ export class ProfessionalComponent implements OnInit {
     }
     this.service.getMyEvents(this.prof.professionalId).subscribe((result: any) => {
       console.log(result);this.myEvents= result });
+
+    this.service.myrating(this.prof.professionalId).subscribe((op: any) => {
+      console.log(op);
+      if (op == 'NaN'){this.value="No Rating";}
+      else{
+        this.value = op;}
+      });
   }
 
   goToEvent(event: any): void {

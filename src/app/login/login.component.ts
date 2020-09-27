@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { SocialAuthService, GoogleLoginProvider } from 'angularx-social-login';
+
+
 declare var jQuery: any;
 @Component({
   selector: 'app-login',
@@ -21,11 +24,17 @@ export class LoginComponent implements OnInit {
   user1: any;
   
   
-  constructor(private service: UserService, private router: Router) { }
+  constructor(private authService: SocialAuthService, private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
   isLoading = false;
+  
+
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+  
   
   toggleLoading = () => {
     this.isLoading = true;

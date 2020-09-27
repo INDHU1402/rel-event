@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { SocialAuthService, GoogleLoginProvider } from 'angularx-social-login';
 
 @Component({
   selector: 'app-usersignup',
@@ -21,7 +22,7 @@ export class UsersignupComponent implements OnInit {
   imageUrl:String;
   profDetails= {professionalId:'', professionalName:'', address:'', experience:'', mailId:'',mobile:'', serviceName:'', serviceType:'',serviceImage:'',password:''};
 
-  constructor(private service: UserService, private router: Router) {
+  constructor(private authService: SocialAuthService, private service: UserService, private router: Router) {
     this.imageUrl = 'src/assets/img/birthday.jpg';
   }
 

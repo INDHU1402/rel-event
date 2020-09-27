@@ -3,110 +3,162 @@
   <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conference</title>
 </head>
 
 <br><br><br><br><br>
+
 <body>
   <div class="ncontainer">
-    <section id="home" >
+    <section id="home">
 
       <div class="row" style="background-color: rgb(236, 230, 230);">
         <div class="container column left" style="background-color: rgb(236, 230, 230); padding-left: 10%;">
-        <h1 >{{event.eventName}}</h1>
-        <h2 class="section-heading">By {{event.organiserName}}</h2>
-        <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
-        <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
-        <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
-        <p style="font-size: 20px;">
-          {{event.about}}
-        </p>
-        <div class="social-icon">
-          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <h1>{{event.eventName}}</h1>
+          <h2 class="section-heading">By {{event.organiserName}}</h2>
+          <h2 class="section-heading">From : {{event.eventStartDate | date}} , {{event.startTime}} </h2>
+          <h2 class="section-heading">To : {{event.eventEndDate | date}} , {{event.endTime}}</h2>
+          <h2 class="section-heading">Price : {{event.ticketPrice | currency: 'INR'}}</h2>
+
+          <div class="social-icon">
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+
+          <div class="social-icon">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </div>
+          <br>
+          <button class="register-today-btn" data-toggle="modal" data-target="#myModal" style="width: 200px;">Register
+            Now
+          </button>
         </div>
 
-        <div class="social-icon">
-          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <br>
-        <button class="register-today-btn"data-toggle="modal" data-target="#myModal" style="width: 200px;"
-        >Register Now
-       </button>
+        <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event.poster}});background-size: 100% 100%;
+    background-repeat: no-repeat; padding-right: 10%;"></div>
+
       </div>
-
-    <div class=" container column right" style="background-image: url(http://localhost:8080/RESTAPI/images/{{event.poster}});background-size: 100% 100%;
-    background-repeat: no-repeat; padding-right: 10%;" ></div>
-
-    </div>
     </section>
     <!-- home section -->
 
-    <div style="text-align: center; margin-left:-420px; margin-top: -80px;">
+    <div style="width: 1000px;">
       <!-- Button to Open the Modal -->
-      
 
-     
 
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="width: 500px;">
 
-          <!-- Modal Header -->
-          <div class="modal-header" style="width: 500px;">
-            <h4 class="modal-title" style="font-size: 30px;">Enter no. of tickets</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
 
-          <!-- Modal body -->
-        
-          <div class="modal-body" style="width: 500px;">
-            <input type="number" name="howManyTickets" [(ngModel)]='howManyTickets' placeholder="Enter no. of Tickets">
-          </div>
+      <div class="modal fade" id="myModal" style="width:800px;margin-left: 500px;margin-top: 50px;">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
 
-          <!-- Modal footer -->
-          <div class="modal-footer" style="width: 500px;">
-            <button type="button" class="register-btn hvr-buzz-out" (click)="payment()" data-dismiss="modal">Continue</button>
+            <!-- Modal Header -->
+            <div class="modal-header" style="background-color: #00b3b3;" >
+              <h4 class="modal-title" style="font-size: 30px;">Enter no. of tickets</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+
+            <div class="modal-body" style="height:200px;background-color:#ffffff;">
+              
+             <!-- <input type="number" min = "0" name="howManyTickets" [(ngModel)]='howManyTickets' placeholder="Enter no. of Tickets" >-->
+             <div id="invis" class="animated fadeInUpBig invis" >
+              <div id="selectclass" style="width:420px;background-color: transparent;">
+                <h2>Select your tickets :</h2>
+                <div id="trainClass">
+                  <label class="blue"><input type="radio" [(ngModel)]='howManyTickets' value=1 name='howManyTickets' ><span>1</span></label>
+                  <label class="green"><input type="radio" [(ngModel)]='howManyTickets' value=2 name='howManyTickets'><span>2</span></label>
+                  <label class="yellow"><input type="radio" [(ngModel)]='howManyTickets' vaue=3 name='howManyTickets'><span>3</span></label>
+                  <label class="pink"><input type="radio" [(ngModel)]='howManyTickets'  value=4 name='howManyTickets'><span>4</span></label>
+                  <label class="purple"><input type="radio" [(ngModel)]='howManyTickets' value=5 name='howManyTickets'><span>5</span></label>
+                  <label class="blue"><input type="radio" [(ngModel)]='howManyTickets' value=6 name='howManyTickets'><span>6</span></label>
+                </div>
+              </div>
+            </div>
+              
+              <br>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="background-color: #00b3b3;">
+              <button type="button" class="btn btn primary hvr-buzz-out" style="background-color: black; color: white;"
+                (click)="payment()" data-dismiss="modal">Continue</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-</div>
-<br><br>
-<div class="container" style= "color:black; text-align: center;">
-  <br><br><br><br>
-  <h1>CountDown</h1>
-  <ul>
-    <li><span id="days"></span>days</li>
-    <li><span id="hours"></span>Hours</li>
-    <li><span id="minutes"></span>Minutes</li>
-    <li><span id="seconds"></span>Seconds</li>
-  </ul>
-</div>
+    </div>
+    <br><br>
+    <div class="container" style="color:black; text-align: center;">
+      <br><br><br><br>
+      <h1>CountDown</h1>
+      <ul>
+        <li><span id="days"></span>days</li>
+        <li><span id="hours"></span>Hours</li>
+        <li><span id="minutes"></span>Minutes</li>
+        <li><span id="seconds"></span>Seconds</li>
+      </ul>
+    </div>
 
     <!-- speakers section -->
     <br><br><br><br>
     <section id="speakers">
       <div class="content-container">
-        <div class="content">
-          <img class="speaker-icon" src="https://image.ibb.co/ixMeYo/music_microphone_old.png" alt="Microphone Icon" />
-      <h2 class="section-heading">Speakers</h2>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest1}}
-          </p>
+        <div class="row">
+          <div class="col-sm-4" style="text-align: center;">
+            <img class="speaker-icon" src="https://image.ibb.co/ixMeYo/music_microphone_old.png"
+              alt="Microphone Icon" />
+            <h2 class="section-heading">Speakers</h2>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest2}}
-          </p>
+            <p class="speakers-address" style="font-size: 20px;">
+              Special Guest : {{event.guest1}}
+            </p>
 
-          <p class="speakers-address" style="font-size: 20px;">
-            Special Guest : {{event.guest3}}
-          </p>
+            <p class="speakers-address" style="font-size: 20px;">
+              Special Guest : {{event.guest2}}
+            </p>
+
+            <p class="speakers-address" style="font-size: 20px;">
+              Special Guest : {{event.guest3}}
+            </p>
+          </div>
+
+
+          <div class="col-sm-4" style="text-align: center;">
+            <span class="glyphicon glyphicon-tasks" style="font-size: 55px;"></span>
+            <h2 class="section-heading">About</h2>
+            <p style="font-size: 15px;">
+              {{event.about}}
+            </p>
+          </div>
+
+          <div class="col-sm-4" style="text-align: center;">
+            <img class="speaker-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
+            <h2 class="section-heading">Venue</h2>
+
+
+            <p class="speakers-address" style="font-size: 20px;">
+              {{event.venue}}
+            </p>
+
+            <p class="speakers-address" style="font-size: 20px;">
+              Mob : {{user.contact}}
+            </p>
+
+            <p class="speakers-address" style="font-size: 20px;">
+              E-Mail : {{user.emailId}}
+            </p>
+          </div>
+
+
+
         </div>
+
       </div>
     </section>
 
@@ -124,7 +176,7 @@
           <p class="event-hours" style="font-size: 18px;">{{event.time1}}</p>
           <p class="event-hours" style="font-size: 18px;">{{event.time2}}</p>
           <p class="event-hours" style="font-size: 18px;">{{event.endTime}}</p>
-         
+
         </div>
 
         <div class="event-title-container">
@@ -140,9 +192,34 @@
     <section id="auditorium">
       <div class="content-container">
         <div class="content">
-          <img class="auditorium-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
 
-          <h2 class="section-heading">Venue</h2>
+
+          <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
+
+          <h2 class="section-heading">Sponsors</h2>
+
+          <p class="section-subtitle">The Conference Partners</p>
+          <br>
+          <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
+
+        </div>
+      </div>
+    </section>
+    <!--auditorium section 
+
+    <section id="sponsors">
+      <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
+
+      <h2 class="section-heading">Sponsors</h2>
+
+      <p class="section-subtitle">The Conference Partners</p>
+      <br>
+      <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
+    </section>
+
+
+     <img class="auditorium-icon" src="https://image.ibb.co/iekv68/basic_geolocalize_01.png" alt="" />
+     <h2 class="section-heading">Venue</h2>
           <p class="section-subtitle">The Location</p>
 
           <p class="auditorium-address" style="font-size: 20px;">
@@ -156,27 +233,14 @@
           <p class="auditorium-email">
             E-Mail : info@salapastore.it
           </p>
-        </div>
-      </div>
-    </section>
-    <!-- auditorium section -->
-
-    <section id="sponsors">
-      <img class="sponsors-icon" src="https://image.ibb.co/maSmDo/basic_bookmark.png" alt="" />
-
-      <h2 class="section-heading">Sponsors</h2>
-
-      <p class="section-subtitle">The Conference Partners</p>
-      <br>
-      <button class="register-today-btn" (click)="Sponsor(event)">Become a Sponsor</button>
-    </section>
-    <!-- sponsors section -->
+    sponsors section -->
 
     <footer>
       <p class="footer-title">{{event.eventName}}</p>
 
       <div class="social-icon-container">
-        <a href="mailto:best@email.com" target="_blank"><img class="email-icon" src="https://image.ibb.co/c1n8R8/basic_mail.png" alt=""/></a>
+        <a href="mailto:best@email.com" target="_blank"><img class="email-icon"
+            src="https://image.ibb.co/c1n8R8/basic_mail.png" alt="" /></a>
 
         <div class="footer-icon">
           <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -187,9 +251,9 @@
         </div>
       </div>
 
-     
+
       <span class="copyright">Copyright &copy; All Rights Reserved.</span>
     </footer>
 
   </div>
-  </body>
+</body>

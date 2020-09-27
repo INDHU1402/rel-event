@@ -28,6 +28,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { MatStepperModule} from '@angular/material/stepper';
 import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
+import { ProfessionalComponent } from './professional/professional.component'; 
 import { SponsorformComponent } from './sponsorform/sponsorform.component';
 import { ShareExperienceComponent } from './share-experience/share-experience.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -53,14 +54,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DateComponent } from './date/date.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import { CulturalEventComponent } from './cultural-event/cultural-event.component';
-import { TechnicalEventComponent } from './technical-event/technical-event.component';
+
 import { PersonalEventComponent } from './personal-event/personal-event.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { ProfcartComponent } from './profcart/profcart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfDashBoardComponent } from './prof-dash-board/prof-dash-board.component';
 import { BlogFormComponent } from './blog-form/blog-form.component';
-import { ProfessionalComponent } from './professional/professional.component';
+
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { DetailsComponent } from './details/details.component';
 import { OtpComponent } from './otp/otp.component';
@@ -96,12 +97,12 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
                          {path:'techform', component:TechFormComponent},
                          {path:'cart', component:ProffcartComponent},
                          {path:'culturalEvent', component: CulturalEventComponent},
-                         {path:'technicalEvent', component:TechnicalEventComponent},
+                         {path:'professional', component:ProfessionalComponent}, 
                          {path:'personalEvent', component:PersonalEventComponent},
                          {path:'profcart', component:ProfcartComponent},
                          {path:'dashboard', component:DashboardComponent},
                          {path:'profdashboard', component:ProfDashBoardComponent},
-                         {path:'professional', component:ProfessionalComponent},
+                    
                          {path:'forgot', component:ForgotpasswordComponent},
                          {path:'fp1', component:DetailsComponent},
                          {path:'fp2', component:OtpComponent}
@@ -146,13 +147,13 @@ const appRoot: Routes = [{path:'home', component: HomeComponent},
     ProffcartComponent,
     DateComponent,
     CulturalEventComponent,
-    TechnicalEventComponent,
+    ProfessionalComponent,
     PersonalEventComponent,
     ProfcartComponent,
     DashboardComponent,
     ProfDashBoardComponent,
     BlogFormComponent,
-    ProfessionalComponent,
+
     ForgotpasswordComponent,
     DetailsComponent,
     OtpComponent

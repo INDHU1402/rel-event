@@ -26,4 +26,5 @@ export class SponsorformComponent implements OnInit {
     this.text = "Hello I am " + this.name + " I would like to sponsor the event " + this.event.eventName + 
     " . Here are my details : " + this.email + " Sponsor message : " + this.message; 
     this.service.sponsorship(this.x, this.text).subscribe((result: any) => { console.log(result);});
+    alert('Thank you fror showing your interest, We will let organiser to know about this');
   }}

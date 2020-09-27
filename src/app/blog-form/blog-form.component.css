@@ -29,7 +29,7 @@
 
 	 font-size: 30px;
 	 font-weight: 30px;
-	 background-image: linear-gradient(to right, #ff4dc4 ,white);
+	 background-image: linear-gradient(to right, green,white);
 	 border-radius: 10px 10px 0 0;
 	 
 }
@@ -88,7 +88,7 @@
 	 border: none;
 	 border-radius: 5px;
 	 padding: 5px 15px;
-	 background: #27ae60;
+	 background: green;
 	 margin-left: 120px;
 	 font-size: 14px;
 }
@@ -96,7 +96,7 @@
 	 margin-left: 8px;
 }
 .hero-image2 {
-    background-image: url('/assets/img/writeBlog.png');
+    background-image: url('/assets/img/1991.png');
     height: 380px;
     
     background-position: center;
@@ -105,7 +105,7 @@
     position: relative;
   }
   .hero-image3 {
-    background-image: url('/assets/img/tt.jpg');
+    background-image: url('/assets/img/1991.png');
      
     background-position: center;
     background-repeat: no-repeat;
