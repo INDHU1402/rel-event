@@ -169,21 +169,21 @@
 
       <p class="section-subtitle">Schedule</p>
 
-      <h2 class="agenda-subheading">{{event.venue}} • {{event.eventStartDate | date}}</h2>
+      <h2 class="agenda-subheading">{{event.venue}} • {{event.eventStartDate | date}} - {{event.eventEndDate | date}}</h2>
       <div class="events-container">
         <div class="event-hours-container">
-          <p class="event-hours" style="font-size: 18px;">{{event.startTime}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.startTime | date:'shortTime'}}</p>
           <p class="event-hours" style="font-size: 18px;">{{event.time1}}</p>
           <p class="event-hours" style="font-size: 18px;">{{event.time2}}</p>
-          <p class="event-hours" style="font-size: 18px;">{{event.endTime}}</p>
+          <p class="event-hours" style="font-size: 18px;">{{event.endTime | date:'shortTime'}}</p>
 
         </div>
 
         <div class="event-title-container">
-          <p class="event-title" style="font-size: 18px;">{{event.startOverview}}</p>
+          <p class="event-title" style="font-size: 18px;">START</p>
           <p class="event-title" style="font-size: 18px;">{{event.overview1}}</p>
           <p class="event-title" style="font-size: 18px;">{{event.overview1}}</p>
-          <p class="event-title" style="font-size: 18px;">{{event.endOverview}}</p>
+          <p class="event-title" style="font-size: 18px;">END</p>
         </div>
       </div>
     </section>
