@@ -290,7 +290,7 @@
                         <h2>Number of days</h2>
                         <select class="form-control" placeholder="Select no.of Days" name="howManyDays" id="category"
                             [(ngModel)]='howManyDays' style="width:100px;">
-                            <option hidden value="" disabled selected>Number of days</option>
+                            <option hidden value="" disabled selected>days</option>
                             <option *ngFor="let day of days">{{day}}</option>
                         </select>
 
@@ -346,13 +346,13 @@
                 <div class="back" style="height:350px;">
                     <div class="form-group">
                         <h2 for="focusedInput" style="color:white">About</h2>
-                        <textarea class="form-control" id="focusedInput" style="width:300px;font-size: 20px;" rows="5"
-                            cols="10" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
+                        <textarea class="form-control" id="focusedInput" style="width:300px; height:100px; font-size: 20px;" rows="5"
+                            cols="5" type="text" autofocus="true" name="about" [(ngModel)]='eventDetails.about'
                             required="true" placeholder="about"></textarea>
                     </div>
                     <h2 for="focusedInput" style="color:white">Venue</h2>
-                    <textarea class="form-control" id="focusedInput" type="text" type="text" rows="5" cols="7"
-                        style="width:270px;font-size: 20px;" autofocus="true" name="venue"
+                    <textarea class="form-control" id="focusedInput" type="text" rows="5" cols="5"
+                        style="width:300px; height:100px; font-size: 20px;" autofocus="true" name="venue"
                         [(ngModel)]='eventDetails.venue' required="true" placeholder="add venue"></textarea>
 
                     <br><br>
