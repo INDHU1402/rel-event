@@ -235,6 +235,7 @@ games = [
     setTimeout(() => {
       this.isLoading = false;
     }, 2000);
+    alert('Event created successfully!');
     //  this.service.registerEvent(this.eventDetails).subscribe((result: any) => { result = this.eventDetails; console.log(result) } );
   }
   handleFileInput(file: FileList) {

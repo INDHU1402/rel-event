@@ -72,6 +72,7 @@ export class DashboardComponent implements OnInit {
     console.log('user id = ' + this.User.userId);
     console.log('to = ' + this.to);
     this.service.shareMyEvent(this.eventId, this.User.userId, this.to).subscribe((result: any) => {console.log(result); });
+    alert('Shared Event');
   }
 
   goToEvent(event: any): void {
@@ -111,6 +112,7 @@ export class DashboardComponent implements OnInit {
     this.profs1 = this.profs.toString();
     this.service.rateEvent(this.profs1, this.rates1).subscribe((result: any) => {console.log(result); });
     console.log("added rating");
+    alert('Thank you for your feedback');
   }
 
 }
