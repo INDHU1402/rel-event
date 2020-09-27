@@ -318,16 +318,17 @@
                 <div class="back" style="height:350px;">
 
                     <label>
-                        <input style="width:300px;" placeholder="Start Time" name="startTime"
-                           [(ngModel)]='eventDetails.startTime' [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+                        <input style ="color: black;" placeholder="Start Time" name="startTime"
+                        [(ngModel)]='eventDetails.startTime' [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
                         <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
-                     </label>
+                    </label>
+
                     <br><br>
                     <label>
-                     <input style="width:300px;" placeholder="End Time" name="endTime"
-                        [(ngModel)]='eventDetails.endTime' [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
-                     <owl-date-time [pickerType]="'timer'" #dt5></owl-date-time>
+                        <input style ="color: black;" placeholder="End Time" name="endTime" [(ngModel)]='eventDetails.endTime' [owlDateTimeTrigger]="dt5" [owlDateTime]="dt5">
+                        <owl-date-time [pickerType]="'timer'" #dt5></owl-date-time>
                     </label>
+
                     <br><br>
 
                     <h2>Click below button to submit timeline</h2>
